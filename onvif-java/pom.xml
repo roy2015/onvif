@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>onvif-java</artifactId>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -56,7 +57,7 @@
 			<version>3.4</version>
 		</dependency>
 
-		<!-- Java 9+ javax dependencies -->
+		<!-- Java 9+ javax dependencies start -->
 		<dependency>
 			<groupId>com.sun.activation</groupId>
 			<artifactId>javax.activation</artifactId>
@@ -80,10 +81,7 @@
 			<artifactId>jaxb-impl</artifactId>
 			<version>${jaxb.api.version}</version>
 		</dependency>
-
-
-
-
+		<!-- Java 9+ javax dependencies end -->
 
 
 	</dependencies>
