@@ -117,7 +117,7 @@ public class OnvifDevice {
 
 		Socket socket = null;
 		try {
-			SocketAddress sockaddr = new InetSocketAddress(ip, new Integer(port));
+			SocketAddress sockaddr = new InetSocketAddress(ip, Integer.parseInt(port));
 			socket = new Socket();
 
 			socket.connect(sockaddr, 5000);

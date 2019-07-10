@@ -1,20 +1,21 @@
 package org.onvif.client;
 
+import de.onvif.soap.OnvifDevice;
+import org.apache.commons.io.FileUtils;
+import org.onvif.ver10.schema.MediaUri;
+import org.onvif.ver10.schema.PTZPreset;
+import org.onvif.ver20.ptz.wsdl.PTZ;
+
+import javax.xml.soap.SOAPException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.ConnectException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
-
-import javax.xml.soap.SOAPException;
-
-import org.apache.commons.io.FileUtils;
-import org.onvif.ver10.schema.MediaUri;
-
-import de.onvif.soap.OnvifDevice;
 
 public class SimpleTest {
 
@@ -25,7 +26,11 @@ public class SimpleTest {
 		final Map<String, String> onvifCamerasTokens = new HashMap<>();
 		final String propFileRelativePath = "src/test/resources/onvif.properties";
 		final Properties config = new Properties();
-		config.load(new FileInputStream(new File(propFileRelativePath)));
+		final File f = new File(propFileRelativePath);
+		if (!f.exists()) throw new Exception("fnf: "+f.getAbsolutePath());
+		javax.jws.WebService foo=null;
+
+		config.load(new FileInputStream(f));
 		String firstCamId = null;
 		for (Entry<Object, Object> entry : config.entrySet()) {
 			String deviceName = (String) entry.getKey();
@@ -60,6 +65,18 @@ public class SimpleTest {
 		MediaUri sceenshotUri = firstCam.getMedia().getSnapshotUri(profileToken);
 		File tempFile = File.createTempFile("tmp", ".jpg");
 		FileUtils.copyURLToFile(new URL(sceenshotUri.getUri()), tempFile);
+		System.out.println("snapshot: "+tempFile.getAbsolutePath()+" length:"+tempFile.length());
+
+		PTZ ptz = firstCam.getPtz();
+		if (ptz!=null)
+		{
+			List<PTZPreset> presets = ptz.getPresets(profileToken);
+			if (presets!=null && !presets.isEmpty())
+			{
+				System.out.println("Found "+presets.size()+" presets");
+			}
+		}
+
 
 	}
 
