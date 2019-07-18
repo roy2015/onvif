@@ -8,13 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per PTZNodeExtension complex type.
+ * <p>Java class for PTZNodeExtension complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PTZNodeExtension"&gt;
@@ -78,7 +80,7 @@ public class PTZNodeExtension {
     }
 
     /**
-     * Recupera il valore della proprietà supportedPresetTour.
+     * Gets the value of the supportedPresetTour property.
      * 
      * @return
      *     possible object is
@@ -90,7 +92,7 @@ public class PTZNodeExtension {
     }
 
     /**
-     * Imposta il valore della proprietà supportedPresetTour.
+     * Sets the value of the supportedPresetTour property.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +104,7 @@ public class PTZNodeExtension {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -114,7 +116,7 @@ public class PTZNodeExtension {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -123,6 +125,16 @@ public class PTZNodeExtension {
      */
     public void setExtension(PTZNodeExtension2 value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -54,7 +56,7 @@ public class GetDeviceInformationResponse {
     protected String hardwareId;
 
     /**
-     * Recupera il valore della proprietà manufacturer.
+     * Gets the value of the manufacturer property.
      * 
      * @return
      *     possible object is
@@ -66,7 +68,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Imposta il valore della proprietà manufacturer.
+     * Sets the value of the manufacturer property.
      * 
      * @param value
      *     allowed object is
@@ -78,7 +80,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Recupera il valore della proprietà model.
+     * Gets the value of the model property.
      * 
      * @return
      *     possible object is
@@ -90,7 +92,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Imposta il valore della proprietà model.
+     * Sets the value of the model property.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +104,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Recupera il valore della proprietà firmwareVersion.
+     * Gets the value of the firmwareVersion property.
      * 
      * @return
      *     possible object is
@@ -114,7 +116,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Imposta il valore della proprietà firmwareVersion.
+     * Sets the value of the firmwareVersion property.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +128,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Recupera il valore della proprietà serialNumber.
+     * Gets the value of the serialNumber property.
      * 
      * @return
      *     possible object is
@@ -138,7 +140,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Imposta il valore della proprietà serialNumber.
+     * Sets the value of the serialNumber property.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +152,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Recupera il valore della proprietà hardwareId.
+     * Gets the value of the hardwareId property.
      * 
      * @return
      *     possible object is
@@ -162,7 +164,7 @@ public class GetDeviceInformationResponse {
     }
 
     /**
-     * Imposta il valore della proprietà hardwareId.
+     * Sets the value of the hardwareId property.
      * 
      * @param value
      *     allowed object is
@@ -171,6 +173,16 @@ public class GetDeviceInformationResponse {
      */
     public void setHardwareId(String value) {
         this.hardwareId = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

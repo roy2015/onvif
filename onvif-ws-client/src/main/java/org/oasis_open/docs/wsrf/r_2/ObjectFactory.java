@@ -51,8 +51,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResourceUnknownFaultType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResourceUnknownFaultType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ResourceUnknownFaultType }{@code >}
      */
     @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsrf/r-2", name = "ResourceUnknownFault")
     public JAXBElement<ResourceUnknownFaultType> createResourceUnknownFault(ResourceUnknownFaultType value) {
@@ -60,8 +64,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResourceUnavailableFaultType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResourceUnavailableFaultType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ResourceUnavailableFaultType }{@code >}
      */
     @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsrf/r-2", name = "ResourceUnavailableFault")
     public JAXBElement<ResourceUnavailableFaultType> createResourceUnavailableFault(ResourceUnavailableFaultType value) {

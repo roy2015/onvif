@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per EventCapabilities complex type.
+ * <p>Java class for EventCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="EventCapabilities"&gt;
@@ -65,7 +67,7 @@ public class EventCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà xAddr.
+     * Gets the value of the xAddr property.
      * 
      * @return
      *     possible object is
@@ -77,7 +79,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà xAddr.
+     * Sets the value of the xAddr property.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +91,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà wsSubscriptionPolicySupport.
+     * Gets the value of the wsSubscriptionPolicySupport property.
      * This getter has been renamed from isWSSubscriptionPolicySupport() to getWSSubscriptionPolicySupport() by cxf-xjc-boolean plugin.
      * 
      */
@@ -98,7 +100,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà wsSubscriptionPolicySupport.
+     * Sets the value of the wsSubscriptionPolicySupport property.
      * 
      */
     public void setWSSubscriptionPolicySupport(boolean value) {
@@ -106,7 +108,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà wsPullPointSupport.
+     * Gets the value of the wsPullPointSupport property.
      * This getter has been renamed from isWSPullPointSupport() to getWSPullPointSupport() by cxf-xjc-boolean plugin.
      * 
      */
@@ -115,7 +117,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà wsPullPointSupport.
+     * Sets the value of the wsPullPointSupport property.
      * 
      */
     public void setWSPullPointSupport(boolean value) {
@@ -123,7 +125,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà wsPausableSubscriptionManagerInterfaceSupport.
+     * Gets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
      * This getter has been renamed from isWSPausableSubscriptionManagerInterfaceSupport() to getWSPausableSubscriptionManagerInterfaceSupport() by cxf-xjc-boolean plugin.
      * 
      */
@@ -132,7 +134,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà wsPausableSubscriptionManagerInterfaceSupport.
+     * Sets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
      * 
      */
     public void setWSPausableSubscriptionManagerInterfaceSupport(boolean value) {
@@ -185,6 +187,16 @@ public class EventCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -11,12 +11,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per SystemCapabilities complex type.
+ * <p>Java class for SystemCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SystemCapabilities"&gt;
@@ -73,7 +75,7 @@ public class SystemCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà discoveryResolve.
+     * Gets the value of the discoveryResolve property.
      * This getter has been renamed from isDiscoveryResolve() to getDiscoveryResolve() by cxf-xjc-boolean plugin.
      * 
      */
@@ -82,7 +84,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà discoveryResolve.
+     * Sets the value of the discoveryResolve property.
      * 
      */
     public void setDiscoveryResolve(boolean value) {
@@ -90,7 +92,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà discoveryBye.
+     * Gets the value of the discoveryBye property.
      * This getter has been renamed from isDiscoveryBye() to getDiscoveryBye() by cxf-xjc-boolean plugin.
      * 
      */
@@ -99,7 +101,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà discoveryBye.
+     * Sets the value of the discoveryBye property.
      * 
      */
     public void setDiscoveryBye(boolean value) {
@@ -107,7 +109,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà remoteDiscovery.
+     * Gets the value of the remoteDiscovery property.
      * This getter has been renamed from isRemoteDiscovery() to getRemoteDiscovery() by cxf-xjc-boolean plugin.
      * 
      */
@@ -116,7 +118,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà remoteDiscovery.
+     * Sets the value of the remoteDiscovery property.
      * 
      */
     public void setRemoteDiscovery(boolean value) {
@@ -124,7 +126,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà systemBackup.
+     * Gets the value of the systemBackup property.
      * This getter has been renamed from isSystemBackup() to getSystemBackup() by cxf-xjc-boolean plugin.
      * 
      */
@@ -133,7 +135,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà systemBackup.
+     * Sets the value of the systemBackup property.
      * 
      */
     public void setSystemBackup(boolean value) {
@@ -141,7 +143,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà systemLogging.
+     * Gets the value of the systemLogging property.
      * This getter has been renamed from isSystemLogging() to getSystemLogging() by cxf-xjc-boolean plugin.
      * 
      */
@@ -150,7 +152,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà systemLogging.
+     * Sets the value of the systemLogging property.
      * 
      */
     public void setSystemLogging(boolean value) {
@@ -158,7 +160,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà firmwareUpgrade.
+     * Gets the value of the firmwareUpgrade property.
      * This getter has been renamed from isFirmwareUpgrade() to getFirmwareUpgrade() by cxf-xjc-boolean plugin.
      * 
      */
@@ -167,7 +169,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà firmwareUpgrade.
+     * Sets the value of the firmwareUpgrade property.
      * 
      */
     public void setFirmwareUpgrade(boolean value) {
@@ -204,7 +206,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -216,7 +218,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -243,6 +245,16 @@ public class SystemCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

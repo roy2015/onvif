@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Appearance complex type.
+ * <p>Java class for Appearance complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Appearance"&gt;
@@ -59,7 +61,7 @@ public class Appearance {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà transformation.
+     * Gets the value of the transformation property.
      * 
      * @return
      *     possible object is
@@ -71,7 +73,7 @@ public class Appearance {
     }
 
     /**
-     * Imposta il valore della proprietà transformation.
+     * Sets the value of the transformation property.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +85,7 @@ public class Appearance {
     }
 
     /**
-     * Recupera il valore della proprietà shape.
+     * Gets the value of the shape property.
      * 
      * @return
      *     possible object is
@@ -95,7 +97,7 @@ public class Appearance {
     }
 
     /**
-     * Imposta il valore della proprietà shape.
+     * Sets the value of the shape property.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +109,7 @@ public class Appearance {
     }
 
     /**
-     * Recupera il valore della proprietà color.
+     * Gets the value of the color property.
      * 
      * @return
      *     possible object is
@@ -119,7 +121,7 @@ public class Appearance {
     }
 
     /**
-     * Imposta il valore della proprietà color.
+     * Sets the value of the color property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +133,7 @@ public class Appearance {
     }
 
     /**
-     * Recupera il valore della proprietà clazz.
+     * Gets the value of the clazz property.
      * 
      * @return
      *     possible object is
@@ -143,7 +145,7 @@ public class Appearance {
     }
 
     /**
-     * Imposta il valore della proprietà clazz.
+     * Sets the value of the clazz property.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +157,7 @@ public class Appearance {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -167,7 +169,7 @@ public class Appearance {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -194,6 +196,16 @@ public class Appearance {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

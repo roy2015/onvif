@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per reasontext complex type.
+ * <p>Java class for reasontext complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="reasontext"&gt;
@@ -37,7 +39,7 @@ public class Reasontext {
     protected String lang;
 
     /**
-     * Recupera il valore della proprietà value.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
@@ -49,7 +51,7 @@ public class Reasontext {
     }
 
     /**
-     * Imposta il valore della proprietà value.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +63,7 @@ public class Reasontext {
     }
 
     /**
-     * Recupera il valore della proprietà lang.
+     * Gets the value of the lang property.
      * 
      * @return
      *     possible object is
@@ -73,7 +75,7 @@ public class Reasontext {
     }
 
     /**
-     * Imposta il valore della proprietà lang.
+     * Sets the value of the lang property.
      * 
      * @param value
      *     allowed object is
@@ -82,6 +84,16 @@ public class Reasontext {
      */
     public void setLang(String value) {
         this.lang = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -4045,8 +4045,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VideoSourceConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VideoSourceConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VideoSourceConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "VideoSourceConfiguration")
     public JAXBElement<VideoSourceConfiguration> createVideoSourceConfiguration(VideoSourceConfiguration value) {
@@ -4054,8 +4058,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AudioSourceConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AudioSourceConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AudioSourceConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "AudioSourceConfiguration")
     public JAXBElement<AudioSourceConfiguration> createAudioSourceConfiguration(AudioSourceConfiguration value) {
@@ -4063,8 +4071,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VideoEncoderConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VideoEncoderConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VideoEncoderConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "VideoEncoderConfiguration")
     public JAXBElement<VideoEncoderConfiguration> createVideoEncoderConfiguration(VideoEncoderConfiguration value) {
@@ -4072,8 +4084,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AudioEncoderConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AudioEncoderConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AudioEncoderConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "AudioEncoderConfiguration")
     public JAXBElement<AudioEncoderConfiguration> createAudioEncoderConfiguration(AudioEncoderConfiguration value) {
@@ -4081,8 +4097,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VideoAnalyticsConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VideoAnalyticsConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VideoAnalyticsConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "VideoAnalyticsConfiguration")
     public JAXBElement<VideoAnalyticsConfiguration> createVideoAnalyticsConfiguration(VideoAnalyticsConfiguration value) {
@@ -4090,8 +4110,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PTZConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PTZConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link PTZConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "PTZConfiguration")
     public JAXBElement<PTZConfiguration> createPTZConfiguration(PTZConfiguration value) {
@@ -4099,8 +4123,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MetadataConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link MetadataConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link MetadataConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "MetadataConfiguration")
     public JAXBElement<MetadataConfiguration> createMetadataConfiguration(MetadataConfiguration value) {
@@ -4108,8 +4136,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AudioOutputConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AudioOutputConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AudioOutputConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "AudioOutputConfiguration")
     public JAXBElement<AudioOutputConfiguration> createAudioOutputConfiguration(AudioOutputConfiguration value) {
@@ -4117,8 +4149,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AudioDecoderConfiguration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AudioDecoderConfiguration }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AudioDecoderConfiguration }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "AudioDecoderConfiguration")
     public JAXBElement<AudioDecoderConfiguration> createAudioDecoderConfiguration(AudioDecoderConfiguration value) {
@@ -4126,8 +4162,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Polygon }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Polygon }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Polygon }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "Polygon")
     public JAXBElement<Polygon> createPolygon(Polygon value) {
@@ -4135,8 +4175,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Polyline }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Polyline }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Polyline }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "Polyline")
     public JAXBElement<Polyline> createPolyline(Polyline value) {
@@ -4144,8 +4188,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MetadataStream }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link MetadataStream }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link MetadataStream }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/schema", name = "MetadataStream")
     public JAXBElement<MetadataStream> createMetadataStream(MetadataStream value) {

@@ -6,14 +6,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.SearchScope;
 import org.onvif.ver10.schema.StorageReferencePath;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -48,7 +50,7 @@ public class ExportRecordedData {
     protected StorageReferencePath storageDestination;
 
     /**
-     * Recupera il valore della proprietà searchScope.
+     * Gets the value of the searchScope property.
      * 
      * @return
      *     possible object is
@@ -60,7 +62,7 @@ public class ExportRecordedData {
     }
 
     /**
-     * Imposta il valore della proprietà searchScope.
+     * Sets the value of the searchScope property.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +74,7 @@ public class ExportRecordedData {
     }
 
     /**
-     * Recupera il valore della proprietà fileFormat.
+     * Gets the value of the fileFormat property.
      * 
      * @return
      *     possible object is
@@ -84,7 +86,7 @@ public class ExportRecordedData {
     }
 
     /**
-     * Imposta il valore della proprietà fileFormat.
+     * Sets the value of the fileFormat property.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +98,7 @@ public class ExportRecordedData {
     }
 
     /**
-     * Recupera il valore della proprietà storageDestination.
+     * Gets the value of the storageDestination property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class ExportRecordedData {
     }
 
     /**
-     * Imposta il valore della proprietà storageDestination.
+     * Sets the value of the storageDestination property.
      * 
      * @param value
      *     allowed object is
@@ -117,6 +119,16 @@ public class ExportRecordedData {
      */
     public void setStorageDestination(StorageReferencePath value) {
         this.storageDestination = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

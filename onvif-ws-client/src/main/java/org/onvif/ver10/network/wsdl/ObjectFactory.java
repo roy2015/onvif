@@ -44,8 +44,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link HelloType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link HelloType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/network/wsdl", name = "Hello")
     public JAXBElement<HelloType> createHello(HelloType value) {
@@ -53,8 +57,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/network/wsdl", name = "HelloResponse")
     public JAXBElement<ResolveType> createHelloResponse(ResolveType value) {
@@ -62,8 +70,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ProbeType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/network/wsdl", name = "Probe")
     public JAXBElement<ProbeType> createProbe(ProbeType value) {
@@ -71,8 +83,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeMatchesType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeMatchesType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ProbeMatchesType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/network/wsdl", name = "ProbeResponse")
     public JAXBElement<ProbeMatchesType> createProbeResponse(ProbeMatchesType value) {
@@ -80,8 +96,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ByeType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ByeType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ByeType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/network/wsdl", name = "Bye")
     public JAXBElement<ByeType> createBye(ByeType value) {
@@ -89,8 +109,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/network/wsdl", name = "ByeResponse")
     public JAXBElement<ResolveType> createByeResponse(ResolveType value) {

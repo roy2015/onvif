@@ -512,8 +512,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
@@ -521,8 +525,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Get }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetVideoSources")
     public JAXBElement<Get> createGetVideoSources(Get value) {
@@ -530,8 +538,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetVideoSourcesResponse")
     public JAXBElement<GetResponse> createGetVideoSourcesResponse(GetResponse value) {
@@ -539,8 +551,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Get }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioSources")
     public JAXBElement<Get> createGetAudioSources(Get value) {
@@ -548,8 +564,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioSourcesResponse")
     public JAXBElement<GetResponse> createGetAudioSourcesResponse(GetResponse value) {
@@ -557,8 +577,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Get }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioOutputs")
     public JAXBElement<Get> createGetAudioOutputs(Get value) {
@@ -566,8 +590,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioOutputsResponse")
     public JAXBElement<GetResponse> createGetAudioOutputsResponse(GetResponse value) {

@@ -15,13 +15,15 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per CertificateWithPrivateKey complex type.
+ * <p>Java class for CertificateWithPrivateKey complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="CertificateWithPrivateKey"&gt;
@@ -64,7 +66,7 @@ public class CertificateWithPrivateKey {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà certificateID.
+     * Gets the value of the certificateID property.
      * 
      * @return
      *     possible object is
@@ -76,7 +78,7 @@ public class CertificateWithPrivateKey {
     }
 
     /**
-     * Imposta il valore della proprietà certificateID.
+     * Sets the value of the certificateID property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +90,7 @@ public class CertificateWithPrivateKey {
     }
 
     /**
-     * Recupera il valore della proprietà certificate.
+     * Gets the value of the certificate property.
      * 
      * @return
      *     possible object is
@@ -100,7 +102,7 @@ public class CertificateWithPrivateKey {
     }
 
     /**
-     * Imposta il valore della proprietà certificate.
+     * Sets the value of the certificate property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +114,7 @@ public class CertificateWithPrivateKey {
     }
 
     /**
-     * Recupera il valore della proprietà privateKey.
+     * Gets the value of the privateKey property.
      * 
      * @return
      *     possible object is
@@ -124,7 +126,7 @@ public class CertificateWithPrivateKey {
     }
 
     /**
-     * Imposta il valore della proprietà privateKey.
+     * Sets the value of the privateKey property.
      * 
      * @param value
      *     allowed object is
@@ -181,6 +183,16 @@ public class CertificateWithPrivateKey {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

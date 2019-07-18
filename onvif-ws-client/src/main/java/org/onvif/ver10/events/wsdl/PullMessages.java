@@ -10,12 +10,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -50,7 +52,7 @@ public class PullMessages {
     protected List<Object> any;
 
     /**
-     * Recupera il valore della proprietà timeout.
+     * Gets the value of the timeout property.
      * 
      * @return
      *     possible object is
@@ -62,7 +64,7 @@ public class PullMessages {
     }
 
     /**
-     * Imposta il valore della proprietà timeout.
+     * Sets the value of the timeout property.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +76,7 @@ public class PullMessages {
     }
 
     /**
-     * Recupera il valore della proprietà messageLimit.
+     * Gets the value of the messageLimit property.
      * 
      */
     public int getMessageLimit() {
@@ -82,7 +84,7 @@ public class PullMessages {
     }
 
     /**
-     * Imposta il valore della proprietà messageLimit.
+     * Sets the value of the messageLimit property.
      * 
      */
     public void setMessageLimit(int value) {
@@ -116,6 +118,16 @@ public class PullMessages {
             any = new ArrayList<Object>();
         }
         return this.any;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

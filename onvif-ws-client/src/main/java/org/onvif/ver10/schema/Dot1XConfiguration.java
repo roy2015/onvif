@@ -14,12 +14,14 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Dot1XConfiguration complex type.
+ * <p>Java class for Dot1XConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Dot1XConfiguration"&gt;
@@ -74,7 +76,7 @@ public class Dot1XConfiguration {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà dot1XConfigurationToken.
+     * Gets the value of the dot1XConfigurationToken property.
      * 
      * @return
      *     possible object is
@@ -86,7 +88,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà dot1XConfigurationToken.
+     * Sets the value of the dot1XConfigurationToken property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +100,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà identity.
+     * Gets the value of the identity property.
      * 
      * @return
      *     possible object is
@@ -110,7 +112,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà identity.
+     * Sets the value of the identity property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +124,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà anonymousID.
+     * Gets the value of the anonymousID property.
      * 
      * @return
      *     possible object is
@@ -134,7 +136,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà anonymousID.
+     * Sets the value of the anonymousID property.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +148,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà eapMethod.
+     * Gets the value of the eapMethod property.
      * 
      */
     public int getEAPMethod() {
@@ -154,7 +156,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà eapMethod.
+     * Sets the value of the eapMethod property.
      * 
      */
     public void setEAPMethod(int value) {
@@ -191,7 +193,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà eapMethodConfiguration.
+     * Gets the value of the eapMethodConfiguration property.
      * 
      * @return
      *     possible object is
@@ -203,7 +205,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà eapMethodConfiguration.
+     * Sets the value of the eapMethodConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -215,7 +217,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -227,7 +229,7 @@ public class Dot1XConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -254,6 +256,16 @@ public class Dot1XConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

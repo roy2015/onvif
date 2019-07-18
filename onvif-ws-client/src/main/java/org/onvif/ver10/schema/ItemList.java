@@ -14,6 +14,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
@@ -22,9 +24,9 @@ import javax.xml.namespace.QName;
  * 			Each item in the list shall have a unique name.
  * 		
  * 
- * <p>Classe Java per ItemList complex type.
+ * <p>Java class for ItemList complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ItemList"&gt;
@@ -139,7 +141,7 @@ public class ItemList {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -151,7 +153,7 @@ public class ItemList {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -180,11 +182,21 @@ public class ItemList {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -213,7 +225,7 @@ public class ItemList {
         protected String name;
 
         /**
-         * Recupera il valore della proprietà any.
+         * Gets the value of the any property.
          * 
          * @return
          *     possible object is
@@ -225,7 +237,7 @@ public class ItemList {
         }
 
         /**
-         * Imposta il valore della proprietà any.
+         * Sets the value of the any property.
          * 
          * @param value
          *     allowed object is
@@ -237,7 +249,7 @@ public class ItemList {
         }
 
         /**
-         * Recupera il valore della proprietà name.
+         * Gets the value of the name property.
          * 
          * @return
          *     possible object is
@@ -249,7 +261,7 @@ public class ItemList {
         }
 
         /**
-         * Imposta il valore della proprietà name.
+         * Sets the value of the name property.
          * 
          * @param value
          *     allowed object is
@@ -260,13 +272,23 @@ public class ItemList {
             this.name = value;
         }
 
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+        }
+
     }
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -292,7 +314,7 @@ public class ItemList {
         protected String value;
 
         /**
-         * Recupera il valore della proprietà name.
+         * Gets the value of the name property.
          * 
          * @return
          *     possible object is
@@ -304,7 +326,7 @@ public class ItemList {
         }
 
         /**
-         * Imposta il valore della proprietà name.
+         * Sets the value of the name property.
          * 
          * @param value
          *     allowed object is
@@ -316,7 +338,7 @@ public class ItemList {
         }
 
         /**
-         * Recupera il valore della proprietà value.
+         * Gets the value of the value property.
          * 
          * @return
          *     possible object is
@@ -328,7 +350,7 @@ public class ItemList {
         }
 
         /**
-         * Imposta il valore della proprietà value.
+         * Sets the value of the value property.
          * 
          * @param value
          *     allowed object is
@@ -337,6 +359,16 @@ public class ItemList {
          */
         public void setValue(String value) {
             this.value = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

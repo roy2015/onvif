@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per RecordingCapabilities complex type.
+ * <p>Java class for RecordingCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RecordingCapabilities"&gt;
@@ -73,7 +75,7 @@ public class RecordingCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà xAddr.
+     * Gets the value of the xAddr property.
      * 
      * @return
      *     possible object is
@@ -85,7 +87,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà xAddr.
+     * Sets the value of the xAddr property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +99,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà receiverSource.
+     * Gets the value of the receiverSource property.
      * This getter has been renamed from isReceiverSource() to getReceiverSource() by cxf-xjc-boolean plugin.
      * 
      */
@@ -106,7 +108,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà receiverSource.
+     * Sets the value of the receiverSource property.
      * 
      */
     public void setReceiverSource(boolean value) {
@@ -114,7 +116,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà mediaProfileSource.
+     * Gets the value of the mediaProfileSource property.
      * This getter has been renamed from isMediaProfileSource() to getMediaProfileSource() by cxf-xjc-boolean plugin.
      * 
      */
@@ -123,7 +125,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà mediaProfileSource.
+     * Sets the value of the mediaProfileSource property.
      * 
      */
     public void setMediaProfileSource(boolean value) {
@@ -131,7 +133,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà dynamicRecordings.
+     * Gets the value of the dynamicRecordings property.
      * This getter has been renamed from isDynamicRecordings() to getDynamicRecordings() by cxf-xjc-boolean plugin.
      * 
      */
@@ -140,7 +142,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà dynamicRecordings.
+     * Sets the value of the dynamicRecordings property.
      * 
      */
     public void setDynamicRecordings(boolean value) {
@@ -148,7 +150,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà dynamicTracks.
+     * Gets the value of the dynamicTracks property.
      * This getter has been renamed from isDynamicTracks() to getDynamicTracks() by cxf-xjc-boolean plugin.
      * 
      */
@@ -157,7 +159,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà dynamicTracks.
+     * Sets the value of the dynamicTracks property.
      * 
      */
     public void setDynamicTracks(boolean value) {
@@ -165,7 +167,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maxStringLength.
+     * Gets the value of the maxStringLength property.
      * 
      */
     public int getMaxStringLength() {
@@ -173,7 +175,7 @@ public class RecordingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maxStringLength.
+     * Sets the value of the maxStringLength property.
      * 
      */
     public void setMaxStringLength(int value) {
@@ -226,6 +228,16 @@ public class RecordingCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

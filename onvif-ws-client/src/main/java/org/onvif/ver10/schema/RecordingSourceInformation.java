@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
@@ -21,9 +23,9 @@ import org.w3c.dom.Element;
  * 				A set of informative desciptions of a data source. The Search searvice allows a client to filter on recordings based on information in this structure.
  * 			
  * 
- * <p>Classe Java per RecordingSourceInformation complex type.
+ * <p>Java class for RecordingSourceInformation complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RecordingSourceInformation"&gt;
@@ -74,7 +76,7 @@ public class RecordingSourceInformation {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà sourceId.
+     * Gets the value of the sourceId property.
      * 
      * @return
      *     possible object is
@@ -86,7 +88,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Imposta il valore della proprietà sourceId.
+     * Sets the value of the sourceId property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +100,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -110,7 +112,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +124,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Recupera il valore della proprietà location.
+     * Gets the value of the location property.
      * 
      * @return
      *     possible object is
@@ -134,7 +136,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Imposta il valore della proprietà location.
+     * Sets the value of the location property.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +148,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Recupera il valore della proprietà description.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -158,7 +160,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Imposta il valore della proprietà description.
+     * Sets the value of the description property.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +172,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Recupera il valore della proprietà address.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -182,7 +184,7 @@ public class RecordingSourceInformation {
     }
 
     /**
-     * Imposta il valore della proprietà address.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is
@@ -239,6 +241,16 @@ public class RecordingSourceInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

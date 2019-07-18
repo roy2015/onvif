@@ -11,16 +11,17 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.VideoResolution;
 
 
 /**
- * <p>Classe Java per VideoSourceMode complex type.
+ * <p>Java class for VideoSourceMode complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VideoSourceMode"&gt;
@@ -61,7 +62,6 @@ public class VideoSourceMode {
     protected VideoResolution maxResolution;
     @XmlList
     @XmlElement(name = "Encodings", required = true)
-    @XmlSchemaType(name = "anySimpleType")
     protected List<String> encodings;
     @XmlElement(name = "Reboot")
     protected boolean reboot;
@@ -77,7 +77,7 @@ public class VideoSourceMode {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà maxFramerate.
+     * Gets the value of the maxFramerate property.
      * 
      */
     public float getMaxFramerate() {
@@ -85,7 +85,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà maxFramerate.
+     * Sets the value of the maxFramerate property.
      * 
      */
     public void setMaxFramerate(float value) {
@@ -93,7 +93,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Recupera il valore della proprietà maxResolution.
+     * Gets the value of the maxResolution property.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà maxResolution.
+     * Sets the value of the maxResolution property.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +146,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Recupera il valore della proprietà reboot.
+     * Gets the value of the reboot property.
      * This getter has been renamed from isReboot() to getReboot() by cxf-xjc-boolean plugin.
      * 
      */
@@ -155,7 +155,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà reboot.
+     * Sets the value of the reboot property.
      * 
      */
     public void setReboot(boolean value) {
@@ -163,7 +163,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Recupera il valore della proprietà description.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -175,7 +175,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà description.
+     * Sets the value of the description property.
      * 
      * @param value
      *     allowed object is
@@ -187,7 +187,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -199,7 +199,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -211,7 +211,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Recupera il valore della proprietà token.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -223,7 +223,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà token.
+     * Sets the value of the token property.
      * 
      * @param value
      *     allowed object is
@@ -235,7 +235,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Recupera il valore della proprietà enabled.
+     * Gets the value of the enabled property.
      * This getter has been renamed from isEnabled() to getEnabled() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -248,7 +248,7 @@ public class VideoSourceMode {
     }
 
     /**
-     * Imposta il valore della proprietà enabled.
+     * Sets the value of the enabled property.
      * 
      * @param value
      *     allowed object is
@@ -275,6 +275,16 @@ public class VideoSourceMode {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

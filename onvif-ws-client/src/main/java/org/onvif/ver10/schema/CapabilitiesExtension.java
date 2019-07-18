@@ -8,13 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per CapabilitiesExtension complex type.
+ * <p>Java class for CapabilitiesExtension complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="CapabilitiesExtension"&gt;
@@ -102,7 +104,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà deviceIO.
+     * Gets the value of the deviceIO property.
      * 
      * @return
      *     possible object is
@@ -114,7 +116,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà deviceIO.
+     * Sets the value of the deviceIO property.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +128,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà display.
+     * Gets the value of the display property.
      * 
      * @return
      *     possible object is
@@ -138,7 +140,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà display.
+     * Sets the value of the display property.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +152,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà recording.
+     * Gets the value of the recording property.
      * 
      * @return
      *     possible object is
@@ -162,7 +164,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà recording.
+     * Sets the value of the recording property.
      * 
      * @param value
      *     allowed object is
@@ -174,7 +176,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà search.
+     * Gets the value of the search property.
      * 
      * @return
      *     possible object is
@@ -186,7 +188,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà search.
+     * Sets the value of the search property.
      * 
      * @param value
      *     allowed object is
@@ -198,7 +200,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà replay.
+     * Gets the value of the replay property.
      * 
      * @return
      *     possible object is
@@ -210,7 +212,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà replay.
+     * Sets the value of the replay property.
      * 
      * @param value
      *     allowed object is
@@ -222,7 +224,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà receiver.
+     * Gets the value of the receiver property.
      * 
      * @return
      *     possible object is
@@ -234,7 +236,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà receiver.
+     * Sets the value of the receiver property.
      * 
      * @param value
      *     allowed object is
@@ -246,7 +248,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà analyticsDevice.
+     * Gets the value of the analyticsDevice property.
      * 
      * @return
      *     possible object is
@@ -258,7 +260,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà analyticsDevice.
+     * Sets the value of the analyticsDevice property.
      * 
      * @param value
      *     allowed object is
@@ -270,7 +272,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà extensions.
+     * Gets the value of the extensions property.
      * 
      * @return
      *     possible object is
@@ -282,7 +284,7 @@ public class CapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà extensions.
+     * Sets the value of the extensions property.
      * 
      * @param value
      *     allowed object is
@@ -291,6 +293,16 @@ public class CapabilitiesExtension {
      */
     public void setExtensions(CapabilitiesExtension2 value) {
         this.extensions = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per LensProjection complex type.
+ * <p>Java class for LensProjection complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="LensProjection"&gt;
@@ -59,7 +61,7 @@ public class LensProjection {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà angle.
+     * Gets the value of the angle property.
      * 
      */
     public float getAngle() {
@@ -67,7 +69,7 @@ public class LensProjection {
     }
 
     /**
-     * Imposta il valore della proprietà angle.
+     * Sets the value of the angle property.
      * 
      */
     public void setAngle(float value) {
@@ -75,7 +77,7 @@ public class LensProjection {
     }
 
     /**
-     * Recupera il valore della proprietà radius.
+     * Gets the value of the radius property.
      * 
      */
     public float getRadius() {
@@ -83,7 +85,7 @@ public class LensProjection {
     }
 
     /**
-     * Imposta il valore della proprietà radius.
+     * Sets the value of the radius property.
      * 
      */
     public void setRadius(float value) {
@@ -91,7 +93,7 @@ public class LensProjection {
     }
 
     /**
-     * Recupera il valore della proprietà transmittance.
+     * Gets the value of the transmittance property.
      * 
      * @return
      *     possible object is
@@ -103,7 +105,7 @@ public class LensProjection {
     }
 
     /**
-     * Imposta il valore della proprietà transmittance.
+     * Sets the value of the transmittance property.
      * 
      * @param value
      *     allowed object is
@@ -160,6 +162,16 @@ public class LensProjection {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

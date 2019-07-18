@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Transport complex type.
+ * <p>Java class for Transport complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Transport"&gt;
@@ -42,7 +44,7 @@ public class Transport {
     protected Transport tunnel;
 
     /**
-     * Recupera il valore della proprietà protocol.
+     * Gets the value of the protocol property.
      * 
      * @return
      *     possible object is
@@ -54,7 +56,7 @@ public class Transport {
     }
 
     /**
-     * Imposta il valore della proprietà protocol.
+     * Sets the value of the protocol property.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +68,7 @@ public class Transport {
     }
 
     /**
-     * Recupera il valore della proprietà tunnel.
+     * Gets the value of the tunnel property.
      * 
      * @return
      *     possible object is
@@ -78,7 +80,7 @@ public class Transport {
     }
 
     /**
-     * Imposta il valore della proprietà tunnel.
+     * Sets the value of the tunnel property.
      * 
      * @param value
      *     allowed object is
@@ -87,6 +89,16 @@ public class Transport {
      */
     public void setTunnel(Transport value) {
         this.tunnel = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

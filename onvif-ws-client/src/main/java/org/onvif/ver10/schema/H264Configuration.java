@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per H264Configuration complex type.
+ * <p>Java class for H264Configuration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="H264Configuration"&gt;
@@ -42,7 +44,7 @@ public class H264Configuration {
     protected H264Profile h264Profile;
 
     /**
-     * Recupera il valore della proprietà govLength.
+     * Gets the value of the govLength property.
      * 
      */
     public int getGovLength() {
@@ -50,7 +52,7 @@ public class H264Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà govLength.
+     * Sets the value of the govLength property.
      * 
      */
     public void setGovLength(int value) {
@@ -58,7 +60,7 @@ public class H264Configuration {
     }
 
     /**
-     * Recupera il valore della proprietà h264Profile.
+     * Gets the value of the h264Profile property.
      * 
      * @return
      *     possible object is
@@ -70,7 +72,7 @@ public class H264Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà h264Profile.
+     * Sets the value of the h264Profile property.
      * 
      * @param value
      *     allowed object is
@@ -79,6 +81,16 @@ public class H264Configuration {
      */
     public void setH264Profile(H264Profile value) {
         this.h264Profile = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

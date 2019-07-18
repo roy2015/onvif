@@ -11,12 +11,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per ColorDescriptor complex type.
+ * <p>Java class for ColorDescriptor complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ColorDescriptor"&gt;
@@ -90,7 +92,7 @@ public class ColorDescriptor {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -102,7 +104,7 @@ public class ColorDescriptor {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -131,11 +133,21 @@ public class ColorDescriptor {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -169,7 +181,7 @@ public class ColorDescriptor {
         protected ColorCovariance covariance;
 
         /**
-         * Recupera il valore della proprietà color.
+         * Gets the value of the color property.
          * 
          * @return
          *     possible object is
@@ -181,7 +193,7 @@ public class ColorDescriptor {
         }
 
         /**
-         * Imposta il valore della proprietà color.
+         * Sets the value of the color property.
          * 
          * @param value
          *     allowed object is
@@ -193,7 +205,7 @@ public class ColorDescriptor {
         }
 
         /**
-         * Recupera il valore della proprietà weight.
+         * Gets the value of the weight property.
          * 
          * @return
          *     possible object is
@@ -205,7 +217,7 @@ public class ColorDescriptor {
         }
 
         /**
-         * Imposta il valore della proprietà weight.
+         * Sets the value of the weight property.
          * 
          * @param value
          *     allowed object is
@@ -217,7 +229,7 @@ public class ColorDescriptor {
         }
 
         /**
-         * Recupera il valore della proprietà covariance.
+         * Gets the value of the covariance property.
          * 
          * @return
          *     possible object is
@@ -229,7 +241,7 @@ public class ColorDescriptor {
         }
 
         /**
-         * Imposta il valore della proprietà covariance.
+         * Sets the value of the covariance property.
          * 
          * @param value
          *     allowed object is
@@ -238,6 +250,16 @@ public class ColorDescriptor {
          */
         public void setCovariance(ColorCovariance value) {
             this.covariance = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

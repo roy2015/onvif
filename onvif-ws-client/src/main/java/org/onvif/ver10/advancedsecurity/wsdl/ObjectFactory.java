@@ -902,8 +902,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/advancedsecurity/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
@@ -911,8 +915,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/advancedsecurity/wsdl", name = "CertPathValidationPolicyID", scope = GetAssignedCertPathValidationPoliciesResponse.class)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

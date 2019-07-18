@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per Capabilities complex type.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Capabilities"&gt;
@@ -92,7 +94,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà eFlip.
+     * Gets the value of the eFlip property.
      * This getter has been renamed from isEFlip() to getEFlip() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -105,7 +107,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà eFlip.
+     * Sets the value of the eFlip property.
      * 
      * @param value
      *     allowed object is
@@ -117,7 +119,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà reverse.
+     * Gets the value of the reverse property.
      * This getter has been renamed from isReverse() to getReverse() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -130,7 +132,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà reverse.
+     * Sets the value of the reverse property.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +144,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà getCompatibleConfigurations.
+     * Gets the value of the getCompatibleConfigurations property.
      * This getter has been renamed from isGetCompatibleConfigurations() to getGetCompatibleConfigurations() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -155,7 +157,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà getCompatibleConfigurations.
+     * Sets the value of the getCompatibleConfigurations property.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +169,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà moveStatus.
+     * Gets the value of the moveStatus property.
      * This getter has been renamed from isMoveStatus() to getMoveStatus() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -180,7 +182,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà moveStatus.
+     * Sets the value of the moveStatus property.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +194,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà statusPosition.
+     * Gets the value of the statusPosition property.
      * This getter has been renamed from isStatusPosition() to getStatusPosition() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -205,7 +207,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà statusPosition.
+     * Sets the value of the statusPosition property.
      * 
      * @param value
      *     allowed object is
@@ -232,6 +234,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per VideoDecoderConfigurationOptions complex type.
+ * <p>Java class for VideoDecoderConfigurationOptions complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VideoDecoderConfigurationOptions"&gt;
@@ -55,7 +57,7 @@ public class VideoDecoderConfigurationOptions {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà jpegDecOptions.
+     * Gets the value of the jpegDecOptions property.
      * 
      * @return
      *     possible object is
@@ -67,7 +69,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà jpegDecOptions.
+     * Sets the value of the jpegDecOptions property.
      * 
      * @param value
      *     allowed object is
@@ -79,7 +81,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà h264DecOptions.
+     * Gets the value of the h264DecOptions property.
      * 
      * @return
      *     possible object is
@@ -91,7 +93,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà h264DecOptions.
+     * Sets the value of the h264DecOptions property.
      * 
      * @param value
      *     allowed object is
@@ -103,7 +105,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà mpeg4DecOptions.
+     * Gets the value of the mpeg4DecOptions property.
      * 
      * @return
      *     possible object is
@@ -115,7 +117,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà mpeg4DecOptions.
+     * Sets the value of the mpeg4DecOptions property.
      * 
      * @param value
      *     allowed object is
@@ -127,7 +129,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -139,7 +141,7 @@ public class VideoDecoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -166,6 +168,16 @@ public class VideoDecoderConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

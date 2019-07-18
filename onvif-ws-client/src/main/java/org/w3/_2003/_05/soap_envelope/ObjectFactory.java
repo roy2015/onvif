@@ -135,8 +135,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Envelope }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Envelope }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Envelope }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2003/05/soap-envelope", name = "Envelope")
     public JAXBElement<Envelope> createEnvelope(Envelope value) {
@@ -144,8 +148,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Header }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Header }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Header }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2003/05/soap-envelope", name = "Header")
     public JAXBElement<Header> createHeader(Header value) {
@@ -153,8 +161,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Body }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Body }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Body }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2003/05/soap-envelope", name = "Body")
     public JAXBElement<Body> createBody(Body value) {
@@ -162,8 +174,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Fault }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Fault }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Fault }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2003/05/soap-envelope", name = "Fault")
     public JAXBElement<Fault> createFault(Fault value) {
@@ -171,8 +187,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NotUnderstoodType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link NotUnderstoodType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link NotUnderstoodType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2003/05/soap-envelope", name = "NotUnderstood")
     public JAXBElement<NotUnderstoodType> createNotUnderstood(NotUnderstoodType value) {
@@ -180,8 +200,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpgradeType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpgradeType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link UpgradeType }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2003/05/soap-envelope", name = "Upgrade")
     public JAXBElement<UpgradeType> createUpgrade(UpgradeType value) {

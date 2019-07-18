@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per FocusConfiguration complex type.
+ * <p>Java class for FocusConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FocusConfiguration"&gt;
@@ -65,7 +67,7 @@ public class FocusConfiguration {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà autoFocusMode.
+     * Gets the value of the autoFocusMode property.
      * 
      * @return
      *     possible object is
@@ -77,7 +79,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà autoFocusMode.
+     * Sets the value of the autoFocusMode property.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +91,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà defaultSpeed.
+     * Gets the value of the defaultSpeed property.
      * 
      */
     public float getDefaultSpeed() {
@@ -97,7 +99,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà defaultSpeed.
+     * Sets the value of the defaultSpeed property.
      * 
      */
     public void setDefaultSpeed(float value) {
@@ -105,7 +107,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà nearLimit.
+     * Gets the value of the nearLimit property.
      * 
      */
     public float getNearLimit() {
@@ -113,7 +115,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà nearLimit.
+     * Sets the value of the nearLimit property.
      * 
      */
     public void setNearLimit(float value) {
@@ -121,7 +123,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà farLimit.
+     * Gets the value of the farLimit property.
      * 
      */
     public float getFarLimit() {
@@ -129,7 +131,7 @@ public class FocusConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà farLimit.
+     * Sets the value of the farLimit property.
      * 
      */
     public void setFarLimit(float value) {
@@ -182,6 +184,16 @@ public class FocusConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

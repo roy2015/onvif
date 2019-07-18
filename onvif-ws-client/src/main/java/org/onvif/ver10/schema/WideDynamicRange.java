@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per WideDynamicRange complex type.
+ * <p>Java class for WideDynamicRange complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="WideDynamicRange"&gt;
@@ -42,7 +44,7 @@ public class WideDynamicRange {
     protected float level;
 
     /**
-     * Recupera il valore della proprietà mode.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -54,7 +56,7 @@ public class WideDynamicRange {
     }
 
     /**
-     * Imposta il valore della proprietà mode.
+     * Sets the value of the mode property.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +68,7 @@ public class WideDynamicRange {
     }
 
     /**
-     * Recupera il valore della proprietà level.
+     * Gets the value of the level property.
      * 
      */
     public float getLevel() {
@@ -74,11 +76,21 @@ public class WideDynamicRange {
     }
 
     /**
-     * Imposta il valore della proprietà level.
+     * Sets the value of the level property.
      * 
      */
     public void setLevel(float value) {
         this.level = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

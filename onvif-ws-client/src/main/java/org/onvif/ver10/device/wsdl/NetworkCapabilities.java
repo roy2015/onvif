@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per NetworkCapabilities complex type.
+ * <p>Java class for NetworkCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NetworkCapabilities"&gt;
@@ -63,7 +65,7 @@ public class NetworkCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà ipFilter.
+     * Gets the value of the ipFilter property.
      * This getter has been renamed from isIPFilter() to getIPFilter() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -76,7 +78,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà ipFilter.
+     * Sets the value of the ipFilter property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +90,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà zeroConfiguration.
+     * Gets the value of the zeroConfiguration property.
      * This getter has been renamed from isZeroConfiguration() to getZeroConfiguration() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -101,7 +103,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà zeroConfiguration.
+     * Sets the value of the zeroConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +115,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà ipVersion6.
+     * Gets the value of the ipVersion6 property.
      * This getter has been renamed from isIPVersion6() to getIPVersion6() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -126,7 +128,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà ipVersion6.
+     * Sets the value of the ipVersion6 property.
      * 
      * @param value
      *     allowed object is
@@ -138,7 +140,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà dynDNS.
+     * Gets the value of the dynDNS property.
      * This getter has been renamed from isDynDNS() to getDynDNS() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -151,7 +153,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà dynDNS.
+     * Sets the value of the dynDNS property.
      * 
      * @param value
      *     allowed object is
@@ -163,7 +165,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà dot11Configuration.
+     * Gets the value of the dot11Configuration property.
      * This getter has been renamed from isDot11Configuration() to getDot11Configuration() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -176,7 +178,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà dot11Configuration.
+     * Sets the value of the dot11Configuration property.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +190,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà dot1XConfigurations.
+     * Gets the value of the dot1XConfigurations property.
      * 
      * @return
      *     possible object is
@@ -200,7 +202,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà dot1XConfigurations.
+     * Sets the value of the dot1XConfigurations property.
      * 
      * @param value
      *     allowed object is
@@ -212,7 +214,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà hostnameFromDHCP.
+     * Gets the value of the hostnameFromDHCP property.
      * This getter has been renamed from isHostnameFromDHCP() to getHostnameFromDHCP() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -225,7 +227,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà hostnameFromDHCP.
+     * Sets the value of the hostnameFromDHCP property.
      * 
      * @param value
      *     allowed object is
@@ -237,7 +239,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà ntp.
+     * Gets the value of the ntp property.
      * 
      * @return
      *     possible object is
@@ -249,7 +251,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà ntp.
+     * Sets the value of the ntp property.
      * 
      * @param value
      *     allowed object is
@@ -261,7 +263,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà dhcPv6.
+     * Gets the value of the dhcPv6 property.
      * This getter has been renamed from isDHCPv6() to getDHCPv6() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -274,7 +276,7 @@ public class NetworkCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà dhcPv6.
+     * Sets the value of the dhcPv6 property.
      * 
      * @param value
      *     allowed object is
@@ -301,6 +303,16 @@ public class NetworkCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

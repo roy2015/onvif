@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per SecurityCapabilitiesExtension complex type.
+ * <p>Java class for SecurityCapabilitiesExtension complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SecurityCapabilitiesExtension"&gt;
@@ -40,7 +42,7 @@ public class SecurityCapabilitiesExtension {
     protected SecurityCapabilitiesExtension2 extension;
 
     /**
-     * Recupera il valore della proprietà tls10.
+     * Gets the value of the tls10 property.
      * This getter has been renamed from isTLS10() to getTLS10() by cxf-xjc-boolean plugin.
      * 
      */
@@ -49,7 +51,7 @@ public class SecurityCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà tls10.
+     * Sets the value of the tls10 property.
      * 
      */
     public void setTLS10(boolean value) {
@@ -57,7 +59,7 @@ public class SecurityCapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -69,7 +71,7 @@ public class SecurityCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -78,6 +80,16 @@ public class SecurityCapabilitiesExtension {
      */
     public void setExtension(SecurityCapabilitiesExtension2 value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

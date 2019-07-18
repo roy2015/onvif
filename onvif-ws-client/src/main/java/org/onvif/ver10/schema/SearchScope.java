@@ -11,14 +11,16 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * A structure for defining a limited scope when searching in recorded data.
  * 
- * <p>Classe Java per SearchScope complex type.
+ * <p>Java class for SearchScope complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SearchScope"&gt;
@@ -117,7 +119,7 @@ public class SearchScope {
     }
 
     /**
-     * Recupera il valore della proprietà recordingInformationFilter.
+     * Gets the value of the recordingInformationFilter property.
      * 
      * @return
      *     possible object is
@@ -129,7 +131,7 @@ public class SearchScope {
     }
 
     /**
-     * Imposta il valore della proprietà recordingInformationFilter.
+     * Sets the value of the recordingInformationFilter property.
      * 
      * @param value
      *     allowed object is
@@ -141,7 +143,7 @@ public class SearchScope {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -153,7 +155,7 @@ public class SearchScope {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -180,6 +182,16 @@ public class SearchScope {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

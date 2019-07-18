@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per RecordingConfiguration complex type.
+ * <p>Java class for RecordingConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RecordingConfiguration"&gt;
@@ -60,7 +62,7 @@ public class RecordingConfiguration {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà source.
+     * Gets the value of the source property.
      * 
      * @return
      *     possible object is
@@ -72,7 +74,7 @@ public class RecordingConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà source.
+     * Sets the value of the source property.
      * 
      * @param value
      *     allowed object is
@@ -84,7 +86,7 @@ public class RecordingConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà content.
+     * Gets the value of the content property.
      * 
      * @return
      *     possible object is
@@ -96,7 +98,7 @@ public class RecordingConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà content.
+     * Sets the value of the content property.
      * 
      * @param value
      *     allowed object is
@@ -108,7 +110,7 @@ public class RecordingConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà maximumRetentionTime.
+     * Gets the value of the maximumRetentionTime property.
      * 
      * @return
      *     possible object is
@@ -120,7 +122,7 @@ public class RecordingConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà maximumRetentionTime.
+     * Sets the value of the maximumRetentionTime property.
      * 
      * @param value
      *     allowed object is
@@ -177,6 +179,16 @@ public class RecordingConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

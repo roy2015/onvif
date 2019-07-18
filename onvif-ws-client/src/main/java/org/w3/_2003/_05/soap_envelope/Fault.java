@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
@@ -13,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
  * 	    Fault reporting structure
  * 	  
  * 
- * <p>Classe Java per Fault complex type.
+ * <p>Java class for Fault complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Fault"&gt;
@@ -59,7 +61,7 @@ public class Fault {
     protected Detail detail;
 
     /**
-     * Recupera il valore della proprietà code.
+     * Gets the value of the code property.
      * 
      * @return
      *     possible object is
@@ -71,7 +73,7 @@ public class Fault {
     }
 
     /**
-     * Imposta il valore della proprietà code.
+     * Sets the value of the code property.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +85,7 @@ public class Fault {
     }
 
     /**
-     * Recupera il valore della proprietà reason.
+     * Gets the value of the reason property.
      * 
      * @return
      *     possible object is
@@ -95,7 +97,7 @@ public class Fault {
     }
 
     /**
-     * Imposta il valore della proprietà reason.
+     * Sets the value of the reason property.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +109,7 @@ public class Fault {
     }
 
     /**
-     * Recupera il valore della proprietà node.
+     * Gets the value of the node property.
      * 
      * @return
      *     possible object is
@@ -119,7 +121,7 @@ public class Fault {
     }
 
     /**
-     * Imposta il valore della proprietà node.
+     * Sets the value of the node property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +133,7 @@ public class Fault {
     }
 
     /**
-     * Recupera il valore della proprietà role.
+     * Gets the value of the role property.
      * 
      * @return
      *     possible object is
@@ -143,7 +145,7 @@ public class Fault {
     }
 
     /**
-     * Imposta il valore della proprietà role.
+     * Sets the value of the role property.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +157,7 @@ public class Fault {
     }
 
     /**
-     * Recupera il valore della proprietà detail.
+     * Gets the value of the detail property.
      * 
      * @return
      *     possible object is
@@ -167,7 +169,7 @@ public class Fault {
     }
 
     /**
-     * Imposta il valore della proprietà detail.
+     * Sets the value of the detail property.
      * 
      * @param value
      *     allowed object is
@@ -176,6 +178,16 @@ public class Fault {
      */
     public void setDetail(Detail value) {
         this.detail = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per Capabilities complex type.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Capabilities"&gt;
@@ -95,7 +97,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà wsSubscriptionPolicySupport.
+     * Gets the value of the wsSubscriptionPolicySupport property.
      * This getter has been renamed from isWSSubscriptionPolicySupport() to getWSSubscriptionPolicySupport() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -108,7 +110,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà wsSubscriptionPolicySupport.
+     * Sets the value of the wsSubscriptionPolicySupport property.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +122,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà wsPullPointSupport.
+     * Gets the value of the wsPullPointSupport property.
      * This getter has been renamed from isWSPullPointSupport() to getWSPullPointSupport() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -133,7 +135,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà wsPullPointSupport.
+     * Sets the value of the wsPullPointSupport property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +147,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà wsPausableSubscriptionManagerInterfaceSupport.
+     * Gets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
      * This getter has been renamed from isWSPausableSubscriptionManagerInterfaceSupport() to getWSPausableSubscriptionManagerInterfaceSupport() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -158,7 +160,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà wsPausableSubscriptionManagerInterfaceSupport.
+     * Sets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +172,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maxNotificationProducers.
+     * Gets the value of the maxNotificationProducers property.
      * 
      * @return
      *     possible object is
@@ -182,7 +184,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maxNotificationProducers.
+     * Sets the value of the maxNotificationProducers property.
      * 
      * @param value
      *     allowed object is
@@ -194,7 +196,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maxPullPoints.
+     * Gets the value of the maxPullPoints property.
      * 
      * @return
      *     possible object is
@@ -206,7 +208,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maxPullPoints.
+     * Sets the value of the maxPullPoints property.
      * 
      * @param value
      *     allowed object is
@@ -218,7 +220,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà persistentNotificationStorage.
+     * Gets the value of the persistentNotificationStorage property.
      * This getter has been renamed from isPersistentNotificationStorage() to getPersistentNotificationStorage() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -231,7 +233,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà persistentNotificationStorage.
+     * Sets the value of the persistentNotificationStorage property.
      * 
      * @param value
      *     allowed object is
@@ -258,6 +260,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

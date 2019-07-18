@@ -8,13 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per UserCredential complex type.
+ * <p>Java class for UserCredential complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="UserCredential"&gt;
@@ -58,7 +60,7 @@ public class UserCredential {
     protected UserCredential.Extension extension;
 
     /**
-     * Recupera il valore della proprietà userName.
+     * Gets the value of the userName property.
      * 
      * @return
      *     possible object is
@@ -70,7 +72,7 @@ public class UserCredential {
     }
 
     /**
-     * Imposta il valore della proprietà userName.
+     * Sets the value of the userName property.
      * 
      * @param value
      *     allowed object is
@@ -82,7 +84,7 @@ public class UserCredential {
     }
 
     /**
-     * Recupera il valore della proprietà password.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
@@ -94,7 +96,7 @@ public class UserCredential {
     }
 
     /**
-     * Imposta il valore della proprietà password.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is
@@ -106,7 +108,7 @@ public class UserCredential {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -118,7 +120,7 @@ public class UserCredential {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -129,11 +131,21 @@ public class UserCredential {
         this.extension = value;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -186,6 +198,16 @@ public class UserCredential {
                 any = new ArrayList<Object>();
             }
             return this.any;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

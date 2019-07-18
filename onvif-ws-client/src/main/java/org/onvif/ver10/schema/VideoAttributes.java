@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per VideoAttributes complex type.
+ * <p>Java class for VideoAttributes complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VideoAttributes"&gt;
@@ -69,7 +71,7 @@ public class VideoAttributes {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà bitrate.
+     * Gets the value of the bitrate property.
      * 
      * @return
      *     possible object is
@@ -81,7 +83,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Imposta il valore della proprietà bitrate.
+     * Sets the value of the bitrate property.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +95,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Recupera il valore della proprietà width.
+     * Gets the value of the width property.
      * 
      */
     public int getWidth() {
@@ -101,7 +103,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Imposta il valore della proprietà width.
+     * Sets the value of the width property.
      * 
      */
     public void setWidth(int value) {
@@ -109,7 +111,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Recupera il valore della proprietà height.
+     * Gets the value of the height property.
      * 
      */
     public int getHeight() {
@@ -117,7 +119,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Imposta il valore della proprietà height.
+     * Sets the value of the height property.
      * 
      */
     public void setHeight(int value) {
@@ -125,7 +127,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Recupera il valore della proprietà encoding.
+     * Gets the value of the encoding property.
      * 
      * @return
      *     possible object is
@@ -137,7 +139,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Imposta il valore della proprietà encoding.
+     * Sets the value of the encoding property.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +151,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Recupera il valore della proprietà framerate.
+     * Gets the value of the framerate property.
      * 
      */
     public float getFramerate() {
@@ -157,7 +159,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Imposta il valore della proprietà framerate.
+     * Sets the value of the framerate property.
      * 
      */
     public void setFramerate(float value) {
@@ -210,6 +212,16 @@ public class VideoAttributes {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

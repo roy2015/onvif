@@ -8,12 +8,14 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per PrefixedIPv6Address complex type.
+ * <p>Java class for PrefixedIPv6Address complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PrefixedIPv6Address"&gt;
@@ -45,7 +47,7 @@ public class PrefixedIPv6Address {
     protected int prefixLength;
 
     /**
-     * Recupera il valore della proprietà address.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -57,7 +59,7 @@ public class PrefixedIPv6Address {
     }
 
     /**
-     * Imposta il valore della proprietà address.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is
@@ -69,7 +71,7 @@ public class PrefixedIPv6Address {
     }
 
     /**
-     * Recupera il valore della proprietà prefixLength.
+     * Gets the value of the prefixLength property.
      * 
      */
     public int getPrefixLength() {
@@ -77,11 +79,21 @@ public class PrefixedIPv6Address {
     }
 
     /**
-     * Imposta il valore della proprietà prefixLength.
+     * Sets the value of the prefixLength property.
      * 
      */
     public void setPrefixLength(int value) {
         this.prefixLength = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

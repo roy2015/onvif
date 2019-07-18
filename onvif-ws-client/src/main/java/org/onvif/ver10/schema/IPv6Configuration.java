@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per IPv6Configuration complex type.
+ * <p>Java class for IPv6Configuration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="IPv6Configuration"&gt;
@@ -71,7 +73,7 @@ public class IPv6Configuration {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà acceptRouterAdvert.
+     * Gets the value of the acceptRouterAdvert property.
      * This getter has been renamed from isAcceptRouterAdvert() to getAcceptRouterAdvert() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -84,7 +86,7 @@ public class IPv6Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà acceptRouterAdvert.
+     * Sets the value of the acceptRouterAdvert property.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +98,7 @@ public class IPv6Configuration {
     }
 
     /**
-     * Recupera il valore della proprietà dhcp.
+     * Gets the value of the dhcp property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class IPv6Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà dhcp.
+     * Sets the value of the dhcp property.
      * 
      * @param value
      *     allowed object is
@@ -236,7 +238,7 @@ public class IPv6Configuration {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -248,7 +250,7 @@ public class IPv6Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -275,6 +277,16 @@ public class IPv6Configuration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

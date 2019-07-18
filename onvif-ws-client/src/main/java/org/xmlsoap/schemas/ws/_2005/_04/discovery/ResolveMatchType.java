@@ -14,14 +14,16 @@ import javax.xml.bind.annotation.XmlList;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 import org.xmlsoap.schemas.ws._2004._08.addressing.EndpointReferenceType;
 
 
 /**
- * <p>Classe Java per ResolveMatchType complex type.
+ * <p>Java class for ResolveMatchType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ResolveMatchType"&gt;
@@ -58,13 +60,11 @@ public class ResolveMatchType {
     protected EndpointReferenceType endpointReference;
     @XmlList
     @XmlElement(name = "Types")
-    @XmlSchemaType(name = "anySimpleType")
     protected List<QName> types;
     @XmlElement(name = "Scopes")
     protected ScopesType scopes;
     @XmlList
     @XmlElement(name = "XAddrs", required = true)
-    @XmlSchemaType(name = "anySimpleType")
     protected List<String> xAddrs;
     @XmlElement(name = "MetadataVersion")
     @XmlSchemaType(name = "unsignedInt")
@@ -75,7 +75,7 @@ public class ResolveMatchType {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà endpointReference.
+     * Gets the value of the endpointReference property.
      * 
      * @return
      *     possible object is
@@ -87,7 +87,7 @@ public class ResolveMatchType {
     }
 
     /**
-     * Imposta il valore della proprietà endpointReference.
+     * Sets the value of the endpointReference property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class ResolveMatchType {
     }
 
     /**
-     * Recupera il valore della proprietà scopes.
+     * Gets the value of the scopes property.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class ResolveMatchType {
     }
 
     /**
-     * Imposta il valore della proprietà scopes.
+     * Sets the value of the scopes property.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +181,7 @@ public class ResolveMatchType {
     }
 
     /**
-     * Recupera il valore della proprietà metadataVersion.
+     * Gets the value of the metadataVersion property.
      * 
      */
     public long getMetadataVersion() {
@@ -189,7 +189,7 @@ public class ResolveMatchType {
     }
 
     /**
-     * Imposta il valore della proprietà metadataVersion.
+     * Sets the value of the metadataVersion property.
      * 
      */
     public void setMetadataVersion(long value) {
@@ -242,6 +242,16 @@ public class ResolveMatchType {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

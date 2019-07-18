@@ -10,12 +10,14 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per AppSequenceType complex type.
+ * <p>Java class for AppSequenceType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="AppSequenceType"&gt;
@@ -49,7 +51,7 @@ public class AppSequenceType {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà instanceId.
+     * Gets the value of the instanceId property.
      * 
      */
     public long getInstanceId() {
@@ -57,7 +59,7 @@ public class AppSequenceType {
     }
 
     /**
-     * Imposta il valore della proprietà instanceId.
+     * Sets the value of the instanceId property.
      * 
      */
     public void setInstanceId(long value) {
@@ -65,7 +67,7 @@ public class AppSequenceType {
     }
 
     /**
-     * Recupera il valore della proprietà sequenceId.
+     * Gets the value of the sequenceId property.
      * 
      * @return
      *     possible object is
@@ -77,7 +79,7 @@ public class AppSequenceType {
     }
 
     /**
-     * Imposta il valore della proprietà sequenceId.
+     * Sets the value of the sequenceId property.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +91,7 @@ public class AppSequenceType {
     }
 
     /**
-     * Recupera il valore della proprietà messageNumber.
+     * Gets the value of the messageNumber property.
      * 
      */
     public long getMessageNumber() {
@@ -97,7 +99,7 @@ public class AppSequenceType {
     }
 
     /**
-     * Imposta il valore della proprietà messageNumber.
+     * Sets the value of the messageNumber property.
      * 
      */
     public void setMessageNumber(long value) {
@@ -120,6 +122,16 @@ public class AppSequenceType {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

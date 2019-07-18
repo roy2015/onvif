@@ -8,12 +8,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per FindRecordingResultList complex type.
+ * <p>Java class for FindRecordingResultList complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FindRecordingResultList"&gt;
@@ -44,7 +46,7 @@ public class FindRecordingResultList {
     protected List<RecordingInformation> recordingInformation;
 
     /**
-     * Recupera il valore della proprietà searchState.
+     * Gets the value of the searchState property.
      * 
      * @return
      *     possible object is
@@ -56,7 +58,7 @@ public class FindRecordingResultList {
     }
 
     /**
-     * Imposta il valore della proprietà searchState.
+     * Sets the value of the searchState property.
      * 
      * @param value
      *     allowed object is
@@ -94,6 +96,16 @@ public class FindRecordingResultList {
             recordingInformation = new ArrayList<RecordingInformation>();
         }
         return this.recordingInformation;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

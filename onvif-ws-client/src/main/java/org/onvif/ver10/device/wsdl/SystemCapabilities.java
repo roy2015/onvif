@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per SystemCapabilities complex type.
+ * <p>Java class for SystemCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SystemCapabilities"&gt;
@@ -69,7 +71,7 @@ public class SystemCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà discoveryResolve.
+     * Gets the value of the discoveryResolve property.
      * This getter has been renamed from isDiscoveryResolve() to getDiscoveryResolve() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -82,7 +84,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà discoveryResolve.
+     * Sets the value of the discoveryResolve property.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +96,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà discoveryBye.
+     * Gets the value of the discoveryBye property.
      * This getter has been renamed from isDiscoveryBye() to getDiscoveryBye() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -107,7 +109,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà discoveryBye.
+     * Sets the value of the discoveryBye property.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +121,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà remoteDiscovery.
+     * Gets the value of the remoteDiscovery property.
      * This getter has been renamed from isRemoteDiscovery() to getRemoteDiscovery() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -132,7 +134,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà remoteDiscovery.
+     * Sets the value of the remoteDiscovery property.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +146,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà systemBackup.
+     * Gets the value of the systemBackup property.
      * This getter has been renamed from isSystemBackup() to getSystemBackup() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -157,7 +159,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà systemBackup.
+     * Sets the value of the systemBackup property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +171,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà systemLogging.
+     * Gets the value of the systemLogging property.
      * This getter has been renamed from isSystemLogging() to getSystemLogging() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -182,7 +184,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà systemLogging.
+     * Sets the value of the systemLogging property.
      * 
      * @param value
      *     allowed object is
@@ -194,7 +196,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà firmwareUpgrade.
+     * Gets the value of the firmwareUpgrade property.
      * This getter has been renamed from isFirmwareUpgrade() to getFirmwareUpgrade() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -207,7 +209,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà firmwareUpgrade.
+     * Sets the value of the firmwareUpgrade property.
      * 
      * @param value
      *     allowed object is
@@ -219,7 +221,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà httpFirmwareUpgrade.
+     * Gets the value of the httpFirmwareUpgrade property.
      * This getter has been renamed from isHttpFirmwareUpgrade() to getHttpFirmwareUpgrade() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -232,7 +234,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà httpFirmwareUpgrade.
+     * Sets the value of the httpFirmwareUpgrade property.
      * 
      * @param value
      *     allowed object is
@@ -244,7 +246,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà httpSystemBackup.
+     * Gets the value of the httpSystemBackup property.
      * This getter has been renamed from isHttpSystemBackup() to getHttpSystemBackup() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -257,7 +259,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà httpSystemBackup.
+     * Sets the value of the httpSystemBackup property.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +271,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà httpSystemLogging.
+     * Gets the value of the httpSystemLogging property.
      * This getter has been renamed from isHttpSystemLogging() to getHttpSystemLogging() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -282,7 +284,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà httpSystemLogging.
+     * Sets the value of the httpSystemLogging property.
      * 
      * @param value
      *     allowed object is
@@ -294,7 +296,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà httpSupportInformation.
+     * Gets the value of the httpSupportInformation property.
      * This getter has been renamed from isHttpSupportInformation() to getHttpSupportInformation() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -307,7 +309,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà httpSupportInformation.
+     * Sets the value of the httpSupportInformation property.
      * 
      * @param value
      *     allowed object is
@@ -319,7 +321,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà storageConfiguration.
+     * Gets the value of the storageConfiguration property.
      * This getter has been renamed from isStorageConfiguration() to getStorageConfiguration() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -332,7 +334,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà storageConfiguration.
+     * Sets the value of the storageConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -359,6 +361,16 @@ public class SystemCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

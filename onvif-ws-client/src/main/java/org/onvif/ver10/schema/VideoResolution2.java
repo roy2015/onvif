@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per VideoResolution2 complex type.
+ * <p>Java class for VideoResolution2 complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VideoResolution2"&gt;
@@ -55,7 +57,7 @@ public class VideoResolution2 {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà width.
+     * Gets the value of the width property.
      * 
      */
     public int getWidth() {
@@ -63,7 +65,7 @@ public class VideoResolution2 {
     }
 
     /**
-     * Imposta il valore della proprietà width.
+     * Sets the value of the width property.
      * 
      */
     public void setWidth(int value) {
@@ -71,7 +73,7 @@ public class VideoResolution2 {
     }
 
     /**
-     * Recupera il valore della proprietà height.
+     * Gets the value of the height property.
      * 
      */
     public int getHeight() {
@@ -79,7 +81,7 @@ public class VideoResolution2 {
     }
 
     /**
-     * Imposta il valore della proprietà height.
+     * Sets the value of the height property.
      * 
      */
     public void setHeight(int value) {
@@ -132,6 +134,16 @@ public class VideoResolution2 {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

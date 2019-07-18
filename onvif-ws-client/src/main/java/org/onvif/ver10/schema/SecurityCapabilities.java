@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per SecurityCapabilities complex type.
+ * <p>Java class for SecurityCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SecurityCapabilities"&gt;
@@ -83,7 +85,7 @@ public class SecurityCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà tls11.
+     * Gets the value of the tls11 property.
      * This getter has been renamed from isTLS11() to getTLS11() by cxf-xjc-boolean plugin.
      * 
      */
@@ -92,7 +94,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà tls11.
+     * Sets the value of the tls11 property.
      * 
      */
     public void setTLS11(boolean value) {
@@ -100,7 +102,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà tls12.
+     * Gets the value of the tls12 property.
      * This getter has been renamed from isTLS12() to getTLS12() by cxf-xjc-boolean plugin.
      * 
      */
@@ -109,7 +111,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà tls12.
+     * Sets the value of the tls12 property.
      * 
      */
     public void setTLS12(boolean value) {
@@ -117,7 +119,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà onboardKeyGeneration.
+     * Gets the value of the onboardKeyGeneration property.
      * This getter has been renamed from isOnboardKeyGeneration() to getOnboardKeyGeneration() by cxf-xjc-boolean plugin.
      * 
      */
@@ -126,7 +128,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà onboardKeyGeneration.
+     * Sets the value of the onboardKeyGeneration property.
      * 
      */
     public void setOnboardKeyGeneration(boolean value) {
@@ -134,7 +136,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà accessPolicyConfig.
+     * Gets the value of the accessPolicyConfig property.
      * This getter has been renamed from isAccessPolicyConfig() to getAccessPolicyConfig() by cxf-xjc-boolean plugin.
      * 
      */
@@ -143,7 +145,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà accessPolicyConfig.
+     * Sets the value of the accessPolicyConfig property.
      * 
      */
     public void setAccessPolicyConfig(boolean value) {
@@ -151,7 +153,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà x509Token.
+     * Gets the value of the x509Token property.
      * This getter has been renamed from isX509Token() to getX509Token() by cxf-xjc-boolean plugin.
      * 
      */
@@ -160,7 +162,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà x509Token.
+     * Sets the value of the x509Token property.
      * 
      */
     public void setX509Token(boolean value) {
@@ -168,7 +170,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà samlToken.
+     * Gets the value of the samlToken property.
      * This getter has been renamed from isSAMLToken() to getSAMLToken() by cxf-xjc-boolean plugin.
      * 
      */
@@ -177,7 +179,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà samlToken.
+     * Sets the value of the samlToken property.
      * 
      */
     public void setSAMLToken(boolean value) {
@@ -185,7 +187,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà kerberosToken.
+     * Gets the value of the kerberosToken property.
      * This getter has been renamed from isKerberosToken() to getKerberosToken() by cxf-xjc-boolean plugin.
      * 
      */
@@ -194,7 +196,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà kerberosToken.
+     * Sets the value of the kerberosToken property.
      * 
      */
     public void setKerberosToken(boolean value) {
@@ -202,7 +204,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà relToken.
+     * Gets the value of the relToken property.
      * This getter has been renamed from isRELToken() to getRELToken() by cxf-xjc-boolean plugin.
      * 
      */
@@ -211,7 +213,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà relToken.
+     * Sets the value of the relToken property.
      * 
      */
     public void setRELToken(boolean value) {
@@ -249,7 +251,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -261,7 +263,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -288,6 +290,16 @@ public class SecurityCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

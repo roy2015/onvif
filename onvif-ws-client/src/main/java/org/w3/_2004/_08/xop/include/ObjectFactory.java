@@ -42,8 +42,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Include }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Include }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Include }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2004/08/xop/include", name = "Include")
     public JAXBElement<Include> createInclude(Include value) {

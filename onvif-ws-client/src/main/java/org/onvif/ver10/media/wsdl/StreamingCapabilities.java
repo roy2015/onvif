@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per StreamingCapabilities complex type.
+ * <p>Java class for StreamingCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="StreamingCapabilities"&gt;
@@ -92,7 +94,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rtpMulticast.
+     * Gets the value of the rtpMulticast property.
      * This getter has been renamed from isRTPMulticast() to getRTPMulticast() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -105,7 +107,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rtpMulticast.
+     * Sets the value of the rtpMulticast property.
      * 
      * @param value
      *     allowed object is
@@ -117,7 +119,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rtptcp.
+     * Gets the value of the rtptcp property.
      * This getter has been renamed from isRTPTCP() to getRTPTCP() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -130,7 +132,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rtptcp.
+     * Sets the value of the rtptcp property.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +144,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rtprtsptcp.
+     * Gets the value of the rtprtsptcp property.
      * This getter has been renamed from isRTPRTSPTCP() to getRTPRTSPTCP() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -155,7 +157,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rtprtsptcp.
+     * Sets the value of the rtprtsptcp property.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +169,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà nonAggregateControl.
+     * Gets the value of the nonAggregateControl property.
      * This getter has been renamed from isNonAggregateControl() to getNonAggregateControl() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -180,7 +182,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà nonAggregateControl.
+     * Sets the value of the nonAggregateControl property.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +194,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà noRTSPStreaming.
+     * Gets the value of the noRTSPStreaming property.
      * This getter has been renamed from isNoRTSPStreaming() to getNoRTSPStreaming() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -205,7 +207,7 @@ public class StreamingCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà noRTSPStreaming.
+     * Sets the value of the noRTSPStreaming property.
      * 
      * @param value
      *     allowed object is
@@ -232,6 +234,16 @@ public class StreamingCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

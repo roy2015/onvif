@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per BackupFile complex type.
+ * <p>Java class for BackupFile complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="BackupFile"&gt;
@@ -40,7 +42,7 @@ public class BackupFile {
     protected AttachmentData data;
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -52,7 +54,7 @@ public class BackupFile {
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +66,7 @@ public class BackupFile {
     }
 
     /**
-     * Recupera il valore della proprietà data.
+     * Gets the value of the data property.
      * 
      * @return
      *     possible object is
@@ -76,7 +78,7 @@ public class BackupFile {
     }
 
     /**
-     * Imposta il valore della proprietà data.
+     * Sets the value of the data property.
      * 
      * @param value
      *     allowed object is
@@ -85,6 +87,16 @@ public class BackupFile {
      */
     public void setData(AttachmentData value) {
         this.data = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

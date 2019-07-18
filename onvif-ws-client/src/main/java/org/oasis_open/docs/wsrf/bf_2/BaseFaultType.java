@@ -19,6 +19,8 @@ import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.ws.wsaddressing.W3CEndpointReference;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.oasis_open.docs.wsn.b_2.InvalidFilterFaultType;
 import org.oasis_open.docs.wsn.b_2.InvalidMessageContentExpressionFaultType;
 import org.oasis_open.docs.wsn.b_2.InvalidProducerPropertiesExpressionFaultType;
@@ -43,9 +45,9 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per BaseFaultType complex type.
+ * <p>Java class for BaseFaultType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="BaseFaultType"&gt;
@@ -174,7 +176,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Recupera il valore della proprietà timestamp.
+     * Gets the value of the timestamp property.
      * 
      * @return
      *     possible object is
@@ -186,7 +188,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Imposta il valore della proprietà timestamp.
+     * Sets the value of the timestamp property.
      * 
      * @param value
      *     allowed object is
@@ -198,7 +200,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Recupera il valore della proprietà originator.
+     * Gets the value of the originator property.
      * 
      * @return
      *     possible object is
@@ -210,7 +212,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Imposta il valore della proprietà originator.
+     * Sets the value of the originator property.
      * 
      * @param value
      *     allowed object is
@@ -222,7 +224,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Recupera il valore della proprietà errorCode.
+     * Gets the value of the errorCode property.
      * 
      * @return
      *     possible object is
@@ -234,7 +236,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Imposta il valore della proprietà errorCode.
+     * Sets the value of the errorCode property.
      * 
      * @param value
      *     allowed object is
@@ -275,7 +277,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Recupera il valore della proprietà faultCause.
+     * Gets the value of the faultCause property.
      * 
      * @return
      *     possible object is
@@ -287,7 +289,7 @@ public class BaseFaultType {
     }
 
     /**
-     * Imposta il valore della proprietà faultCause.
+     * Sets the value of the faultCause property.
      * 
      * @param value
      *     allowed object is
@@ -316,11 +318,21 @@ public class BaseFaultType {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -346,7 +358,7 @@ public class BaseFaultType {
         protected String lang;
 
         /**
-         * Recupera il valore della proprietà value.
+         * Gets the value of the value property.
          * 
          * @return
          *     possible object is
@@ -358,7 +370,7 @@ public class BaseFaultType {
         }
 
         /**
-         * Imposta il valore della proprietà value.
+         * Sets the value of the value property.
          * 
          * @param value
          *     allowed object is
@@ -370,7 +382,7 @@ public class BaseFaultType {
         }
 
         /**
-         * Recupera il valore della proprietà lang.
+         * Gets the value of the lang property.
          * 
          * @return
          *     possible object is
@@ -382,7 +394,7 @@ public class BaseFaultType {
         }
 
         /**
-         * Imposta il valore della proprietà lang.
+         * Sets the value of the lang property.
          * 
          * @param value
          *     allowed object is
@@ -393,13 +405,23 @@ public class BaseFaultType {
             this.lang = value;
         }
 
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+        }
+
     }
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -447,8 +469,8 @@ public class BaseFaultType {
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link String }
          * {@link Element }
+         * {@link String }
          * 
          * 
          */
@@ -460,7 +482,7 @@ public class BaseFaultType {
         }
 
         /**
-         * Recupera il valore della proprietà dialect.
+         * Gets the value of the dialect property.
          * 
          * @return
          *     possible object is
@@ -472,7 +494,7 @@ public class BaseFaultType {
         }
 
         /**
-         * Imposta il valore della proprietà dialect.
+         * Sets the value of the dialect property.
          * 
          * @param value
          *     allowed object is
@@ -501,13 +523,23 @@ public class BaseFaultType {
             return otherAttributes;
         }
 
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+        }
+
     }
 
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -533,7 +565,7 @@ public class BaseFaultType {
         protected Object any;
 
         /**
-         * Recupera il valore della proprietà any.
+         * Gets the value of the any property.
          * 
          * @return
          *     possible object is
@@ -546,7 +578,7 @@ public class BaseFaultType {
         }
 
         /**
-         * Imposta il valore della proprietà any.
+         * Sets the value of the any property.
          * 
          * @param value
          *     allowed object is
@@ -556,6 +588,16 @@ public class BaseFaultType {
          */
         public void setAny(Object value) {
             this.any = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

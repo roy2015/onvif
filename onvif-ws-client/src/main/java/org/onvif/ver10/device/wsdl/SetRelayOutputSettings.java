@@ -6,13 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.RelayOutputSettings;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -43,7 +45,7 @@ public class SetRelayOutputSettings {
     protected RelayOutputSettings properties;
 
     /**
-     * Recupera il valore della proprietà relayOutputToken.
+     * Gets the value of the relayOutputToken property.
      * 
      * @return
      *     possible object is
@@ -55,7 +57,7 @@ public class SetRelayOutputSettings {
     }
 
     /**
-     * Imposta il valore della proprietà relayOutputToken.
+     * Sets the value of the relayOutputToken property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +69,7 @@ public class SetRelayOutputSettings {
     }
 
     /**
-     * Recupera il valore della proprietà properties.
+     * Gets the value of the properties property.
      * 
      * @return
      *     possible object is
@@ -79,7 +81,7 @@ public class SetRelayOutputSettings {
     }
 
     /**
-     * Imposta il valore della proprietà properties.
+     * Sets the value of the properties property.
      * 
      * @param value
      *     allowed object is
@@ -88,6 +90,16 @@ public class SetRelayOutputSettings {
      */
     public void setProperties(RelayOutputSettings value) {
         this.properties = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

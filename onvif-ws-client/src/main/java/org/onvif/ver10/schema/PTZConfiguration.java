@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per PTZConfiguration complex type.
+ * <p>Java class for PTZConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PTZConfiguration"&gt;
@@ -107,7 +109,7 @@ public class PTZConfiguration
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà nodeToken.
+     * Gets the value of the nodeToken property.
      * 
      * @return
      *     possible object is
@@ -119,7 +121,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà nodeToken.
+     * Sets the value of the nodeToken property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +133,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultAbsolutePantTiltPositionSpace.
+     * Gets the value of the defaultAbsolutePantTiltPositionSpace property.
      * 
      * @return
      *     possible object is
@@ -143,7 +145,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultAbsolutePantTiltPositionSpace.
+     * Sets the value of the defaultAbsolutePantTiltPositionSpace property.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +157,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultAbsoluteZoomPositionSpace.
+     * Gets the value of the defaultAbsoluteZoomPositionSpace property.
      * 
      * @return
      *     possible object is
@@ -167,7 +169,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultAbsoluteZoomPositionSpace.
+     * Sets the value of the defaultAbsoluteZoomPositionSpace property.
      * 
      * @param value
      *     allowed object is
@@ -179,7 +181,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultRelativePanTiltTranslationSpace.
+     * Gets the value of the defaultRelativePanTiltTranslationSpace property.
      * 
      * @return
      *     possible object is
@@ -191,7 +193,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultRelativePanTiltTranslationSpace.
+     * Sets the value of the defaultRelativePanTiltTranslationSpace property.
      * 
      * @param value
      *     allowed object is
@@ -203,7 +205,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultRelativeZoomTranslationSpace.
+     * Gets the value of the defaultRelativeZoomTranslationSpace property.
      * 
      * @return
      *     possible object is
@@ -215,7 +217,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultRelativeZoomTranslationSpace.
+     * Sets the value of the defaultRelativeZoomTranslationSpace property.
      * 
      * @param value
      *     allowed object is
@@ -227,7 +229,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultContinuousPanTiltVelocitySpace.
+     * Gets the value of the defaultContinuousPanTiltVelocitySpace property.
      * 
      * @return
      *     possible object is
@@ -239,7 +241,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultContinuousPanTiltVelocitySpace.
+     * Sets the value of the defaultContinuousPanTiltVelocitySpace property.
      * 
      * @param value
      *     allowed object is
@@ -251,7 +253,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultContinuousZoomVelocitySpace.
+     * Gets the value of the defaultContinuousZoomVelocitySpace property.
      * 
      * @return
      *     possible object is
@@ -263,7 +265,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultContinuousZoomVelocitySpace.
+     * Sets the value of the defaultContinuousZoomVelocitySpace property.
      * 
      * @param value
      *     allowed object is
@@ -275,7 +277,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultPTZSpeed.
+     * Gets the value of the defaultPTZSpeed property.
      * 
      * @return
      *     possible object is
@@ -287,7 +289,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultPTZSpeed.
+     * Sets the value of the defaultPTZSpeed property.
      * 
      * @param value
      *     allowed object is
@@ -299,7 +301,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà defaultPTZTimeout.
+     * Gets the value of the defaultPTZTimeout property.
      * 
      * @return
      *     possible object is
@@ -311,7 +313,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà defaultPTZTimeout.
+     * Sets the value of the defaultPTZTimeout property.
      * 
      * @param value
      *     allowed object is
@@ -323,7 +325,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà panTiltLimits.
+     * Gets the value of the panTiltLimits property.
      * 
      * @return
      *     possible object is
@@ -335,7 +337,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà panTiltLimits.
+     * Sets the value of the panTiltLimits property.
      * 
      * @param value
      *     allowed object is
@@ -347,7 +349,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà zoomLimits.
+     * Gets the value of the zoomLimits property.
      * 
      * @return
      *     possible object is
@@ -359,7 +361,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà zoomLimits.
+     * Sets the value of the zoomLimits property.
      * 
      * @param value
      *     allowed object is
@@ -371,7 +373,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -383,7 +385,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -395,7 +397,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà moveRamp.
+     * Gets the value of the moveRamp property.
      * 
      * @return
      *     possible object is
@@ -407,7 +409,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà moveRamp.
+     * Sets the value of the moveRamp property.
      * 
      * @param value
      *     allowed object is
@@ -419,7 +421,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà presetRamp.
+     * Gets the value of the presetRamp property.
      * 
      * @return
      *     possible object is
@@ -431,7 +433,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà presetRamp.
+     * Sets the value of the presetRamp property.
      * 
      * @param value
      *     allowed object is
@@ -443,7 +445,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà presetTourRamp.
+     * Gets the value of the presetTourRamp property.
      * 
      * @return
      *     possible object is
@@ -455,7 +457,7 @@ public class PTZConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà presetTourRamp.
+     * Sets the value of the presetTourRamp property.
      * 
      * @param value
      *     allowed object is
@@ -482,6 +484,16 @@ public class PTZConfiguration
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

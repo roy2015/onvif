@@ -8,12 +8,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per IPv6NetworkInterfaceSetConfiguration complex type.
+ * <p>Java class for IPv6NetworkInterfaceSetConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="IPv6NetworkInterfaceSetConfiguration"&gt;
@@ -52,7 +54,7 @@ public class IPv6NetworkInterfaceSetConfiguration {
     protected IPv6DHCPConfiguration dhcp;
 
     /**
-     * Recupera il valore della proprietà enabled.
+     * Gets the value of the enabled property.
      * This getter has been renamed from isEnabled() to getEnabled() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -65,7 +67,7 @@ public class IPv6NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà enabled.
+     * Sets the value of the enabled property.
      * 
      * @param value
      *     allowed object is
@@ -77,7 +79,7 @@ public class IPv6NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà acceptRouterAdvert.
+     * Gets the value of the acceptRouterAdvert property.
      * This getter has been renamed from isAcceptRouterAdvert() to getAcceptRouterAdvert() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -90,7 +92,7 @@ public class IPv6NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà acceptRouterAdvert.
+     * Sets the value of the acceptRouterAdvert property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +133,7 @@ public class IPv6NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà dhcp.
+     * Gets the value of the dhcp property.
      * 
      * @return
      *     possible object is
@@ -143,7 +145,7 @@ public class IPv6NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà dhcp.
+     * Sets the value of the dhcp property.
      * 
      * @param value
      *     allowed object is
@@ -152,6 +154,16 @@ public class IPv6NetworkInterfaceSetConfiguration {
      */
     public void setDHCP(IPv6DHCPConfiguration value) {
         this.dhcp = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

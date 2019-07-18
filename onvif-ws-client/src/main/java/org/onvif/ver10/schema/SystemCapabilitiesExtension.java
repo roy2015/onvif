@@ -8,13 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per SystemCapabilitiesExtension complex type.
+ * <p>Java class for SystemCapabilitiesExtension complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SystemCapabilitiesExtension"&gt;
@@ -90,7 +92,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà httpFirmwareUpgrade.
+     * Gets the value of the httpFirmwareUpgrade property.
      * This getter has been renamed from isHttpFirmwareUpgrade() to getHttpFirmwareUpgrade() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -103,7 +105,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà httpFirmwareUpgrade.
+     * Sets the value of the httpFirmwareUpgrade property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +117,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà httpSystemBackup.
+     * Gets the value of the httpSystemBackup property.
      * This getter has been renamed from isHttpSystemBackup() to getHttpSystemBackup() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -128,7 +130,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà httpSystemBackup.
+     * Sets the value of the httpSystemBackup property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +142,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà httpSystemLogging.
+     * Gets the value of the httpSystemLogging property.
      * This getter has been renamed from isHttpSystemLogging() to getHttpSystemLogging() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -153,7 +155,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà httpSystemLogging.
+     * Sets the value of the httpSystemLogging property.
      * 
      * @param value
      *     allowed object is
@@ -165,7 +167,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà httpSupportInformation.
+     * Gets the value of the httpSupportInformation property.
      * This getter has been renamed from isHttpSupportInformation() to getHttpSupportInformation() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -178,7 +180,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà httpSupportInformation.
+     * Sets the value of the httpSupportInformation property.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +192,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -202,7 +204,7 @@ public class SystemCapabilitiesExtension {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -211,6 +213,16 @@ public class SystemCapabilitiesExtension {
      */
     public void setExtension(SystemCapabilitiesExtension2 value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

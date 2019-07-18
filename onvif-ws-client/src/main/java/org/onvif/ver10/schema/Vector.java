@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Vector complex type.
+ * <p>Java class for Vector complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Vector"&gt;
@@ -35,7 +37,7 @@ public class Vector {
     protected Float y;
 
     /**
-     * Recupera il valore della proprietà x.
+     * Gets the value of the x property.
      * 
      * @return
      *     possible object is
@@ -47,7 +49,7 @@ public class Vector {
     }
 
     /**
-     * Imposta il valore della proprietà x.
+     * Sets the value of the x property.
      * 
      * @param value
      *     allowed object is
@@ -59,7 +61,7 @@ public class Vector {
     }
 
     /**
-     * Recupera il valore della proprietà y.
+     * Gets the value of the y property.
      * 
      * @return
      *     possible object is
@@ -71,7 +73,7 @@ public class Vector {
     }
 
     /**
-     * Imposta il valore della proprietà y.
+     * Sets the value of the y property.
      * 
      * @param value
      *     allowed object is
@@ -80,6 +82,16 @@ public class Vector {
      */
     public void setY(Float value) {
         this.y = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

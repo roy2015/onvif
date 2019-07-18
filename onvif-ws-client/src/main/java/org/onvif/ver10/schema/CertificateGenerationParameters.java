@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per CertificateGenerationParameters complex type.
+ * <p>Java class for CertificateGenerationParameters complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="CertificateGenerationParameters"&gt;
@@ -68,7 +70,7 @@ public class CertificateGenerationParameters {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà certificateID.
+     * Gets the value of the certificateID property.
      * 
      * @return
      *     possible object is
@@ -80,7 +82,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Imposta il valore della proprietà certificateID.
+     * Sets the value of the certificateID property.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +94,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Recupera il valore della proprietà subject.
+     * Gets the value of the subject property.
      * 
      * @return
      *     possible object is
@@ -104,7 +106,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Imposta il valore della proprietà subject.
+     * Sets the value of the subject property.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +118,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Recupera il valore della proprietà validNotBefore.
+     * Gets the value of the validNotBefore property.
      * 
      * @return
      *     possible object is
@@ -128,7 +130,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Imposta il valore della proprietà validNotBefore.
+     * Sets the value of the validNotBefore property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +142,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Recupera il valore della proprietà validNotAfter.
+     * Gets the value of the validNotAfter property.
      * 
      * @return
      *     possible object is
@@ -152,7 +154,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Imposta il valore della proprietà validNotAfter.
+     * Sets the value of the validNotAfter property.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +166,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -176,7 +178,7 @@ public class CertificateGenerationParameters {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -203,6 +205,16 @@ public class CertificateGenerationParameters {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

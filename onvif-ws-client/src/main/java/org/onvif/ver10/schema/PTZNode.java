@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per PTZNode complex type.
+ * <p>Java class for PTZNode complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PTZNode"&gt;
@@ -71,7 +73,7 @@ public class PTZNode
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -83,7 +85,7 @@ public class PTZNode
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +97,7 @@ public class PTZNode
     }
 
     /**
-     * Recupera il valore della proprietà supportedPTZSpaces.
+     * Gets the value of the supportedPTZSpaces property.
      * 
      * @return
      *     possible object is
@@ -107,7 +109,7 @@ public class PTZNode
     }
 
     /**
-     * Imposta il valore della proprietà supportedPTZSpaces.
+     * Sets the value of the supportedPTZSpaces property.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +121,7 @@ public class PTZNode
     }
 
     /**
-     * Recupera il valore della proprietà maximumNumberOfPresets.
+     * Gets the value of the maximumNumberOfPresets property.
      * 
      */
     public int getMaximumNumberOfPresets() {
@@ -127,7 +129,7 @@ public class PTZNode
     }
 
     /**
-     * Imposta il valore della proprietà maximumNumberOfPresets.
+     * Sets the value of the maximumNumberOfPresets property.
      * 
      */
     public void setMaximumNumberOfPresets(int value) {
@@ -135,7 +137,7 @@ public class PTZNode
     }
 
     /**
-     * Recupera il valore della proprietà homeSupported.
+     * Gets the value of the homeSupported property.
      * This getter has been renamed from isHomeSupported() to getHomeSupported() by cxf-xjc-boolean plugin.
      * 
      */
@@ -144,7 +146,7 @@ public class PTZNode
     }
 
     /**
-     * Imposta il valore della proprietà homeSupported.
+     * Sets the value of the homeSupported property.
      * 
      */
     public void setHomeSupported(boolean value) {
@@ -181,7 +183,7 @@ public class PTZNode
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -193,7 +195,7 @@ public class PTZNode
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -205,7 +207,7 @@ public class PTZNode
     }
 
     /**
-     * Recupera il valore della proprietà fixedHomePosition.
+     * Gets the value of the fixedHomePosition property.
      * This getter has been renamed from isFixedHomePosition() to getFixedHomePosition() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -218,7 +220,7 @@ public class PTZNode
     }
 
     /**
-     * Imposta il valore della proprietà fixedHomePosition.
+     * Sets the value of the fixedHomePosition property.
      * 
      * @param value
      *     allowed object is
@@ -245,6 +247,16 @@ public class PTZNode
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -6,13 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.BinaryData;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -39,7 +41,7 @@ public class GetPkcs10RequestResponse {
     protected BinaryData pkcs10Request;
 
     /**
-     * Recupera il valore della proprietà pkcs10Request.
+     * Gets the value of the pkcs10Request property.
      * 
      * @return
      *     possible object is
@@ -51,7 +53,7 @@ public class GetPkcs10RequestResponse {
     }
 
     /**
-     * Imposta il valore della proprietà pkcs10Request.
+     * Sets the value of the pkcs10Request property.
      * 
      * @param value
      *     allowed object is
@@ -60,6 +62,16 @@ public class GetPkcs10RequestResponse {
      */
     public void setPkcs10Request(BinaryData value) {
         this.pkcs10Request = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

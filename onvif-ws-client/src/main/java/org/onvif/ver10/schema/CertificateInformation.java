@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per CertificateInformation complex type.
+ * <p>Java class for CertificateInformation complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="CertificateInformation"&gt;
@@ -88,7 +90,7 @@ public class CertificateInformation {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà certificateID.
+     * Gets the value of the certificateID property.
      * 
      * @return
      *     possible object is
@@ -100,7 +102,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà certificateID.
+     * Sets the value of the certificateID property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +114,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà issuerDN.
+     * Gets the value of the issuerDN property.
      * 
      * @return
      *     possible object is
@@ -124,7 +126,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà issuerDN.
+     * Sets the value of the issuerDN property.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +138,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà subjectDN.
+     * Gets the value of the subjectDN property.
      * 
      * @return
      *     possible object is
@@ -148,7 +150,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà subjectDN.
+     * Sets the value of the subjectDN property.
      * 
      * @param value
      *     allowed object is
@@ -160,7 +162,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà keyUsage.
+     * Gets the value of the keyUsage property.
      * 
      * @return
      *     possible object is
@@ -172,7 +174,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà keyUsage.
+     * Sets the value of the keyUsage property.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +186,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà extendedKeyUsage.
+     * Gets the value of the extendedKeyUsage property.
      * 
      * @return
      *     possible object is
@@ -196,7 +198,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà extendedKeyUsage.
+     * Sets the value of the extendedKeyUsage property.
      * 
      * @param value
      *     allowed object is
@@ -208,7 +210,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà keyLength.
+     * Gets the value of the keyLength property.
      * 
      * @return
      *     possible object is
@@ -220,7 +222,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà keyLength.
+     * Sets the value of the keyLength property.
      * 
      * @param value
      *     allowed object is
@@ -232,7 +234,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà version.
+     * Gets the value of the version property.
      * 
      * @return
      *     possible object is
@@ -244,7 +246,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà version.
+     * Sets the value of the version property.
      * 
      * @param value
      *     allowed object is
@@ -256,7 +258,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà serialNum.
+     * Gets the value of the serialNum property.
      * 
      * @return
      *     possible object is
@@ -268,7 +270,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà serialNum.
+     * Sets the value of the serialNum property.
      * 
      * @param value
      *     allowed object is
@@ -280,7 +282,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà signatureAlgorithm.
+     * Gets the value of the signatureAlgorithm property.
      * 
      * @return
      *     possible object is
@@ -292,7 +294,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà signatureAlgorithm.
+     * Sets the value of the signatureAlgorithm property.
      * 
      * @param value
      *     allowed object is
@@ -304,7 +306,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà validity.
+     * Gets the value of the validity property.
      * 
      * @return
      *     possible object is
@@ -316,7 +318,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà validity.
+     * Sets the value of the validity property.
      * 
      * @param value
      *     allowed object is
@@ -328,7 +330,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -340,7 +342,7 @@ public class CertificateInformation {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -367,6 +369,16 @@ public class CertificateInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

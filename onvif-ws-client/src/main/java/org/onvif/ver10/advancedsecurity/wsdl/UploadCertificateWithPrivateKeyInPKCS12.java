@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -69,7 +71,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     protected String passphrase;
 
     /**
-     * Recupera il valore della proprietà certWithPrivateKey.
+     * Gets the value of the certWithPrivateKey property.
      * 
      * @return
      *     possible object is
@@ -80,7 +82,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà certWithPrivateKey.
+     * Sets the value of the certWithPrivateKey property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +93,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Recupera il valore della proprietà certificationPathAlias.
+     * Gets the value of the certificationPathAlias property.
      * 
      * @return
      *     possible object is
@@ -103,7 +105,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà certificationPathAlias.
+     * Sets the value of the certificationPathAlias property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +117,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Recupera il valore della proprietà keyAlias.
+     * Gets the value of the keyAlias property.
      * 
      * @return
      *     possible object is
@@ -127,7 +129,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà keyAlias.
+     * Sets the value of the keyAlias property.
      * 
      * @param value
      *     allowed object is
@@ -139,7 +141,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Recupera il valore della proprietà ignoreAdditionalCertificates.
+     * Gets the value of the ignoreAdditionalCertificates property.
      * This getter has been renamed from isIgnoreAdditionalCertificates() to getIgnoreAdditionalCertificates() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -152,7 +154,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà ignoreAdditionalCertificates.
+     * Sets the value of the ignoreAdditionalCertificates property.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +166,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Recupera il valore della proprietà integrityPassphraseID.
+     * Gets the value of the integrityPassphraseID property.
      * 
      * @return
      *     possible object is
@@ -176,7 +178,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà integrityPassphraseID.
+     * Sets the value of the integrityPassphraseID property.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +190,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Recupera il valore della proprietà encryptionPassphraseID.
+     * Gets the value of the encryptionPassphraseID property.
      * 
      * @return
      *     possible object is
@@ -200,7 +202,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà encryptionPassphraseID.
+     * Sets the value of the encryptionPassphraseID property.
      * 
      * @param value
      *     allowed object is
@@ -212,7 +214,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Recupera il valore della proprietà passphrase.
+     * Gets the value of the passphrase property.
      * 
      * @return
      *     possible object is
@@ -224,7 +226,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
     }
 
     /**
-     * Imposta il valore della proprietà passphrase.
+     * Sets the value of the passphrase property.
      * 
      * @param value
      *     allowed object is
@@ -233,6 +235,16 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      */
     public void setPassphrase(String value) {
         this.passphrase = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

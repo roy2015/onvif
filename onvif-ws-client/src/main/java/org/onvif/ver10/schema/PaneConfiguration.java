@@ -12,15 +12,17 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
  * Configuration of the streaming and coding settings of a Video window.
  * 
- * <p>Classe Java per PaneConfiguration complex type.
+ * <p>Java class for PaneConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PaneConfiguration"&gt;
@@ -73,7 +75,7 @@ public class PaneConfiguration {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà paneName.
+     * Gets the value of the paneName property.
      * 
      * @return
      *     possible object is
@@ -85,7 +87,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà paneName.
+     * Sets the value of the paneName property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +99,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà audioOutputToken.
+     * Gets the value of the audioOutputToken property.
      * 
      * @return
      *     possible object is
@@ -109,7 +111,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà audioOutputToken.
+     * Sets the value of the audioOutputToken property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +123,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà audioSourceToken.
+     * Gets the value of the audioSourceToken property.
      * 
      * @return
      *     possible object is
@@ -133,7 +135,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà audioSourceToken.
+     * Sets the value of the audioSourceToken property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +147,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà audioEncoderConfiguration.
+     * Gets the value of the audioEncoderConfiguration property.
      * 
      * @return
      *     possible object is
@@ -157,7 +159,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà audioEncoderConfiguration.
+     * Sets the value of the audioEncoderConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +171,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà receiverToken.
+     * Gets the value of the receiverToken property.
      * 
      * @return
      *     possible object is
@@ -181,7 +183,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà receiverToken.
+     * Sets the value of the receiverToken property.
      * 
      * @param value
      *     allowed object is
@@ -193,7 +195,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà token.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -205,7 +207,7 @@ public class PaneConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà token.
+     * Sets the value of the token property.
      * 
      * @param value
      *     allowed object is
@@ -262,6 +264,16 @@ public class PaneConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }
