@@ -93,6 +93,27 @@
 						<configuration>
 							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
 							<sourceRoot>${basedir}/src/main/java</sourceRoot>
+
+							<!-- TODO for java 12. Add code to either set WSDL_LOCATION=null; or load it from a local resource. -->
+
+							<!-- https://stackoverflow.com/questions/4455195/how-to-avoid-the-need-to-specify-the-wsdl-location-in-a-cxf-or-jax-ws-generated
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/FooService.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/FooService.wsdl</wsdlLocation>
+								</wsdlOption>
+							</wsdlOptions>
+							-->
+
+
+<!--
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdlLocation>classpath:wsdl/</wsdlLocation>
+								</wsdlOption>
+							</wsdlOptions>
+-->
+
 							<includes>
 								<include>*.wsdl</include>
 							</includes>
