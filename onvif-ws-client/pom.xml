@@ -39,18 +39,6 @@
 			<version>1.1</version>
 		</dependency>
 		<!-- Java 9+ javax dependencies end -->
-
-
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.cxf</groupId> -->
-		<!-- <artifactId>cxf-rt-ws-addr</artifactId> -->
-		<!-- <version>${cxf.version}</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.cxf</groupId> -->
-		<!-- <artifactId>cxf-rt-ws-policy</artifactId> -->
-		<!-- <version>${cxf.version}</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.apache.cxf.services.wsn</groupId>
 			<artifactId>cxf-services-wsn-core</artifactId>
@@ -93,27 +81,10 @@
 						<configuration>
 							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
 							<sourceRoot>${basedir}/src/main/java</sourceRoot>
-
-							<!-- TODO for java 12. Add code to either set WSDL_LOCATION=null; or load it from a local resource. -->
-
-							<!-- https://stackoverflow.com/questions/4455195/how-to-avoid-the-need-to-specify-the-wsdl-location-in-a-cxf-or-jax-ws-generated
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/FooService.wsdl</wsdl>
-									<wsdlLocation>classpath:wsdl/FooService.wsdl</wsdlLocation>
-								</wsdlOption>
-							</wsdlOptions>
-							-->
-
-
 <!--
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdlLocation>classpath:wsdl/</wsdlLocation>
-								</wsdlOption>
-							</wsdlOptions>
+	// TODO: Consider moving generated sources to separate folder and excluse from source control.
+							<sourceRoot>${basedir}/generated/src/main/java</sourceRoot>
 -->
-
 							<includes>
 								<include>*.wsdl</include>
 							</includes>
@@ -124,8 +95,13 @@
 									<extraarg>-xjc-Xbg</extraarg>
 									<extraarg>-xjc-Xts</extraarg>	<!-- added for toString() builder -->
 									<extraarg>-verbose</extraarg>
+									<extraarg>-suppress-generated-date</extraarg>
+									<extraarg>-wsdlLocation</extraarg>
+									<extraarg>null</extraarg>
+
 									<extraarg>-catalog</extraarg>
 									<extraarg>${basedir}/src/main/resources/wsdl/jax-ws-catalog.xml</extraarg>
+
 								</extraargs>
 							</defaultOptions>
 						</configuration>
