@@ -31,8 +31,7 @@ public class SimpleTest {
 		final String propFileRelativePath = "src/test/resources/onvif.properties";
 		final Properties config = new Properties();
 		final File f = new File(propFileRelativePath);
-		if (!f.exists()) throw new Exception("fnf: "+f.getAbsolutePath());
-		javax.jws.WebService foo=null;
+		if (!f.exists()) throw new Exception("fnf: " + f.getAbsolutePath());
 
 		config.load(new FileInputStream(f));
 		String firstCamId = null;
@@ -77,26 +76,23 @@ public class SimpleTest {
 
 
 		MediaUri rtsp = media.getStreamUri(streamSetup, profileToken);
-		System.out.println("rtspURL: "+rtsp+": "+ rtsp.getUri());
+		System.out.println("rtspURL: " + rtsp + ": " + rtsp.getUri());
 
 
- 		Profile profile = media.getProfile(profileToken);
-
+		Profile profile = media.getProfile(profileToken);
 
 
 		// Example 1 - take a snapshot (the file gets deleted once the app ends..)
 		MediaUri sceenshotUri = media.getSnapshotUri(profileToken);
 		File tempFile = File.createTempFile("tmp", ".jpg");
 		FileUtils.copyURLToFile(new URL(sceenshotUri.getUri()), tempFile);
-		System.out.println("snapshot: "+tempFile.getAbsolutePath()+" length:"+tempFile.length());
+		System.out.println("snapshot: " + tempFile.getAbsolutePath() + " length:" + tempFile.length());
 
 		PTZ ptz = firstCam.getPtz();
-		if (ptz!=null)
-		{
+		if (ptz != null) {
 			List<PTZPreset> presets = ptz.getPresets(profileToken);
-			if (presets!=null && !presets.isEmpty())
-			{
-				System.out.println("Found "+presets.size()+" presets");
+			if (presets != null && !presets.isEmpty()) {
+				System.out.println("Found " + presets.size() + " presets");
 			}
 		}
 

@@ -44,6 +44,8 @@
 			<artifactId>cxf-services-wsn-core</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
+
+		<!-- For creating human readable toString() functions in generated classes. -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>

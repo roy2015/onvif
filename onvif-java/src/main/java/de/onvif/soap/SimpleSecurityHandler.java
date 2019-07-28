@@ -1,41 +1,19 @@
 package de.onvif.soap;
 
-import static org.apache.wss4j.common.WSS4JConstants.BASE64_ENCODING;
-import static org.apache.wss4j.common.WSS4JConstants.CREATED_LN;
-import static org.apache.wss4j.common.WSS4JConstants.NONCE_LN;
-import static org.apache.wss4j.common.WSS4JConstants.PASSWORD_DIGEST;
-import static org.apache.wss4j.common.WSS4JConstants.PASSWORD_LN;
-import static org.apache.wss4j.common.WSS4JConstants.PASSWORD_TYPE_ATTR;
-import static org.apache.wss4j.common.WSS4JConstants.USERNAME_LN;
-import static org.apache.wss4j.common.WSS4JConstants.USERNAME_TOKEN_LN;
-import static org.apache.wss4j.common.WSS4JConstants.WSSE_LN;
-import static org.apache.wss4j.common.WSS4JConstants.WSSE_NS;
-import static org.apache.wss4j.common.WSS4JConstants.WSSE_PREFIX;
-import static org.apache.wss4j.common.WSS4JConstants.WSU_NS;
-import static org.apache.wss4j.common.WSS4JConstants.WSU_PREFIX;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Random;
-import java.util.Set;
-import java.util.SimpleTimeZone;
-import java.util.TimeZone;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest.MessageDigestAlgorithms;
 
 import javax.xml.namespace.QName;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPEnvelope;
-import javax.xml.soap.SOAPHeader;
-import javax.xml.soap.SOAPMessage;
-import javax.xml.soap.SOAPPart;
+import javax.xml.soap.*;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.MessageDigestAlgorithms;
+import static org.apache.wss4j.common.WSS4JConstants.*;
 
 public class SimpleSecurityHandler implements SOAPHandler<SOAPMessageContext> {
 
@@ -52,6 +30,7 @@ public class SimpleSecurityHandler implements SOAPHandler<SOAPMessageContext> {
 
 	@Override
     public boolean handleMessage(final SOAPMessageContext msgCtx) {
+		// System.out.println("SimpleSecurityHandler");
 
         // Indicator telling us which direction this message is going in
         final Boolean outInd = (Boolean) msgCtx.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);

@@ -53,6 +53,24 @@
 		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/com.sun.xml.messaging.saaj/saaj-impl -->
+		<!-- For Discovery -->
+		<dependency>
+			<groupId>com.sun.xml.messaging.saaj</groupId>
+			<artifactId>saaj-impl</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+
+		<!-- For discovery using cxf -->
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf.services.ws-discovery/cxf-services-ws-discovery-api -->
+<!--
+		<dependency>
+			<groupId>org.apache.cxf.services.ws-discovery</groupId>
+			<artifactId>cxf-services-ws-discovery-api</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+-->
+
 		<!-- Java 9+ javax dependencies start -->
 		<dependency>
 			<groupId>com.sun.activation</groupId>
@@ -78,6 +96,18 @@
 			<version>${jaxb.api.version}</version>
 		</dependency>
 		<!-- Java 9+ javax dependencies end -->
+
+
+		<!-- LOGGINBG... for testing -->
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.26</version>
+			<scope>test</scope>
+		</dependency>
+
 
 
 	</dependencies>
