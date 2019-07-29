@@ -33,7 +33,7 @@
 					<jdkToolchain>
 						<version>${java.release}</version>
 					</jdkToolchain>
-					<release>${java.release}</release>
+<!--					<release>${java.release}</release>  -->
 				</configuration>
 
 			</plugin>
