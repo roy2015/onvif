@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per Capabilities complex type.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Capabilities"&gt;
@@ -101,7 +103,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà videoSources.
+     * Gets the value of the videoSources property.
      * 
      * @return
      *     possible object is
@@ -117,7 +119,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà videoSources.
+     * Sets the value of the videoSources property.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +131,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà videoOutputs.
+     * Gets the value of the videoOutputs property.
      * 
      * @return
      *     possible object is
@@ -145,7 +147,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà videoOutputs.
+     * Sets the value of the videoOutputs property.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +159,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà audioSources.
+     * Gets the value of the audioSources property.
      * 
      * @return
      *     possible object is
@@ -173,7 +175,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà audioSources.
+     * Sets the value of the audioSources property.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +187,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà audioOutputs.
+     * Gets the value of the audioOutputs property.
      * 
      * @return
      *     possible object is
@@ -201,7 +203,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà audioOutputs.
+     * Sets the value of the audioOutputs property.
      * 
      * @param value
      *     allowed object is
@@ -213,7 +215,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà relayOutputs.
+     * Gets the value of the relayOutputs property.
      * 
      * @return
      *     possible object is
@@ -229,7 +231,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà relayOutputs.
+     * Sets the value of the relayOutputs property.
      * 
      * @param value
      *     allowed object is
@@ -241,7 +243,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà serialPorts.
+     * Gets the value of the serialPorts property.
      * 
      * @return
      *     possible object is
@@ -257,7 +259,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà serialPorts.
+     * Sets the value of the serialPorts property.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +271,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà digitalInputs.
+     * Gets the value of the digitalInputs property.
      * 
      * @return
      *     possible object is
@@ -285,7 +287,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà digitalInputs.
+     * Sets the value of the digitalInputs property.
      * 
      * @param value
      *     allowed object is
@@ -297,7 +299,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà digitalInputOptions.
+     * Gets the value of the digitalInputOptions property.
      * This getter has been renamed from isDigitalInputOptions() to getDigitalInputOptions() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -314,7 +316,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà digitalInputOptions.
+     * Sets the value of the digitalInputOptions property.
      * 
      * @param value
      *     allowed object is
@@ -341,6 +343,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

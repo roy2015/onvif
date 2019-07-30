@@ -266,8 +266,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Capabilities }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/search/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {

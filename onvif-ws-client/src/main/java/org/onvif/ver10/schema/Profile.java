@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
@@ -32,9 +34,9 @@ import javax.xml.namespace.QName;
  * 			resources.
  * 		
  * 
- * <p>Classe Java per Profile complex type.
+ * <p>Java class for Profile complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Profile"&gt;
@@ -101,7 +103,7 @@ public class Profile {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -113,7 +115,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -125,7 +127,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà videoSourceConfiguration.
+     * Gets the value of the videoSourceConfiguration property.
      * 
      * @return
      *     possible object is
@@ -137,7 +139,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà videoSourceConfiguration.
+     * Sets the value of the videoSourceConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +151,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà audioSourceConfiguration.
+     * Gets the value of the audioSourceConfiguration property.
      * 
      * @return
      *     possible object is
@@ -161,7 +163,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà audioSourceConfiguration.
+     * Sets the value of the audioSourceConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -173,7 +175,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà videoEncoderConfiguration.
+     * Gets the value of the videoEncoderConfiguration property.
      * 
      * @return
      *     possible object is
@@ -185,7 +187,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà videoEncoderConfiguration.
+     * Sets the value of the videoEncoderConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +199,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà audioEncoderConfiguration.
+     * Gets the value of the audioEncoderConfiguration property.
      * 
      * @return
      *     possible object is
@@ -209,7 +211,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà audioEncoderConfiguration.
+     * Sets the value of the audioEncoderConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -221,7 +223,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà videoAnalyticsConfiguration.
+     * Gets the value of the videoAnalyticsConfiguration property.
      * 
      * @return
      *     possible object is
@@ -233,7 +235,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà videoAnalyticsConfiguration.
+     * Sets the value of the videoAnalyticsConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -245,7 +247,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà ptzConfiguration.
+     * Gets the value of the ptzConfiguration property.
      * 
      * @return
      *     possible object is
@@ -257,7 +259,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà ptzConfiguration.
+     * Sets the value of the ptzConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +271,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà metadataConfiguration.
+     * Gets the value of the metadataConfiguration property.
      * 
      * @return
      *     possible object is
@@ -281,7 +283,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà metadataConfiguration.
+     * Sets the value of the metadataConfiguration property.
      * 
      * @param value
      *     allowed object is
@@ -293,7 +295,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -305,7 +307,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -317,7 +319,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà token.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -329,7 +331,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà token.
+     * Sets the value of the token property.
      * 
      * @param value
      *     allowed object is
@@ -341,7 +343,7 @@ public class Profile {
     }
 
     /**
-     * Recupera il valore della proprietà fixed.
+     * Gets the value of the fixed property.
      * This getter has been renamed from isFixed() to getFixed() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -354,7 +356,7 @@ public class Profile {
     }
 
     /**
-     * Imposta il valore della proprietà fixed.
+     * Sets the value of the fixed property.
      * 
      * @param value
      *     allowed object is
@@ -381,6 +383,16 @@ public class Profile {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

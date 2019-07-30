@@ -9,14 +9,16 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.MetadataFilter;
 import org.onvif.ver10.schema.SearchScope;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -65,7 +67,7 @@ public class FindMetadata {
     protected Duration keepAliveTime;
 
     /**
-     * Recupera il valore della proprietà startPoint.
+     * Gets the value of the startPoint property.
      * 
      * @return
      *     possible object is
@@ -77,7 +79,7 @@ public class FindMetadata {
     }
 
     /**
-     * Imposta il valore della proprietà startPoint.
+     * Sets the value of the startPoint property.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +91,7 @@ public class FindMetadata {
     }
 
     /**
-     * Recupera il valore della proprietà endPoint.
+     * Gets the value of the endPoint property.
      * 
      * @return
      *     possible object is
@@ -101,7 +103,7 @@ public class FindMetadata {
     }
 
     /**
-     * Imposta il valore della proprietà endPoint.
+     * Sets the value of the endPoint property.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +115,7 @@ public class FindMetadata {
     }
 
     /**
-     * Recupera il valore della proprietà scope.
+     * Gets the value of the scope property.
      * 
      * @return
      *     possible object is
@@ -125,7 +127,7 @@ public class FindMetadata {
     }
 
     /**
-     * Imposta il valore della proprietà scope.
+     * Sets the value of the scope property.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +139,7 @@ public class FindMetadata {
     }
 
     /**
-     * Recupera il valore della proprietà metadataFilter.
+     * Gets the value of the metadataFilter property.
      * 
      * @return
      *     possible object is
@@ -149,7 +151,7 @@ public class FindMetadata {
     }
 
     /**
-     * Imposta il valore della proprietà metadataFilter.
+     * Sets the value of the metadataFilter property.
      * 
      * @param value
      *     allowed object is
@@ -161,7 +163,7 @@ public class FindMetadata {
     }
 
     /**
-     * Recupera il valore della proprietà maxMatches.
+     * Gets the value of the maxMatches property.
      * 
      * @return
      *     possible object is
@@ -173,7 +175,7 @@ public class FindMetadata {
     }
 
     /**
-     * Imposta il valore della proprietà maxMatches.
+     * Sets the value of the maxMatches property.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +187,7 @@ public class FindMetadata {
     }
 
     /**
-     * Recupera il valore della proprietà keepAliveTime.
+     * Gets the value of the keepAliveTime property.
      * 
      * @return
      *     possible object is
@@ -197,7 +199,7 @@ public class FindMetadata {
     }
 
     /**
-     * Imposta il valore della proprietà keepAliveTime.
+     * Sets the value of the keepAliveTime property.
      * 
      * @param value
      *     allowed object is
@@ -206,6 +208,16 @@ public class FindMetadata {
      */
     public void setKeepAliveTime(Duration value) {
         this.keepAliveTime = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

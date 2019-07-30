@@ -5,14 +5,16 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Range of values greater equal Min value and less equal Max value.
  * 
- * <p>Classe Java per IntRange complex type.
+ * <p>Java class for IntRange complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="IntRange"&gt;
@@ -42,7 +44,7 @@ public class IntRange {
     protected int max;
 
     /**
-     * Recupera il valore della proprietà min.
+     * Gets the value of the min property.
      * 
      */
     public int getMin() {
@@ -50,7 +52,7 @@ public class IntRange {
     }
 
     /**
-     * Imposta il valore della proprietà min.
+     * Sets the value of the min property.
      * 
      */
     public void setMin(int value) {
@@ -58,7 +60,7 @@ public class IntRange {
     }
 
     /**
-     * Recupera il valore della proprietà max.
+     * Gets the value of the max property.
      * 
      */
     public int getMax() {
@@ -66,11 +68,21 @@ public class IntRange {
     }
 
     /**
-     * Imposta il valore della proprietà max.
+     * Sets the value of the max property.
      * 
      */
     public void setMax(int value) {
         this.max = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

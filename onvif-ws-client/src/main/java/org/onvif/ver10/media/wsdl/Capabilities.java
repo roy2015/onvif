@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per Capabilities complex type.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Capabilities"&gt;
@@ -71,7 +73,7 @@ public class Capabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà profileCapabilities.
+     * Gets the value of the profileCapabilities property.
      * 
      * @return
      *     possible object is
@@ -83,7 +85,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà profileCapabilities.
+     * Sets the value of the profileCapabilities property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +97,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà streamingCapabilities.
+     * Gets the value of the streamingCapabilities property.
      * 
      * @return
      *     possible object is
@@ -107,7 +109,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà streamingCapabilities.
+     * Sets the value of the streamingCapabilities property.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +151,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà snapshotUri.
+     * Gets the value of the snapshotUri property.
      * This getter has been renamed from isSnapshotUri() to getSnapshotUri() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -162,7 +164,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà snapshotUri.
+     * Sets the value of the snapshotUri property.
      * 
      * @param value
      *     allowed object is
@@ -174,7 +176,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rotation.
+     * Gets the value of the rotation property.
      * This getter has been renamed from isRotation() to getRotation() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -187,7 +189,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rotation.
+     * Sets the value of the rotation property.
      * 
      * @param value
      *     allowed object is
@@ -199,7 +201,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà videoSourceMode.
+     * Gets the value of the videoSourceMode property.
      * This getter has been renamed from isVideoSourceMode() to getVideoSourceMode() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -212,7 +214,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà videoSourceMode.
+     * Sets the value of the videoSourceMode property.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +226,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà osd.
+     * Gets the value of the osd property.
      * This getter has been renamed from isOSD() to getOSD() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -237,7 +239,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà osd.
+     * Sets the value of the osd property.
      * 
      * @param value
      *     allowed object is
@@ -249,7 +251,7 @@ public class Capabilities {
     }
 
     /**
-     * Recupera il valore della proprietà exiCompression.
+     * Gets the value of the exiCompression property.
      * This getter has been renamed from isEXICompression() to getEXICompression() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -262,7 +264,7 @@ public class Capabilities {
     }
 
     /**
-     * Imposta il valore della proprietà exiCompression.
+     * Sets the value of the exiCompression property.
      * 
      * @param value
      *     allowed object is
@@ -289,6 +291,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

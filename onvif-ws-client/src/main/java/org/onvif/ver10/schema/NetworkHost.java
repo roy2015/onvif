@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per NetworkHost complex type.
+ * <p>Java class for NetworkHost complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NetworkHost"&gt;
@@ -69,7 +71,7 @@ public class NetworkHost {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà type.
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
@@ -81,7 +83,7 @@ public class NetworkHost {
     }
 
     /**
-     * Imposta il valore della proprietà type.
+     * Sets the value of the type property.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +95,7 @@ public class NetworkHost {
     }
 
     /**
-     * Recupera il valore della proprietà iPv4Address.
+     * Gets the value of the iPv4Address property.
      * 
      * @return
      *     possible object is
@@ -105,7 +107,7 @@ public class NetworkHost {
     }
 
     /**
-     * Imposta il valore della proprietà iPv4Address.
+     * Sets the value of the iPv4Address property.
      * 
      * @param value
      *     allowed object is
@@ -117,7 +119,7 @@ public class NetworkHost {
     }
 
     /**
-     * Recupera il valore della proprietà iPv6Address.
+     * Gets the value of the iPv6Address property.
      * 
      * @return
      *     possible object is
@@ -129,7 +131,7 @@ public class NetworkHost {
     }
 
     /**
-     * Imposta il valore della proprietà iPv6Address.
+     * Sets the value of the iPv6Address property.
      * 
      * @param value
      *     allowed object is
@@ -141,7 +143,7 @@ public class NetworkHost {
     }
 
     /**
-     * Recupera il valore della proprietà dnSname.
+     * Gets the value of the dnSname property.
      * 
      * @return
      *     possible object is
@@ -153,7 +155,7 @@ public class NetworkHost {
     }
 
     /**
-     * Imposta il valore della proprietà dnSname.
+     * Sets the value of the dnSname property.
      * 
      * @param value
      *     allowed object is
@@ -165,7 +167,7 @@ public class NetworkHost {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -177,7 +179,7 @@ public class NetworkHost {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -204,6 +206,16 @@ public class NetworkHost {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

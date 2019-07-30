@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per PTZStatusFilterOptions complex type.
+ * <p>Java class for PTZStatusFilterOptions complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PTZStatusFilterOptions"&gt;
@@ -67,7 +69,7 @@ public class PTZStatusFilterOptions {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà panTiltStatusSupported.
+     * Gets the value of the panTiltStatusSupported property.
      * This getter has been renamed from isPanTiltStatusSupported() to getPanTiltStatusSupported() by cxf-xjc-boolean plugin.
      * 
      */
@@ -76,7 +78,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Imposta il valore della proprietà panTiltStatusSupported.
+     * Sets the value of the panTiltStatusSupported property.
      * 
      */
     public void setPanTiltStatusSupported(boolean value) {
@@ -84,7 +86,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Recupera il valore della proprietà zoomStatusSupported.
+     * Gets the value of the zoomStatusSupported property.
      * This getter has been renamed from isZoomStatusSupported() to getZoomStatusSupported() by cxf-xjc-boolean plugin.
      * 
      */
@@ -93,7 +95,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Imposta il valore della proprietà zoomStatusSupported.
+     * Sets the value of the zoomStatusSupported property.
      * 
      */
     public void setZoomStatusSupported(boolean value) {
@@ -131,7 +133,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Recupera il valore della proprietà panTiltPositionSupported.
+     * Gets the value of the panTiltPositionSupported property.
      * This getter has been renamed from isPanTiltPositionSupported() to getPanTiltPositionSupported() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -144,7 +146,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Imposta il valore della proprietà panTiltPositionSupported.
+     * Sets the value of the panTiltPositionSupported property.
      * 
      * @param value
      *     allowed object is
@@ -156,7 +158,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Recupera il valore della proprietà zoomPositionSupported.
+     * Gets the value of the zoomPositionSupported property.
      * This getter has been renamed from isZoomPositionSupported() to getZoomPositionSupported() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -169,7 +171,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Imposta il valore della proprietà zoomPositionSupported.
+     * Sets the value of the zoomPositionSupported property.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +183,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -193,7 +195,7 @@ public class PTZStatusFilterOptions {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -220,6 +222,16 @@ public class PTZStatusFilterOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

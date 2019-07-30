@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
@@ -21,9 +23,9 @@ import org.w3c.dom.Element;
  * 						and does not change during device operation. The following capabilities are available:
  * 					
  * 
- * <p>Classe Java per ServiceCapabilities complex type.
+ * <p>Java class for ServiceCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ServiceCapabilities"&gt;
@@ -112,7 +114,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maxLimit.
+     * Gets the value of the maxLimit property.
      * 
      */
     public long getMaxLimit() {
@@ -120,7 +122,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maxLimit.
+     * Sets the value of the maxLimit property.
      * 
      */
     public void setMaxLimit(long value) {
@@ -128,7 +130,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maxAccessProfiles.
+     * Gets the value of the maxAccessProfiles property.
      * 
      */
     public long getMaxAccessProfiles() {
@@ -136,7 +138,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maxAccessProfiles.
+     * Sets the value of the maxAccessProfiles property.
      * 
      */
     public void setMaxAccessProfiles(long value) {
@@ -144,7 +146,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maxAccessPoliciesPerAccessProfile.
+     * Gets the value of the maxAccessPoliciesPerAccessProfile property.
      * 
      */
     public long getMaxAccessPoliciesPerAccessProfile() {
@@ -152,7 +154,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maxAccessPoliciesPerAccessProfile.
+     * Sets the value of the maxAccessPoliciesPerAccessProfile property.
      * 
      */
     public void setMaxAccessPoliciesPerAccessProfile(long value) {
@@ -160,7 +162,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà multipleSchedulesPerAccessPointSupported.
+     * Gets the value of the multipleSchedulesPerAccessPointSupported property.
      * This getter has been renamed from isMultipleSchedulesPerAccessPointSupported() to getMultipleSchedulesPerAccessPointSupported() by cxf-xjc-boolean plugin.
      * 
      */
@@ -169,7 +171,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà multipleSchedulesPerAccessPointSupported.
+     * Sets the value of the multipleSchedulesPerAccessPointSupported property.
      * 
      */
     public void setMultipleSchedulesPerAccessPointSupported(boolean value) {
@@ -192,6 +194,16 @@ public class ServiceCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per DeviceServiceCapabilities complex type.
+ * <p>Java class for DeviceServiceCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="DeviceServiceCapabilities"&gt;
@@ -48,7 +50,7 @@ public class DeviceServiceCapabilities {
     protected MiscCapabilities misc;
 
     /**
-     * Recupera il valore della proprietà network.
+     * Gets the value of the network property.
      * 
      * @return
      *     possible object is
@@ -60,7 +62,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà network.
+     * Sets the value of the network property.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +74,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà security.
+     * Gets the value of the security property.
      * 
      * @return
      *     possible object is
@@ -84,7 +86,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà security.
+     * Sets the value of the security property.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +98,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà system.
+     * Gets the value of the system property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà system.
+     * Sets the value of the system property.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +122,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà misc.
+     * Gets the value of the misc property.
      * 
      * @return
      *     possible object is
@@ -132,7 +134,7 @@ public class DeviceServiceCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà misc.
+     * Sets the value of the misc property.
      * 
      * @param value
      *     allowed object is
@@ -141,6 +143,16 @@ public class DeviceServiceCapabilities {
      */
     public void setMisc(MiscCapabilities value) {
         this.misc = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per OnvifVersion complex type.
+ * <p>Java class for OnvifVersion complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="OnvifVersion"&gt;
@@ -40,7 +42,7 @@ public class OnvifVersion {
     protected int minor;
 
     /**
-     * Recupera il valore della proprietà major.
+     * Gets the value of the major property.
      * 
      */
     public int getMajor() {
@@ -48,7 +50,7 @@ public class OnvifVersion {
     }
 
     /**
-     * Imposta il valore della proprietà major.
+     * Sets the value of the major property.
      * 
      */
     public void setMajor(int value) {
@@ -56,7 +58,7 @@ public class OnvifVersion {
     }
 
     /**
-     * Recupera il valore della proprietà minor.
+     * Gets the value of the minor property.
      * 
      */
     public int getMinor() {
@@ -64,11 +66,21 @@ public class OnvifVersion {
     }
 
     /**
-     * Imposta il valore della proprietà minor.
+     * Sets the value of the minor property.
      * 
      */
     public void setMinor(int value) {
         this.minor = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -5,14 +5,16 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Range of a rectangle. The rectangle itself is defined by lower left corner position and size. Units are pixel.
  * 
- * <p>Classe Java per IntRectangleRange complex type.
+ * <p>Java class for IntRectangleRange complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="IntRectangleRange"&gt;
@@ -50,7 +52,7 @@ public class IntRectangleRange {
     protected IntRange heightRange;
 
     /**
-     * Recupera il valore della proprietà xRange.
+     * Gets the value of the xRange property.
      * 
      * @return
      *     possible object is
@@ -62,7 +64,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Imposta il valore della proprietà xRange.
+     * Sets the value of the xRange property.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +76,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Recupera il valore della proprietà yRange.
+     * Gets the value of the yRange property.
      * 
      * @return
      *     possible object is
@@ -86,7 +88,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Imposta il valore della proprietà yRange.
+     * Sets the value of the yRange property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +100,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Recupera il valore della proprietà widthRange.
+     * Gets the value of the widthRange property.
      * 
      * @return
      *     possible object is
@@ -110,7 +112,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Imposta il valore della proprietà widthRange.
+     * Sets the value of the widthRange property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +124,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Recupera il valore della proprietà heightRange.
+     * Gets the value of the heightRange property.
      * 
      * @return
      *     possible object is
@@ -134,7 +136,7 @@ public class IntRectangleRange {
     }
 
     /**
-     * Imposta il valore della proprietà heightRange.
+     * Sets the value of the heightRange property.
      * 
      * @param value
      *     allowed object is
@@ -143,6 +145,16 @@ public class IntRectangleRange {
      */
     public void setHeightRange(IntRange value) {
         this.heightRange = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

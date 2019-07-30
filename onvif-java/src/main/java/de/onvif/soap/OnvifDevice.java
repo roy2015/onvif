@@ -1,39 +1,22 @@
 package de.onvif.soap;
 
-import java.io.IOException;
-import java.net.ConnectException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
-
-import javax.xml.soap.SOAPException;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.Holder;
-
+import de.onvif.beans.DeviceInfo;
 import org.apache.cxf.binding.soap.Soap12;
 import org.apache.cxf.binding.soap.SoapBindingConfiguration;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
-import org.apache.cxf.wsn.client.CreatePullPoint;
 import org.onvif.ver10.device.wsdl.Device;
 import org.onvif.ver10.device.wsdl.DeviceService;
 import org.onvif.ver10.events.wsdl.EventPortType;
 import org.onvif.ver10.events.wsdl.EventService;
 import org.onvif.ver10.media.wsdl.Media;
 import org.onvif.ver10.media.wsdl.MediaService;
-import org.onvif.ver10.schema.Capabilities;
-import org.onvif.ver10.schema.CapabilityCategory;
-import org.onvif.ver10.schema.DateTime;
-import org.onvif.ver10.schema.SetDateTimeType;
+import org.onvif.ver10.schema.*;
 import org.onvif.ver20.imaging.wsdl.ImagingPort;
 import org.onvif.ver20.imaging.wsdl.ImagingService;
 import org.onvif.ver20.ptz.wsdl.PTZ;
@@ -41,120 +24,101 @@ import org.onvif.ver20.ptz.wsdl.PtzService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import de.onvif.beans.DeviceInfo;
+import javax.xml.soap.SOAPException;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.Holder;
+import java.net.ConnectException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 /**
- * 
  * @author Robin Dick
- * 
+ * @author Modified by Brad Lowe
  */
 public class OnvifDevice {
 	private static final Logger logger = LoggerFactory.getLogger(OnvifDevice.class);
+	private static final String DEVICE_SERVICE = "/onvif/device_service";
 
-	private String deviceIp;
-	private String username, password;
-	private String deviceUri;
+	final private URL url;        // Example http://host:port, https://host, http://host, http://ip_address
 
 	private Device device;
 	private Media media;
 	private PTZ ptz;
 	private ImagingPort imaging;
 	private EventPortType events;
+	public static boolean verbose = false;        // enable/disable logging of SOAP messages
+	final SimpleSecurityHandler securityHandler;
 
-	/**
-	 * Initializes an Onvif device, e.g. a Network Video Transmitter (NVT) with
-	 * logindata.
-	 * 
-	 * @param deviceIp
-	 *            The IP address of your device, you can also add a port but not
-	 *            protocol (e.g. http://)
-	 * @param user
-	 *            Username you need to login
-	 * @param password
-	 *            User's password to login
-	 * @throws ConnectException
-	 *             Exception gets thrown, if device isn't accessible or invalid
-	 *             and doesn't answer to SOAP messages
-	 * @throws SOAPException
+	/*
+	 * @param url is http://host or http://host:port or https://host or https://host:port
+	 * @param user     Username you need to login, or "" for none
+	 * @param password User's password to login, or "" for none
 	 */
-	public OnvifDevice(String deviceIp, String user, String password) throws ConnectException, SOAPException {
-		this.deviceIp = deviceIp;
-		
-		if (!isOnline()) {
-			throw new ConnectException("Host not available.");
-		}
-
-		this.deviceUri = "http://" + deviceIp + "/onvif/device_service";
-		this.username = user;
-		this.password = password;
-
+	public OnvifDevice(URL url, String user, String password) throws ConnectException, SOAPException, MalformedURLException {
+		this.url = url;
+		String f = url.getFile();
+		if (!f.isEmpty()) throw new MalformedURLException("Expected empty file in URL, not:" + f);
+		securityHandler = !user.isEmpty() && !password.isEmpty() ? new SimpleSecurityHandler(user, password) : null;
 		init();
 	}
 
+
 	/**
 	 * Initializes an Onvif device, e.g. a Network Video Transmitter (NVT) with
 	 * logindata.
-	 * 
-	 * @param hostIp
-	 *            The IP address of your device, you can also add a port but
-	 *            noch protocol (e.g. http://)
-	 * @throws ConnectException
-	 *             Exception gets thrown, if device isn't accessible or invalid
-	 *             and doesn't answer to SOAP messages
+	 *
+	 * @param deviceIp The IP address or host name of your device, you can also add a port
+	 * @param user     Username you need to login
+	 * @param password User's password to login
+	 * @throws ConnectException Exception gets thrown, if device isn't accessible or invalid
+	 *                          and doesn't answer to SOAP messages
 	 * @throws SOAPException
 	 */
-	public OnvifDevice(String hostIp) throws ConnectException, SOAPException {
-		this(hostIp, null, null);
+	public OnvifDevice(String deviceIp, String user, String password) throws ConnectException, SOAPException, MalformedURLException {
+		this(deviceIp.startsWith("http")? new URL(deviceIp):new URL("http://" + deviceIp), user, password);
 	}
 
 	/**
-	 * Internal function to check, if device is available and answers to ping
-	 * requests.
+	 * Initializes an Onvif device, e.g. a Network Video Transmitter (NVT) with
+	 * logindata.
+	 *
+	 * @param hostIp The IP address of your device, you can also add a port but
+	 *               noch protocol (e.g. http://)
+	 * @throws ConnectException Exception gets thrown, if device isn't accessible or invalid
+	 *                          and doesn't answer to SOAP messages
+	 * @throws SOAPException
 	 */
-	private boolean isOnline() {
-		String port = deviceIp.contains(":") ? deviceIp.substring(deviceIp.indexOf(':') + 1) : "80";
-		String ip = deviceIp.contains(":") ? deviceIp.substring(0, deviceIp.indexOf(':')) : deviceIp;
-
-		Socket socket = null;
-		try {
-			SocketAddress sockaddr = new InetSocketAddress(ip, new Integer(port));
-			socket = new Socket();
-
-			socket.connect(sockaddr, 5000);
-		} catch (NumberFormatException | IOException e) {
-			return false;
-		} finally {
-			try {
-				if (socket != null) {
-					socket.close();
-				}
-			} catch (IOException ex) {
-			}
-		}
-		return true;
+	public OnvifDevice(String hostIp) throws ConnectException, SOAPException, MalformedURLException {
+		this(hostIp, null, null);
 	}
+
 
 	/**
 	 * Initalizes the addresses used for SOAP messages and to get the internal
 	 * IP, if given IP is a proxy.
-	 * 
-	 * @throws ConnectException
-	 *             Get thrown if device doesn't give answers to
-	 *             GetCapabilities()
+	 *
+	 * @throws ConnectException Get thrown if device doesn't give answers to
+	 *                          GetCapabilities()
 	 * @throws SOAPException
 	 */
 	protected void init() throws ConnectException, SOAPException {
-		BindingProvider deviceServicePort = (BindingProvider) new DeviceService().getDevicePort();
-		this.device = getServiceProxy(deviceServicePort, deviceUri).create(Device.class);
-		
-		resetSystemDateAndTime();
-		
+
+		DeviceService deviceService = new DeviceService(null, DeviceService.SERVICE);
+
+		BindingProvider deviceServicePort = (BindingProvider) deviceService.getDevicePort();
+		this.device = getServiceProxy(deviceServicePort, url.toString() + DEVICE_SERVICE).create(Device.class);
+
+		// resetSystemDateAndTime();		// don't modify the camera in a constructor.. :)
+
 		Capabilities capabilities = this.device.getCapabilities(Arrays.asList(CapabilityCategory.ALL));
 		if (capabilities == null) {
 			throw new ConnectException("Capabilities not reachable.");
 		}
-
-		//String localDeviceUri = capabilities.getDevice().getXAddr();
 
 		if (capabilities.getMedia() != null && capabilities.getMedia().getXAddr() != null) {
 			this.media = new MediaService().getMediaPort();
@@ -177,33 +141,41 @@ public class OnvifDevice {
 		}
 	}
 
-	public static JaxWsProxyFactoryBean getServiceProxy(BindingProvider servicePort, String serviceAddr) {
+
+	public JaxWsProxyFactoryBean getServiceProxy(BindingProvider servicePort, String serviceAddr) {
+
 		JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean();
-		if(serviceAddr != null)
+		proxyFactory.getHandlers();
+
+		if (serviceAddr != null)
 			proxyFactory.setAddress(serviceAddr);
 		proxyFactory.setServiceClass(servicePort.getClass());
-		proxyFactory.getOutInterceptors().add(new LoggingOutInterceptor());  
-		SoapBindingConfiguration config = new SoapBindingConfiguration();  
+
+		SoapBindingConfiguration config = new SoapBindingConfiguration();
+
 		config.setVersion(Soap12.getInstance());
 		proxyFactory.setBindingConfig(config);
 		Client deviceClient = ClientProxy.getClient(servicePort);
 
-		HTTPConduit http = (HTTPConduit) deviceClient.getConduit();
+		if (verbose) {
+			// these logging interceptors are depreciated, but should be fine for debugging/development use.
+			proxyFactory.getOutInterceptors().add(new LoggingOutInterceptor());
+			proxyFactory.getInInterceptors().add(new LoggingInInterceptor());
+		}
 
-//		AuthorizationPolicy authPolicy = new AuthorizationPolicy();
-//		authPolicy.setUserName(username);
-//		authPolicy.setPassword(password);
-//		authPolicy.setAuthorizationType("Basic");
-//		http.setAuthorization(authPolicy);
-		
+		HTTPConduit http = (HTTPConduit) deviceClient.getConduit();
+		if (securityHandler != null)
+			proxyFactory.getHandlers().add(securityHandler);
 		HTTPClientPolicy httpClientPolicy = http.getClient();
-		httpClientPolicy.setConnectionTimeout(36000);  
+		httpClientPolicy.setConnectionTimeout(36000);
 		httpClientPolicy.setReceiveTimeout(32000);
 		httpClientPolicy.setAllowChunking(false);
+
 		return proxyFactory;
 	}
-	
-	private void resetSystemDateAndTime() {
+
+
+	public void resetSystemDateAndTime() {
 		Calendar calendar = Calendar.getInstance();
 		Date currentDate = new Date();
 		boolean daylightSavings = calendar.getTimeZone().inDaylightTime(currentDate);
@@ -238,7 +210,6 @@ public class OnvifDevice {
 		}
 
 		return result;
-
 	}
 
 	/**
@@ -286,4 +257,38 @@ public class OnvifDevice {
 	public String reboot() throws ConnectException, SOAPException {
 		return device.systemReboot();
 	}
+
+	// returns http://host[:port]/path_for_snapshot
+	public String getSnapshotUri(String profileToken) {
+		MediaUri sceenshotUri = media.getSnapshotUri(profileToken);
+		if (sceenshotUri!=null)
+		{
+			try {
+				URL u = new URL(sceenshotUri.getUri());
+				// if using port forwarding, this URL may be incorrect..
+				// Here we can normalize the URL to use the
+				String up = url.toString() + u.getFile();
+				return up;
+			}catch(MalformedURLException m)
+			{
+				// This should never happen.
+				logger.error(sceenshotUri.getUri(), m);
+			}
+		}
+		return "";
+	}
+
+	// returns rtsp://host[:port]/path_for_rtsp
+	public String getRTSPURL(String profileToken) {
+		StreamSetup streamSetup = new StreamSetup();
+		Transport t = new Transport();
+		t.setProtocol(TransportProtocol.RTSP);
+		streamSetup.setTransport(t);
+		streamSetup.setStream(StreamType.RTP_UNICAST);
+		MediaUri rtsp = media.getStreamUri(streamSetup, profileToken);
+
+		return rtsp!=null ? rtsp.getUri():"";
+	}
+
+
 }

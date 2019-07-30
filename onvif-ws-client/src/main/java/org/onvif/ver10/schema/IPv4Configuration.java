@@ -12,13 +12,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per IPv4Configuration complex type.
+ * <p>Java class for IPv4Configuration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="IPv4Configuration"&gt;
@@ -92,7 +94,7 @@ public class IPv4Configuration {
     }
 
     /**
-     * Recupera il valore della proprietà linkLocal.
+     * Gets the value of the linkLocal property.
      * 
      * @return
      *     possible object is
@@ -104,7 +106,7 @@ public class IPv4Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà linkLocal.
+     * Sets the value of the linkLocal property.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +118,7 @@ public class IPv4Configuration {
     }
 
     /**
-     * Recupera il valore della proprietà fromDHCP.
+     * Gets the value of the fromDHCP property.
      * 
      * @return
      *     possible object is
@@ -128,7 +130,7 @@ public class IPv4Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà fromDHCP.
+     * Sets the value of the fromDHCP property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +142,7 @@ public class IPv4Configuration {
     }
 
     /**
-     * Recupera il valore della proprietà dhcp.
+     * Gets the value of the dhcp property.
      * This getter has been renamed from isDHCP() to getDHCP() by cxf-xjc-boolean plugin.
      * 
      */
@@ -149,7 +151,7 @@ public class IPv4Configuration {
     }
 
     /**
-     * Imposta il valore della proprietà dhcp.
+     * Sets the value of the dhcp property.
      * 
      */
     public void setDHCP(boolean value) {
@@ -202,6 +204,16 @@ public class IPv4Configuration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

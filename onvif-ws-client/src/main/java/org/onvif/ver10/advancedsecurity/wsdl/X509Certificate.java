@@ -15,15 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
  * An X.509 cerficiate as specified in RFC 5280.
  * 
- * <p>Classe Java per X509Certificate complex type.
+ * <p>Java class for X509Certificate complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="X509Certificate"&gt;
@@ -72,7 +74,7 @@ public class X509Certificate {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà certificateID.
+     * Gets the value of the certificateID property.
      * 
      * @return
      *     possible object is
@@ -84,7 +86,7 @@ public class X509Certificate {
     }
 
     /**
-     * Imposta il valore della proprietà certificateID.
+     * Sets the value of the certificateID property.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +98,7 @@ public class X509Certificate {
     }
 
     /**
-     * Recupera il valore della proprietà keyID.
+     * Gets the value of the keyID property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class X509Certificate {
     }
 
     /**
-     * Imposta il valore della proprietà keyID.
+     * Sets the value of the keyID property.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +122,7 @@ public class X509Certificate {
     }
 
     /**
-     * Recupera il valore della proprietà alias.
+     * Gets the value of the alias property.
      * 
      * @return
      *     possible object is
@@ -132,7 +134,7 @@ public class X509Certificate {
     }
 
     /**
-     * Imposta il valore della proprietà alias.
+     * Sets the value of the alias property.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +146,7 @@ public class X509Certificate {
     }
 
     /**
-     * Recupera il valore della proprietà certificateContent.
+     * Gets the value of the certificateContent property.
      * 
      * @return
      *     possible object is
@@ -155,7 +157,7 @@ public class X509Certificate {
     }
 
     /**
-     * Imposta il valore della proprietà certificateContent.
+     * Sets the value of the certificateContent property.
      * 
      * @param value
      *     allowed object is
@@ -211,6 +213,16 @@ public class X509Certificate {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

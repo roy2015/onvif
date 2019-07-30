@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Exposure complex type.
+ * <p>Java class for Exposure complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Exposure"&gt;
@@ -83,7 +85,7 @@ public class Exposure {
     protected float iris;
 
     /**
-     * Recupera il valore della proprietà mode.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -95,7 +97,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà mode.
+     * Sets the value of the mode property.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +109,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà priority.
+     * Gets the value of the priority property.
      * 
      * @return
      *     possible object is
@@ -119,7 +121,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà priority.
+     * Sets the value of the priority property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +133,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà window.
+     * Gets the value of the window property.
      * 
      * @return
      *     possible object is
@@ -143,7 +145,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà window.
+     * Sets the value of the window property.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +157,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà minExposureTime.
+     * Gets the value of the minExposureTime property.
      * 
      */
     public float getMinExposureTime() {
@@ -163,7 +165,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà minExposureTime.
+     * Sets the value of the minExposureTime property.
      * 
      */
     public void setMinExposureTime(float value) {
@@ -171,7 +173,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà maxExposureTime.
+     * Gets the value of the maxExposureTime property.
      * 
      */
     public float getMaxExposureTime() {
@@ -179,7 +181,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà maxExposureTime.
+     * Sets the value of the maxExposureTime property.
      * 
      */
     public void setMaxExposureTime(float value) {
@@ -187,7 +189,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà minGain.
+     * Gets the value of the minGain property.
      * 
      */
     public float getMinGain() {
@@ -195,7 +197,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà minGain.
+     * Sets the value of the minGain property.
      * 
      */
     public void setMinGain(float value) {
@@ -203,7 +205,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà maxGain.
+     * Gets the value of the maxGain property.
      * 
      */
     public float getMaxGain() {
@@ -211,7 +213,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà maxGain.
+     * Sets the value of the maxGain property.
      * 
      */
     public void setMaxGain(float value) {
@@ -219,7 +221,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà minIris.
+     * Gets the value of the minIris property.
      * 
      */
     public float getMinIris() {
@@ -227,7 +229,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà minIris.
+     * Sets the value of the minIris property.
      * 
      */
     public void setMinIris(float value) {
@@ -235,7 +237,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà maxIris.
+     * Gets the value of the maxIris property.
      * 
      */
     public float getMaxIris() {
@@ -243,7 +245,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà maxIris.
+     * Sets the value of the maxIris property.
      * 
      */
     public void setMaxIris(float value) {
@@ -251,7 +253,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà exposureTime.
+     * Gets the value of the exposureTime property.
      * 
      */
     public float getExposureTime() {
@@ -259,7 +261,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà exposureTime.
+     * Sets the value of the exposureTime property.
      * 
      */
     public void setExposureTime(float value) {
@@ -267,7 +269,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà gain.
+     * Gets the value of the gain property.
      * 
      */
     public float getGain() {
@@ -275,7 +277,7 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà gain.
+     * Sets the value of the gain property.
      * 
      */
     public void setGain(float value) {
@@ -283,7 +285,7 @@ public class Exposure {
     }
 
     /**
-     * Recupera il valore della proprietà iris.
+     * Gets the value of the iris property.
      * 
      */
     public float getIris() {
@@ -291,11 +293,21 @@ public class Exposure {
     }
 
     /**
-     * Imposta il valore della proprietà iris.
+     * Sets the value of the iris property.
      * 
      */
     public void setIris(float value) {
         this.iris = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

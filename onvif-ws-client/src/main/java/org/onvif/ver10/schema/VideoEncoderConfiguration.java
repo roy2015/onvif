@@ -14,13 +14,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per VideoEncoderConfiguration complex type.
+ * <p>Java class for VideoEncoderConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VideoEncoderConfiguration"&gt;
@@ -84,7 +86,7 @@ public class VideoEncoderConfiguration
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà encoding.
+     * Gets the value of the encoding property.
      * 
      * @return
      *     possible object is
@@ -96,7 +98,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà encoding.
+     * Sets the value of the encoding property.
      * 
      * @param value
      *     allowed object is
@@ -108,7 +110,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà resolution.
+     * Gets the value of the resolution property.
      * 
      * @return
      *     possible object is
@@ -120,7 +122,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà resolution.
+     * Sets the value of the resolution property.
      * 
      * @param value
      *     allowed object is
@@ -132,7 +134,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà quality.
+     * Gets the value of the quality property.
      * 
      */
     public float getQuality() {
@@ -140,7 +142,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà quality.
+     * Sets the value of the quality property.
      * 
      */
     public void setQuality(float value) {
@@ -148,7 +150,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà rateControl.
+     * Gets the value of the rateControl property.
      * 
      * @return
      *     possible object is
@@ -160,7 +162,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà rateControl.
+     * Sets the value of the rateControl property.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +174,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà mpeg4.
+     * Gets the value of the mpeg4 property.
      * 
      * @return
      *     possible object is
@@ -184,7 +186,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà mpeg4.
+     * Sets the value of the mpeg4 property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +198,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà h264.
+     * Gets the value of the h264 property.
      * 
      * @return
      *     possible object is
@@ -208,7 +210,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà h264.
+     * Sets the value of the h264 property.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +222,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà multicast.
+     * Gets the value of the multicast property.
      * 
      * @return
      *     possible object is
@@ -232,7 +234,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà multicast.
+     * Sets the value of the multicast property.
      * 
      * @param value
      *     allowed object is
@@ -244,7 +246,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Recupera il valore della proprietà sessionTimeout.
+     * Gets the value of the sessionTimeout property.
      * 
      * @return
      *     possible object is
@@ -256,7 +258,7 @@ public class VideoEncoderConfiguration
     }
 
     /**
-     * Imposta il valore della proprietà sessionTimeout.
+     * Sets the value of the sessionTimeout property.
      * 
      * @param value
      *     allowed object is
@@ -313,6 +315,16 @@ public class VideoEncoderConfiguration
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _TopicSet_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicSet");
     private final static QName _TopicNamespace_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicNamespace");
+    private final static QName _TopicSet_QNAME = new QName("http://docs.oasis-open.org/wsn/t-1", "TopicSet");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.oasis_open.docs.wsn.t_1
@@ -83,21 +83,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TopicSetType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link TopicNamespaceType }{@code >}
      * 
-     */
-    @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicSet")
-    public JAXBElement<TopicSetType> createTopicSet(TopicSetType value) {
-        return new JAXBElement<TopicSetType>(_TopicSet_QNAME, TopicSetType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TopicNamespaceType }{@code >}}
-     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TopicNamespaceType }{@code >}
      */
     @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicNamespace")
     public JAXBElement<TopicNamespaceType> createTopicNamespace(TopicNamespaceType value) {
         return new JAXBElement<TopicNamespaceType>(_TopicNamespace_QNAME, TopicNamespaceType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TopicSetType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TopicSetType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsn/t-1", name = "TopicSet")
+    public JAXBElement<TopicSetType> createTopicSet(TopicSetType value) {
+        return new JAXBElement<TopicSetType>(_TopicSet_QNAME, TopicSetType.class, null, value);
     }
 
 }

@@ -6,14 +6,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Type describing whether WDR mode is enabled or disabled (on/off).
  * 
- * <p>Classe Java per WideDynamicRange20 complex type.
+ * <p>Java class for WideDynamicRange20 complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="WideDynamicRange20"&gt;
@@ -44,7 +46,7 @@ public class WideDynamicRange20 {
     protected Float level;
 
     /**
-     * Recupera il valore della proprietà mode.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -56,7 +58,7 @@ public class WideDynamicRange20 {
     }
 
     /**
-     * Imposta il valore della proprietà mode.
+     * Sets the value of the mode property.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +70,7 @@ public class WideDynamicRange20 {
     }
 
     /**
-     * Recupera il valore della proprietà level.
+     * Gets the value of the level property.
      * 
      * @return
      *     possible object is
@@ -80,7 +82,7 @@ public class WideDynamicRange20 {
     }
 
     /**
-     * Imposta il valore della proprietà level.
+     * Sets the value of the level property.
      * 
      * @param value
      *     allowed object is
@@ -89,6 +91,16 @@ public class WideDynamicRange20 {
      */
     public void setLevel(Float value) {
         this.level = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

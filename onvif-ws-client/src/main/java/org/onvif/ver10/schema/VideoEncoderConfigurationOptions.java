@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per VideoEncoderConfigurationOptions complex type.
+ * <p>Java class for VideoEncoderConfigurationOptions complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VideoEncoderConfigurationOptions"&gt;
@@ -59,7 +61,7 @@ public class VideoEncoderConfigurationOptions {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà qualityRange.
+     * Gets the value of the qualityRange property.
      * 
      * @return
      *     possible object is
@@ -71,7 +73,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà qualityRange.
+     * Sets the value of the qualityRange property.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +85,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà jpeg.
+     * Gets the value of the jpeg property.
      * 
      * @return
      *     possible object is
@@ -95,7 +97,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà jpeg.
+     * Sets the value of the jpeg property.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +109,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà mpeg4.
+     * Gets the value of the mpeg4 property.
      * 
      * @return
      *     possible object is
@@ -119,7 +121,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà mpeg4.
+     * Sets the value of the mpeg4 property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +133,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà h264.
+     * Gets the value of the h264 property.
      * 
      * @return
      *     possible object is
@@ -143,7 +145,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà h264.
+     * Sets the value of the h264 property.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +157,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -167,7 +169,7 @@ public class VideoEncoderConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -194,6 +196,16 @@ public class VideoEncoderConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

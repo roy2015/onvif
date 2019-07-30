@@ -14,13 +14,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per RecordingInformation complex type.
+ * <p>Java class for RecordingInformation complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RecordingInformation"&gt;
@@ -80,7 +82,7 @@ public class RecordingInformation {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà recordingToken.
+     * Gets the value of the recordingToken property.
      * 
      * @return
      *     possible object is
@@ -92,7 +94,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Imposta il valore della proprietà recordingToken.
+     * Sets the value of the recordingToken property.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +106,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Recupera il valore della proprietà source.
+     * Gets the value of the source property.
      * 
      * @return
      *     possible object is
@@ -116,7 +118,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Imposta il valore della proprietà source.
+     * Sets the value of the source property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +130,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Recupera il valore della proprietà earliestRecording.
+     * Gets the value of the earliestRecording property.
      * 
      * @return
      *     possible object is
@@ -140,7 +142,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Imposta il valore della proprietà earliestRecording.
+     * Sets the value of the earliestRecording property.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +154,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Recupera il valore della proprietà latestRecording.
+     * Gets the value of the latestRecording property.
      * 
      * @return
      *     possible object is
@@ -164,7 +166,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Imposta il valore della proprietà latestRecording.
+     * Sets the value of the latestRecording property.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +178,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Recupera il valore della proprietà content.
+     * Gets the value of the content property.
      * 
      * @return
      *     possible object is
@@ -188,7 +190,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Imposta il valore della proprietà content.
+     * Sets the value of the content property.
      * 
      * @param value
      *     allowed object is
@@ -229,7 +231,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Recupera il valore della proprietà recordingStatus.
+     * Gets the value of the recordingStatus property.
      * 
      * @return
      *     possible object is
@@ -241,7 +243,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Imposta il valore della proprietà recordingStatus.
+     * Sets the value of the recordingStatus property.
      * 
      * @param value
      *     allowed object is
@@ -298,6 +300,16 @@ public class RecordingInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

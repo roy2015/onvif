@@ -1,17 +1,6 @@
 package org.onvif.client;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.ConnectException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-
-import javax.xml.bind.JAXBElement;
-import javax.xml.soap.SOAPException;
-
+import de.onvif.soap.OnvifDevice;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.cxf.wsn.client.Consumer;
@@ -22,24 +11,10 @@ import org.apache.cxf.wsn.services.JaxwsNotificationBroker;
 import org.oasis_open.docs.wsn.b_2.FilterType;
 import org.oasis_open.docs.wsn.b_2.NotificationMessageHolderType;
 import org.oasis_open.docs.wsn.b_2.TopicExpressionType;
-import org.oasis_open.docs.wsn.bw_2.InvalidFilterFault;
-import org.oasis_open.docs.wsn.bw_2.InvalidMessageContentExpressionFault;
-import org.oasis_open.docs.wsn.bw_2.InvalidProducerPropertiesExpressionFault;
-import org.oasis_open.docs.wsn.bw_2.InvalidTopicExpressionFault;
-import org.oasis_open.docs.wsn.bw_2.NotifyMessageNotSupportedFault;
-import org.oasis_open.docs.wsn.bw_2.SubscribeCreationFailedFault;
-import org.oasis_open.docs.wsn.bw_2.TopicExpressionDialectUnknownFault;
-import org.oasis_open.docs.wsn.bw_2.TopicNotSupportedFault;
-import org.oasis_open.docs.wsn.bw_2.UnacceptableInitialTerminationTimeFault;
-import org.oasis_open.docs.wsn.bw_2.UnrecognizedPolicyRequestFault;
-import org.oasis_open.docs.wsn.bw_2.UnsupportedPolicyRequestFault;
+import org.oasis_open.docs.wsn.bw_2.*;
 import org.oasis_open.docs.wsrf.rw_2.ResourceUnknownFault;
-import org.onvif.ver10.events.wsdl.CreatePullPointSubscription;
+import org.onvif.ver10.events.wsdl.*;
 import org.onvif.ver10.events.wsdl.CreatePullPointSubscription.SubscriptionPolicy;
-import org.onvif.ver10.events.wsdl.CreatePullPointSubscriptionResponse;
-import org.onvif.ver10.events.wsdl.EventPortType;
-import org.onvif.ver10.events.wsdl.GetEventProperties;
-import org.onvif.ver10.events.wsdl.GetEventPropertiesResponse;
 import org.onvif.ver10.schema.Capabilities;
 import org.onvif.ver10.schema.CapabilityCategory;
 import org.onvif.ver10.schema.MediaUri;
@@ -48,28 +23,31 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import de.onvif.soap.OnvifDevice;
+import javax.xml.bind.JAXBElement;
+import javax.xml.soap.SOAPException;
+import java.io.File;
+import java.io.IOException;
+import java.net.ConnectException;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 public class WsNotificationTest {
 
 	// This is a work in progress class...any help is welcome ;)
-	// A ood idea could be to follow this guide:
+	// A good idea could be to follow this guide:
 	// https://access.redhat.com/documentation/en-us/red_hat_jboss_a-mq/6.1/html-single/ws-notification_guide/index#WSNTutorial
-	public static void main(String args[]) throws MalformedURLException {
-		String deviceIp, user, password, profileToken;
 
-		deviceIp = "192.168.1.53";
-		// deviceIp = "localhost:8080";
-		user = password = "admin";
-		profileToken = "MediaProfile000";// MediaProfile_Channel1_MainStream
-		// profileToken = "MediaProfile001";//MediaProfile_Channel1_SubStream1
+	public static void main(String args[]) throws IOException {
+		OnvifCredentials creds = GetTestDevice.getOnvifCredentials(args);
 		System.out.println("Connect to camera, please wait ...");
 
 		OnvifDevice cam = null;
 		try {
-			cam = new OnvifDevice(deviceIp, user, password);
+			cam = new OnvifDevice(creds.getHost(), creds.getUser(), creds.getPassword());
 		} catch (ConnectException | SOAPException e1) {
-			System.err.println("No connection to device with ip " + deviceIp + ", please try again.");
+			System.err.println("No connection to device with ip " + creds + ", please try again.");
 			System.exit(0);
 		}
 		System.out.println("Connected to device " + cam.getDeviceInfo());
@@ -99,7 +77,7 @@ public class WsNotificationTest {
 		FilterType filter = new FilterType();
 		TopicExpressionType topicExp = new TopicExpressionType();
 		topicExp.getContent().add("tns1:RuleEngine//.");// every event in that
-														// topic
+		// topic
 		topicExp.setDialect("http://www.onvif.org/ver10/tev/topicExpression/ConcreteSet");
 		JAXBElement<?> topicExpElem = objectFactory.createTopicExpression(topicExp);
 		filter.getAny().add(topicExpElem);
@@ -210,12 +188,11 @@ public class WsNotificationTest {
 
 	}
 
-	private static void printTree(Node node, String name) {
+	public static void printTree(Node node, String name) {
 		if (node.hasChildNodes()) {
 			NodeList nodes = node.getChildNodes();
 			for (int i = 0; i < nodes.getLength(); i++) {
 				Node n = nodes.item(i);
-
 				printTree(n, name + " - " + n.getNodeName());
 			}
 		} else

@@ -14,15 +14,17 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
  * The capabilities of a TLS server implementation on a device.
  * 
- * <p>Classe Java per TLSServerCapabilities complex type.
+ * <p>Java class for TLSServerCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="TLSServerCapabilities"&gt;
@@ -124,7 +126,7 @@ public class TLSServerCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maximumNumberOfTLSCertificationPaths.
+     * Gets the value of the maximumNumberOfTLSCertificationPaths property.
      * 
      * @return
      *     possible object is
@@ -136,7 +138,7 @@ public class TLSServerCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maximumNumberOfTLSCertificationPaths.
+     * Sets the value of the maximumNumberOfTLSCertificationPaths property.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +150,7 @@ public class TLSServerCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà tlsClientAuthSupported.
+     * Gets the value of the tlsClientAuthSupported property.
      * This getter has been renamed from isTLSClientAuthSupported() to getTLSClientAuthSupported() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -161,7 +163,7 @@ public class TLSServerCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà tlsClientAuthSupported.
+     * Sets the value of the tlsClientAuthSupported property.
      * 
      * @param value
      *     allowed object is
@@ -173,7 +175,7 @@ public class TLSServerCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maximumNumberOfTLSCertificationPathValidationPolicies.
+     * Gets the value of the maximumNumberOfTLSCertificationPathValidationPolicies property.
      * 
      * @return
      *     possible object is
@@ -185,7 +187,7 @@ public class TLSServerCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maximumNumberOfTLSCertificationPathValidationPolicies.
+     * Sets the value of the maximumNumberOfTLSCertificationPathValidationPolicies property.
      * 
      * @param value
      *     allowed object is
@@ -212,6 +214,16 @@ public class TLSServerCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

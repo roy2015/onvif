@@ -5,12 +5,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Time complex type.
+ * <p>Java class for Time complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Time"&gt;
@@ -44,7 +46,7 @@ public class Time {
     protected int second;
 
     /**
-     * Recupera il valore della proprietà hour.
+     * Gets the value of the hour property.
      * 
      */
     public int getHour() {
@@ -52,7 +54,7 @@ public class Time {
     }
 
     /**
-     * Imposta il valore della proprietà hour.
+     * Sets the value of the hour property.
      * 
      */
     public void setHour(int value) {
@@ -60,7 +62,7 @@ public class Time {
     }
 
     /**
-     * Recupera il valore della proprietà minute.
+     * Gets the value of the minute property.
      * 
      */
     public int getMinute() {
@@ -68,7 +70,7 @@ public class Time {
     }
 
     /**
-     * Imposta il valore della proprietà minute.
+     * Sets the value of the minute property.
      * 
      */
     public void setMinute(int value) {
@@ -76,7 +78,7 @@ public class Time {
     }
 
     /**
-     * Recupera il valore della proprietà second.
+     * Gets the value of the second property.
      * 
      */
     public int getSecond() {
@@ -84,11 +86,21 @@ public class Time {
     }
 
     /**
-     * Imposta il valore della proprietà second.
+     * Sets the value of the second property.
      * 
      */
     public void setSecond(int value) {
         this.second = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

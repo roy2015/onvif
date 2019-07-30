@@ -14,13 +14,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per RecordingSummary complex type.
+ * <p>Java class for RecordingSummary complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RecordingSummary"&gt;
@@ -63,7 +65,7 @@ public class RecordingSummary {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà dataFrom.
+     * Gets the value of the dataFrom property.
      * 
      * @return
      *     possible object is
@@ -75,7 +77,7 @@ public class RecordingSummary {
     }
 
     /**
-     * Imposta il valore della proprietà dataFrom.
+     * Sets the value of the dataFrom property.
      * 
      * @param value
      *     allowed object is
@@ -87,7 +89,7 @@ public class RecordingSummary {
     }
 
     /**
-     * Recupera il valore della proprietà dataUntil.
+     * Gets the value of the dataUntil property.
      * 
      * @return
      *     possible object is
@@ -99,7 +101,7 @@ public class RecordingSummary {
     }
 
     /**
-     * Imposta il valore della proprietà dataUntil.
+     * Sets the value of the dataUntil property.
      * 
      * @param value
      *     allowed object is
@@ -111,7 +113,7 @@ public class RecordingSummary {
     }
 
     /**
-     * Recupera il valore della proprietà numberRecordings.
+     * Gets the value of the numberRecordings property.
      * 
      */
     public int getNumberRecordings() {
@@ -119,7 +121,7 @@ public class RecordingSummary {
     }
 
     /**
-     * Imposta il valore della proprietà numberRecordings.
+     * Sets the value of the numberRecordings property.
      * 
      */
     public void setNumberRecordings(int value) {
@@ -172,6 +174,16 @@ public class RecordingSummary {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per NetworkInterfaceSetConfiguration complex type.
+ * <p>Java class for NetworkInterfaceSetConfiguration complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NetworkInterfaceSetConfiguration"&gt;
@@ -63,7 +65,7 @@ public class NetworkInterfaceSetConfiguration {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà enabled.
+     * Gets the value of the enabled property.
      * This getter has been renamed from isEnabled() to getEnabled() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -76,7 +78,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà enabled.
+     * Sets the value of the enabled property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +90,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà link.
+     * Gets the value of the link property.
      * 
      * @return
      *     possible object is
@@ -100,7 +102,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà link.
+     * Sets the value of the link property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +114,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà mtu.
+     * Gets the value of the mtu property.
      * 
      * @return
      *     possible object is
@@ -124,7 +126,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà mtu.
+     * Sets the value of the mtu property.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +138,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà iPv4.
+     * Gets the value of the iPv4 property.
      * 
      * @return
      *     possible object is
@@ -148,7 +150,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà iPv4.
+     * Sets the value of the iPv4 property.
      * 
      * @param value
      *     allowed object is
@@ -160,7 +162,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà iPv6.
+     * Gets the value of the iPv6 property.
      * 
      * @return
      *     possible object is
@@ -172,7 +174,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà iPv6.
+     * Sets the value of the iPv6 property.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +186,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -196,7 +198,7 @@ public class NetworkInterfaceSetConfiguration {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -223,6 +225,16 @@ public class NetworkInterfaceSetConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

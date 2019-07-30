@@ -16,6 +16,9 @@ bin/**
 *.swp
 *.swo
 
+.idea/**
+.idea
+
 local.properties
 .classpath
 .settings/

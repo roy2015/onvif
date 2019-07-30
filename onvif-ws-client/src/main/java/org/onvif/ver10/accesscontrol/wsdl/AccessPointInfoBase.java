@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.pacs.DataEntity;
 
 
@@ -15,9 +17,9 @@ import org.onvif.ver10.pacs.DataEntity;
  * Used as extension base for AccessPointInfo.
  * 
  * 
- * <p>Classe Java per AccessPointInfoBase complex type.
+ * <p>Java class for AccessPointInfoBase complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="AccessPointInfoBase"&gt;
@@ -68,7 +70,7 @@ public class AccessPointInfoBase
     protected String entity;
 
     /**
-     * Recupera il valore della proprietà name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -80,7 +82,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Imposta il valore della proprietà name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +94,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Recupera il valore della proprietà description.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -104,7 +106,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Imposta il valore della proprietà description.
+     * Sets the value of the description property.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +118,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Recupera il valore della proprietà areaFrom.
+     * Gets the value of the areaFrom property.
      * 
      * @return
      *     possible object is
@@ -128,7 +130,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Imposta il valore della proprietà areaFrom.
+     * Sets the value of the areaFrom property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +142,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Recupera il valore della proprietà areaTo.
+     * Gets the value of the areaTo property.
      * 
      * @return
      *     possible object is
@@ -152,7 +154,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Imposta il valore della proprietà areaTo.
+     * Sets the value of the areaTo property.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +166,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Recupera il valore della proprietà entityType.
+     * Gets the value of the entityType property.
      * 
      * @return
      *     possible object is
@@ -176,7 +178,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Imposta il valore della proprietà entityType.
+     * Sets the value of the entityType property.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +190,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Recupera il valore della proprietà entity.
+     * Gets the value of the entity property.
      * 
      * @return
      *     possible object is
@@ -200,7 +202,7 @@ public class AccessPointInfoBase
     }
 
     /**
-     * Imposta il valore della proprietà entity.
+     * Sets the value of the entity property.
      * 
      * @param value
      *     allowed object is
@@ -209,6 +211,16 @@ public class AccessPointInfoBase
      */
     public void setEntity(String value) {
         this.entity = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

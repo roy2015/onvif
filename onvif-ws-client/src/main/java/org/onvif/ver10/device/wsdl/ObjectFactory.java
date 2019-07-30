@@ -1530,8 +1530,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeviceServiceCapabilities }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeviceServiceCapabilities }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DeviceServiceCapabilities }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/device/wsdl", name = "Capabilities")
     public JAXBElement<DeviceServiceCapabilities> createCapabilities(DeviceServiceCapabilities value) {

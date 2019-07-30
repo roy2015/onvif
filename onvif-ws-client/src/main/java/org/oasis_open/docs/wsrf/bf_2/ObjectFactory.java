@@ -66,8 +66,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BaseFaultType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BaseFaultType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BaseFaultType }{@code >}
      */
     @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsrf/bf-2", name = "BaseFault")
     public JAXBElement<BaseFaultType> createBaseFault(BaseFaultType value) {

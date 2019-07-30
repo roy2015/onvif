@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.FloatList;
 import org.onvif.ver10.schema.IntList;
 import org.w3c.dom.Element;
@@ -21,9 +23,9 @@ import org.w3c.dom.Element;
 /**
  * The configuration options that relates to serial port.
  * 
- * <p>Classe Java per SerialPortConfigurationOptions complex type.
+ * <p>Java class for SerialPortConfigurationOptions complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SerialPortConfigurationOptions"&gt;
@@ -71,7 +73,7 @@ public class SerialPortConfigurationOptions {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà baudRateList.
+     * Gets the value of the baudRateList property.
      * 
      * @return
      *     possible object is
@@ -83,7 +85,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà baudRateList.
+     * Sets the value of the baudRateList property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +97,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà parityBitList.
+     * Gets the value of the parityBitList property.
      * 
      * @return
      *     possible object is
@@ -107,7 +109,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà parityBitList.
+     * Sets the value of the parityBitList property.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +121,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà characterLengthList.
+     * Gets the value of the characterLengthList property.
      * 
      * @return
      *     possible object is
@@ -131,7 +133,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà characterLengthList.
+     * Sets the value of the characterLengthList property.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +145,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà stopBitList.
+     * Gets the value of the stopBitList property.
      * 
      * @return
      *     possible object is
@@ -155,7 +157,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà stopBitList.
+     * Sets the value of the stopBitList property.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +199,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Recupera il valore della proprietà token.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -209,7 +211,7 @@ public class SerialPortConfigurationOptions {
     }
 
     /**
-     * Imposta il valore della proprietà token.
+     * Sets the value of the token property.
      * 
      * @param value
      *     allowed object is
@@ -236,6 +238,16 @@ public class SerialPortConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

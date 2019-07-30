@@ -24,28 +24,55 @@
 			<artifactId>cxf-rt-transports-http-jetty</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.cxf</groupId> -->
-		<!-- <artifactId>cxf-rt-ws-addr</artifactId> -->
-		<!-- <version>${cxf.version}</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.cxf</groupId> -->
-		<!-- <artifactId>cxf-rt-ws-policy</artifactId> -->
-		<!-- <version>${cxf.version}</version> -->
-		<!-- </dependency> -->
+
+
+		<!-- Java 9+ javax dependencies start -->
+		<dependency>
+			<groupId>javax.xml.ws</groupId>
+			<artifactId>jaxws-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.jws</groupId>
+			<artifactId>javax.jws-api</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<!-- Java 9+ javax dependencies end -->
 		<dependency>
 			<groupId>org.apache.cxf.services.wsn</groupId>
 			<artifactId>cxf-services-wsn-core</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
+
+		<!-- For creating human readable toString() functions in generated classes. -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf.xjc-utils</groupId>
+			<artifactId>cxf-xjc-runtime</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model-builder</artifactId>
+			<version>3.6.1</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>${cxf.version}</version>
+				<version>3.3.2</version>
 				<executions>
 					<execution>
 						<id>generate-ws-stubs</id>
@@ -56,6 +83,10 @@
 						<configuration>
 							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
 							<sourceRoot>${basedir}/src/main/java</sourceRoot>
+<!--
+	// TODO: Consider moving generated sources to separate folder and excluse from source control.
+							<sourceRoot>${basedir}/generated/src/main/java</sourceRoot>
+-->
 							<includes>
 								<include>*.wsdl</include>
 							</includes>
@@ -64,11 +95,15 @@
 									<!-- DataMapper compatibility requires that the boolean getters 
 										and setters follow naming conventions for other getters and setters. -->
 									<extraarg>-xjc-Xbg</extraarg>
+									<extraarg>-xjc-Xts</extraarg>	<!-- added for toString() builder -->
 									<extraarg>-verbose</extraarg>
+									<extraarg>-suppress-generated-date</extraarg>
+									<extraarg>-wsdlLocation</extraarg>
+									<extraarg>null</extraarg>
+
 									<extraarg>-catalog</extraarg>
 									<extraarg>${basedir}/src/main/resources/wsdl/jax-ws-catalog.xml</extraarg>
-									<extraarg>-wsdlLocation</extraarg>
-									<extraarg></extraarg>
+
 								</extraargs>
 							</defaultOptions>
 						</configuration>
@@ -86,6 +121,67 @@
 						<artifactId>cxf-xjc-boolean</artifactId>
 						<version>3.1.0</version>
 					</dependency>
+					<!-- ToString -->
+					<dependency>
+						<groupId>org.apache.cxf.xjcplugins</groupId>
+						<artifactId>cxf-xjc-ts</artifactId>
+						<version>3.1.0</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.cxf.xjc-utils</groupId>
+						<artifactId>cxf-xjc-runtime</artifactId>
+						<version>3.3.0</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.apache.maven</groupId>
+						<artifactId>maven-model-builder</artifactId>
+						<version>3.6.1</version>
+					</dependency>
+
+					<!-- for java 10+ -->
+					<dependency>
+						<groupId>com.sun.activation</groupId>
+						<artifactId>javax.activation</artifactId>
+						<version>${javax.activation.version}</version>
+					</dependency>
+
+					<dependency>
+						<groupId>javax.xml.bind</groupId>
+						<artifactId>jaxb-api</artifactId>
+						<version>${jaxb.api.version}</version>
+					</dependency>
+
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-core</artifactId>
+						<version>2.3.0.1</version>
+					</dependency>
+
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-impl</artifactId>
+						<version>${jaxb.api.version}</version>
+					</dependency>
+
+					<dependency>
+						<groupId>javax.annotation</groupId>
+						<artifactId>javax.annotation-api</artifactId>
+						<version>1.3.1</version>
+					</dependency>
+					<dependency>
+						<groupId>javax.xml.ws</groupId>
+						<artifactId>jaxws-api</artifactId>
+						<version>2.3.0</version>
+					</dependency>
+					<dependency>
+						<groupId>javax.activation</groupId>
+						<artifactId>activation</artifactId>
+						<version>1.1.1</version>
+					</dependency>
+
+
+
 				</dependencies>
 			</plugin>
 		</plugins>

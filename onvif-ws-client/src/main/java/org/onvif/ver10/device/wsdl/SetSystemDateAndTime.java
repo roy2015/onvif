@@ -7,15 +7,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.DateTime;
 import org.onvif.ver10.schema.SetDateTimeType;
 import org.onvif.ver10.schema.TimeZone;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -55,7 +57,7 @@ public class SetSystemDateAndTime {
     protected DateTime utcDateTime;
 
     /**
-     * Recupera il valore della proprietà dateTimeType.
+     * Gets the value of the dateTimeType property.
      * 
      * @return
      *     possible object is
@@ -67,7 +69,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Imposta il valore della proprietà dateTimeType.
+     * Sets the value of the dateTimeType property.
      * 
      * @param value
      *     allowed object is
@@ -79,7 +81,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Recupera il valore della proprietà daylightSavings.
+     * Gets the value of the daylightSavings property.
      * This getter has been renamed from isDaylightSavings() to getDaylightSavings() by cxf-xjc-boolean plugin.
      * 
      */
@@ -88,7 +90,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Imposta il valore della proprietà daylightSavings.
+     * Sets the value of the daylightSavings property.
      * 
      */
     public void setDaylightSavings(boolean value) {
@@ -96,7 +98,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Recupera il valore della proprietà timeZone.
+     * Gets the value of the timeZone property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Imposta il valore della proprietà timeZone.
+     * Sets the value of the timeZone property.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +122,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Recupera il valore della proprietà utcDateTime.
+     * Gets the value of the utcDateTime property.
      * 
      * @return
      *     possible object is
@@ -132,7 +134,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Imposta il valore della proprietà utcDateTime.
+     * Sets the value of the utcDateTime property.
      * 
      * @param value
      *     allowed object is
@@ -141,6 +143,16 @@ public class SetSystemDateAndTime {
      */
     public void setUTCDateTime(DateTime value) {
         this.utcDateTime = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

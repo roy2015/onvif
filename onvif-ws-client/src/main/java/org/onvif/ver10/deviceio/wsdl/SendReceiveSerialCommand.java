@@ -8,12 +8,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -52,7 +54,7 @@ public class SendReceiveSerialCommand {
     protected String delimiter;
 
     /**
-     * Recupera il valore della proprietà serialData.
+     * Gets the value of the serialData property.
      * 
      * @return
      *     possible object is
@@ -64,7 +66,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Imposta il valore della proprietà serialData.
+     * Sets the value of the serialData property.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +78,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Recupera il valore della proprietà timeOut.
+     * Gets the value of the timeOut property.
      * 
      * @return
      *     possible object is
@@ -88,7 +90,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Imposta il valore della proprietà timeOut.
+     * Sets the value of the timeOut property.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +102,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Recupera il valore della proprietà dataLength.
+     * Gets the value of the dataLength property.
      * 
      * @return
      *     possible object is
@@ -112,7 +114,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Imposta il valore della proprietà dataLength.
+     * Sets the value of the dataLength property.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +126,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Recupera il valore della proprietà delimiter.
+     * Gets the value of the delimiter property.
      * 
      * @return
      *     possible object is
@@ -136,7 +138,7 @@ public class SendReceiveSerialCommand {
     }
 
     /**
-     * Imposta il valore della proprietà delimiter.
+     * Sets the value of the delimiter property.
      * 
      * @param value
      *     allowed object is
@@ -145,6 +147,16 @@ public class SendReceiveSerialCommand {
      */
     public void setDelimiter(String value) {
         this.delimiter = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

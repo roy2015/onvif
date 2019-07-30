@@ -7,13 +7,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.PTZPresetTourOperation;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -49,7 +51,7 @@ public class OperatePresetTour {
     protected PTZPresetTourOperation operation;
 
     /**
-     * Recupera il valore della proprietà profileToken.
+     * Gets the value of the profileToken property.
      * 
      * @return
      *     possible object is
@@ -61,7 +63,7 @@ public class OperatePresetTour {
     }
 
     /**
-     * Imposta il valore della proprietà profileToken.
+     * Sets the value of the profileToken property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +75,7 @@ public class OperatePresetTour {
     }
 
     /**
-     * Recupera il valore della proprietà presetTourToken.
+     * Gets the value of the presetTourToken property.
      * 
      * @return
      *     possible object is
@@ -85,7 +87,7 @@ public class OperatePresetTour {
     }
 
     /**
-     * Imposta il valore della proprietà presetTourToken.
+     * Sets the value of the presetTourToken property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +99,7 @@ public class OperatePresetTour {
     }
 
     /**
-     * Recupera il valore della proprietà operation.
+     * Gets the value of the operation property.
      * 
      * @return
      *     possible object is
@@ -109,7 +111,7 @@ public class OperatePresetTour {
     }
 
     /**
-     * Imposta il valore della proprietà operation.
+     * Sets the value of the operation property.
      * 
      * @param value
      *     allowed object is
@@ -118,6 +120,16 @@ public class OperatePresetTour {
      */
     public void setOperation(PTZPresetTourOperation value) {
         this.operation = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

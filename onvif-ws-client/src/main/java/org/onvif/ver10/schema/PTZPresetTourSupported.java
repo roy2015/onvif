@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per PTZPresetTourSupported complex type.
+ * <p>Java class for PTZPresetTourSupported complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PTZPresetTourSupported"&gt;
@@ -55,7 +57,7 @@ public class PTZPresetTourSupported {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà maximumNumberOfPresetTours.
+     * Gets the value of the maximumNumberOfPresetTours property.
      * 
      */
     public int getMaximumNumberOfPresetTours() {
@@ -63,7 +65,7 @@ public class PTZPresetTourSupported {
     }
 
     /**
-     * Imposta il valore della proprietà maximumNumberOfPresetTours.
+     * Sets the value of the maximumNumberOfPresetTours property.
      * 
      */
     public void setMaximumNumberOfPresetTours(int value) {
@@ -100,7 +102,7 @@ public class PTZPresetTourSupported {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -112,7 +114,7 @@ public class PTZPresetTourSupported {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -139,6 +141,16 @@ public class PTZPresetTourSupported {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

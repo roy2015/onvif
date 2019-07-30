@@ -144,8 +144,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link HelloType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link HelloType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Hello")
     public JAXBElement<HelloType> createHello(HelloType value) {
@@ -153,8 +157,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ByeType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ByeType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ByeType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Bye")
     public JAXBElement<ByeType> createBye(ByeType value) {
@@ -162,8 +170,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ProbeType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Probe")
     public JAXBElement<ProbeType> createProbe(ProbeType value) {
@@ -171,8 +183,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeMatchesType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProbeMatchesType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ProbeMatchesType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "ProbeMatches")
     public JAXBElement<ProbeMatchesType> createProbeMatches(ProbeMatchesType value) {
@@ -180,8 +196,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ResolveType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Resolve")
     public JAXBElement<ResolveType> createResolve(ResolveType value) {
@@ -189,8 +209,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveMatchesType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResolveMatchesType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ResolveMatchesType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "ResolveMatches")
     public JAXBElement<ResolveMatchesType> createResolveMatches(ResolveMatchesType value) {
@@ -198,8 +222,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link QName }{@code >}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link QName }{@code >}{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link QName }{@code >}{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Types")
     public JAXBElement<List<QName>> createTypes(List<QName> value) {
@@ -207,8 +235,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ScopesType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ScopesType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ScopesType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Scopes")
     public JAXBElement<ScopesType> createScopes(ScopesType value) {
@@ -216,8 +248,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link String }{@code >}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link String }{@code >}{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link String }{@code >}{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "XAddrs")
     public JAXBElement<List<String>> createXAddrs(List<String> value) {
@@ -225,8 +261,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Long }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "MetadataVersion")
     public JAXBElement<Long> createMetadataVersion(Long value) {
@@ -234,8 +274,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link String }{@code >}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link String }{@code >}{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link List }{@code <}{@link String }{@code >}{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "SupportedMatchingRules")
     public JAXBElement<List<String>> createSupportedMatchingRules(List<String> value) {
@@ -243,8 +287,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SecurityType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SecurityType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SecurityType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Security")
     public JAXBElement<SecurityType> createSecurity(SecurityType value) {
@@ -252,8 +300,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SigType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SigType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SigType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "Sig")
     public JAXBElement<SigType> createSig(SigType value) {
@@ -261,8 +313,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AppSequenceType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AppSequenceType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AppSequenceType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2005/04/discovery", name = "AppSequence")
     public JAXBElement<AppSequenceType> createAppSequence(AppSequenceType value) {

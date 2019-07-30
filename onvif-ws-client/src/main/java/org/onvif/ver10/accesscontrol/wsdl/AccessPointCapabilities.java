@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
@@ -22,9 +24,9 @@ import org.w3c.dom.Element;
  * change during device operation, e.g. if hardware settings are changed.
  * The following capabilities are available:
  * 
- * <p>Classe Java per AccessPointCapabilities complex type.
+ * <p>Java class for AccessPointCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="AccessPointCapabilities"&gt;
@@ -98,7 +100,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà disableAccessPoint.
+     * Gets the value of the disableAccessPoint property.
      * This getter has been renamed from isDisableAccessPoint() to getDisableAccessPoint() by cxf-xjc-boolean plugin.
      * 
      */
@@ -107,7 +109,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà disableAccessPoint.
+     * Sets the value of the disableAccessPoint property.
      * 
      */
     public void setDisableAccessPoint(boolean value) {
@@ -115,7 +117,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà duress.
+     * Gets the value of the duress property.
      * This getter has been renamed from isDuress() to getDuress() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -128,7 +130,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà duress.
+     * Sets the value of the duress property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +142,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà anonymousAccess.
+     * Gets the value of the anonymousAccess property.
      * This getter has been renamed from isAnonymousAccess() to getAnonymousAccess() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -153,7 +155,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà anonymousAccess.
+     * Sets the value of the anonymousAccess property.
      * 
      * @param value
      *     allowed object is
@@ -165,7 +167,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà accessTaken.
+     * Gets the value of the accessTaken property.
      * This getter has been renamed from isAccessTaken() to getAccessTaken() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -178,7 +180,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà accessTaken.
+     * Sets the value of the accessTaken property.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +192,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà externalAuthorization.
+     * Gets the value of the externalAuthorization property.
      * This getter has been renamed from isExternalAuthorization() to getExternalAuthorization() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -203,7 +205,7 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà externalAuthorization.
+     * Sets the value of the externalAuthorization property.
      * 
      * @param value
      *     allowed object is
@@ -230,6 +232,16 @@ public class AccessPointCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

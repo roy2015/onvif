@@ -13,13 +13,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per ReceiverCapabilities complex type.
+ * <p>Java class for ReceiverCapabilities complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ReceiverCapabilities"&gt;
@@ -73,7 +75,7 @@ public class ReceiverCapabilities {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà xAddr.
+     * Gets the value of the xAddr property.
      * 
      * @return
      *     possible object is
@@ -85,7 +87,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà xAddr.
+     * Sets the value of the xAddr property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +99,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rtpMulticast.
+     * Gets the value of the rtpMulticast property.
      * This getter has been renamed from isRTPMulticast() to getRTPMulticast() by cxf-xjc-boolean plugin.
      * 
      */
@@ -106,7 +108,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rtpMulticast.
+     * Sets the value of the rtpMulticast property.
      * 
      */
     public void setRTPMulticast(boolean value) {
@@ -114,7 +116,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rtptcp.
+     * Gets the value of the rtptcp property.
      * This getter has been renamed from isRTPTCP() to getRTPTCP() by cxf-xjc-boolean plugin.
      * 
      */
@@ -123,7 +125,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rtptcp.
+     * Sets the value of the rtptcp property.
      * 
      */
     public void setRTPTCP(boolean value) {
@@ -131,7 +133,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà rtprtsptcp.
+     * Gets the value of the rtprtsptcp property.
      * This getter has been renamed from isRTPRTSPTCP() to getRTPRTSPTCP() by cxf-xjc-boolean plugin.
      * 
      */
@@ -140,7 +142,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà rtprtsptcp.
+     * Sets the value of the rtprtsptcp property.
      * 
      */
     public void setRTPRTSPTCP(boolean value) {
@@ -148,7 +150,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà supportedReceivers.
+     * Gets the value of the supportedReceivers property.
      * 
      */
     public int getSupportedReceivers() {
@@ -156,7 +158,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà supportedReceivers.
+     * Sets the value of the supportedReceivers property.
      * 
      */
     public void setSupportedReceivers(int value) {
@@ -164,7 +166,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Recupera il valore della proprietà maximumRTSPURILength.
+     * Gets the value of the maximumRTSPURILength property.
      * 
      */
     public int getMaximumRTSPURILength() {
@@ -172,7 +174,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Imposta il valore della proprietà maximumRTSPURILength.
+     * Sets the value of the maximumRTSPURILength property.
      * 
      */
     public void setMaximumRTSPURILength(int value) {
@@ -225,6 +227,16 @@ public class ReceiverCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

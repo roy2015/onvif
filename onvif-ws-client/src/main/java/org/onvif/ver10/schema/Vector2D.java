@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per Vector2D complex type.
+ * <p>Java class for Vector2D complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Vector2D"&gt;
@@ -40,7 +42,7 @@ public class Vector2D {
     protected String space;
 
     /**
-     * Recupera il valore della proprietà x.
+     * Gets the value of the x property.
      * 
      */
     public float getX() {
@@ -48,7 +50,7 @@ public class Vector2D {
     }
 
     /**
-     * Imposta il valore della proprietà x.
+     * Sets the value of the x property.
      * 
      */
     public void setX(float value) {
@@ -56,7 +58,7 @@ public class Vector2D {
     }
 
     /**
-     * Recupera il valore della proprietà y.
+     * Gets the value of the y property.
      * 
      */
     public float getY() {
@@ -64,7 +66,7 @@ public class Vector2D {
     }
 
     /**
-     * Imposta il valore della proprietà y.
+     * Sets the value of the y property.
      * 
      */
     public void setY(float value) {
@@ -72,7 +74,7 @@ public class Vector2D {
     }
 
     /**
-     * Recupera il valore della proprietà space.
+     * Gets the value of the space property.
      * 
      * @return
      *     possible object is
@@ -84,7 +86,7 @@ public class Vector2D {
     }
 
     /**
-     * Imposta il valore della proprietà space.
+     * Sets the value of the space property.
      * 
      * @param value
      *     allowed object is
@@ -93,6 +95,16 @@ public class Vector2D {
      */
     public void setSpace(String value) {
         this.space = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

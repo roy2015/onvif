@@ -7,12 +7,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per RelayOutputSettings complex type.
+ * <p>Java class for RelayOutputSettings complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RelayOutputSettings"&gt;
@@ -48,7 +50,7 @@ public class RelayOutputSettings {
     protected RelayIdleState idleState;
 
     /**
-     * Recupera il valore della proprietà mode.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -60,7 +62,7 @@ public class RelayOutputSettings {
     }
 
     /**
-     * Imposta il valore della proprietà mode.
+     * Sets the value of the mode property.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +74,7 @@ public class RelayOutputSettings {
     }
 
     /**
-     * Recupera il valore della proprietà delayTime.
+     * Gets the value of the delayTime property.
      * 
      * @return
      *     possible object is
@@ -84,7 +86,7 @@ public class RelayOutputSettings {
     }
 
     /**
-     * Imposta il valore della proprietà delayTime.
+     * Sets the value of the delayTime property.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +98,7 @@ public class RelayOutputSettings {
     }
 
     /**
-     * Recupera il valore della proprietà idleState.
+     * Gets the value of the idleState property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class RelayOutputSettings {
     }
 
     /**
-     * Imposta il valore della proprietà idleState.
+     * Sets the value of the idleState property.
      * 
      * @param value
      *     allowed object is
@@ -117,6 +119,16 @@ public class RelayOutputSettings {
      */
     public void setIdleState(RelayIdleState value) {
         this.idleState = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

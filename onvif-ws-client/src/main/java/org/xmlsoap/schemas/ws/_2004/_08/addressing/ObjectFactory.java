@@ -115,8 +115,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "EndpointReference")
     public JAXBElement<EndpointReferenceType> createEndpointReference(EndpointReferenceType value) {
@@ -124,8 +128,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "MessageID")
     public JAXBElement<AttributedURI> createMessageID(AttributedURI value) {
@@ -133,8 +141,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Relationship }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Relationship }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Relationship }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "RelatesTo")
     public JAXBElement<Relationship> createRelatesTo(Relationship value) {
@@ -142,8 +154,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "To")
     public JAXBElement<AttributedURI> createTo(AttributedURI value) {
@@ -151,8 +167,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AttributedURI }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "Action")
     public JAXBElement<AttributedURI> createAction(AttributedURI value) {
@@ -160,8 +180,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "From")
     public JAXBElement<EndpointReferenceType> createFrom(EndpointReferenceType value) {
@@ -169,8 +193,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "ReplyTo")
     public JAXBElement<EndpointReferenceType> createReplyTo(EndpointReferenceType value) {
@@ -178,8 +206,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link EndpointReferenceType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "FaultTo")
     public JAXBElement<EndpointReferenceType> createFaultTo(EndpointReferenceType value) {
@@ -187,8 +219,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ReplyAfterType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReplyAfterType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ReplyAfterType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "ReplyAfter")
     public JAXBElement<ReplyAfterType> createReplyAfter(ReplyAfterType value) {
@@ -196,8 +232,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RetryAfterType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RetryAfterType }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link RetryAfterType }{@code >}
      */
     @XmlElementDecl(namespace = "http://schemas.xmlsoap.org/ws/2004/08/addressing", name = "RetryAfter")
     public JAXBElement<RetryAfterType> createRetryAfter(RetryAfterType value) {

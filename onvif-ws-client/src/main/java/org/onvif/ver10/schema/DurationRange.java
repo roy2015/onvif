@@ -6,14 +6,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.Duration;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Range of duration greater equal Min duration and less equal Max duration.
  * 
- * <p>Classe Java per DurationRange complex type.
+ * <p>Java class for DurationRange complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="DurationRange"&gt;
@@ -43,7 +45,7 @@ public class DurationRange {
     protected Duration max;
 
     /**
-     * Recupera il valore della proprietà min.
+     * Gets the value of the min property.
      * 
      * @return
      *     possible object is
@@ -55,7 +57,7 @@ public class DurationRange {
     }
 
     /**
-     * Imposta il valore della proprietà min.
+     * Sets the value of the min property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +69,7 @@ public class DurationRange {
     }
 
     /**
-     * Recupera il valore della proprietà max.
+     * Gets the value of the max property.
      * 
      * @return
      *     possible object is
@@ -79,7 +81,7 @@ public class DurationRange {
     }
 
     /**
-     * Imposta il valore della proprietà max.
+     * Sets the value of the max property.
      * 
      * @param value
      *     allowed object is
@@ -88,6 +90,16 @@ public class DurationRange {
      */
     public void setMax(Duration value) {
         this.max = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -11,12 +11,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per MessageDescription complex type.
+ * <p>Java class for MessageDescription complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="MessageDescription"&gt;
@@ -63,7 +65,7 @@ public class MessageDescription {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà source.
+     * Gets the value of the source property.
      * 
      * @return
      *     possible object is
@@ -75,7 +77,7 @@ public class MessageDescription {
     }
 
     /**
-     * Imposta il valore della proprietà source.
+     * Sets the value of the source property.
      * 
      * @param value
      *     allowed object is
@@ -87,7 +89,7 @@ public class MessageDescription {
     }
 
     /**
-     * Recupera il valore della proprietà key.
+     * Gets the value of the key property.
      * 
      * @return
      *     possible object is
@@ -99,7 +101,7 @@ public class MessageDescription {
     }
 
     /**
-     * Imposta il valore della proprietà key.
+     * Sets the value of the key property.
      * 
      * @param value
      *     allowed object is
@@ -111,7 +113,7 @@ public class MessageDescription {
     }
 
     /**
-     * Recupera il valore della proprietà data.
+     * Gets the value of the data property.
      * 
      * @return
      *     possible object is
@@ -123,7 +125,7 @@ public class MessageDescription {
     }
 
     /**
-     * Imposta il valore della proprietà data.
+     * Sets the value of the data property.
      * 
      * @param value
      *     allowed object is
@@ -135,7 +137,7 @@ public class MessageDescription {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -147,7 +149,7 @@ public class MessageDescription {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -159,7 +161,7 @@ public class MessageDescription {
     }
 
     /**
-     * Recupera il valore della proprietà isProperty.
+     * Gets the value of the isProperty property.
      * This getter has been renamed from isIsProperty() to getIsProperty() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -172,7 +174,7 @@ public class MessageDescription {
     }
 
     /**
-     * Imposta il valore della proprietà isProperty.
+     * Sets the value of the isProperty property.
      * 
      * @param value
      *     allowed object is
@@ -199,6 +201,16 @@ public class MessageDescription {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

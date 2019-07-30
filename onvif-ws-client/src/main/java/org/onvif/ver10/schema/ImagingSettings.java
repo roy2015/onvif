@@ -10,12 +10,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per ImagingSettings complex type.
+ * <p>Java class for ImagingSettings complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ImagingSettings"&gt;
@@ -85,7 +87,7 @@ public class ImagingSettings {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà backlightCompensation.
+     * Gets the value of the backlightCompensation property.
      * 
      * @return
      *     possible object is
@@ -97,7 +99,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà backlightCompensation.
+     * Sets the value of the backlightCompensation property.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +111,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà brightness.
+     * Gets the value of the brightness property.
      * 
      * @return
      *     possible object is
@@ -121,7 +123,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà brightness.
+     * Sets the value of the brightness property.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +135,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà colorSaturation.
+     * Gets the value of the colorSaturation property.
      * 
      * @return
      *     possible object is
@@ -145,7 +147,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà colorSaturation.
+     * Sets the value of the colorSaturation property.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +159,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà contrast.
+     * Gets the value of the contrast property.
      * 
      * @return
      *     possible object is
@@ -169,7 +171,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà contrast.
+     * Sets the value of the contrast property.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +183,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà exposure.
+     * Gets the value of the exposure property.
      * 
      * @return
      *     possible object is
@@ -193,7 +195,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà exposure.
+     * Sets the value of the exposure property.
      * 
      * @param value
      *     allowed object is
@@ -205,7 +207,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà focus.
+     * Gets the value of the focus property.
      * 
      * @return
      *     possible object is
@@ -217,7 +219,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà focus.
+     * Sets the value of the focus property.
      * 
      * @param value
      *     allowed object is
@@ -229,7 +231,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà irCutFilter.
+     * Gets the value of the irCutFilter property.
      * 
      * @return
      *     possible object is
@@ -241,7 +243,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà irCutFilter.
+     * Sets the value of the irCutFilter property.
      * 
      * @param value
      *     allowed object is
@@ -253,7 +255,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà sharpness.
+     * Gets the value of the sharpness property.
      * 
      * @return
      *     possible object is
@@ -265,7 +267,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà sharpness.
+     * Sets the value of the sharpness property.
      * 
      * @param value
      *     allowed object is
@@ -277,7 +279,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà wideDynamicRange.
+     * Gets the value of the wideDynamicRange property.
      * 
      * @return
      *     possible object is
@@ -289,7 +291,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà wideDynamicRange.
+     * Sets the value of the wideDynamicRange property.
      * 
      * @param value
      *     allowed object is
@@ -301,7 +303,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà whiteBalance.
+     * Gets the value of the whiteBalance property.
      * 
      * @return
      *     possible object is
@@ -313,7 +315,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà whiteBalance.
+     * Sets the value of the whiteBalance property.
      * 
      * @param value
      *     allowed object is
@@ -325,7 +327,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -337,7 +339,7 @@ public class ImagingSettings {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -364,6 +366,16 @@ public class ImagingSettings {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

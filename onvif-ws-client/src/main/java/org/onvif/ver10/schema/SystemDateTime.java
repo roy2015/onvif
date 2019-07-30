@@ -10,14 +10,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * General date time inforamtion returned by the GetSystemDateTime method.
  * 
- * <p>Classe Java per SystemDateTime complex type.
+ * <p>Java class for SystemDateTime complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="SystemDateTime"&gt;
@@ -67,7 +69,7 @@ public class SystemDateTime {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà dateTimeType.
+     * Gets the value of the dateTimeType property.
      * 
      * @return
      *     possible object is
@@ -79,7 +81,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Imposta il valore della proprietà dateTimeType.
+     * Sets the value of the dateTimeType property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +93,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Recupera il valore della proprietà daylightSavings.
+     * Gets the value of the daylightSavings property.
      * This getter has been renamed from isDaylightSavings() to getDaylightSavings() by cxf-xjc-boolean plugin.
      * 
      */
@@ -100,7 +102,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Imposta il valore della proprietà daylightSavings.
+     * Sets the value of the daylightSavings property.
      * 
      */
     public void setDaylightSavings(boolean value) {
@@ -108,7 +110,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Recupera il valore della proprietà timeZone.
+     * Gets the value of the timeZone property.
      * 
      * @return
      *     possible object is
@@ -120,7 +122,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Imposta il valore della proprietà timeZone.
+     * Sets the value of the timeZone property.
      * 
      * @param value
      *     allowed object is
@@ -132,7 +134,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Recupera il valore della proprietà utcDateTime.
+     * Gets the value of the utcDateTime property.
      * 
      * @return
      *     possible object is
@@ -144,7 +146,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Imposta il valore della proprietà utcDateTime.
+     * Sets the value of the utcDateTime property.
      * 
      * @param value
      *     allowed object is
@@ -156,7 +158,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Recupera il valore della proprietà localDateTime.
+     * Gets the value of the localDateTime property.
      * 
      * @return
      *     possible object is
@@ -168,7 +170,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Imposta il valore della proprietà localDateTime.
+     * Sets the value of the localDateTime property.
      * 
      * @param value
      *     allowed object is
@@ -180,7 +182,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Recupera il valore della proprietà extension.
+     * Gets the value of the extension property.
      * 
      * @return
      *     possible object is
@@ -192,7 +194,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Imposta il valore della proprietà extension.
+     * Sets the value of the extension property.
      * 
      * @param value
      *     allowed object is
@@ -219,6 +221,16 @@ public class SystemDateTime {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

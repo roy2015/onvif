@@ -6,12 +6,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per NetworkInterfaceConnectionSetting complex type.
+ * <p>Java class for NetworkInterfaceConnectionSetting complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NetworkInterfaceConnectionSetting"&gt;
@@ -46,7 +48,7 @@ public class NetworkInterfaceConnectionSetting {
     protected Duplex duplex;
 
     /**
-     * Recupera il valore della proprietà autoNegotiation.
+     * Gets the value of the autoNegotiation property.
      * This getter has been renamed from isAutoNegotiation() to getAutoNegotiation() by cxf-xjc-boolean plugin.
      * 
      */
@@ -55,7 +57,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Imposta il valore della proprietà autoNegotiation.
+     * Sets the value of the autoNegotiation property.
      * 
      */
     public void setAutoNegotiation(boolean value) {
@@ -63,7 +65,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Recupera il valore della proprietà speed.
+     * Gets the value of the speed property.
      * 
      */
     public int getSpeed() {
@@ -71,7 +73,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Imposta il valore della proprietà speed.
+     * Sets the value of the speed property.
      * 
      */
     public void setSpeed(int value) {
@@ -79,7 +81,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Recupera il valore della proprietà duplex.
+     * Gets the value of the duplex property.
      * 
      * @return
      *     possible object is
@@ -91,7 +93,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Imposta il valore della proprietà duplex.
+     * Sets the value of the duplex property.
      * 
      * @param value
      *     allowed object is
@@ -100,6 +102,16 @@ public class NetworkInterfaceConnectionSetting {
      */
     public void setDuplex(Duplex value) {
         this.duplex = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

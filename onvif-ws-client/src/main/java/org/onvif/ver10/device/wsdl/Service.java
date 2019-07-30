@@ -13,14 +13,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.OnvifVersion;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per Service complex type.
+ * <p>Java class for Service complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Service"&gt;
@@ -77,7 +79,7 @@ public class Service {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà namespace.
+     * Gets the value of the namespace property.
      * 
      * @return
      *     possible object is
@@ -89,7 +91,7 @@ public class Service {
     }
 
     /**
-     * Imposta il valore della proprietà namespace.
+     * Sets the value of the namespace property.
      * 
      * @param value
      *     allowed object is
@@ -101,7 +103,7 @@ public class Service {
     }
 
     /**
-     * Recupera il valore della proprietà xAddr.
+     * Gets the value of the xAddr property.
      * 
      * @return
      *     possible object is
@@ -113,7 +115,7 @@ public class Service {
     }
 
     /**
-     * Imposta il valore della proprietà xAddr.
+     * Sets the value of the xAddr property.
      * 
      * @param value
      *     allowed object is
@@ -125,7 +127,7 @@ public class Service {
     }
 
     /**
-     * Recupera il valore della proprietà capabilities.
+     * Gets the value of the capabilities property.
      * 
      * @return
      *     possible object is
@@ -137,7 +139,7 @@ public class Service {
     }
 
     /**
-     * Imposta il valore della proprietà capabilities.
+     * Sets the value of the capabilities property.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +151,7 @@ public class Service {
     }
 
     /**
-     * Recupera il valore della proprietà version.
+     * Gets the value of the version property.
      * 
      * @return
      *     possible object is
@@ -161,7 +163,7 @@ public class Service {
     }
 
     /**
-     * Imposta il valore della proprietà version.
+     * Sets the value of the version property.
      * 
      * @param value
      *     allowed object is
@@ -220,11 +222,21 @@ public class Service {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -250,7 +262,7 @@ public class Service {
         protected Object any;
 
         /**
-         * Recupera il valore della proprietà any.
+         * Gets the value of the any property.
          * 
          * @return
          *     possible object is
@@ -263,7 +275,7 @@ public class Service {
         }
 
         /**
-         * Imposta il valore della proprietà any.
+         * Sets the value of the any property.
          * 
          * @param value
          *     allowed object is
@@ -273,6 +285,16 @@ public class Service {
          */
         public void setAny(Object value) {
             this.any = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

@@ -14,13 +14,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per TrackInformation complex type.
+ * <p>Java class for TrackInformation complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="TrackInformation"&gt;
@@ -72,7 +74,7 @@ public class TrackInformation {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà trackToken.
+     * Gets the value of the trackToken property.
      * 
      * @return
      *     possible object is
@@ -84,7 +86,7 @@ public class TrackInformation {
     }
 
     /**
-     * Imposta il valore della proprietà trackToken.
+     * Sets the value of the trackToken property.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +98,7 @@ public class TrackInformation {
     }
 
     /**
-     * Recupera il valore della proprietà trackType.
+     * Gets the value of the trackType property.
      * 
      * @return
      *     possible object is
@@ -108,7 +110,7 @@ public class TrackInformation {
     }
 
     /**
-     * Imposta il valore della proprietà trackType.
+     * Sets the value of the trackType property.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +122,7 @@ public class TrackInformation {
     }
 
     /**
-     * Recupera il valore della proprietà description.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -132,7 +134,7 @@ public class TrackInformation {
     }
 
     /**
-     * Imposta il valore della proprietà description.
+     * Sets the value of the description property.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +146,7 @@ public class TrackInformation {
     }
 
     /**
-     * Recupera il valore della proprietà dataFrom.
+     * Gets the value of the dataFrom property.
      * 
      * @return
      *     possible object is
@@ -156,7 +158,7 @@ public class TrackInformation {
     }
 
     /**
-     * Imposta il valore della proprietà dataFrom.
+     * Sets the value of the dataFrom property.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +170,7 @@ public class TrackInformation {
     }
 
     /**
-     * Recupera il valore della proprietà dataTo.
+     * Gets the value of the dataTo property.
      * 
      * @return
      *     possible object is
@@ -180,7 +182,7 @@ public class TrackInformation {
     }
 
     /**
-     * Imposta il valore della proprietà dataTo.
+     * Sets the value of the dataTo property.
      * 
      * @param value
      *     allowed object is
@@ -237,6 +239,16 @@ public class TrackInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -8,6 +8,8 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
@@ -63,9 +65,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * </pre>
  * 
  * 
- * <p>Classe Java per TimeZone complex type.
+ * <p>Java class for TimeZone complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="TimeZone"&gt;
@@ -93,7 +95,7 @@ public class TimeZone {
     protected String tz;
 
     /**
-     * Recupera il valore della proprietà tz.
+     * Gets the value of the tz property.
      * 
      * @return
      *     possible object is
@@ -105,7 +107,7 @@ public class TimeZone {
     }
 
     /**
-     * Imposta il valore della proprietà tz.
+     * Sets the value of the tz property.
      * 
      * @param value
      *     allowed object is
@@ -114,6 +116,16 @@ public class TimeZone {
      */
     public void setTZ(String value) {
         this.tz = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

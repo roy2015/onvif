@@ -10,12 +10,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Classe Java per ColorspaceRange complex type.
+ * <p>Java class for ColorspaceRange complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ColorspaceRange"&gt;
@@ -57,7 +59,7 @@ public class ColorspaceRange {
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Recupera il valore della proprietà x.
+     * Gets the value of the x property.
      * 
      * @return
      *     possible object is
@@ -69,7 +71,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Imposta il valore della proprietà x.
+     * Sets the value of the x property.
      * 
      * @param value
      *     allowed object is
@@ -81,7 +83,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Recupera il valore della proprietà y.
+     * Gets the value of the y property.
      * 
      * @return
      *     possible object is
@@ -93,7 +95,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Imposta il valore della proprietà y.
+     * Sets the value of the y property.
      * 
      * @param value
      *     allowed object is
@@ -105,7 +107,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Recupera il valore della proprietà z.
+     * Gets the value of the z property.
      * 
      * @return
      *     possible object is
@@ -117,7 +119,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Imposta il valore della proprietà z.
+     * Sets the value of the z property.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +131,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Recupera il valore della proprietà colorspace.
+     * Gets the value of the colorspace property.
      * 
      * @return
      *     possible object is
@@ -141,7 +143,7 @@ public class ColorspaceRange {
     }
 
     /**
-     * Imposta il valore della proprietà colorspace.
+     * Sets the value of the colorspace property.
      * 
      * @param value
      *     allowed object is
@@ -168,6 +170,16 @@ public class ColorspaceRange {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

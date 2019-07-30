@@ -7,13 +7,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.ws.wsaddressing.W3CEndpointReference;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Classe Java per NotificationMessageHolderType complex type.
+ * <p>Java class for NotificationMessageHolderType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NotificationMessageHolderType"&gt;
@@ -61,7 +63,7 @@ public class NotificationMessageHolderType {
     protected NotificationMessageHolderType.Message message;
 
     /**
-     * Recupera il valore della proprietà subscriptionReference.
+     * Gets the value of the subscriptionReference property.
      * 
      * @return
      *     possible object is
@@ -73,7 +75,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Imposta il valore della proprietà subscriptionReference.
+     * Sets the value of the subscriptionReference property.
      * 
      * @param value
      *     allowed object is
@@ -85,7 +87,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Recupera il valore della proprietà topic.
+     * Gets the value of the topic property.
      * 
      * @return
      *     possible object is
@@ -97,7 +99,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Imposta il valore della proprietà topic.
+     * Sets the value of the topic property.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +111,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Recupera il valore della proprietà producerReference.
+     * Gets the value of the producerReference property.
      * 
      * @return
      *     possible object is
@@ -121,7 +123,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Imposta il valore della proprietà producerReference.
+     * Sets the value of the producerReference property.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +135,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Recupera il valore della proprietà message.
+     * Gets the value of the message property.
      * 
      * @return
      *     possible object is
@@ -145,7 +147,7 @@ public class NotificationMessageHolderType {
     }
 
     /**
-     * Imposta il valore della proprietà message.
+     * Sets the value of the message property.
      * 
      * @param value
      *     allowed object is
@@ -156,11 +158,21 @@ public class NotificationMessageHolderType {
         this.message = value;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Classe Java per anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;
@@ -186,7 +198,7 @@ public class NotificationMessageHolderType {
         protected Object any;
 
         /**
-         * Recupera il valore della proprietà any.
+         * Gets the value of the any property.
          * 
          * @return
          *     possible object is
@@ -199,7 +211,7 @@ public class NotificationMessageHolderType {
         }
 
         /**
-         * Imposta il valore della proprietà any.
+         * Sets the value of the any property.
          * 
          * @param value
          *     allowed object is
@@ -209,6 +221,16 @@ public class NotificationMessageHolderType {
          */
         public void setAny(Object value) {
             this.any = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }
