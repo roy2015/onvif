@@ -12,6 +12,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Type describing whether WDR mode is enabled or disabled (on/off).
+ *       
  * 
  * <p>Java class for WideDynamicRange20 complex type.
  * 

@@ -17,10 +17,12 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * 
- * 						The access profile structure contains information about the collection of access policies. The
- * 						device shall include all properties of the AccessProfileInfo structure and also a list of access
- * 						policies.
- * 					
+ *             The access profile structure contains information about the collection of access
+ *             policies. The
+ *             device shall include all properties of the AccessProfileInfo structure and also a list
+ *             of access
+ *             policies.
+ *           
  * 
  * <p>Java class for AccessProfile complex type.
  * 

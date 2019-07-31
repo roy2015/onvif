@@ -20,11 +20,14 @@ import javax.xml.ws.ResponseWrapper;
 public interface EventPortType {
 
     /**
-     * The WS-BaseNotification specification defines a set of OPTIONAL WS-ResouceProperties.
-     * 				This specification does not require the implementation of the WS-ResourceProperty interface.
-     * 				Instead, the subsequent direct interface shall be implemented by an ONVIF compliant device
-     * 				in order to provide information about the FilterDialects, Schema files and topics supported by
-     * 				the device.
+     * The WS-BaseNotification specification defines a set of OPTIONAL
+     *         WS-ResouceProperties.
+     *         This specification does not require the implementation of the WS-ResourceProperty interface.
+     *         Instead, the subsequent direct interface shall be implemented by an ONVIF compliant device
+     *         in order to provide information about the FilterDialects, Schema files and topics supported
+     *         by
+     *         the device.
+     *       
      */
     @WebMethod(operationName = "GetEventProperties", action = "http://www.onvif.org/ver10/events/wsdl/EventPortType/GetEventPropertiesRequest")
     @Action(input = "http://www.onvif.org/ver10/events/wsdl/EventPortType/GetEventPropertiesRequest", output = "http://www.onvif.org/ver10/events/wsdl/EventPortType/GetEventPropertiesResponse")
@@ -37,10 +40,15 @@ public interface EventPortType {
     );
 
     /**
-     * This method returns a PullPointSubscription that can be polled using PullMessages. 
-     * 				This message contains the same elements as the SubscriptionRequest of the WS-BaseNotification without the ConsumerReference.
-     * 				If no Filter is specified the pullpoint notifies all occurring events to the client.
-     * 				This method is mandatory.
+     * This method returns a PullPointSubscription that can be polled using
+     *         PullMessages.
+     *         This message contains the same elements as the SubscriptionRequest of the
+     *         WS-BaseNotification without the ConsumerReference.
+     *         
+     *         If no Filter is specified the pullpoint notifies all occurring events to the client.
+     *         
+     *         This method is mandatory.
+     *       
      */
     @WebMethod(operationName = "CreatePullPointSubscription", action = "http://www.onvif.org/ver10/events/wsdl/EventPortType/CreatePullPointSubscriptionRequest")
     @Action(input = "http://www.onvif.org/ver10/events/wsdl/EventPortType/CreatePullPointSubscriptionRequest", output = "http://www.onvif.org/ver10/events/wsdl/EventPortType/CreatePullPointSubscriptionResponse", fault = {})
@@ -53,7 +61,9 @@ public interface EventPortType {
     ) throws org.oasis_open.docs.wsn.bw_2.TopicNotSupportedFault, org.oasis_open.docs.wsn.bw_2.TopicExpressionDialectUnknownFault, org.oasis_open.docs.wsn.bw_2.InvalidTopicExpressionFault, org.oasis_open.docs.wsn.bw_2.InvalidMessageContentExpressionFault, org.oasis_open.docs.wsn.bw_2.InvalidProducerPropertiesExpressionFault, org.oasis_open.docs.wsn.bw_2.UnacceptableInitialTerminationTimeFault, org.oasis_open.docs.wsn.bw_2.NotifyMessageNotSupportedFault, org.oasis_open.docs.wsrf.rw_2.ResourceUnknownFault, org.oasis_open.docs.wsn.bw_2.UnsupportedPolicyRequestFault, org.oasis_open.docs.wsn.bw_2.InvalidFilterFault, org.oasis_open.docs.wsn.bw_2.SubscribeCreationFailedFault, org.oasis_open.docs.wsn.bw_2.UnrecognizedPolicyRequestFault;
 
     /**
-     * Returns the capabilities of the event service. The result is returned in a typed answer.
+     * Returns the capabilities of the event service. The result is returned in a
+     *         typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/events/wsdl/EventPortType/GetServiceCapabilitiesRequest")
     @Action(input = "http://www.onvif.org/ver10/events/wsdl/EventPortType/GetServiceCapabilitiesRequest", output = "http://www.onvif.org/ver10/events/wsdl/EventPortType/GetServiceCapabilitiesResponse")

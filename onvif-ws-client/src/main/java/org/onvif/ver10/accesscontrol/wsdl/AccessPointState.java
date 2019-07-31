@@ -19,9 +19,10 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * The AccessPointState contains state information for an AccessPoint.
- * An ONVIF compliant device shall provide the following fields for each AccessPoint instance:
- * 
+ *             The AccessPointState contains state information for an AccessPoint.
+ *             An ONVIF compliant device shall provide the following fields for each AccessPoint
+ *             instance:
+ *           
  * 
  * <p>Java class for AccessPointState complex type.
  * 

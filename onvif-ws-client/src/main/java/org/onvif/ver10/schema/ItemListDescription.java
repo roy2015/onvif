@@ -18,10 +18,10 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * 
- * 			Describes a list of items. Each item in the list shall have a unique name.
- * 			The list is designed as linear structure without optional or unbounded elements.
- * 			Use ElementItems only when complex structures are inevitable.
- * 		
+ *         Describes a list of items. Each item in the list shall have a unique name.
+ *         The list is designed as linear structure without optional or unbounded elements.
+ *         Use ElementItems only when complex structures are inevitable.
+ *       
  * 
  * <p>Java class for ItemListDescription complex type.
  * 

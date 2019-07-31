@@ -11,6 +11,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Rectangle defined by lower left corner position and size. Units are pixel.
+ *       
  * 
  * <p>Java class for IntRectangle complex type.
  * 

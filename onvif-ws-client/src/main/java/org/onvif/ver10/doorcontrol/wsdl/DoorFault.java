@@ -20,8 +20,9 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * Fault information for a Door.
- * This can be extended with optional attributes in the future.
+ *             Fault information for a Door.
+ *             This can be extended with optional attributes in the future.
+ *           
  * 
  * <p>Java class for DoorFault complex type.
  * 

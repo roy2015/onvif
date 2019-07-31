@@ -19,20 +19,22 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * The AccessPointInfo structure contains basic information about an AccessPoint instance.
- * An AccessPoint defines an entity a Credential can be granted or denied access to. The
- * AccessPointInfo provides basic information on how access is controlled in one direction for a
- * door (from which area to which area).
- * </p><p>
- *  door is the typical device involved, but other type of
- * devices may be supported as well.
- * Multiple AccessPoints may cover the same Door.
- * A typical case is one AccessPoint for entry and another for exit, both referencing
- * the same Door.
- * </p><p>
+ *             The AccessPointInfo structure contains basic information about an AccessPoint instance.
+ *             An AccessPoint defines an entity a Credential can be granted or denied access to. The
+ *             AccessPointInfo provides basic information on how access is controlled in one direction
+ *             for a
+ *             door (from which area to which area).
+ *             </p><p>
+ *             door is the typical device involved, but other type of
+ *             devices may be supported as well.
+ *             Multiple AccessPoints may cover the same Door.
+ *             A typical case is one AccessPoint for entry and another for exit, both referencing
+ *             the same Door.
+ *             </p><p>
  * 
- * An ONVIF compliant device shall provide the following fields for each AccessPoint instance:
- * 
+ *             An ONVIF compliant device shall provide the following fields for each AccessPoint
+ *             instance:
+ *           
  * 
  * <p>Java class for AccessPointInfo complex type.
  * 

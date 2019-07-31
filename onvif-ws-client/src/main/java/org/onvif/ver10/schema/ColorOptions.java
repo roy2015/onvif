@@ -16,7 +16,9 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * Describe the option of the color supported. Either list each color or define the range of color value. The following values are acceptable for Colourspace attribute.
+ * Describe the option of the color supported. Either list each color or define
+ *         the range of color value. The following values are acceptable for Colourspace attribute.
+ *         
  * <pre>
  * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/YCbCr - YCbCr colourspace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/CIELUV - CIE LUV&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/CIELAB - CIE 1976 (L*a*b*)&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/HSV - HSV colourspace&lt;/li&gt;&lt;/ul&gt;
  * </pre>

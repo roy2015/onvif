@@ -17,6 +17,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Description of a pane layout describing a complete display layout.
+ *       
  * 
  * <p>Java class for PaneLayoutOptions complex type.
  * 

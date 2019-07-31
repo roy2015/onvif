@@ -222,7 +222,7 @@ public class WsNotificationTest {
 
 		List<Profile> profiles = cam.getMedia().getProfiles();
 		for (Profile p : profiles) {
-			System.out.printf("Profile: [token=%s,name=%s,snapshotUri=%s]\n", p.getToken(), p.getName(),
+			System.out.printf("Profile: [token=%s,name=%s,snapshotUri=%s]%n", p.getToken(), p.getName(),
 					cam.getMedia().getSnapshotUri(p.getToken()).getUri());
 		}
 	}

@@ -5,7 +5,6 @@ import de.onvif.soap.OnvifDevice;
 import de.onvif.utils.OnvifUtils;
 import org.apache.cxf.common.logging.LogUtils;
 import org.onvif.ver10.device.wsdl.DeviceServiceCapabilities;
-import org.onvif.ver10.device.wsdl.SystemCapabilities;
 import org.onvif.ver10.events.wsdl.EventPortType;
 import org.onvif.ver10.events.wsdl.GetEventProperties;
 import org.onvif.ver10.events.wsdl.GetEventPropertiesResponse;
@@ -15,6 +14,8 @@ import org.onvif.ver20.imaging.wsdl.ImagingPort;
 import org.onvif.ver20.ptz.wsdl.Capabilities;
 import org.onvif.ver20.ptz.wsdl.PTZ;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.soap.SOAPException;
 import java.io.IOException;
@@ -23,7 +24,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.logging.Logger;
 
-
+/**
+ * @author Brad Lowe
+ */
 public class TestDevice {
 	private static final Logger LOG = LogUtils.getL7dLogger(TestDevice.class);
 
@@ -40,19 +43,19 @@ public class TestDevice {
 	public static String inspect(OnvifDevice device) {
 		String out = "";
 		DeviceInfo info = device.getDeviceInfo();
-		out += "DeviceInfo:" + info + sep;
+		out += "DeviceInfo:" +sep + "\t" + info + sep;
+		DeviceServiceCapabilities caps = device.getDevice().getServiceCapabilities();
+		out += "\tgetServiceCapabilities: " + OnvifUtils.format(caps) + sep;
+		out += "\tgetServiceCapabilities.getSystem: " + OnvifUtils.format(caps.getSystem()) + sep;
+
 
 		Media media = device.getMedia();
-
 		media.getVideoSources();
-
-
 		List<Profile> profiles = media.getProfiles();
 		out += "Media Profiles: " + profiles.size() + sep;
-
 		for (Profile profile : profiles) {
 			String profileToken = profile.getToken();
-			String rtsp = device.getRTSPURL(profileToken);
+			String rtsp = device.getRTSPUri(profileToken);
 			out += "\tProfile: " + profile.getName() + " token=" + profile.getToken() + sep;
 			out += "\t\trtsp: " + rtsp + sep;
 			out += "\t\tsnapshot: " + device.getSnapshotUri(profileToken) + sep;
@@ -63,15 +66,12 @@ public class TestDevice {
 		out += "VideoSources: " + videoSources.size() + sep;
 		for (VideoSource v : videoSources)
 			out += "\t" + OnvifUtils.format(v) + sep;
+
 		List<AudioSource> audioSources = media.getAudioSources();
 		out += "AudioSources: " + audioSources.size() + sep;
 		for (AudioSource a : audioSources)
 			out += "\t" + OnvifUtils.format(a) + sep;
 
-		out += "hostName=" + device.getHostname() + sep;
-		DeviceServiceCapabilities caps = device.getDevice().getServiceCapabilities();
-		out += "getServiceCapabilities=" + OnvifUtils.format(caps) + sep;
-		out += "getServiceCapabilities.getSystem=" + OnvifUtils.format(caps.getSystem()) + sep;
 
 		ImagingPort imaging = device.getImaging();
 		if (imaging != null && videoSources.size() > 0) {
@@ -102,13 +102,21 @@ public class TestDevice {
 
 			GetEventProperties getEventProperties = new GetEventProperties();
 			GetEventPropertiesResponse getEventPropertiesResp = events.getEventProperties(getEventProperties);
-			getEventPropertiesResp.getMessageContentFilterDialect().forEach(x -> System.out.println(x));
-			getEventPropertiesResp.getTopicExpressionDialect().forEach(x -> System.out.println(x));
+			out += "\tMessageContentFilterDialects:" + sep;
+			for (String f : getEventPropertiesResp.getMessageContentFilterDialect())
+				out += ("\t\t" + f + sep);
+			out += "\tTopicExpressionDialects:" + sep;
+			for (String f : getEventPropertiesResp.getTopicExpressionDialect())
+				out += ("\t\t" + f + sep);
+
+			out += "\tTopics:" + sep;
+			StringBuffer tree = new StringBuffer();
 			for (Object object : getEventPropertiesResp.getTopicSet().getAny()) {
 				Element e = (Element) object;
-				WsNotificationTest.printTree(e, e.getNodeName());
+				printTree(e, e.getNodeName(), tree);
+				// WsNotificationTest.printTree(e, e.getNodeName());
 			}
-
+			out += tree;
 
 		}
 
@@ -116,7 +124,7 @@ public class TestDevice {
 		PTZ ptz = device.getPtz();
 		if (ptz != null) {
 
-			out += "PTZ:"  + sep;
+			out += "PTZ:" + sep;
 			String profileToken = profiles.get(0).getToken();
 
 			Capabilities ptz_caps = ptz.getServiceCapabilities();
@@ -126,7 +134,7 @@ public class TestDevice {
 			// out += "ptz.getConfiguration=" + ptz.getConfiguration(profileToken) + sep;
 			List<PTZPreset> presets = ptz.getPresets(profileToken);
 			if (presets != null && !presets.isEmpty()) {
-				out += "\tPresets:" + presets.size() +sep;
+				out += "\tPresets:" + presets.size() + sep;
 				for (PTZPreset p : presets)
 					out += "\t\t" + OnvifUtils.format(p) + sep;
 			}
@@ -134,6 +142,20 @@ public class TestDevice {
 
 
 		return out;
+	}
+
+	public static void printTree(Node node, String name, StringBuffer buffer) {
+
+		if (node.hasChildNodes()) {
+			NodeList nodes = node.getChildNodes();
+			for (int i = 0; i < nodes.getLength(); i++) {
+				Node n = nodes.item(i);
+				printTree(n, name + " - " + n.getNodeName(), buffer);
+			}
+		} else {
+			buffer.append("\t\t"+ name + " - " + node.getNodeName() + "\n");
+		}
+
 	}
 
 	public static String testCamera(URL url, String user, String password) throws SOAPException, IOException {
@@ -146,8 +168,9 @@ public class TestDevice {
 		try {
 			OnvifCredentials creds = GetTestDevice.getOnvifCredentials(args);
 			String out = testCamera(creds);
-			LOG.info("\n"+out+"\n");
+			LOG.info("\n" + out + "\n");
 		} catch (Throwable th) {
+			LOG.warning("Error "+th);
 			th.printStackTrace();
 		}
 	}

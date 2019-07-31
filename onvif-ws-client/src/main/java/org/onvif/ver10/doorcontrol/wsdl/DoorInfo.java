@@ -19,10 +19,10 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * The DoorInfo type represents the Door as a physical object.
- * The structure contains information and capabilities of a specific door instance.
- * An ONVIF compliant device shall provide the following fields for each Door instance:
- * 
+ *             The DoorInfo type represents the Door as a physical object.
+ *             The structure contains information and capabilities of a specific door instance.
+ *             An ONVIF compliant device shall provide the following fields for each Door instance:
+ *           
  * 
  * <p>Java class for DoorInfo complex type.
  * 

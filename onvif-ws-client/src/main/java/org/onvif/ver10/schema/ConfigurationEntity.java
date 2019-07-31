@@ -13,6 +13,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Base type defining the common properties of a configuration.
+ *       
  * 
  * <p>Java class for ConfigurationEntity complex type.
  * 

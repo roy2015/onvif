@@ -29,7 +29,9 @@ public enum DoorPhysicalState {
 
 
     /**
-     * Value is currently unknown (possibly due to initialization or monitors not giving a conclusive result).
+     * Value is currently unknown (possibly due to initialization or
+     *                 monitors not giving a conclusive result).
+     *               
      * 
      */
     @XmlEnumValue("Unknown")

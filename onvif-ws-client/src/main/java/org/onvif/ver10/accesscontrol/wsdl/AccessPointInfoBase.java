@@ -14,8 +14,8 @@ import org.onvif.ver10.pacs.DataEntity;
 
 /**
  * 
- * Used as extension base for AccessPointInfo.
- * 
+ *             Used as extension base for AccessPointInfo.
+ *           
  * 
  * <p>Java class for AccessPointInfoBase complex type.
  * 

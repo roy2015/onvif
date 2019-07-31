@@ -20,9 +20,9 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * 
- * 			List of parameters according to the corresponding ItemListDescription.
- * 			Each item in the list shall have a unique name.
- * 		
+ *         List of parameters according to the corresponding ItemListDescription.
+ *         Each item in the list shall have a unique name.
+ *       
  * 
  * <p>Java class for ItemList complex type.
  * 

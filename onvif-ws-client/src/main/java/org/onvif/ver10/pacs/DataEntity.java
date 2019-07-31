@@ -13,8 +13,9 @@ import org.onvif.ver10.doorcontrol.wsdl.DoorInfoBase;
 
 /**
  * 
- * General datastructure referenced by a token.
- * Should be used as extension base.
+ *         General datastructure referenced by a token.
+ *         Should be used as extension base.
+ *       
  * 
  * <p>Java class for DataEntity complex type.
  * 

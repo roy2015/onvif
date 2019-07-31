@@ -15,11 +15,14 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * 
- * 						The access policy is an association of an access point and a schedule. It defines when an access
- * 						point can be accessed using an access profile which contains this access policy. If an access
- * 						profile contains several access policies specifying different schedules for the same access
- * 						point will result in a union of the schedules.
- * 					
+ *             The access policy is an association of an access point and a schedule. It defines when
+ *             an access
+ *             point can be accessed using an access profile which contains this access policy. If an
+ *             access
+ *             profile contains several access policies specifying different schedules for the same
+ *             access
+ *             point will result in a union of the schedules.
+ *           
  * 
  * <p>Java class for AccessPolicy complex type.
  * 

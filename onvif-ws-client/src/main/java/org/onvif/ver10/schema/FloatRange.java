@@ -11,6 +11,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Range of values greater equal Min value and less equal Max value.
+ *       
  * 
  * <p>Java class for FloatRange complex type.
  * 

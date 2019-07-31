@@ -22,6 +22,7 @@ import org.w3c.dom.Element;
 
 /**
  * The configuration options that relates to serial port.
+ *           
  * 
  * <p>Java class for SerialPortConfigurationOptions complex type.
  * 

@@ -13,8 +13,8 @@ import org.onvif.ver10.pacs.DataEntity;
 
 /**
  * 
- * Basic information about an Area. Used as extension base.
- * 
+ *             Basic information about an Area. Used as extension base.
+ *           
  * 
  * <p>Java class for AreaInfoBase complex type.
  * 

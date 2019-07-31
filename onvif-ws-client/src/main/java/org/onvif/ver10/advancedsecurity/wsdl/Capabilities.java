@@ -18,7 +18,9 @@ import org.w3c.dom.Element;
 
 
 /**
- * The capabilities of an Advanced Security Service implementation on a device.
+ * The capabilities of an Advanced Security Service implementation on a
+ *             device.
+ *           
  * 
  * <p>Java class for Capabilities complex type.
  * 

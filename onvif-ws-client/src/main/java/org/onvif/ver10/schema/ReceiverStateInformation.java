@@ -20,8 +20,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * 			Contains information about a receiver's current state.
- * 		
+ *         Contains information about a receiver's current state.
+ *       
  * 
  * <p>Java class for ReceiverStateInformation complex type.
  * 

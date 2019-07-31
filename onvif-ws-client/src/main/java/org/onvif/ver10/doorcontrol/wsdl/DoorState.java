@@ -20,8 +20,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * The DoorState structure contains current aggregate runtime status of Door.
- * 
+ *             The DoorState structure contains current aggregate runtime status of Door.
+ *           
  * 
  * <p>Java class for DoorState complex type.
  * 

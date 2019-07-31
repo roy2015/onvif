@@ -18,7 +18,9 @@ import javax.xml.ws.ResponseWrapper;
 public interface ReplayPort {
 
     /**
-     * Returns the capabilities of the replay service. The result is returned in a typed answer.
+     * Returns the capabilities of the replay service. The result is returned in
+     *         a typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/replay/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/replay/wsdl", className = "org.onvif.ver10.replay.wsdl.GetServiceCapabilities")
@@ -29,10 +31,10 @@ public interface ReplayPort {
 
     /**
      * Requests a URI that can be used to initiate playback of a recorded stream
-     * 				using RTSP as the control protocol. The URI is valid only as it is
-     * 				specified in the response.
-     * 				This operation is mandatory.
-     * 			
+     * using RTSP as the control protocol. The URI is valid only as it is
+     * specified in the response.
+     * This operation is mandatory.
+     *       
      */
     @WebMethod(operationName = "GetReplayUri", action = "http://www.onvif.org/ver10/replay/wsdl/GetReplayUri")
     @RequestWrapper(localName = "GetReplayUri", targetNamespace = "http://www.onvif.org/ver10/replay/wsdl", className = "org.onvif.ver10.replay.wsdl.GetReplayUri")
@@ -48,8 +50,8 @@ public interface ReplayPort {
 
     /**
      * Returns the current configuration of the replay service.
-     * 				This operation is mandatory.
-     * 			
+     * This operation is mandatory.
+     *       
      */
     @WebMethod(operationName = "GetReplayConfiguration", action = "http://www.onvif.org/ver10/replay/wsdl/GetReplayConfiguration")
     @RequestWrapper(localName = "GetReplayConfiguration", targetNamespace = "http://www.onvif.org/ver10/replay/wsdl", className = "org.onvif.ver10.replay.wsdl.GetReplayConfiguration")
@@ -60,8 +62,8 @@ public interface ReplayPort {
 
     /**
      * Changes the current configuration of the replay service.
-     * 				This operation is mandatory.
-     * 			
+     * This operation is mandatory.
+     *       
      */
     @WebMethod(operationName = "SetReplayConfiguration", action = "http://www.onvif.org/ver10/replay/wsdl/SetReplayConfiguration")
     @RequestWrapper(localName = "SetReplayConfiguration", targetNamespace = "http://www.onvif.org/ver10/replay/wsdl", className = "org.onvif.ver10.replay.wsdl.SetReplayConfiguration")

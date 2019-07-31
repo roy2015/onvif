@@ -17,6 +17,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * A structure for defining a limited scope when searching in recorded data.
+ *       
  * 
  * <p>Java class for SearchScope complex type.
  * 

@@ -22,7 +22,8 @@ public interface DoorControlPort {
      * It invokes the functionality typically used when a card holder presents a
      * card to a card reader at the door and is granted access.
      * </p><p>
-     * The DoorMode shall change to Accessed state. Please refer to Accessed mode in section [DoorMode] for more details.
+     * The DoorMode shall change to Accessed state. Please refer to Accessed mode in section
+     * [DoorMode] for more details.
      * </p><p>
      * The Door shall remain accessible for the defined time. When the time span
      * elapses, the DoorMode shall change back to its previous state.
@@ -40,6 +41,7 @@ public interface DoorControlPort {
      * The device shall take the best effort approach for parameters not supported,
      * it must fallback to preconfigured time or limit the time to the closest
      * supported time if the specified time is out of range.
+     *       
      */
     @WebMethod(operationName = "AccessDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/AccessDoor")
     @RequestWrapper(localName = "AccessDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.AccessDoor")
@@ -70,6 +72,7 @@ public interface DoorControlPort {
      * </p><p>
      * If the request cannot be fulfilled, a Failure fault shall be returned.
      * Please refer to section [DoorMode] for more details about Door Modes restrictions.
+     *       
      */
     @WebMethod(operationName = "UnlockDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/UnlockDoor")
     @RequestWrapper(localName = "UnlockDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.UnlockDoor")
@@ -86,6 +89,7 @@ public interface DoorControlPort {
      * It is not defined what the previous/next state shall be, but typically - Locked.
      * </p><p>
      * This method shall only succeed if the current DoorMode is LockedDown.
+     *       
      */
     @WebMethod(operationName = "LockDownReleaseDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/LockDownReleaseDoor")
     @RequestWrapper(localName = "LockDownReleaseDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.LockDownReleaseDoor")
@@ -102,11 +106,13 @@ public interface DoorControlPort {
      * this method.
      * </p><p>
      * 
-     * A call to this method shall return a StartReference when not all data  is returned and more data is available.
+     * A call to this method shall return a StartReference when not all data is returned and more
+     * data is available.
      * The reference shall be valid for retrieving the next set of data.
      * Please refer section 4.8.3 of Access Control Service Specification for more details.
      * The number of items returned shall not be greater than Limit parameter.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "GetDoorInfoList", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoorInfoList")
     @RequestWrapper(localName = "GetDoorInfoList", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.GetDoorInfoList")
@@ -124,16 +130,20 @@ public interface DoorControlPort {
     );
 
     /**
-     * This operation allows unlocking a Door and preventing other actions until LockOpenRelease method is invoked.
+     * This operation allows unlocking a Door and preventing other actions until LockOpenRelease
+     * method is invoked.
      * The DoorMode shall change to LockedOpen state.
      * Please refer to LockedOpen mode in section [DoorMode] for more details.
      * </p><p>
-     * The device shall ignore other door control commands until a LockOpenRelease command is performed.
+     * The device shall ignore other door control commands until a LockOpenRelease command is
+     * performed.
      * </p><p>
-     * A device that signals support for LockOpen capability for a particular Door instance shall implement this method.
+     * A device that signals support for LockOpen capability for a particular Door instance shall
+     * implement this method.
      * </p><p>
      * If the request cannot be fulfilled, a Failure fault shall be returned.
      * Please refer to section [DoorMode] for more details about Door Modes restrictions.
+     *       
      */
     @WebMethod(operationName = "LockOpenDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/LockOpenDoor")
     @RequestWrapper(localName = "LockOpenDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.LockOpenDoor")
@@ -156,6 +166,7 @@ public interface DoorControlPort {
      * If the door has an extra lock that shall be locked as well.
      * </p><p>
      * If the request cannot be fulfilled, a Failure fault shall be returned.
+     *       
      */
     @WebMethod(operationName = "DoubleLockDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/DoubleLockDoor")
     @RequestWrapper(localName = "DoubleLockDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.DoubleLockDoor")
@@ -176,6 +187,7 @@ public interface DoorControlPort {
      * </p><p>
      * If the request cannot be fulfilled, a Failure fault shall be returned.
      * Please refer to section [DoorMode] for more details about Door Modes restrictions.
+     *       
      */
     @WebMethod(operationName = "LockDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/LockDoor")
     @RequestWrapper(localName = "LockDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.LockDoor")
@@ -192,6 +204,7 @@ public interface DoorControlPort {
      * It is not defined what the previous/next state shall be, but typically - Unlocked.
      * </p><p>
      * This method shall only succeed if the current DoorMode is LockedOpen.
+     *       
      */
     @WebMethod(operationName = "LockOpenReleaseDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/LockOpenReleaseDoor")
     @RequestWrapper(localName = "LockOpenReleaseDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.LockOpenReleaseDoor")
@@ -209,8 +222,10 @@ public interface DoorControlPort {
      * 
      * The device shall ignore tokens it cannot resolve and may return an empty list
      * if there are no items matching specified tokens.
-     * If the number of requested items is greater than MaxLimit, a TooManyItems fault shall be returned.
+     * If the number of requested items is greater than MaxLimit, a TooManyItems fault shall be
+     * returned.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "GetDoorInfo", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoorInfo")
     @RequestWrapper(localName = "GetDoorInfo", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.GetDoorInfo")
@@ -225,7 +240,9 @@ public interface DoorControlPort {
     /**
      * This operation returns the capabilities of the service.
      * </p><p>
-     * An ONVIF compliant device which provides the Door Control service shall implement this method.
+     * An ONVIF compliant device which provides the Door Control service shall implement this
+     * method.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.GetServiceCapabilities")
@@ -235,11 +252,13 @@ public interface DoorControlPort {
 ;
 
     /**
-     * This operation allows locking and preventing other actions until a LockDownRelease command is invoked.
+     * This operation allows locking and preventing other actions until a LockDownRelease command
+     * is invoked.
      * The DoorMode shall change to LockedDown state.
      * Please refer to LockedDown mode in section [DoorMode] for more details.
      * </p><p>
-     * The device shall ignore other door control commands until a LockDownRelease command is performed.
+     * The device shall ignore other door control commands until a LockDownRelease command is
+     * performed.
      * </p><p>
      * A device that signals support for LockDown capability for a particular Door
      * instance shall implement this method.
@@ -249,6 +268,7 @@ public interface DoorControlPort {
      * </p><p>
      * If the request cannot be fulfilled, a Failure fault shall be returned.
      * Please refer to section [DoorMode] for more details about Door Modes restrictions.
+     *       
      */
     @WebMethod(operationName = "LockDownDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/LockDownDoor")
     @RequestWrapper(localName = "LockDownDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.LockDownDoor")
@@ -269,6 +289,7 @@ public interface DoorControlPort {
      * </p><p>
      * If the request cannot be fulfilled, a Failure fault shall be returned.
      * Please refer to section [DoorMode] for more details about Door Modes restrictions.
+     *       
      */
     @WebMethod(operationName = "BlockDoor", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/BlockDoor")
     @RequestWrapper(localName = "BlockDoor", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.BlockDoor")
@@ -285,6 +306,7 @@ public interface DoorControlPort {
      * A device implementing the Door Control service shall be capable of reporting
      * the status of a door using a DoorState structure available from the
      * GetDoorState command.
+     *       
      */
     @WebMethod(operationName = "GetDoorState", action = "http://www.onvif.org/ver10/doorcontrol/wsdl/GetDoorState")
     @RequestWrapper(localName = "GetDoorState", targetNamespace = "http://www.onvif.org/ver10/doorcontrol/wsdl", className = "org.onvif.ver10.doorcontrol.wsdl.GetDoorState")

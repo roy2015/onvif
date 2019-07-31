@@ -16,7 +16,9 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * A layout describes a set of Video windows that are displayed simultaniously on a display. 
+ * A layout describes a set of Video windows that are displayed simultaniously
+ *         on a display.
+ *       
  * 
  * <p>Java class for Layout complex type.
  * 

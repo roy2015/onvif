@@ -45,17 +45,20 @@ public class GetTestDevice {
 		return new OnvifCredentials("","","","");
 	}
 
-	private static OnvifCredentials getFromArgs(String[] args) {
-		if (args==null||args.length<2) return null;
+	// arguments to any test app can be host user password profilename
+	// if no arguments passed, returns null.
+	// All arguments optional.
+	public static OnvifCredentials getFromArgs(String[] args) {
+		if (args==null||args.length==0) return null;
 		String host="",user="",password="",profile="";
-		if (args.length > 0) host = args[0];
+		host = args[0];
 		if (args.length > 1) user = args[1];
 		if (args.length > 2) password = args[2];
 		if (args.length > 3) profile = args[3];
 		return new OnvifCredentials(host,user,password,profile);
 	}
 
-	private static OnvifCredentials getFromProperties() {
+	public static OnvifCredentials getFromProperties() {
 		String test = null;
 		if (test == null) test = System.getProperty(PROPERTY_NAME);
 		if (test == null) test = System.getenv(PROPERTY_NAME);
@@ -69,7 +72,7 @@ public class GetTestDevice {
 	private static OnvifCredentials getFromStandardInput() throws IOException {
 
 		System.out.println("Getting camera credentials from standard input");
-		InputStreamReader inputStream = new InputStreamReader(System.in);
+		InputStreamReader inputStream = new InputStreamReader(System.in, "utf-8");
 		BufferedReader keyboardInput = new BufferedReader(inputStream);
 		System.out.println("Please enter camera IP (with port if not 80):");
 		String cameraAddress = keyboardInput.readLine();

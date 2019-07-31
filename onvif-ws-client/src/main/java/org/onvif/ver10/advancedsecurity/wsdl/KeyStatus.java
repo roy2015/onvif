@@ -43,6 +43,7 @@ public enum KeyStatus {
 
     /**
      * Key has not been successfully generated and cannot be used.
+     *               
      * 
      */
     @XmlEnumValue("corrupt")

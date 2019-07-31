@@ -27,6 +27,7 @@ public class ReadCommandsFromStdInput {
 			user = keyboardInput.readLine();
 			System.out.println("Please enter camera password:");
 			password = keyboardInput.readLine();
+			if (cameraAddress==null||user==null||password==null) throw new IOException("No input");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			return;
@@ -48,7 +49,7 @@ public class ReadCommandsFromStdInput {
 				System.out.println();
 				System.out.println("Enter a command (type \"info\" to get commands):");
 				input = keyboardInput.readLine();
-
+				if (input==null) break;
 				switch (input) {
 					case "url": {
 						List<Profile> profiles = cam.getMedia().getProfiles();

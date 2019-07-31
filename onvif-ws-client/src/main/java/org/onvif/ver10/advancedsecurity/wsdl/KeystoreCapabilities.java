@@ -22,6 +22,7 @@ import org.w3c.dom.Element;
 
 /**
  * The capabilities of a keystore implementation on a device.
+ *           
  * 
  * <p>Java class for KeystoreCapabilities complex type.
  * 

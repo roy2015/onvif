@@ -19,6 +19,7 @@ import org.w3c.dom.Element;
 
 /**
  * Configuration of the streaming and coding settings of a Video window.
+ *       
  * 
  * <p>Java class for PaneConfiguration complex type.
  * 

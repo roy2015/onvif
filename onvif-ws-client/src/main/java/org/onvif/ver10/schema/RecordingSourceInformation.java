@@ -20,8 +20,9 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * 				A set of informative desciptions of a data source. The Search searvice allows a client to filter on recordings based on information in this structure.
- * 			
+ *         A set of informative desciptions of a data source. The Search searvice allows a client to
+ *         filter on recordings based on information in this structure.
+ *       
  * 
  * <p>Java class for RecordingSourceInformation complex type.
  * 

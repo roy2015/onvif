@@ -15,7 +15,10 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * The value range of "Transparent" could be defined by vendors only should follow this rule: the minimum value means non-transparent and the maximum value maens fully transparent.
+ * The value range of "Transparent" could be defined by vendors only should
+ *         follow this rule: the minimum value means non-transparent and the maximum value maens fully
+ *         transparent.
+ *       
  * 
  * <p>Java class for OSDColor complex type.
  * 

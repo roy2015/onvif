@@ -16,6 +16,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * General date time inforamtion returned by the GetSystemDateTime method.
+ *       
  * 
  * <p>Java class for SystemDateTime complex type.
  * 

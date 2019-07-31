@@ -20,6 +20,7 @@ import org.w3c.dom.Element;
 
 /**
  * Subcription handling in the same way as base notification subscription.
+ *       
  * 
  * <p>Java class for EventSubscription complex type.
  * 

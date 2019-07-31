@@ -1,10 +1,10 @@
 package org.onvif.client;
 
 public class OnvifCredentials {
-	private String host;            // 92.168.xx.yy
+	private String host;        // 92.168.xx.yy, or http://host[:port]
 	private String user;        // admin
 	private String password;    // secret
-	private String profile;        // "MediaProfile000"  If empty, will use first profile.
+	private String profile;     // "MediaProfile000"  If empty, will use first profile.
 
 	public OnvifCredentials(String host, String user, String password, String profile) {
 		this.host = host;

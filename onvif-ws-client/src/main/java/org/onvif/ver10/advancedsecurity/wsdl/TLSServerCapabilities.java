@@ -21,6 +21,7 @@ import org.w3c.dom.Element;
 
 /**
  * The capabilities of a TLS server implementation on a device.
+ *           
  * 
  * <p>Java class for TLSServerCapabilities complex type.
  * 
