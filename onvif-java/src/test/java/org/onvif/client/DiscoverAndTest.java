@@ -65,7 +65,7 @@ public class DiscoverAndTest {
     if (args.length > 1) password = args[1];
 
     if (password.isEmpty()) {
-      LOG.info(
+      LOG.warn(
           "Warning: No password for discover and test... run with common user password as arguments");
     }
     // OnvifDevice.setVerbose(true);
