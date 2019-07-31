@@ -36,8 +36,8 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.MessageDigestAlgorithms;
 /*
-  Utility class to add user/password onvif credentials to SOAP communications
- */
+ Utility class to add user/password onvif credentials to SOAP communications
+*/
 public class SimpleSecurityHandler implements SOAPHandler<SOAPMessageContext> {
 
   private final String username;

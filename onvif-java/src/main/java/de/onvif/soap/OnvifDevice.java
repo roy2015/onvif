@@ -62,16 +62,27 @@ public class OnvifDevice {
   private static boolean verbose = false; // enable/disable logging of SOAP messages
   final SimpleSecurityHandler securityHandler;
 
+  private static URL cleanURL(URL u) throws ConnectException {
+    if (u == null) throw new ConnectException("null url not allowed");
+    String f = u.getFile();
+    if (!f.isEmpty()) {
+      String out = u.toString().replace(f, "");
+      try {
+        return new URL(out);
+      } catch (MalformedURLException e) {
+        throw new ConnectException("MalformedURLException " + u);
+      }
+    }
+
+    return u;
+  }
   /*
    * @param url is http://host or http://host:port or https://host or https://host:port
    * @param user     Username you need to login, or "" for none
    * @param password User's password to login, or "" for none
    */
-  public OnvifDevice(URL url, String user, String password)
-      throws ConnectException, SOAPException, MalformedURLException {
-    this.url = url;
-    String f = url.getFile();
-    if (!f.isEmpty()) throw new MalformedURLException("Expected empty file in URL, not:" + f);
+  public OnvifDevice(URL url, String user, String password) throws ConnectException, SOAPException {
+    this.url = cleanURL(url);
     securityHandler =
         !user.isEmpty() && !password.isEmpty() ? new SimpleSecurityHandler(user, password) : null;
     init();
@@ -289,8 +300,8 @@ public class OnvifDevice {
     return getSnapshotUri(0);
   }
 
-  public String getRTSPUri() {
-    return getRTSPUri(0);
+  public String getStreamUri() {
+    return getStreamUri(0);
   }
 
   // Get snapshot uri for profile with index
@@ -300,12 +311,12 @@ public class OnvifDevice {
     return "";
   }
 
-  public String getRTSPUri(int index) {
-    return getRTSPUri(media.getProfiles().get(index).getToken());
+  public String getStreamUri(int index) {
+    return getStreamUri(media.getProfiles().get(index).getToken());
   }
 
   // returns rtsp://host[:port]/path_for_rtsp
-  public String getRTSPUri(String profileToken) {
+  public String getStreamUri(String profileToken) {
     StreamSetup streamSetup = new StreamSetup();
     Transport t = new Transport();
     t.setProtocol(TransportProtocol.RTSP);

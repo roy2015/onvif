@@ -6,16 +6,17 @@ import java.io.StringWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.logging.Logger;
-import org.apache.cxf.common.logging.LogUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Class calls OnvifDiscovery and for each device URL found, calls TestDevice
- * This assumes all onvif devices on your network use the same username and password.
+ * Class calls OnvifDiscovery and for each device URL found, calls TestDevice This assumes all onvif
+ * devices on your network use the same username and password.
+ *
  * @author Brad Lowe
  */
 public class DiscoverAndTest {
-  private static final Logger LOG = LogUtils.getL7dLogger(TestDevice.class);
+  private static final Logger LOG = LoggerFactory.getLogger(TestDevice.class);
 
   public static String discoverAndTest(String user, String password) {
     String sep = "\n";
@@ -38,10 +39,10 @@ public class DiscoverAndTest {
         results.add(u.toString() + ":" + result);
       } catch (Throwable e) {
         bad++;
-        LOG.severe("error:" + u + " " + e.toString());
+        LOG.error("error:" + u, e);
         // This is a bit of a hack. When a camera is password protected (it should be!)
         // and the password is not provided or wrong, a "Unable to Send Message" exception
-        // is thrown. This is not clear-- buried in the stack track is the real cause.
+        // may be thrown. This is not clear-- buried in the stack track is the real cause.
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
         e.printStackTrace(pw);
@@ -58,8 +59,16 @@ public class DiscoverAndTest {
 
   public static void main(String[] args) {
     // get user and password.. we will ignore device host
-    OnvifCredentials creds = GetTestDevice.getOnvifCredentials(args);
-    if (creds.getPassword().isEmpty()) LOG.info("Warning: No password for discover and test...");
-    LOG.info(discoverAndTest(creds.getUser(), creds.getPassword()));
+    String user = "";
+    String password = "";
+    if (args.length > 0) user = args[0];
+    if (args.length > 1) password = args[1];
+
+    if (password.isEmpty()) {
+      LOG.info(
+          "Warning: No password for discover and test... run with common user password as arguments");
+    }
+    // OnvifDevice.setVerbose(true);
+    LOG.info(discoverAndTest(user, password));
   }
 }
