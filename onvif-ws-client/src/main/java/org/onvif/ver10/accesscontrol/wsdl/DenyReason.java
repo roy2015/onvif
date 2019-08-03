@@ -32,49 +32,66 @@ public enum DenyReason {
 
 
     /**
-     * The device shall provide the following event, whenever a valid credential is not enabled or has been disabled (e.g., due to credential being lost etc.) to prevent unauthorized entry.
+     * The device shall provide the following event, whenever a valid
+     *                 credential is not enabled or has been disabled (e.g., due to credential being lost
+     *                 etc.) to prevent unauthorized entry.
+     *               
      * 
      */
     @XmlEnumValue("CredentialNotEnabled")
     CREDENTIAL_NOT_ENABLED("CredentialNotEnabled"),
 
     /**
-     * The device shall provide the following event, whenever a valid credential is presented though it is not active yet;: e.g, the credential was presented before the start date.
+     * The device shall provide the following event, whenever a valid
+     *                 credential is presented though it is not active yet;: e.g, the credential was
+     *                 presented before the start date.
+     *               
      * 
      */
     @XmlEnumValue("CredentialNotActive")
     CREDENTIAL_NOT_ACTIVE("CredentialNotActive"),
 
     /**
-     * The device shall provide the following event, whenever a valid credential was presented after its expiry date.
+     * The device shall provide the following event, whenever a valid
+     *                 credential was presented after its expiry date.
+     *               
      * 
      */
     @XmlEnumValue("CredentialExpired")
     CREDENTIAL_EXPIRED("CredentialExpired"),
 
     /**
-     * The device shall provide the following event, whenever an entered PIN code does not match the credential.
+     * The device shall provide the following event, whenever an entered
+     *                 PIN code does not match the credential.
+     *               
      * 
      */
     @XmlEnumValue("InvalidPIN")
     INVALID_PIN("InvalidPIN"),
 
     /**
-     * The device shall provide the following event, whenever a valid credential is denied access to the requested AccessPoint because the credential is not permitted at the moment.
+     * The device shall provide the following event, whenever a valid
+     *                 credential is denied access to the requested AccessPoint because the credential is
+     *                 not permitted at the moment.
+     *               
      * 
      */
     @XmlEnumValue("NotPermittedAtThisTime")
     NOT_PERMITTED_AT_THIS_TIME("NotPermittedAtThisTime"),
 
     /**
-     * The device shall provide the following event, whenever the presented credential is not authorized.
+     * The device shall provide the following event, whenever the presented
+     *                 credential is not authorized.
+     *               
      * 
      */
     @XmlEnumValue("Unauthorized")
     UNAUTHORIZED("Unauthorized"),
 
     /**
-     * The device shall provide the following event, whenever the request is denied and no other specific event matches it or is supported by the service.
+     * The device shall provide the following event, whenever the request
+     *                 is denied and no other specific event matches it or is supported by the service.
+     *               
      * 
      */
     @XmlEnumValue("Other")

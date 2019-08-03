@@ -19,11 +19,12 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * DoorCapabilities reflect optional functionality of a particular physical entity.
- * Different door instances may have different set of capabilities.
- * This information may change during device operation, e.g. if hardware settings are changed.
- * The following capabilities are available:
- * 
+ *             DoorCapabilities reflect optional functionality of a particular physical entity.
+ *             Different door instances may have different set of capabilities.
+ *             This information may change during device operation, e.g. if hardware settings are
+ *             changed.
+ *             The following capabilities are available:
+ *           
  * 
  * <p>Java class for DoorCapabilities complex type.
  * 

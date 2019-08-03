@@ -16,23 +16,28 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * 
- * 			A media profile consists of a set of media configurations. Media profiles are used by a client
- * 			to configure properties of a media stream from an NVT.
+ *         A media profile consists of a set of media configurations. Media profiles are used by a
+ *         client
+ *         to configure properties of a media stream from an NVT.
+ *         
  * <pre>
  * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
  * </pre>
  * 
- * 			An NVT shall provide at least one media profile at boot. An NVT should provide “ready to use”
- * 			profiles for the most common media configurations that the device offers.
+ *         An NVT shall provide at least one media profile at boot. An NVT should provide “ready to
+ *         use”
+ *         profiles for the most common media configurations that the device offers.
+ *         
  * <pre>
  * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
  * </pre>
  * 
- * 			A profile consists of a set of interconnected configuration entities. Configurations are provided
- * 			by the NVT and can be either static or created dynamically by the NVT. For example, the
- * 			dynamic configurations can be created by the NVT depending on current available encoding
- * 			resources.
- * 		
+ *         A profile consists of a set of interconnected configuration entities. Configurations are
+ *         provided
+ *         by the NVT and can be either static or created dynamically by the NVT. For example, the
+ *         dynamic configurations can be created by the NVT depending on current available encoding
+ *         resources.
+ *       
  * 
  * <p>Java class for Profile complex type.
  * 

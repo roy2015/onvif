@@ -13,8 +13,8 @@ import org.onvif.ver10.pacs.DataEntity;
 
 /**
  * 
- * Used as extension base.
- * 
+ *             Used as extension base.
+ *           
  * 
  * <p>Java class for DoorInfoBase complex type.
  * 

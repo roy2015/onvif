@@ -13,9 +13,10 @@ import org.onvif.ver10.pacs.DataEntity;
 
 /**
  * 
- * 						The AccessProfileInfo structure contains basic information about an access profile. The device
- * 						shall provide the following fields for each AccessProfileInfo.
- * 					
+ *             The AccessProfileInfo structure contains basic information about an access profile. The
+ *             device
+ *             shall provide the following fields for each AccessProfileInfo.
+ *           
  * 
  * <p>Java class for AccessProfileInfo complex type.
  * 

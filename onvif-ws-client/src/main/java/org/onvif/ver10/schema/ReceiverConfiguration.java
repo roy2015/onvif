@@ -20,8 +20,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * 			Describes the configuration of a receiver.
- * 		
+ *         Describes the configuration of a receiver.
+ *       
  * 
  * <p>Java class for ReceiverConfiguration complex type.
  * 

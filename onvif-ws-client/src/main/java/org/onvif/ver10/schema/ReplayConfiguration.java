@@ -20,8 +20,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- *       Configuration parameters for the replay service.
- *     
+ *         Configuration parameters for the replay service.
+ *       
  * 
  * <p>Java class for ReplayConfiguration complex type.
  * 

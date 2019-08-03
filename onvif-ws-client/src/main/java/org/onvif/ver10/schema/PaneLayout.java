@@ -18,7 +18,9 @@ import org.w3c.dom.Element;
 
 
 /**
- * A pane layout describes one Video window of a display. It links a pane configuration to a region of the screen.
+ * A pane layout describes one Video window of a display. It links a pane
+ *         configuration to a region of the screen.
+ *       
  * 
  * <p>Java class for PaneLayout complex type.
  * 

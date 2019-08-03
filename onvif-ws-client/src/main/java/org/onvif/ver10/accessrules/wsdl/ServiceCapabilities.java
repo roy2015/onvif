@@ -19,9 +19,10 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * 						The service capabilities reflect optional functionality of a service. The information is static
- * 						and does not change during device operation. The following capabilities are available:
- * 					
+ *             The service capabilities reflect optional functionality of a service. The information is
+ *             static
+ *             and does not change during device operation. The following capabilities are available:
+ *           
  * 
  * <p>Java class for ServiceCapabilities complex type.
  * 

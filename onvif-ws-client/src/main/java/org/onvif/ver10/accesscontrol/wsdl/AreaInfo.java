@@ -14,9 +14,9 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * 
- * The AreaInfo structure contains basic information about an Area.
- * An ONVIF compliant device shall provide the following fields for each Area:
- * 
+ *             The AreaInfo structure contains basic information about an Area.
+ *             An ONVIF compliant device shall provide the following fields for each Area:
+ *           
  * 
  * <p>Java class for AreaInfo complex type.
  * 

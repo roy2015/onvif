@@ -19,8 +19,10 @@ import javax.xml.ws.ResponseWrapper;
 public interface RecordingPort {
 
     /**
-     * GetRecordings shall return a description of all the recordings in the device. This description
-     * 				shall include a list of all the tracks for each recording.
+     * GetRecordings shall return a description of all the recordings in the
+     *         device. This description
+     *         shall include a list of all the tracks for each recording.
+     *       
      */
     @WebMethod(operationName = "GetRecordings", action = "http://www.onvif.org/ver10/recording/wsdl/GetRecordings")
     @RequestWrapper(localName = "GetRecordings", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetRecordings")
@@ -30,9 +32,12 @@ public interface RecordingPort {
 ;
 
     /**
-     * DeleteTrack shall remove a track from a recording. All the data in the track shall be deleted.
-     * 				This method is optional. It shall be available if the Recording/DynamicTracks capability is
-     * 				TRUE.
+     * DeleteTrack shall remove a track from a recording. All the data in the
+     *         track shall be deleted.
+     *         
+     *         This method is optional. It shall be available if the Recording/DynamicTracks capability is
+     *         TRUE.
+     *       
      */
     @WebMethod(operationName = "DeleteTrack", action = "http://www.onvif.org/ver10/recording/wsdl/DeleteTrack")
     @RequestWrapper(localName = "DeleteTrack", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.DeleteTrack")
@@ -46,14 +51,19 @@ public interface RecordingPort {
     );
 
     /**
-     * DeleteRecording shall delete a recording object. Whenever a recording is deleted, the device
-     * 				shall delete all the tracks that are part of the recording, and it shall delete all the Recording
-     * 				Jobs that record into the recording. For each deleted recording job, the device shall also
-     * 				delete all the receiver objects associated with the recording job that are automatically created
-     * 				using the AutoCreateReceiver field of the recording job configuration structure and are not
-     * 				used in any other recording job.
-     * 				This method is optional. It shall be available if the Recording/DynamicRecordings capability is TRUE.
-     * 			
+     * DeleteRecording shall delete a recording object. Whenever a recording is
+     *         deleted, the device
+     *         shall delete all the tracks that are part of the recording, and it shall delete all the
+     *         Recording
+     *         Jobs that record into the recording. For each deleted recording job, the device shall also
+     *         delete all the receiver objects associated with the recording job that are automatically
+     *         created
+     *         using the AutoCreateReceiver field of the recording job configuration structure and are not
+     *         used in any other recording job.
+     *         
+     *         This method is optional. It shall be available if the Recording/DynamicRecordings capability
+     *         is TRUE.
+     *       
      */
     @WebMethod(operationName = "DeleteRecording", action = "http://www.onvif.org/ver10/recording/wsdl/DeleteRecording")
     @RequestWrapper(localName = "DeleteRecording", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.DeleteRecording")
@@ -66,10 +76,13 @@ public interface RecordingPort {
 
     /**
      * This method shall create a new track within a recording.
-     * 				This method is optional. It shall be available if the Recording/DynamicTracks capability is TRUE.
-     * 				A TrackToken in itself does not uniquely identify a specific track. Tracks within different
-     * 				recordings may have the same TrackToken.
-     * 			
+     *         
+     *         This method is optional. It shall be available if the Recording/DynamicTracks capability is
+     *         TRUE.
+     *         
+     *         A TrackToken in itself does not uniquely identify a specific track. Tracks within different
+     *         recordings may have the same TrackToken.
+     *       
      */
     @WebMethod(operationName = "CreateTrack", action = "http://www.onvif.org/ver10/recording/wsdl/CreateTrack")
     @RequestWrapper(localName = "CreateTrack", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.CreateTrack")
@@ -84,7 +97,9 @@ public interface RecordingPort {
     );
 
     /**
-     * GetRecordingJobs shall return a list of all the recording jobs in the device.
+     * GetRecordingJobs shall return a list of all the recording jobs in the
+     *         device.
+     *       
      */
     @WebMethod(operationName = "GetRecordingJobs", action = "http://www.onvif.org/ver10/recording/wsdl/GetRecordingJobs")
     @RequestWrapper(localName = "GetRecordingJobs", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetRecordingJobs")
@@ -94,10 +109,13 @@ public interface RecordingPort {
 ;
 
     /**
-     * SetRecordingJobConfiguration shall change the configuration for a recording job.
-     * 				SetRecordingJobConfiguration shall implicitly delete any receiver objects that were created
-     * 				automatically if they are no longer used as a result of changing the recording job configuration.
-     * 			
+     * SetRecordingJobConfiguration shall change the configuration for a
+     *         recording job.
+     *         
+     *         SetRecordingJobConfiguration shall implicitly delete any receiver objects that were created
+     *         automatically if they are no longer used as a result of changing the recording job
+     *         configuration.
+     *       
      */
     @WebMethod(operationName = "SetRecordingJobConfiguration", action = "http://www.onvif.org/ver10/recording/wsdl/SetRecordingJobConfiguration")
     @RequestWrapper(localName = "SetRecordingJobConfiguration", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.SetRecordingJobConfiguration")
@@ -112,6 +130,7 @@ public interface RecordingPort {
 
     /**
      * SetRecordingConfiguration shall change the configuration of a recording.
+     *       
      */
     @WebMethod(operationName = "SetRecordingConfiguration", action = "http://www.onvif.org/ver10/recording/wsdl/SetRecordingConfiguration")
     @RequestWrapper(localName = "SetRecordingConfiguration", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.SetRecordingConfiguration")
@@ -125,7 +144,9 @@ public interface RecordingPort {
     );
 
     /**
-     * GetRecordingConfiguration shall retrieve the recording configuration for a recording.
+     * GetRecordingConfiguration shall retrieve the recording configuration for a
+     *         recording.
+     *       
      */
     @WebMethod(operationName = "GetRecordingConfiguration", action = "http://www.onvif.org/ver10/recording/wsdl/GetRecordingConfiguration")
     @RequestWrapper(localName = "GetRecordingConfiguration", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetRecordingConfiguration")
@@ -138,8 +159,8 @@ public interface RecordingPort {
     );
 
     /**
-     * Retrieves the status of selected ExportRecordedData operation. 
-     * 			
+     * Retrieves the status of selected ExportRecordedData operation.
+     *       
      */
     @WebMethod(operationName = "GetExportRecordedDataState", action = "http://www.onvif.org/ver10/recording/wsdl/GetExportRecordedDataState")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -151,9 +172,12 @@ public interface RecordingPort {
     );
 
     /**
-     * SetRecordingJobMode shall change the mode of the recording job. Using this method shall be
-     * 				equivalent to retrieving the recording job configuration, and writing it back with a different
-     * 				mode.
+     * SetRecordingJobMode shall change the mode of the recording job. Using this
+     *         method shall be
+     *         equivalent to retrieving the recording job configuration, and writing it back with a
+     *         different
+     *         mode.
+     *       
      */
     @WebMethod(operationName = "SetRecordingJobMode", action = "http://www.onvif.org/ver10/recording/wsdl/SetRecordingJobMode")
     @RequestWrapper(localName = "SetRecordingJobMode", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.SetRecordingJobMode")
@@ -167,7 +191,9 @@ public interface RecordingPort {
     );
 
     /**
-     * GetTrackConfiguration shall retrieve the configuration for a specific track.
+     * GetTrackConfiguration shall retrieve the configuration for a specific
+     *         track.
+     *       
      */
     @WebMethod(operationName = "GetTrackConfiguration", action = "http://www.onvif.org/ver10/recording/wsdl/GetTrackConfiguration")
     @RequestWrapper(localName = "GetTrackConfiguration", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetTrackConfiguration")
@@ -182,8 +208,9 @@ public interface RecordingPort {
     );
 
     /**
-     * Exports the selected recordings (from existing recorded data) to the given storage target based on the requested file format. 
-     * 			
+     * Exports the selected recordings (from existing recorded data) to the given storage target
+     * based on the requested file format.
+     *       
      */
     @WebMethod(operationName = "ExportRecordedData", action = "http://www.onvif.org/ver10/recording/wsdl/ExportRecordedData")
     @RequestWrapper(localName = "ExportRecordedData", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.ExportRecordedData")
@@ -205,13 +232,19 @@ public interface RecordingPort {
     );
 
     /**
-     * CreateRecording shall create a new recording. The new recording shall be created with a track 
-     *                                 for each supported TrackType see Recording Control Spec. 
-     * 				This method is optional. It shall be available if the Recording/DynamicRecordings capability is TRUE. 
-     * 				When successfully completed, CreateRecording shall have created three tracks with the following configurations: 
-     * 				All TrackConfigurations shall have the MaximumRetentionTime set to 0 (unlimited), and the
-     * 				Description set to the empty string.
-     * 			
+     * CreateRecording shall create a new recording. The new recording shall be
+     *         created with a track
+     *         for each supported TrackType see Recording Control Spec.
+     *         
+     *         This method is optional. It shall be available if the Recording/DynamicRecordings capability
+     *         is TRUE.
+     *         
+     *         When successfully completed, CreateRecording shall have created three tracks with the
+     *         following configurations:
+     *         
+     *         All TrackConfigurations shall have the MaximumRetentionTime set to 0 (unlimited), and the
+     *         Description set to the empty string.
+     *       
      */
     @WebMethod(operationName = "CreateRecording", action = "http://www.onvif.org/ver10/recording/wsdl/CreateRecording")
     @RequestWrapper(localName = "CreateRecording", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.CreateRecording")
@@ -225,6 +258,7 @@ public interface RecordingPort {
 
     /**
      * SetTrackConfiguration shall change the configuration of a track.
+     *       
      */
     @WebMethod(operationName = "SetTrackConfiguration", action = "http://www.onvif.org/ver10/recording/wsdl/SetTrackConfiguration")
     @RequestWrapper(localName = "SetTrackConfiguration", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.SetTrackConfiguration")
@@ -241,11 +275,12 @@ public interface RecordingPort {
 
     /**
      * CreateRecordingJob shall create a new recording job.
-     * 				The JobConfiguration returned from CreateRecordingJob shall be identical to the
-     * 				JobConfiguration passed into CreateRecordingJob, except for the ReceiverToken and the
-     * 				AutoCreateReceiver. In the returned structure, the ReceiverToken shall be present and valid
-     * 				and the AutoCreateReceiver field shall be omitted.
-     * 			
+     *         
+     *         The JobConfiguration returned from CreateRecordingJob shall be identical to the
+     *         JobConfiguration passed into CreateRecordingJob, except for the ReceiverToken and the
+     *         AutoCreateReceiver. In the returned structure, the ReceiverToken shall be present and valid
+     *         and the AutoCreateReceiver field shall be omitted.
+     *       
      */
     @WebMethod(operationName = "CreateRecordingJob", action = "http://www.onvif.org/ver10/recording/wsdl/CreateRecordingJob")
     @RequestWrapper(localName = "CreateRecordingJob", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.CreateRecordingJob")
@@ -259,7 +294,9 @@ public interface RecordingPort {
     );
 
     /**
-     * GetRecordingJobConfiguration shall return the current configuration for a recording job.
+     * GetRecordingJobConfiguration shall return the current configuration for a
+     *         recording job.
+     *       
      */
     @WebMethod(operationName = "GetRecordingJobConfiguration", action = "http://www.onvif.org/ver10/recording/wsdl/GetRecordingJobConfiguration")
     @RequestWrapper(localName = "GetRecordingJobConfiguration", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetRecordingJobConfiguration")
@@ -272,8 +309,8 @@ public interface RecordingPort {
     );
 
     /**
-     * Stops the selected ExportRecordedData operation. 
-     * 			
+     * Stops the selected ExportRecordedData operation.
+     *       
      */
     @WebMethod(operationName = "StopExportRecordedData", action = "http://www.onvif.org/ver10/recording/wsdl/StopExportRecordedData")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -285,7 +322,10 @@ public interface RecordingPort {
     );
 
     /**
-     * GetRecordingOptions returns information for a recording identified by the RecordingToken. The information includes the number of additonal tracks as well as recording jobs that can be configured.
+     * GetRecordingOptions returns information for a recording identified by the
+     *         RecordingToken. The information includes the number of additonal tracks as well as recording
+     *         jobs that can be configured.
+     *       
      */
     @WebMethod(operationName = "GetRecordingOptions", action = "http://www.onvif.org/ver10/recording/wsdl/GetRecordingOptions")
     @RequestWrapper(localName = "GetRecordingOptions", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetRecordingOptions")
@@ -298,10 +338,13 @@ public interface RecordingPort {
     );
 
     /**
-     * DeleteRecordingJob removes a recording job. It shall also implicitly delete all the receiver
-     * 				objects associated with the recording job that are automatically created using the
-     * 				AutoCreateReceiver field of the recording job configuration structure and are not used in any
-     * 				other recording job.
+     * DeleteRecordingJob removes a recording job. It shall also implicitly
+     *         delete all the receiver
+     *         objects associated with the recording job that are automatically created using the
+     *         AutoCreateReceiver field of the recording job configuration structure and are not used in
+     *         any
+     *         other recording job.
+     *       
      */
     @WebMethod(operationName = "DeleteRecordingJob", action = "http://www.onvif.org/ver10/recording/wsdl/DeleteRecordingJob")
     @RequestWrapper(localName = "DeleteRecordingJob", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.DeleteRecordingJob")
@@ -313,7 +356,9 @@ public interface RecordingPort {
     );
 
     /**
-     * Returns the capabilities of the recording service. The result is returned in a typed answer.
+     * Returns the capabilities of the recording service. The result is returned
+     *         in a typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/recording/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetServiceCapabilities")
@@ -323,8 +368,10 @@ public interface RecordingPort {
 ;
 
     /**
-     * GetRecordingJobState returns the state of a recording job. It includes an aggregated state,
-     * 				and state for each track of the recording job.
+     * GetRecordingJobState returns the state of a recording job. It includes an
+     *         aggregated state,
+     *         and state for each track of the recording job.
+     *       
      */
     @WebMethod(operationName = "GetRecordingJobState", action = "http://www.onvif.org/ver10/recording/wsdl/GetRecordingJobState")
     @RequestWrapper(localName = "GetRecordingJobState", targetNamespace = "http://www.onvif.org/ver10/recording/wsdl", className = "org.onvif.ver10.recording.wsdl.GetRecordingJobState")

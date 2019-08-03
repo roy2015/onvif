@@ -20,7 +20,9 @@ import org.w3c.dom.Element;
 
 
 /**
- * A set of media attributes valid for a recording at a point in time or for a time interval.
+ * A set of media attributes valid for a recording at a point in time or for a
+ *         time interval.
+ *       
  * 
  * <p>Java class for MediaAttributes complex type.
  * 

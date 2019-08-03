@@ -18,9 +18,11 @@ import javax.xml.ws.ResponseWrapper;
 public interface PACSPort {
 
     /**
-     * This operation requests the AccessPointState for the AccessPoint instance specified by Token.
+     * This operation requests the AccessPointState for the AccessPoint instance specified by
+     * Token.
      * </p><p>
      * An ONVIF compliant device that provides Access Control service shall implement this method.
+     *       
      */
     @WebMethod(operationName = "GetAccessPointState", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/GetAccessPointState")
     @RequestWrapper(localName = "GetAccessPointState", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.GetAccessPointState")
@@ -37,6 +39,7 @@ public interface PACSPort {
      * </p><p>
      * A device that signals support for ExternalAuthorization capability for a particular
      * AccessPoint instance shall implement this method.
+     *       
      */
     @WebMethod(operationName = "ExternalAuthorization", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/ExternalAuthorization")
     @RequestWrapper(localName = "ExternalAuthorization", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.ExternalAuthorization")
@@ -59,6 +62,7 @@ public interface PACSPort {
      * A device that signals support for DisableAccessPoint capability for a particular AccessPoint
      * instance shall implement this command.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "EnableAccessPoint", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/EnableAccessPoint")
     @RequestWrapper(localName = "EnableAccessPoint", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.EnableAccessPoint")
@@ -75,6 +79,7 @@ public interface PACSPort {
      * A device that signals support for DisableAccessPoint capability for a particular AccessPoint
      * instance shall implement this command.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "DisableAccessPoint", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/DisableAccessPoint")
     @RequestWrapper(localName = "DisableAccessPoint", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.DisableAccessPoint")
@@ -90,6 +95,7 @@ public interface PACSPort {
      * </p><p>
      * An ONVIF compliant device which provides the Access Control service shall
      * implement this method.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.GetServiceCapabilities")
@@ -109,6 +115,7 @@ public interface PACSPort {
      * If the number of requested items is greater than MaxLimit, a TooManyItems
      * fault shall be returned.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "GetAccessPointInfo", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/GetAccessPointInfo")
     @RequestWrapper(localName = "GetAccessPointInfo", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.GetAccessPointInfo")
@@ -131,6 +138,7 @@ public interface PACSPort {
      * If the number of requested items is greater than MaxLimit, a TooManyItems
      * fault shall be returned.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "GetAreaInfo", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/GetAreaInfo")
     @RequestWrapper(localName = "GetAreaInfo", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.GetAreaInfo")
@@ -144,7 +152,8 @@ public interface PACSPort {
 
     /**
      * This operation requests a list of all AccessPointInfo items provided by the device.
-     * An ONVIF compliant device which provides the Access Control service shall implement this method.
+     * An ONVIF compliant device which provides the Access Control service shall implement this
+     * method.
      * </p><p>
      * A call to this method shall return a StartReference when not all data is returned and more
      * data is available. The reference shall be valid for retrieving the next set of data.
@@ -152,6 +161,7 @@ public interface PACSPort {
      * </p><p>
      * The number of items returned shall not be greater than Limit parameter.
      * </p><p>
+     *       
      */
     @WebMethod(operationName = "GetAccessPointInfoList", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/GetAccessPointInfoList")
     @RequestWrapper(localName = "GetAccessPointInfoList", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.GetAccessPointInfoList")
@@ -170,7 +180,8 @@ public interface PACSPort {
 
     /**
      * This operation requests a list of all AreaInfo items provided by the device.
-     * An ONVIF compliant device which provides the Access Control service shall implement this method.
+     * An ONVIF compliant device which provides the Access Control service shall implement this
+     * method.
      * </p><p>
      * A call to this method shall return a StartReference when not all data is returned and more
      * data is available. The reference shall be valid for retrieving the next set of data.
@@ -179,6 +190,7 @@ public interface PACSPort {
      * The number of items returned shall not be greater than Limit parameter.
      * </p><p>
      * 
+     *       
      */
     @WebMethod(operationName = "GetAreaInfoList", action = "http://www.onvif.org/ver10/accesscontrol/wsdl/GetAreaInfoList")
     @RequestWrapper(localName = "GetAreaInfoList", targetNamespace = "http://www.onvif.org/ver10/accesscontrol/wsdl", className = "org.onvif.ver10.accesscontrol.wsdl.GetAreaInfoList")

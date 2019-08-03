@@ -29,14 +29,18 @@ public enum ReceiverMode {
 
 
     /**
-     * The receiver connects on demand, as required by consumers of the media streams.
+     * The receiver connects on demand, as required by consumers of the media
+     *             streams.
+     *           
      * 
      */
     @XmlEnumValue("AutoConnect")
     AUTO_CONNECT("AutoConnect"),
 
     /**
-     * The receiver attempts to maintain a persistent connection to the configured endpoint.
+     * The receiver attempts to maintain a persistent connection to the
+     *             configured endpoint.
+     *           
      * 
      */
     @XmlEnumValue("AlwaysConnect")

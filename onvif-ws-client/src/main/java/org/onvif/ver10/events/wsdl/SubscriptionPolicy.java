@@ -19,6 +19,7 @@ import org.w3c.dom.Element;
 
 /**
  * Optional ONVIF defined pull point subscription policies
+ *           
  * 
  * <p>Java class for SubscriptionPolicy complex type.
  * 

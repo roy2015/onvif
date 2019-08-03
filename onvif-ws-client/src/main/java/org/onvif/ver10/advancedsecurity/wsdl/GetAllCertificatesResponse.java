@@ -14,6 +14,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * A list with all certificates stored in the keystore.
+ *             
  * 
  * <p>Java class for anonymous complex type.
  * 

@@ -19,8 +19,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * 			Description of a receiver, including its token and configuration.
- * 		
+ *         Description of a receiver, including its token and configuration.
+ *       
  * 
  * <p>Java class for Receiver complex type.
  * 

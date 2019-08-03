@@ -44,13 +44,16 @@ public enum SearchState {
 
     /**
      * The search has been completed and no new results will be found.
+     *           
      * 
      */
     @XmlEnumValue("Completed")
     COMPLETED("Completed"),
 
     /**
-     * The state of the search is unknown. (This is not a valid response from GetSearchState.)
+     * The state of the search is unknown. (This is not a valid response from
+     *             GetSearchState.)
+     *           
      * 
      */
     @XmlEnumValue("Unknown")

@@ -15,7 +15,9 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * Type describing the ImagingSettings of a VideoSource. The supported options and ranges can be obtained via the GetOptions command.
+ * Type describing the ImagingSettings of a VideoSource. The supported options
+ *         and ranges can be obtained via the GetOptions command.
+ *       
  * 
  * <p>Java class for ImagingSettings20 complex type.
  * 

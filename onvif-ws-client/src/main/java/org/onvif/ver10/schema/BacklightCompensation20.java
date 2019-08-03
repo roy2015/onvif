@@ -12,6 +12,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Type describing whether BLC mode is enabled or disabled (on/off).
+ *       
  * 
  * <p>Java class for BacklightCompensation20 complex type.
  * 

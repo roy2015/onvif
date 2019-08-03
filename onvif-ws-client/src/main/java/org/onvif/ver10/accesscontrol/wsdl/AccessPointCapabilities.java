@@ -19,10 +19,13 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * The AccessPoint capabilities reflect optional functionality of a particular physical entity.
- * Different AccessPoint instances may have different set of capabilities. This information may
- * change during device operation, e.g. if hardware settings are changed.
- * The following capabilities are available:
+ *             The AccessPoint capabilities reflect optional functionality of a particular physical
+ *             entity.
+ *             Different AccessPoint instances may have different set of capabilities. This information
+ *             may
+ *             change during device operation, e.g. if hardware settings are changed.
+ *             The following capabilities are available:
+ *           
  * 
  * <p>Java class for AccessPointCapabilities complex type.
  * 

@@ -19,8 +19,11 @@ import javax.xml.ws.ResponseWrapper;
 public interface Media {
 
     /**
-     * This operation removes a PTZConfiguration from an existing media profile. If the media profile
-     * does not contain a PTZConfiguration, the operation has no effect. The removal shall be persistent.
+     * This operation removes a PTZConfiguration from an existing media profile.
+     *         If the media profile
+     *         does not contain a PTZConfiguration, the operation has no effect. The removal shall be
+     *         persistent.
+     *       
      */
     @WebMethod(operationName = "RemovePTZConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemovePTZConfiguration")
     @RequestWrapper(localName = "RemovePTZConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemovePTZConfiguration")
@@ -32,9 +35,13 @@ public interface Media {
     );
 
     /**
-     * This operation removes a VideoSourceConfiguration from an existing media profile. If the
-     * media profile does not contain a VideoSourceConfiguration, the operation has no effect. The removal shall be persistent. Video source configurations should only be removed after removing a
-     * VideoEncoderConfiguration from the media profile.
+     * This operation removes a VideoSourceConfiguration from an existing media
+     *         profile. If the
+     *         media profile does not contain a VideoSourceConfiguration, the operation has no effect. The
+     *         removal shall be persistent. Video source configurations should only be removed after
+     *         removing a
+     *         VideoEncoderConfiguration from the media profile.
+     *       
      */
     @WebMethod(operationName = "RemoveVideoSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveVideoSourceConfiguration")
     @RequestWrapper(localName = "RemoveVideoSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveVideoSourceConfiguration")
@@ -46,7 +53,9 @@ public interface Media {
     );
 
     /**
-     * This command stop multicast streaming using a specified media profile of a device
+     * This command stop multicast streaming using a specified media profile of a
+     *         device
+     *       
      */
     @WebMethod(operationName = "StopMulticastStreaming", action = "http://www.onvif.org/ver10/media/wsdl/StopMulticastStreaming")
     @RequestWrapper(localName = "StopMulticastStreaming", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.StopMulticastStreaming")
@@ -58,9 +67,12 @@ public interface Media {
     );
 
     /**
-     * This operation creates a new empty media profile. The media profile shall be created in the
-     * device and shall be persistent (remain after reboot). A created profile shall be deletable and a device shall set the “fixed” attribute to false in the
-     * returned Profile.
+     * This operation creates a new empty media profile. The media profile shall
+     *         be created in the
+     *         device and shall be persistent (remain after reboot). A created profile shall be deletable
+     *         and a device shall set the “fixed” attribute to false in the
+     *         returned Profile.
+     *       
      */
     @WebMethod(operationName = "CreateProfile", action = "http://www.onvif.org/ver10/media/wsdl/CreateProfile")
     @RequestWrapper(localName = "CreateProfile", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.CreateProfile")
@@ -75,8 +87,11 @@ public interface Media {
     );
 
     /**
-     * This operation adds a VideoSourceConfiguration to an existing media profile. If such a
-     * configuration exists in the media profile, it will be replaced. The change shall be persistent.
+     * This operation adds a VideoSourceConfiguration to an existing media
+     *         profile. If such a
+     *         configuration exists in the media profile, it will be replaced. The change shall be
+     *         persistent.
+     *       
      */
     @WebMethod(operationName = "AddVideoSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddVideoSourceConfiguration")
     @RequestWrapper(localName = "AddVideoSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddVideoSourceConfiguration")
@@ -90,7 +105,9 @@ public interface Media {
     );
 
     /**
-     * If the video encoder configuration token is already known, the encoder configuration can be fetched through the GetVideoEncoderConfiguration command.
+     * If the video encoder configuration token is already known, the encoder
+     *         configuration can be fetched through the GetVideoEncoderConfiguration command.
+     *       
      */
     @WebMethod(operationName = "GetVideoEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoEncoderConfiguration")
     @RequestWrapper(localName = "GetVideoEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoEncoderConfiguration")
@@ -103,7 +120,9 @@ public interface Media {
     );
 
     /**
-     * Returns the capabilities of the media service. The result is returned in a typed answer.
+     * Returns the capabilities of the media service. The result is returned in a
+     *         typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/media/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetServiceCapabilities")
@@ -113,14 +132,22 @@ public interface Media {
 ;
 
     /**
-     * This operation returns the available options (supported values and ranges for video encoder 
-     * 				configuration parameters) when the video encoder parameters are reconfigured. 
-     * 				For JPEG, MPEG4 and H264 extension elements have been defined that provide additional information. A device must provide the 
-     * 				XxxOption information for all encodings supported and should additionally provide the corresponding XxxOption2 information.
-     * 				This response contains the available video encoder configuration options. If a video encoder configuration is specified, 
-     * 				the options shall concern that particular configuration. If a media profile is specified, the options shall be 
-     * 				compatible with that media profile. If no tokens are specified, the options shall be considered generic for the device.
-     * 			
+     * This operation returns the available options (supported values and ranges
+     *         for video encoder
+     *         configuration parameters) when the video encoder parameters are reconfigured.
+     *         
+     *         For JPEG, MPEG4 and H264 extension elements have been defined that provide additional
+     *         information. A device must provide the
+     *         XxxOption information for all encodings supported and should additionally provide the
+     *         corresponding XxxOption2 information.
+     *         
+     *         This response contains the available video encoder configuration options. If a video encoder
+     *         configuration is specified,
+     *         the options shall concern that particular configuration. If a media profile is specified,
+     *         the options shall be
+     *         compatible with that media profile. If no tokens are specified, the options shall be
+     *         considered generic for the device.
+     *       
      */
     @WebMethod(operationName = "GetVideoEncoderConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoEncoderConfigurationOptions")
     @RequestWrapper(localName = "GetVideoEncoderConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoEncoderConfigurationOptions")
@@ -148,9 +175,11 @@ public interface Media {
     );
 
     /**
-     * This operation removes an AudioEncoderConfiguration from an existing media profile. If the
-     * media profile does not contain an AudioEncoderConfiguration, the operation has no effect.
-     * The removal shall be persistent.
+     * This operation removes an AudioEncoderConfiguration from an existing media
+     *         profile. If the
+     *         media profile does not contain an AudioEncoderConfiguration, the operation has no effect.
+     *         The removal shall be persistent.
+     *       
      */
     @WebMethod(operationName = "RemoveAudioEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioEncoderConfiguration")
     @RequestWrapper(localName = "RemoveAudioEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveAudioEncoderConfiguration")
@@ -162,7 +191,11 @@ public interface Media {
     );
 
     /**
-     * This operation requests all audio encoder configurations of a device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioSourceConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+     * This operation requests all audio encoder configurations of a device that
+     *         are compatible with a certain media profile. Each of the returned configurations shall be a
+     *         valid input parameter for the AddAudioSourceConfiguration command on the media profile. The
+     *         result varies depending on the capabilities, configurations and settings in the device.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleAudioEncoderConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioEncoderConfigurations")
     @RequestWrapper(localName = "GetCompatibleAudioEncoderConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleAudioEncoderConfigurations")
@@ -175,7 +208,9 @@ public interface Media {
     );
 
     /**
-     * The GetAudioEncoderConfiguration command fetches the encoder configuration if the audio encoder configuration token is known.
+     * The GetAudioEncoderConfiguration command fetches the encoder configuration
+     *         if the audio encoder configuration token is known.
+     *       
      */
     @WebMethod(operationName = "GetAudioEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioEncoderConfiguration")
     @RequestWrapper(localName = "GetAudioEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioEncoderConfiguration")
@@ -188,7 +223,9 @@ public interface Media {
     );
 
     /**
-     * If the audio output configuration token is already known, the output configuration can be fetched through the GetAudioOutputConfiguration command.
+     * If the audio output configuration token is already known, the output
+     *         configuration can be fetched through the GetAudioOutputConfiguration command.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputConfiguration")
     @RequestWrapper(localName = "GetAudioOutputConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioOutputConfiguration")
@@ -201,8 +238,10 @@ public interface Media {
     );
 
     /**
-     * This operation modifies an audio output configuration. The ForcePersistence flag indicates if
-     * the changes shall remain after reboot of the device.
+     * This operation modifies an audio output configuration. The
+     *         ForcePersistence flag indicates if
+     *         the changes shall remain after reboot of the device.
+     *       
      */
     @WebMethod(operationName = "SetAudioOutputConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetAudioOutputConfiguration")
     @RequestWrapper(localName = "SetAudioOutputConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetAudioOutputConfiguration")
@@ -216,14 +255,16 @@ public interface Media {
     );
 
     /**
-     * A client uses the GetSnapshotUri command to obtain a JPEG snapshot from the
-     * device. The returned URI shall remain valid indefinitely even if the profile is changed. The
-     * ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set accordingly
-     * (ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). The URI can be used for
-     * acquiring a JPEG image through a HTTP GET operation. The image encoding will always be
-     * JPEG regardless of the encoding setting in the media profile. The Jpeg settings
-     * (like resolution or quality) may be taken from the profile if suitable. The provided
-     * image will be updated automatically and independent from calls to GetSnapshotUri.
+     * A client uses the GetSnapshotUri command to obtain a JPEG snapshot from
+     *         the
+     *         device. The returned URI shall remain valid indefinitely even if the profile is changed. The
+     *         ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set accordingly
+     *         (ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). The URI can be used for
+     *         acquiring a JPEG image through a HTTP GET operation. The image encoding will always be
+     *         JPEG regardless of the encoding setting in the media profile. The Jpeg settings
+     *         (like resolution or quality) may be taken from the profile if suitable. The provided
+     *         image will be updated automatically and independent from calls to GetSnapshotUri.
+     *       
      */
     @WebMethod(operationName = "GetSnapshotUri", action = "http://www.onvif.org/ver10/media/wsdl/GetSnapshotUri")
     @RequestWrapper(localName = "GetSnapshotUri", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetSnapshotUri")
@@ -236,8 +277,11 @@ public interface Media {
     );
 
     /**
-     * This operation removes a VideoEncoderConfiguration from an existing media profile. If the
-     * media profile does not contain a VideoEncoderConfiguration, the operation has no effect. The removal shall be persistent.
+     * This operation removes a VideoEncoderConfiguration from an existing media
+     *         profile. If the
+     *         media profile does not contain a VideoEncoderConfiguration, the operation has no effect. The
+     *         removal shall be persistent.
+     *       
      */
     @WebMethod(operationName = "RemoveVideoEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveVideoEncoderConfiguration")
     @RequestWrapper(localName = "RemoveVideoEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveVideoEncoderConfiguration")
@@ -249,17 +293,25 @@ public interface Media {
     );
 
     /**
-     * This operation requests a URI that can be used to initiate a live media stream using RTSP as
-     * the control protocol. The returned URI shall remain valid indefinitely even if the profile is
-     * changed. The ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set
-     * accordingly (ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). 
-     * 				The correct syntax for the StreamSetup element for these media stream setups defined in 5.1.1 of the streaming specification are as follows:
-     * 				
-     * 				
-     * If a multicast stream is requested the VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration element inside the corresponding 
-     * media profile must be configured with valid multicast settings.
-     * For full compatibility with other ONVIF services a device should not generate Uris longer than
-     * 128 octets.
+     * This operation requests a URI that can be used to initiate a live media
+     *         stream using RTSP as
+     *         the control protocol. The returned URI shall remain valid indefinitely even if the profile
+     *         is
+     *         changed. The ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set
+     *         accordingly (ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S).
+     *         
+     *         The correct syntax for the StreamSetup element for these media stream setups defined in
+     *         5.1.1 of the streaming specification are as follows:
+     *         
+     *         
+     *         If a multicast stream is requested the VideoEncoderConfiguration, AudioEncoderConfiguration
+     *         and MetadataConfiguration element inside the corresponding
+     *         media profile must be configured with valid multicast settings.
+     *         
+     *         For full compatibility with other ONVIF services a device should not generate Uris longer
+     *         than
+     *         128 octets.
+     *       
      */
     @WebMethod(operationName = "GetStreamUri", action = "http://www.onvif.org/ver10/media/wsdl/GetStreamUri")
     @RequestWrapper(localName = "GetStreamUri", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetStreamUri")
@@ -286,7 +338,10 @@ public interface Media {
     );
 
     /**
-     * This operation lists all existing video source configurations for a device. The client need not know anything about the video source configurations in order to use the command.
+     * This operation lists all existing video source configurations for a
+     *         device. The client need not know anything about the video source configurations in order to
+     *         use the command.
+     *       
      */
     @WebMethod(operationName = "GetVideoSourceConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoSourceConfigurations")
     @RequestWrapper(localName = "GetVideoSourceConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoSourceConfigurations")
@@ -296,10 +351,18 @@ public interface Media {
 ;
 
     /**
-     * This operation adds a VideoAnalytics configuration to an existing media profile. If a
-     * configuration exists in the media profile, it will be replaced. The change shall be persistent. Adding a VideoAnalyticsConfiguration to a media profile means that streams using that media
-     * profile can contain video analytics data (in the metadata) as defined by the submitted configuration reference. A profile containing only a video analytics configuration but no video source configuration is incomplete. Therefore, a client should first add a video source configuration to a profile before adding a video analytics configuration. The device can deny adding of a video analytics
-     * configuration before a video source configuration.
+     * This operation adds a VideoAnalytics configuration to an existing media
+     *         profile. If a
+     *         configuration exists in the media profile, it will be replaced. The change shall be
+     *         persistent. Adding a VideoAnalyticsConfiguration to a media profile means that streams using
+     *         that media
+     *         profile can contain video analytics data (in the metadata) as defined by the submitted
+     *         configuration reference. A profile containing only a video analytics configuration but no
+     *         video source configuration is incomplete. Therefore, a client should first add a video
+     *         source configuration to a profile before adding a video analytics configuration. The device
+     *         can deny adding of a video analytics
+     *         configuration before a video source configuration.
+     *       
      */
     @WebMethod(operationName = "AddVideoAnalyticsConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddVideoAnalyticsConfiguration")
     @RequestWrapper(localName = "AddVideoAnalyticsConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddVideoAnalyticsConfiguration")
@@ -313,12 +376,15 @@ public interface Media {
     );
 
     /**
-     * This command starts multicast streaming using a specified media profile of a device.
-     * Streaming continues until StopMulticastStreaming is called for the same Profile. The
-     * streaming shall continue after a reboot of the device until a StopMulticastStreaming request is
-     * received. The multicast address, port and TTL are configured in the
-     * VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration
-     * respectively.
+     * This command starts multicast streaming using a specified media profile of
+     *         a device.
+     *         Streaming continues until StopMulticastStreaming is called for the same Profile. The
+     *         streaming shall continue after a reboot of the device until a StopMulticastStreaming request
+     *         is
+     *         received. The multicast address, port and TTL are configured in the
+     *         VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration
+     *         respectively.
+     *       
      */
     @WebMethod(operationName = "StartMulticastStreaming", action = "http://www.onvif.org/ver10/media/wsdl/StartMulticastStreaming")
     @RequestWrapper(localName = "StartMulticastStreaming", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.StartMulticastStreaming")
@@ -330,17 +396,25 @@ public interface Media {
     );
 
     /**
-     * Synchronization points allow clients to decode and correctly use all data after the
-     * synchronization point.
-     * For example, if a video stream is configured with a large I-frame distance and a client loses a
-     * single packet, the client does not display video until the next I-frame is transmitted. In such
-     * cases, the client can request a Synchronization Point which enforces the device to add an I-Frame as soon as possible. Clients can request Synchronization Points for profiles. The device
-     * shall add synchronization points for all streams associated with this profile.
-     * Similarly, a synchronization point is used to get an update on full PTZ or event status through
-     * the metadata stream.
-     * If a video stream is associated with the profile, an I-frame shall be added to this video stream.
-     * If a PTZ metadata stream is associated to the profile,
-     * the PTZ position shall be repeated within the metadata stream.
+     * Synchronization points allow clients to decode and correctly use all data
+     *         after the
+     *         synchronization point.
+     *         For example, if a video stream is configured with a large I-frame distance and a client
+     *         loses a
+     *         single packet, the client does not display video until the next I-frame is transmitted. In
+     *         such
+     *         cases, the client can request a Synchronization Point which enforces the device to add an
+     *         I-Frame as soon as possible. Clients can request Synchronization Points for profiles. The
+     *         device
+     *         shall add synchronization points for all streams associated with this profile.
+     *         Similarly, a synchronization point is used to get an update on full PTZ or event status
+     *         through
+     *         the metadata stream.
+     *         If a video stream is associated with the profile, an I-frame shall be added to this video
+     *         stream.
+     *         If a PTZ metadata stream is associated to the profile,
+     *         the PTZ position shall be repeated within the metadata stream.
+     *       
      */
     @WebMethod(operationName = "SetSynchronizationPoint", action = "http://www.onvif.org/ver10/media/wsdl/SetSynchronizationPoint")
     @RequestWrapper(localName = "SetSynchronizationPoint", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetSynchronizationPoint")
@@ -352,8 +426,11 @@ public interface Media {
     );
 
     /**
-     * This operation adds an AudioSourceConfiguration to an existing media profile. If a
-     * configuration exists in the media profile, it will be replaced. The change shall be persistent.
+     * This operation adds an AudioSourceConfiguration to an existing media
+     *         profile. If a
+     *         configuration exists in the media profile, it will be replaced. The change shall be
+     *         persistent.
+     *       
      */
     @WebMethod(operationName = "AddAudioSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddAudioSourceConfiguration")
     @RequestWrapper(localName = "AddAudioSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddAudioSourceConfiguration")
@@ -367,7 +444,10 @@ public interface Media {
     );
 
     /**
-     * This operation adds an AudioOutputConfiguration to an existing media profile. If a configuration exists in the media profile, it will be replaced. The change shall be persistent.
+     * This operation adds an AudioOutputConfiguration to an existing media
+     *         profile. If a configuration exists in the media profile, it will be replaced. The change
+     *         shall be persistent.
+     *       
      */
     @WebMethod(operationName = "AddAudioOutputConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddAudioOutputConfiguration")
     @RequestWrapper(localName = "AddAudioOutputConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddAudioOutputConfiguration")
@@ -381,7 +461,11 @@ public interface Media {
     );
 
     /**
-     * This operation requests all the metadata configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddMetadataConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+     * This operation requests all the metadata configurations of the device that
+     *         are compatible with a certain media profile. Each of the returned configurations shall be a
+     *         valid input parameter for the AddMetadataConfiguration command on the media profile. The
+     *         result varies depending on the capabilities, configurations and settings in the device.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleMetadataConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleMetadataConfigurations")
     @RequestWrapper(localName = "GetCompatibleMetadataConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleMetadataConfigurations")
@@ -394,7 +478,9 @@ public interface Media {
     );
 
     /**
-     * This operation returns the available options (supported values and ranges for metadata configuration parameters) for changing the metadata configuration.
+     * This operation returns the available options (supported values and ranges
+     *         for metadata configuration parameters) for changing the metadata configuration.
+     *       
      */
     @WebMethod(operationName = "GetMetadataConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdl/GetMetadataConfigurationOptions")
     @RequestWrapper(localName = "GetMetadataConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetMetadataConfigurationOptions")
@@ -409,8 +495,10 @@ public interface Media {
     );
 
     /**
-     * This operation modifies an audio decoder configuration. The ForcePersistence flag indicates if
-     * the changes shall remain after reboot of the device.
+     * This operation modifies an audio decoder configuration. The
+     *         ForcePersistence flag indicates if
+     *         the changes shall remain after reboot of the device.
+     *       
      */
     @WebMethod(operationName = "SetAudioDecoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetAudioDecoderConfiguration")
     @RequestWrapper(localName = "SetAudioDecoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetAudioDecoderConfiguration")
@@ -424,7 +512,9 @@ public interface Media {
     );
 
     /**
-     * This operation returns the available options (supported values and ranges for audio output configuration parameters) for configuring an audio output.
+     * This operation returns the available options (supported values and ranges
+     *         for audio output configuration parameters) for configuring an audio output.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputConfigurationOptions")
     @RequestWrapper(localName = "GetAudioOutputConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioOutputConfigurationOptions")
@@ -439,7 +529,13 @@ public interface Media {
     );
 
     /**
-     * This operation modifies a video source configuration. The ForcePersistence flag indicates if the changes shall remain after reboot of the device. Running streams using this configuration may be immediately updated according to the new settings. The changes are not guaranteed to take effect unless the client requests a new stream URI and restarts any affected stream. NVC methods for changing a running stream are out of scope for this specification.
+     * This operation modifies a video source configuration. The ForcePersistence
+     *         flag indicates if the changes shall remain after reboot of the device. Running streams using
+     *         this configuration may be immediately updated according to the new settings. The changes are
+     *         not guaranteed to take effect unless the client requests a new stream URI and restarts any
+     *         affected stream. NVC methods for changing a running stream are out of scope for this
+     *         specification.
+     *       
      */
     @WebMethod(operationName = "SetVideoSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetVideoSourceConfiguration")
     @RequestWrapper(localName = "SetVideoSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetVideoSourceConfiguration")
@@ -453,8 +549,11 @@ public interface Media {
     );
 
     /**
-     * This command lists all audio output configurations of a device that are compatible with a certain media profile. Each returned configuration shall be a valid input for the 
-     * AddAudioOutputConfiguration command.
+     * This command lists all audio output configurations of a device that are
+     *         compatible with a certain media profile. Each returned configuration shall be a valid input
+     *         for the
+     *         AddAudioOutputConfiguration command.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleAudioOutputConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioOutputConfigurations")
     @RequestWrapper(localName = "GetCompatibleAudioOutputConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleAudioOutputConfigurations")
@@ -467,7 +566,11 @@ public interface Media {
     );
 
     /**
-     * This operation lists all existing video encoder configurations of a device. This command lists all configured video encoder configurations in a device. The client need not know anything apriori about the video encoder configurations in order to use the command.
+     * This operation lists all existing video encoder configurations of a
+     *         device. This command lists all configured video encoder configurations in a device. The
+     *         client need not know anything apriori about the video encoder configurations in order to use
+     *         the command.
+     *       
      */
     @WebMethod(operationName = "GetVideoEncoderConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoEncoderConfigurations")
     @RequestWrapper(localName = "GetVideoEncoderConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoEncoderConfigurations")
@@ -477,12 +580,15 @@ public interface Media {
 ;
 
     /**
-     * A video analytics configuration is modified using this command. The ForcePersistence flag
-     * indicates if the changes shall remain after reboot of the device or not. Running streams using
-     * this configuration shall be immediately updated according to the new settings. Otherwise
-     * inconsistencies can occur between the scene description processed by the rule engine and
-     * the notifications produced by analytics engine and rule engine which reference the very same
-     * video analytics configuration token.
+     * A video analytics configuration is modified using this command. The
+     *         ForcePersistence flag
+     *         indicates if the changes shall remain after reboot of the device or not. Running streams
+     *         using
+     *         this configuration shall be immediately updated according to the new settings. Otherwise
+     *         inconsistencies can occur between the scene description processed by the rule engine and
+     *         the notifications produced by analytics engine and rule engine which reference the very same
+     *         video analytics configuration token.
+     *       
      */
     @WebMethod(operationName = "SetVideoAnalyticsConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetVideoAnalyticsConfiguration")
     @RequestWrapper(localName = "SetVideoAnalyticsConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetVideoAnalyticsConfiguration")
@@ -496,8 +602,10 @@ public interface Media {
     );
 
     /**
-     * This operation returns the available options  (supported values and ranges for audio encoder configuration parameters) when the audio encoder parameters are
-     * reconfigured.
+     * This operation returns the available options (supported values and ranges
+     *         for audio encoder configuration parameters) when the audio encoder parameters are
+     *         reconfigured.
+     *       
      */
     @WebMethod(operationName = "GetAudioEncoderConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioEncoderConfigurationOptions")
     @RequestWrapper(localName = "GetAudioEncoderConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioEncoderConfigurationOptions")
@@ -512,10 +620,12 @@ public interface Media {
     );
 
     /**
-     * Any endpoint can ask for the existing media profiles of a device using the GetProfiles
-     * command. Pre-configured or dynamically configured profiles can be retrieved using this
-     * command. This command lists all configured profiles in a device. The client does not need to
-     * know the media profile in order to use the command.
+     * Any endpoint can ask for the existing media profiles of a device using the
+     *         GetProfiles
+     *         command. Pre-configured or dynamically configured profiles can be retrieved using this
+     *         command. This command lists all configured profiles in a device. The client does not need to
+     *         know the media profile in order to use the command.
+     *       
      */
     @WebMethod(operationName = "GetProfiles", action = "http://www.onvif.org/ver10/media/wsdl/GetProfiles")
     @RequestWrapper(localName = "GetProfiles", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetProfiles")
@@ -525,7 +635,12 @@ public interface Media {
 ;
 
     /**
-     * This operation adds a Metadata configuration to an existing media profile. If a configuration exists in the media profile, it will be replaced. The change shall be persistent. Adding a MetadataConfiguration to a Profile means that streams using that profile contain metadata. Metadata can consist of events, PTZ status, and/or video analytics data.
+     * This operation adds a Metadata configuration to an existing media profile.
+     *         If a configuration exists in the media profile, it will be replaced. The change shall be
+     *         persistent. Adding a MetadataConfiguration to a Profile means that streams using that
+     *         profile contain metadata. Metadata can consist of events, PTZ status, and/or video analytics
+     *         data.
+     *       
      */
     @WebMethod(operationName = "AddMetadataConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddMetadataConfiguration")
     @RequestWrapper(localName = "AddMetadataConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddMetadataConfiguration")
@@ -539,11 +654,15 @@ public interface Media {
     );
 
     /**
-     * This operation modifies an audio encoder configuration. The ForcePersistence flag indicates if
-     * the changes shall remain after reboot of the device. Running streams using this configuration may be immediately updated
-     * according to the new settings. The changes are not guaranteed to take effect unless the client
-     * requests a new stream URI and restarts any affected streams. NVC methods for changing a
-     * running stream are out of scope for this specification.
+     * This operation modifies an audio encoder configuration. The
+     *         ForcePersistence flag indicates if
+     *         the changes shall remain after reboot of the device. Running streams using this
+     *         configuration may be immediately updated
+     *         according to the new settings. The changes are not guaranteed to take effect unless the
+     *         client
+     *         requests a new stream URI and restarts any affected streams. NVC methods for changing a
+     *         running stream are out of scope for this specification.
+     *       
      */
     @WebMethod(operationName = "SetAudioEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetAudioEncoderConfiguration")
     @RequestWrapper(localName = "SetAudioEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetAudioEncoderConfiguration")
@@ -557,10 +676,13 @@ public interface Media {
     );
 
     /**
-     * This operation returns the available options  (supported values and ranges for video source configuration parameters) when the video source parameters are
-     * reconfigured If a video source configuration is specified, the options shall concern that
-     * particular configuration. If a media profile is specified, the options shall be compatible with
-     * that media profile.
+     * This operation returns the available options (supported values and ranges
+     *         for video source configuration parameters) when the video source parameters are
+     *         reconfigured If a video source configuration is specified, the options shall concern that
+     *         particular configuration. If a media profile is specified, the options shall be compatible
+     *         with
+     *         that media profile.
+     *       
      */
     @WebMethod(operationName = "GetVideoSourceConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdlGetVideoSourceConfigurationOptions/")
     @RequestWrapper(localName = "GetVideoSourceConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoSourceConfigurationOptions")
@@ -575,9 +697,11 @@ public interface Media {
     );
 
     /**
-     * The GetGuaranteedNumberOfVideoEncoderInstances command can be used to request the
-     * minimum number of guaranteed video encoder instances (applications) per Video Source
-     * Configuration.
+     * The GetGuaranteedNumberOfVideoEncoderInstances command can be used to
+     *         request the
+     *         minimum number of guaranteed video encoder instances (applications) per Video Source
+     *         Configuration.
+     *       
      */
     @WebMethod(operationName = "GetGuaranteedNumberOfVideoEncoderInstances", action = "http://www.onvif.org/ver10/media/wsdl/GetGuaranteedNumberOfVideoEncoderInstances")
     @RequestWrapper(localName = "GetGuaranteedNumberOfVideoEncoderInstances", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetGuaranteedNumberOfVideoEncoderInstances")
@@ -597,7 +721,9 @@ public interface Media {
     );
 
     /**
-     * If the profile token is already known, a profile can be fetched through the GetProfile command.
+     * If the profile token is already known, a profile can be fetched through
+     *         the GetProfile command.
+     *       
      */
     @WebMethod(operationName = "GetProfile", action = "http://www.onvif.org/ver10/media/wsdlGetProfile/")
     @RequestWrapper(localName = "GetProfile", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetProfile")
@@ -610,7 +736,9 @@ public interface Media {
     );
 
     /**
-     * The GetVideoAnalyticsConfiguration command fetches the video analytics configuration if the video analytics token is known.
+     * The GetVideoAnalyticsConfiguration command fetches the video analytics
+     *         configuration if the video analytics token is known.
+     *       
      */
     @WebMethod(operationName = "GetVideoAnalyticsConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoAnalyticsConfiguration")
     @RequestWrapper(localName = "GetVideoAnalyticsConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoAnalyticsConfiguration")
@@ -623,7 +751,9 @@ public interface Media {
     );
 
     /**
-     * This command lists all existing AudioOutputConfigurations of a device. The NVC need not know anything apriori about the audio configurations to use this command.
+     * This command lists all existing AudioOutputConfigurations of a device. The
+     *         NVC need not know anything apriori about the audio configurations to use this command.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputConfigurations")
     @RequestWrapper(localName = "GetAudioOutputConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioOutputConfigurations")
@@ -645,10 +775,13 @@ public interface Media {
     );
 
     /**
-     * This operation adds a PTZConfiguration to an existing media profile. If a configuration exists
-     * in the media profile, it will be replaced. The change shall be persistent. Adding a PTZConfiguration to a media profile means that streams using that media profile can
-     * contain PTZ status (in the metadata), and that the media profile can be used for controlling
-     * PTZ movement.
+     * This operation adds a PTZConfiguration to an existing media profile. If a
+     *         configuration exists
+     *         in the media profile, it will be replaced. The change shall be persistent. Adding a
+     *         PTZConfiguration to a media profile means that streams using that media profile can
+     *         contain PTZ status (in the metadata), and that the media profile can be used for controlling
+     *         PTZ movement.
+     *       
      */
     @WebMethod(operationName = "AddPTZConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddPTZConfiguration")
     @RequestWrapper(localName = "AddPTZConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddPTZConfiguration")
@@ -663,6 +796,7 @@ public interface Media {
 
     /**
      * This command lists all available physical audio outputs of the device.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputs", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioOutputs")
     @RequestWrapper(localName = "GetAudioOutputs", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioOutputs")
@@ -672,7 +806,12 @@ public interface Media {
 ;
 
     /**
-     * This operation requests all video analytic configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddVideoAnalyticsConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+     * This operation requests all video analytic configurations of the device
+     *         that are compatible with a certain media profile. Each of the returned configurations shall
+     *         be a valid input parameter for the AddVideoAnalyticsConfiguration command on the media
+     *         profile. The result varies depending on the capabilities, configurations and settings in the
+     *         device.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleVideoAnalyticsConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleVideoAnalyticsConfigurations")
     @RequestWrapper(localName = "GetCompatibleVideoAnalyticsConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleVideoAnalyticsConfigurations")
@@ -685,7 +824,10 @@ public interface Media {
     );
 
     /**
-     * This operation lists all video analytics configurations of a device. This command lists all configured video analytics in a device. The client need not know anything apriori about the video analytics in order to use the command.
+     * This operation lists all video analytics configurations of a device. This
+     *         command lists all configured video analytics in a device. The client need not know anything
+     *         apriori about the video analytics in order to use the command.
+     *       
      */
     @WebMethod(operationName = "GetVideoAnalyticsConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoAnalyticsConfigurations")
     @RequestWrapper(localName = "GetVideoAnalyticsConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoAnalyticsConfigurations")
@@ -695,7 +837,11 @@ public interface Media {
 ;
 
     /**
-     * This operation requests all audio source configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioEncoderConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+     * This operation requests all audio source configurations of the device that
+     *         are compatible with a certain media profile. Each of the returned configurations shall be a
+     *         valid input parameter for the AddAudioEncoderConfiguration command on the media profile. The
+     *         result varies depending on the capabilities, configurations and settings in the device.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleAudioSourceConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioSourceConfigurations")
     @RequestWrapper(localName = "GetCompatibleAudioSourceConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleAudioSourceConfigurations")
@@ -708,7 +854,10 @@ public interface Media {
     );
 
     /**
-     * A device returns the information for current video source mode and settable video source modes of specified video source. A device that indicates a capability of  VideoSourceModes shall support this command.
+     * A device returns the information for current video source mode and
+     *         settable video source modes of specified video source. A device that indicates a capability
+     *         of VideoSourceModes shall support this command.
+     *       
      */
     @WebMethod(operationName = "GetVideoSourceModes", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoSourceModes")
     @RequestWrapper(localName = "GetVideoSourceModes", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoSourceModes")
@@ -721,10 +870,13 @@ public interface Media {
     );
 
     /**
-     * This operation returns the available options (supported values and ranges for audio source configuration parameters) when the audio source parameters are
-     * reconfigured. If an audio source configuration is specified, the options shall concern that
-     * particular configuration. If a media profile is specified, the options shall be compatible with
-     * that media profile.
+     * This operation returns the available options (supported values and ranges
+     *         for audio source configuration parameters) when the audio source parameters are
+     *         reconfigured. If an audio source configuration is specified, the options shall concern that
+     *         particular configuration. If a media profile is specified, the options shall be compatible
+     *         with
+     *         that media profile.
+     *       
      */
     @WebMethod(operationName = "GetAudioSourceConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioSourceConfigurationOptions")
     @RequestWrapper(localName = "GetAudioSourceConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioSourceConfigurationOptions")
@@ -740,6 +892,7 @@ public interface Media {
 
     /**
      * This command lists all available physical audio inputs of the device.
+     *       
      */
     @WebMethod(operationName = "GetAudioSources", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioSources")
     @RequestWrapper(localName = "GetAudioSources", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioSources")
@@ -750,6 +903,7 @@ public interface Media {
 
     /**
      * This command lists all available physical video inputs of the device.
+     *       
      */
     @WebMethod(operationName = "GetVideoSources", action = "http://www.onvif.org/ver10/media/wsdlGetVideoSources/")
     @RequestWrapper(localName = "GetVideoSources", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoSources")
@@ -759,7 +913,9 @@ public interface Media {
 ;
 
     /**
-     * If the audio decoder configuration token is already known, the decoder configuration can be fetched through the GetAudioDecoderConfiguration command.
+     * If the audio decoder configuration token is already known, the decoder
+     *         configuration can be fetched through the GetAudioDecoderConfiguration command.
+     *       
      */
     @WebMethod(operationName = "GetAudioDecoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioDecoderConfiguration")
     @RequestWrapper(localName = "GetAudioDecoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioDecoderConfiguration")
@@ -772,7 +928,9 @@ public interface Media {
     );
 
     /**
-     * The GetAudioSourceConfiguration command fetches the audio source configurations if the audio source configuration token is already known. An
+     * The GetAudioSourceConfiguration command fetches the audio source
+     *         configurations if the audio source configuration token is already known. An
+     *       
      */
     @WebMethod(operationName = "GetAudioSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioSourceConfiguration")
     @RequestWrapper(localName = "GetAudioSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioSourceConfiguration")
@@ -785,10 +943,12 @@ public interface Media {
     );
 
     /**
-     * This operation requests all the video source configurations of the device that are compatible
-     * with a certain media profile. Each of the returned configurations shall be a valid input
-     * parameter for the AddVideoSourceConfiguration command on the media profile. The result
-     * will vary depending on the capabilities, configurations and settings in the device.
+     * This operation requests all the video source configurations of the device
+     *         that are compatible
+     *         with a certain media profile. Each of the returned configurations shall be a valid input
+     *         parameter for the AddVideoSourceConfiguration command on the media profile. The result
+     *         will vary depending on the capabilities, configurations and settings in the device.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleVideoSourceConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleVideoSourceConfigurations")
     @RequestWrapper(localName = "GetCompatibleVideoSourceConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleVideoSourceConfigurations")
@@ -801,7 +961,11 @@ public interface Media {
     );
 
     /**
-     * This operation lists all the audio decoder configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioDecoderConfiguration command on the media profile.
+     * This operation lists all the audio decoder configurations of the device
+     *         that are compatible with a certain media profile. Each of the returned configurations shall
+     *         be a valid input parameter for the AddAudioDecoderConfiguration command on the media
+     *         profile.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleAudioDecoderConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleAudioDecoderConfigurations")
     @RequestWrapper(localName = "GetCompatibleAudioDecoderConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleAudioDecoderConfigurations")
@@ -814,11 +978,14 @@ public interface Media {
     );
 
     /**
-     * This operation adds a VideoEncoderConfiguration to an existing media profile. If a
-     * configuration exists in the media profile, it will be replaced. The change shall be persistent. A device shall
-     * support adding a compatible VideoEncoderConfiguration to a Profile containing a VideoSourceConfiguration and shall
-     * support streaming video data of such a profile.
-     * 			
+     * This operation adds a VideoEncoderConfiguration to an existing media
+     *         profile. If a
+     *         configuration exists in the media profile, it will be replaced. The change shall be
+     *         persistent. A device shall
+     *         support adding a compatible VideoEncoderConfiguration to a Profile containing a
+     *         VideoSourceConfiguration and shall
+     *         support streaming video data of such a profile.
+     *       
      */
     @WebMethod(operationName = "AddVideoEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddVideoEncoderConfiguration")
     @RequestWrapper(localName = "AddVideoEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddVideoEncoderConfiguration")
@@ -832,7 +999,9 @@ public interface Media {
     );
 
     /**
-     * This operation lists all existing metadata configurations. The client need not know anything apriori about the metadata in order to use the command.
+     * This operation lists all existing metadata configurations. The client need
+     *         not know anything apriori about the metadata in order to use the command.
+     *       
      */
     @WebMethod(operationName = "GetMetadataConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetMetadataConfigurations")
     @RequestWrapper(localName = "GetMetadataConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetMetadataConfigurations")
@@ -842,11 +1011,14 @@ public interface Media {
 ;
 
     /**
-     * This operation modifies an audio source configuration. The ForcePersistence flag indicates if
-     * the changes shall remain after reboot of the device. Running streams using this configuration
-     * may be immediately updated according to the new settings. The changes are not guaranteed
-     * to take effect unless the client requests a new stream URI and restarts any affected stream
-     * NVC methods for changing a running stream are out of scope for this specification.
+     * This operation modifies an audio source configuration. The
+     *         ForcePersistence flag indicates if
+     *         the changes shall remain after reboot of the device. Running streams using this
+     *         configuration
+     *         may be immediately updated according to the new settings. The changes are not guaranteed
+     *         to take effect unless the client requests a new stream URI and restarts any affected stream
+     *         NVC methods for changing a running stream are out of scope for this specification.
+     *       
      */
     @WebMethod(operationName = "SetAudioSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetAudioSourceConfiguration")
     @RequestWrapper(localName = "SetAudioSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetAudioSourceConfiguration")
@@ -872,7 +1044,10 @@ public interface Media {
     );
 
     /**
-     * This operation removes an AudioDecoderConfiguration from an existing media profile. If the media profile does not contain an AudioDecoderConfiguration, the operation has no effect. The removal shall be persistent.
+     * This operation removes an AudioDecoderConfiguration from an existing media
+     *         profile. If the media profile does not contain an AudioDecoderConfiguration, the operation
+     *         has no effect. The removal shall be persistent.
+     *       
      */
     @WebMethod(operationName = "RemoveAudioDecoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioDecoderConfiguration")
     @RequestWrapper(localName = "RemoveAudioDecoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveAudioDecoderConfiguration")
@@ -884,7 +1059,9 @@ public interface Media {
     );
 
     /**
-     * This operation deletes a profile. This change shall always be persistent. Deletion of a profile is only possible for non-fixed profiles
+     * This operation deletes a profile. This change shall always be persistent.
+     *         Deletion of a profile is only possible for non-fixed profiles
+     *       
      */
     @WebMethod(operationName = "DeleteProfile", action = "http://www.onvif.org/ver10/media/wsdl/DeleteProfile")
     @RequestWrapper(localName = "DeleteProfile", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.DeleteProfile")
@@ -896,7 +1073,12 @@ public interface Media {
     );
 
     /**
-     * This operation lists all the video encoder configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddVideoEncoderConfiguration command on the media profile. The result will vary depending on the capabilities, configurations and settings in the device.
+     * This operation lists all the video encoder configurations of the device
+     *         that are compatible with a certain media profile. Each of the returned configurations shall
+     *         be a valid input parameter for the AddVideoEncoderConfiguration command on the media
+     *         profile. The result will vary depending on the capabilities, configurations and settings in
+     *         the device.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleVideoEncoderConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetCompatibleVideoEncoderConfigurations")
     @RequestWrapper(localName = "GetCompatibleVideoEncoderConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetCompatibleVideoEncoderConfigurations")
@@ -909,7 +1091,9 @@ public interface Media {
     );
 
     /**
-     * The GetMetadataConfiguration command fetches the metadata configuration if the metadata token is known.
+     * The GetMetadataConfiguration command fetches the metadata configuration if
+     *         the metadata token is known.
+     *       
      */
     @WebMethod(operationName = "GetMetadataConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetMetadataConfiguration")
     @RequestWrapper(localName = "GetMetadataConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetMetadataConfiguration")
@@ -922,7 +1106,17 @@ public interface Media {
     );
 
     /**
-     * This operation modifies a video encoder configuration. The ForcePersistence flag indicates if the changes shall remain after reboot of the device. Changes in the Multicast settings shall always be persistent. Running streams using this configuration may be immediately updated according to the new settings. The changes are not guaranteed to take effect unless the client requests a new stream URI and restarts any affected stream. NVC methods for changing a running stream are out of scope for this specification. SessionTimeout is provided as a hint for keeping rtsp session by a device. If necessary the device may adapt parameter values for SessionTimeout elements without returning an error. For the time between keep alive calls the client shall adhere to the timeout value signaled via RTSP.
+     * This operation modifies a video encoder configuration. The
+     *         ForcePersistence flag indicates if the changes shall remain after reboot of the device.
+     *         Changes in the Multicast settings shall always be persistent. Running streams using this
+     *         configuration may be immediately updated according to the new settings. The changes are not
+     *         guaranteed to take effect unless the client requests a new stream URI and restarts any
+     *         affected stream. NVC methods for changing a running stream are out of scope for this
+     *         specification.SessionTimeout is provided as a hint for keeping rtsp session by a
+     *         device. If necessary the device may adapt parameter values for SessionTimeout elements
+     *         without returning an error. For the time between keep alive calls the client shall adhere to
+     *         the timeout value signaled via RTSP.
+     *       
      */
     @WebMethod(operationName = "SetVideoEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetVideoEncoderConfiguration")
     @RequestWrapper(localName = "SetVideoEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetVideoEncoderConfiguration")
@@ -936,8 +1130,10 @@ public interface Media {
     );
 
     /**
-     * This command list the audio decoding capabilities for a given profile and configuration of a
-     * device.
+     * This command list the audio decoding capabilities for a given profile and
+     *         configuration of a
+     *         device.
+     *       
      */
     @WebMethod(operationName = "GetAudioDecoderConfigurationOptions", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioDecoderConfigurationOptions")
     @RequestWrapper(localName = "GetAudioDecoderConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioDecoderConfigurationOptions")
@@ -964,11 +1160,14 @@ public interface Media {
     );
 
     /**
-     * This operation adds an AudioEncoderConfiguration to an existing media profile. If a 
-     * configuration exists in the media profile, it will be replaced. The change shall be persistent. A device shall
-     * support adding a compatible AudioEncoderConfiguration to a profile containing an AudioSourceConfiguration and shall
-     * support streaming audio data of such a profile.
-     * 			
+     * This operation adds an AudioEncoderConfiguration to an existing media
+     *         profile. If a
+     *         configuration exists in the media profile, it will be replaced. The change shall be
+     *         persistent. A device shall
+     *         support adding a compatible AudioEncoderConfiguration to a profile containing an
+     *         AudioSourceConfiguration and shall
+     *         support streaming audio data of such a profile.
+     *       
      */
     @WebMethod(operationName = "AddAudioEncoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddAudioEncoderConfiguration")
     @RequestWrapper(localName = "AddAudioEncoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddAudioEncoderConfiguration")
@@ -982,7 +1181,10 @@ public interface Media {
     );
 
     /**
-     * This operation adds an AudioDecoderConfiguration to an existing media profile. If a configuration exists in the media profile, it shall be replaced. The change shall be persistent.
+     * This operation adds an AudioDecoderConfiguration to an existing media
+     *         profile. If a configuration exists in the media profile, it shall be replaced. The change
+     *         shall be persistent.
+     *       
      */
     @WebMethod(operationName = "AddAudioDecoderConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/AddAudioDecoderConfiguration")
     @RequestWrapper(localName = "AddAudioDecoderConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.AddAudioDecoderConfiguration")
@@ -996,8 +1198,11 @@ public interface Media {
     );
 
     /**
-     * This operation removes a VideoAnalyticsConfiguration from an existing media profile. If the media profile does not contain a VideoAnalyticsConfiguration, the operation has no effect.
-     * The removal shall be persistent.
+     * This operation removes a VideoAnalyticsConfiguration from an existing
+     *         media profile. If the media profile does not contain a VideoAnalyticsConfiguration, the
+     *         operation has no effect.
+     *         The removal shall be persistent.
+     *       
      */
     @WebMethod(operationName = "RemoveVideoAnalyticsConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveVideoAnalyticsConfiguration")
     @RequestWrapper(localName = "RemoveVideoAnalyticsConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveVideoAnalyticsConfiguration")
@@ -1009,7 +1214,10 @@ public interface Media {
     );
 
     /**
-     * This operation removes a MetadataConfiguration from an existing media profile. If the media profile does not contain a MetadataConfiguration, the operation has no effect. The removal shall be persistent.
+     * This operation removes a MetadataConfiguration from an existing media
+     *         profile. If the media profile does not contain a MetadataConfiguration, the operation has no
+     *         effect. The removal shall be persistent.
+     *       
      */
     @WebMethod(operationName = "RemoveMetadataConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveMetadataConfiguration")
     @RequestWrapper(localName = "RemoveMetadataConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveMetadataConfiguration")
@@ -1021,7 +1229,10 @@ public interface Media {
     );
 
     /**
-     * This operation removes an AudioOutputConfiguration from an existing media profile. If the media profile does not contain an AudioOutputConfiguration, the operation has no effect. The removal shall be persistent.
+     * This operation removes an AudioOutputConfiguration from an existing media
+     *         profile. If the media profile does not contain an AudioOutputConfiguration, the operation
+     *         has no effect. The removal shall be persistent.
+     *       
      */
     @WebMethod(operationName = "RemoveAudioOutputConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioOutputConfiguration")
     @RequestWrapper(localName = "RemoveAudioOutputConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveAudioOutputConfiguration")
@@ -1033,7 +1244,10 @@ public interface Media {
     );
 
     /**
-     * This operation lists all existing device audio encoder configurations. The client need not know anything apriori about the audio encoder configurations in order to use the command.
+     * This operation lists all existing device audio encoder configurations. The
+     *         client need not know anything apriori about the audio encoder configurations in order to use
+     *         the command.
+     *       
      */
     @WebMethod(operationName = "GetAudioEncoderConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioEncoderConfigurations")
     @RequestWrapper(localName = "GetAudioEncoderConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioEncoderConfigurations")
@@ -1043,12 +1257,15 @@ public interface Media {
 ;
 
     /**
-     * This operation modifies a metadata configuration. The ForcePersistence flag indicates if the
-     * changes shall remain after reboot of the device. Changes in the Multicast settings shall
-     * always be persistent. Running streams using this configuration may be updated immediately
-     * according to the new settings. The changes are not guaranteed to take effect unless the client
-     * requests a new stream URI and restarts any affected streams. NVC methods for changing a
-     * running stream are out of scope for this specification.
+     * This operation modifies a metadata configuration. The ForcePersistence
+     *         flag indicates if the
+     *         changes shall remain after reboot of the device. Changes in the Multicast settings shall
+     *         always be persistent. Running streams using this configuration may be updated immediately
+     *         according to the new settings. The changes are not guaranteed to take effect unless the
+     *         client
+     *         requests a new stream URI and restarts any affected streams. NVC methods for changing a
+     *         running stream are out of scope for this specification.
+     *       
      */
     @WebMethod(operationName = "SetMetadataConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/SetMetadataConfiguration")
     @RequestWrapper(localName = "SetMetadataConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetMetadataConfiguration")
@@ -1062,7 +1279,9 @@ public interface Media {
     );
 
     /**
-     * If the video source configuration token is already known, the video source configuration can be fetched through the GetVideoSourceConfiguration command.
+     * If the video source configuration token is already known, the video source
+     *         configuration can be fetched through the GetVideoSourceConfiguration command.
+     *       
      */
     @WebMethod(operationName = "GetVideoSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/GetVideoSourceConfiguration")
     @RequestWrapper(localName = "GetVideoSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetVideoSourceConfiguration")
@@ -1075,8 +1294,10 @@ public interface Media {
     );
 
     /**
-     * This command lists all existing AudioDecoderConfigurations of a device. The NVC need not know anything apriori about the audio decoder configurations in order to
-     * use this command.
+     * This command lists all existing AudioDecoderConfigurations of a device.
+     *         The NVC need not know anything apriori about the audio decoder configurations in order to
+     *         use this command.
+     *       
      */
     @WebMethod(operationName = "GetAudioDecoderConfigurations", action = "http://www.onvif.org/ver10/media/wsdl/GetAudioDecoderConfigurations")
     @RequestWrapper(localName = "GetAudioDecoderConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioDecoderConfigurations")
@@ -1086,10 +1307,13 @@ public interface Media {
 ;
 
     /**
-     * This operation removes an AudioSourceConfiguration from an existing media profile. If the
-     * media profile does not contain an AudioSourceConfiguration, the operation has no effect. The
-     * removal shall be persistent. Audio source configurations should only be removed after removing an
-     * AudioEncoderConfiguration from the media profile.
+     * This operation removes an AudioSourceConfiguration from an existing media
+     *         profile. If the
+     *         media profile does not contain an AudioSourceConfiguration, the operation has no effect. The
+     *         removal shall be persistent. Audio source configurations should only be removed after
+     *         removing an
+     *         AudioEncoderConfiguration from the media profile.
+     *       
      */
     @WebMethod(operationName = "RemoveAudioSourceConfiguration", action = "http://www.onvif.org/ver10/media/wsdl/RemoveAudioSourceConfiguration")
     @RequestWrapper(localName = "RemoveAudioSourceConfiguration", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.RemoveAudioSourceConfiguration")
@@ -1113,7 +1337,10 @@ public interface Media {
     );
 
     /**
-     * This operation lists all existing audio source configurations of a device. This command lists all audio source configurations in a device. The client need not know anything apriori about the audio source configurations in order to use the command.
+     * This operation lists all existing audio source configurations of a device.
+     *         This command lists all audio source configurations in a device. The client need not know
+     *         anything apriori about the audio source configurations in order to use the command.
+     *       
      */
     @WebMethod(operationName = "GetAudioSourceConfigurations", action = "http://www.onvif.org/ver10/media/wsdlGetAudioSourceConfigurations/")
     @RequestWrapper(localName = "GetAudioSourceConfigurations", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.GetAudioSourceConfigurations")
@@ -1123,7 +1350,11 @@ public interface Media {
 ;
 
     /**
-     * SetVideoSourceMode changes the media profile structure relating to video source for the specified video source mode. A device that indicates a capability of VideoSourceModes shall support this command. The behavior after changing the mode is not defined in this specification.
+     * SetVideoSourceMode changes the media profile structure relating to video
+     *         source for the specified video source mode. A device that indicates a capability of
+     *         VideoSourceModes shall support this command. The behavior after changing the mode is not
+     *         defined in this specification.
+     *       
      */
     @WebMethod(operationName = "SetVideoSourceMode", action = "http://www.onvif.org/ver10/media/wsdl/SetVideoSourceMode")
     @RequestWrapper(localName = "SetVideoSourceMode", targetNamespace = "http://www.onvif.org/ver10/media/wsdl", className = "org.onvif.ver10.media.wsdl.SetVideoSourceMode")

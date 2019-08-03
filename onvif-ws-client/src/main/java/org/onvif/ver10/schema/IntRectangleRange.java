@@ -10,7 +10,9 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * Range of a rectangle. The rectangle itself is defined by lower left corner position and size. Units are pixel.
+ * Range of a rectangle. The rectangle itself is defined by lower left corner
+ *         position and size. Units are pixel.
+ *       
  * 
  * <p>Java class for IntRectangleRange complex type.
  * 

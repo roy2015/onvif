@@ -19,14 +19,17 @@ public interface PTZ {
 
     /**
      * The SetPreset command saves the current device position parameters so that the device can
-     * 				move to the saved preset position through the GotoPreset operation.
-     * 				In order to create a new preset, the SetPresetRequest contains no PresetToken. If creation is
-     * 				successful, the Response contains the PresetToken which uniquely identifies the Preset. An
-     * 				existing Preset can be overwritten by specifying the PresetToken of the corresponding Preset.
-     * 				In both cases (overwriting or creation) an optional PresetName can be specified. The
-     * 				operation fails if the PTZ device is moving during the SetPreset operation.
-     * 				The device MAY internally save additional states such as imaging properties in the PTZ
-     * 				Preset which then should be recalled in the GotoPreset operation.      
+     * move to the saved preset position through the GotoPreset operation.
+     * In order to create a new preset, the SetPresetRequest contains no PresetToken. If creation
+     * is
+     * successful, the Response contains the PresetToken which uniquely identifies the Preset. An
+     * existing Preset can be overwritten by specifying the PresetToken of the corresponding
+     * Preset.
+     * In both cases (overwriting or creation) an optional PresetName can be specified. The
+     * operation fails if the PTZ device is moving during the SetPreset operation.
+     * The device MAY internally save additional states such as imaging properties in the PTZ
+     * Preset which then should be recalled in the GotoPreset operation.
+     *       
      */
     @WebMethod(operationName = "SetPreset", action = "http://www.onvif.org/ver20/ptz/wsdl/SetPreset")
     @RequestWrapper(localName = "SetPreset", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.SetPreset")
@@ -42,7 +45,10 @@ public interface PTZ {
     );
 
     /**
-     * Operation for continuous Pan/Tilt and Zoom movements. The operation is supported if the PTZNode supports at least one continuous Pan/Tilt or Zoom space. If the space argument is omitted, the default space set by the PTZConfiguration will be used.
+     * Operation for continuous Pan/Tilt and Zoom movements. The operation is
+     *         supported if the PTZNode supports at least one continuous Pan/Tilt or Zoom space. If the
+     *         space argument is omitted, the default space set by the PTZConfiguration will be used.
+     *       
      */
     @WebMethod(operationName = "ContinuousMove", action = "http://www.onvif.org/ver20/ptz/wsdl/ContinuousMove")
     @RequestWrapper(localName = "ContinuousMove", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.ContinuousMove")
@@ -59,7 +65,8 @@ public interface PTZ {
 
     /**
      * Operation to request PTZ status for the Node in the
-     * 				selected profile.
+     * selected profile.
+     *       
      */
     @WebMethod(operationName = "GetStatus", action = "http://www.onvif.org/ver20/ptz/wsdl/GetStatus")
     @RequestWrapper(localName = "GetStatus", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetStatus")
@@ -72,7 +79,9 @@ public interface PTZ {
     );
 
     /**
-     * Operation to perform specific operation on the preset tour in selected media profile.
+     * Operation to perform specific operation on the preset tour in selected
+     *         media profile.
+     *       
      */
     @WebMethod(operationName = "OperatePresetTour", action = "http://www.onvif.org/ver20/ptz/wsdl/OperatePresetTour")
     @RequestWrapper(localName = "OperatePresetTour", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.OperatePresetTour")
@@ -89,9 +98,10 @@ public interface PTZ {
 
     /**
      * Operation to save current position as the home position.
-     * 				The SetHomePosition command returns with a failure if the “home” position is fixed and
-     * 				cannot be overwritten. If the SetHomePosition is successful, it is possible to recall the
-     * 				Home Position with the GotoHomePosition command.
+     *         The SetHomePosition command returns with a failure if the “home” position is fixed and
+     *         cannot be overwritten. If the SetHomePosition is successful, it is possible to recall the
+     *         Home Position with the GotoHomePosition command.
+     *       
      */
     @WebMethod(operationName = "SetHomePosition", action = "http://www.onvif.org/ver20/ptz/wsdl/SetHomePosition")
     @RequestWrapper(localName = "SetHomePosition", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.SetHomePosition")
@@ -104,6 +114,7 @@ public interface PTZ {
 
     /**
      * Operation to create a preset tour for the selected media profile.
+     *       
      */
     @WebMethod(operationName = "CreatePresetTour", action = "http://www.onvif.org/ver20/ptz/wsdl/CreatePresetTour")
     @RequestWrapper(localName = "CreatePresetTour", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.CreatePresetTour")
@@ -117,6 +128,7 @@ public interface PTZ {
 
     /**
      * Operation to modify a preset tour for the selected media profile.
+     *       
      */
     @WebMethod(operationName = "ModifyPresetTour", action = "http://www.onvif.org/ver20/ptz/wsdl/ModifyPresetTour")
     @RequestWrapper(localName = "ModifyPresetTour", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.ModifyPresetTour")
@@ -130,8 +142,11 @@ public interface PTZ {
     );
 
     /**
-     * Operation to stop ongoing pan, tilt and zoom movements of absolute relative and continuous type.
-     * If no stop argument for pan, tilt or zoom is set, the device will stop all ongoing pan, tilt and zoom movements.
+     * Operation to stop ongoing pan, tilt and zoom movements of absolute
+     *         relative and continuous type.
+     *         If no stop argument for pan, tilt or zoom is set, the device will stop all ongoing pan, tilt
+     *         and zoom movements.
+     *       
      */
     @WebMethod(operationName = "Stop", action = "http://www.onvif.org/ver20/ptz/wsdl/Stop")
     @RequestWrapper(localName = "Stop", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.Stop")
@@ -148,22 +163,27 @@ public interface PTZ {
 
     /**
      * Get all the existing PTZConfigurations from the device.
-     * 				
-     * 				The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
-     * 				requests without the need to specify a certain coordinate system. The default Speeds are
-     * 				introduced to control the speed of move requests (absolute, relative, preset), where no
-     * 				explicit speed has been set.
-     * 				The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space range
-     * 				that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt Position
-     * 				Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all supported
-     * 				absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
-     * 				coordinate system for which the limits have been specified. That means that even if
-     * 				movements are specified in a different coordinate system, the requested movements shall be
-     * 				transformed to the coordinate system of the limits where the limits can be checked. When a
-     * 				relative or continuous movements is specified, which would leave the specified limits, the PTZ
-     * 				unit has to move along the specified limits. The Zoom Limits have to be interpreted
-     * 				accordingly.
-     * 			
+     * 
+     * The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
+     * requests without the need to specify a certain coordinate system. The default Speeds are
+     * introduced to control the speed of move requests (absolute, relative, preset), where no
+     * explicit speed has been set.
+     * 
+     * The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space
+     * range
+     * that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt
+     * Position
+     * Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all
+     * supported
+     * absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
+     * coordinate system for which the limits have been specified. That means that even if
+     * movements are specified in a different coordinate system, the requested movements shall be
+     * transformed to the coordinate system of the limits where the limits can be checked. When a
+     * relative or continuous movements is specified, which would leave the specified limits, the
+     * PTZ
+     * unit has to move along the specified limits. The Zoom Limits have to be interpreted
+     * accordingly.
+     *       
      */
     @WebMethod(operationName = "GetConfigurations", action = "http://www.onvif.org/ver20/ptz/wsdl/GetConfigurations")
     @RequestWrapper(localName = "GetConfigurations", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetConfigurations")
@@ -174,6 +194,7 @@ public interface PTZ {
 
     /**
      * Operation to request PTZ preset tours in the selected media profiles.
+     *       
      */
     @WebMethod(operationName = "GetPresetTours", action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresetTours")
     @RequestWrapper(localName = "GetPresetTours", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetPresetTours")
@@ -206,7 +227,9 @@ public interface PTZ {
     );
 
     /**
-     * Operation to request a specific PTZ preset tour in the selected media profile.
+     * Operation to request a specific PTZ preset tour in the selected media
+     *         profile.
+     *       
      */
     @WebMethod(operationName = "GetPresetTour", action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresetTour")
     @RequestWrapper(localName = "GetPresetTour", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetPresetTour")
@@ -221,11 +244,15 @@ public interface PTZ {
     );
 
     /**
-     * Operation for Relative Pan/Tilt and Zoom Move. The operation is supported if the PTZNode supports at least one relative Pan/Tilt or Zoom space. 
-     * 				The speed argument is optional. If an x/y speed value is given it is up to the device to either use 
-     * 				the x value as absolute resoluting speed vector or to map x and y to the component speed. 
-     * 				If the speed argument is omitted, the default speed set by the PTZConfiguration will be used.
-     * 			
+     * Operation for Relative Pan/Tilt and Zoom Move. The operation is supported
+     *         if the PTZNode supports at least one relative Pan/Tilt or Zoom space.
+     *         
+     *         The speed argument is optional. If an x/y speed value is given it is up to the device to
+     *         either use
+     *         the x value as absolute resoluting speed vector or to map x and y to the component speed.
+     *         If the speed argument is omitted, the default speed set by the PTZConfiguration will be
+     *         used.
+     *       
      */
     @WebMethod(operationName = "RelativeMove", action = "http://www.onvif.org/ver20/ptz/wsdl/RelativeMove")
     @RequestWrapper(localName = "RelativeMove", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.RelativeMove")
@@ -241,7 +268,9 @@ public interface PTZ {
     );
 
     /**
-     * Operation to move the PTZ device to it's "home" position. The operation is supported if the HomeSupported element in the PTZNode is true.
+     * Operation to move the PTZ device to it's "home" position. The operation is
+     * supported if the HomeSupported element in the PTZNode is true.
+     *       
      */
     @WebMethod(operationName = "GotoHomePosition", action = "http://www.onvif.org/ver20/ptz/wsdl/GotoHomePosition")
     @RequestWrapper(localName = "GotoHomePosition", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GotoHomePosition")
@@ -255,7 +284,9 @@ public interface PTZ {
     );
 
     /**
-     * Returns the capabilities of the PTZ service. The result is returned in a typed answer.
+     * Returns the capabilities of the PTZ service. The result is returned in a
+     *         typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver20/ptz/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetServiceCapabilities")
@@ -265,23 +296,29 @@ public interface PTZ {
 ;
 
     /**
-     * Get a specific PTZonfiguration from the device, identified by its reference token or name.
-     * 				
-     * 				The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
-     * 				requests without the need to specify a certain coordinate system. The default Speeds are
-     * 				introduced to control the speed of move requests (absolute, relative, preset), where no
-     * 				explicit speed has been set.
-     * 				The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space range
-     * 				that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt Position
-     * 				Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all supported
-     * 				absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
-     * 				coordinate system for which the limits have been specified. That means that even if
-     * 				movements are specified in a different coordinate system, the requested movements shall be
-     * 				transformed to the coordinate system of the limits where the limits can be checked. When a
-     * 				relative or continuous movements is specified, which would leave the specified limits, the PTZ
-     * 				unit has to move along the specified limits. The Zoom Limits have to be interpreted
-     * 				accordingly.
-     * 			
+     * Get a specific PTZonfiguration from the device, identified by its
+     *         reference token or name.
+     *         
+     *         The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
+     *         requests without the need to specify a certain coordinate system. The default Speeds are
+     *         introduced to control the speed of move requests (absolute, relative, preset), where no
+     *         explicit speed has been set.
+     *         
+     *         The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space
+     *         range
+     *         that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt
+     *         Position
+     *         Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all
+     *         supported
+     *         absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
+     *         coordinate system for which the limits have been specified. That means that even if
+     *         movements are specified in a different coordinate system, the requested movements shall be
+     *         transformed to the coordinate system of the limits where the limits can be checked. When a
+     *         relative or continuous movements is specified, which would leave the specified limits, the
+     *         PTZ
+     *         unit has to move along the specified limits. The Zoom Limits have to be interpreted
+     *         accordingly.
+     *       
      */
     @WebMethod(operationName = "GetConfiguration", action = "http://www.onvif.org/ver20/ptz/wsdl/GetConfiguration")
     @RequestWrapper(localName = "GetConfiguration", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetConfiguration")
@@ -331,6 +368,7 @@ public interface PTZ {
      * Operation to request all PTZ presets for the PTZNode
      * in the selected profile. The operation is supported if there is support
      * for at least on PTZ preset by the PTZNode.
+     *       
      */
     @WebMethod(operationName = "GetPresets", action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresets")
     @RequestWrapper(localName = "GetPresets", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetPresets")
@@ -345,7 +383,7 @@ public interface PTZ {
     /**
      * Get a specific PTZ Node identified by a reference
      *         token or a name.
-     * 	  
+     *       
      */
     @WebMethod(operationName = "GetNode", action = "http://www.onvif.org/ver20/ptz/wsdl/GetNode")
     @RequestWrapper(localName = "GetNode", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetNode")
@@ -361,6 +399,7 @@ public interface PTZ {
      * Operation to go to a saved preset position for the
      * PTZNode in the selected profile. The operation is supported if there is
      * support for at least on PTZ preset by the PTZNode.
+     *       
      */
     @WebMethod(operationName = "GotoPreset", action = "http://www.onvif.org/ver20/ptz/wsdl/GotoPreset")
     @RequestWrapper(localName = "GotoPreset", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GotoPreset")
@@ -377,6 +416,7 @@ public interface PTZ {
 
     /**
      * Operation to delete a specific preset tour from the media profile.
+     *       
      */
     @WebMethod(operationName = "RemovePresetTour", action = "http://www.onvif.org/ver20/ptz/wsdl/RemovePresetTour")
     @RequestWrapper(localName = "RemovePresetTour", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.RemovePresetTour")
@@ -391,12 +431,12 @@ public interface PTZ {
 
     /**
      * Get the descriptions of the available PTZ Nodes.
-     * 				
-     * 				A PTZ-capable device may have multiple PTZ Nodes. The PTZ Nodes may represent
-     * 				mechanical PTZ drivers, uploaded PTZ drivers or digital PTZ drivers. PTZ Nodes are the
-     * 				lowest level entities in the PTZ control API and reflect the supported PTZ capabilities. The
-     * 				PTZ Node is referenced either by its name or by its reference token. 
-     *   		
+     * 
+     * A PTZ-capable device may have multiple PTZ Nodes. The PTZ Nodes may represent
+     * mechanical PTZ drivers, uploaded PTZ drivers or digital PTZ drivers. PTZ Nodes are the
+     * lowest level entities in the PTZ control API and reflect the supported PTZ capabilities. The
+     * PTZ Node is referenced either by its name or by its reference token.
+     *       
      */
     @WebMethod(operationName = "GetNodes", action = "http://www.onvif.org/ver20/ptz/wsdl/GetNodes")
     @RequestWrapper(localName = "GetNodes", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetNodes")
@@ -407,6 +447,7 @@ public interface PTZ {
 
     /**
      * Operation to request available options to configure PTZ preset tour.
+     *       
      */
     @WebMethod(operationName = "GetPresetTourOptions", action = "http://www.onvif.org/ver20/ptz/wsdl/GetPresetTourOptions")
     @RequestWrapper(localName = "GetPresetTourOptions", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetPresetTourOptions")
@@ -421,11 +462,14 @@ public interface PTZ {
     );
 
     /**
-     * Operation to move pan,tilt or zoom to a absolute destination. 
-     * 				The speed argument is optional. If an x/y speed value is given it is up to the device to either use 
-     * 				the x value as absolute resoluting speed vector or to map x and y to the component speed. 
-     * 				If the speed argument is omitted, the default speed set by the PTZConfiguration will be used.
-     * 			
+     * Operation to move pan,tilt or zoom to a absolute destination.
+     *         
+     *         The speed argument is optional. If an x/y speed value is given it is up to the device to
+     *         either use
+     *         the x value as absolute resoluting speed vector or to map x and y to the component speed.
+     *         If the speed argument is omitted, the default speed set by the PTZConfiguration will be
+     *         used.
+     *       
      */
     @WebMethod(operationName = "AbsoluteMove", action = "http://www.onvif.org/ver20/ptz/wsdl/AbsoluteMove")
     @RequestWrapper(localName = "AbsoluteMove", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.AbsoluteMove")
@@ -441,11 +485,16 @@ public interface PTZ {
     );
 
     /**
-     * Operation to get all available PTZConfigurations that can be added to the referenced media profile. 
-     * 				A device providing more than one PTZConfiguration or more than one VideoSourceConfiguration or which has any other resource
-     * 				interdependency between PTZConfiguration entities and other resources listable in a media profile should implement this operation.
-     * 				PTZConfiguration entities returned by this operation shall not fail on adding them to the referenced media profile.
-     * 			
+     * Operation to get all available PTZConfigurations that can be added to the
+     *         referenced media profile.
+     *         
+     *         A device providing more than one PTZConfiguration or more than one VideoSourceConfiguration
+     *         or which has any other resource
+     *         interdependency between PTZConfiguration entities and other resources listable in a media
+     *         profile should implement this operation.
+     *         PTZConfiguration entities returned by this operation shall not fail on adding them to the
+     *         referenced media profile.
+     *       
      */
     @WebMethod(operationName = "GetCompatibleConfigurations", action = "http://www.onvif.org/ver20/ptz/wsdl/GetCompatibleConfigurations")
     @RequestWrapper(localName = "GetCompatibleConfigurations", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetCompatibleConfigurations")
@@ -459,12 +508,13 @@ public interface PTZ {
 
     /**
      * List supported coordinate systems including their range limitations. Therefore, the options
-     * 				MAY differ depending on whether the PTZ Configuration is assigned to a Profile containing a
-     * 				Video Source Configuration. In that case, the options may additionally contain coordinate
-     * 				systems referring to the image coordinate system described by the Video Source
-     * 				Configuration. If the PTZ Node supports continuous movements, it shall return a Timeout Range within
-     * 				which Timeouts are accepted by the PTZ Node.				
-     * 			
+     * MAY differ depending on whether the PTZ Configuration is assigned to a Profile containing a
+     * Video Source Configuration. In that case, the options may additionally contain coordinate
+     * systems referring to the image coordinate system described by the Video Source
+     * Configuration. If the PTZ Node supports continuous movements, it shall return a Timeout
+     * Range within
+     * which Timeouts are accepted by the PTZ Node.
+     *       
      */
     @WebMethod(operationName = "GetConfigurationOptions", action = "http://www.onvif.org/ver20/ptz/wsdl/GetConfigurationOptions")
     @RequestWrapper(localName = "GetConfigurationOptions", targetNamespace = "http://www.onvif.org/ver20/ptz/wsdl", className = "org.onvif.ver20.ptz.wsdl.GetConfigurationOptions")

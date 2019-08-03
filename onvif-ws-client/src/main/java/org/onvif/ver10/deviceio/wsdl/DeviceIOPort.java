@@ -20,6 +20,7 @@ public interface DeviceIOPort {
 
     /**
      * This operation lists what configuration is available for digital inputs.
+     *       
      */
     @WebMethod(operationName = "GetDigitalInputConfigurationOptions", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetDigitalInputConfigurationOptions")
     @RequestWrapper(localName = "GetDigitalInputConfigurationOptions", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.GetDigitalInputConfigurationOptions")
@@ -33,6 +34,7 @@ public interface DeviceIOPort {
 
     /**
      * This operation gets a list of all available digital inputs.
+     *       
      */
     @WebMethod(operationName = "GetDigitalInputs", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetDigitalInputs")
     @RequestWrapper(localName = "GetDigitalInputs", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.GetDigitalInputs")
@@ -52,7 +54,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Request the VideoSourceConfigurationOptions of a VideoSource. A device with one or more video sources shall support this command.
+     * Request the VideoSourceConfigurationOptions of a VideoSource. A device
+     *         with one or more video sources shall support this command.
+     *       
      */
     @WebMethod(operationName = "GetVideoSourceConfigurationOptions", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoSourceConfigurationOptions")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -91,7 +95,10 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Get the configuration of a Video Output. A device that has one or more Video Outputs shall support the retrieval of the VideoOutputConfiguration through this command.
+     * Get the configuration of a Video Output. A device that has one or more
+     *         Video Outputs shall support the retrieval of the VideoOutputConfiguration through this
+     *         command.
+     *       
      */
     @WebMethod(operationName = "GetVideoOutputConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoOutputConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -103,7 +110,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Request the available settings and ranges for a physical Audio output. A device that has one or more AudioOutputs shall support this command.
+     * Request the available settings and ranges for a physical Audio output. A
+     *         device that has one or more AudioOutputs shall support this command.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputConfigurationOptions", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioOutputConfigurationOptions")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -116,15 +125,22 @@ public interface DeviceIOPort {
 
     /**
      * This operation sets the settings of a relay output.
-     * 				The relay can work in two relay modes: 
-     * 				The physical idle state of a relay output can be configured by setting the IdleState to ‘open’ or
-     * 				‘closed’ (inversion of the relay behaviour).
-     * 				Idle State ‘open’ means that the relay is open when the relay state is set to ‘inactive’ through
-     * 				the trigger command (see Section 8.5.3) and closed when the state is set to ‘active’ through
-     * 				the same command.
-     * 				Idle State ‘closed’ means, that the relay is closed when the relay state is set to ‘inactive’
-     * 				through the trigger command (see Section 8.5.3) and open when the state is set to ‘active’
-     * 				through the same command.
+     *         The relay can work in two relay modes:
+     *         
+     *         The physical idle state of a relay output can be configured by setting the IdleState to
+     *         ‘open’ or
+     *         ‘closed’ (inversion of the relay behaviour).
+     *         
+     *         Idle State ‘open’ means that the relay is open when the relay state is set to ‘inactive’
+     *         through
+     *         the trigger command (see Section 8.5.3) and closed when the state is set to ‘active’ through
+     *         the same command.
+     *         
+     *         Idle State ‘closed’ means, that the relay is closed when the relay state is set to
+     *         ‘inactive’
+     *         through the trigger command (see Section 8.5.3) and open when the state is set to ‘active’
+     *         through the same command.
+     *       
      */
     @WebMethod(operationName = "SetRelayOutputSettings", action = "http://www.onvif.org/ver10/deviceio/wsdl/SetRelayOutputSettings")
     @RequestWrapper(localName = "SetRelayOutputSettings", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.SetRelayOutputSettings")
@@ -136,10 +152,12 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Request the available settings and ranges for one or all relay outputs. A device that has one or more RelayOutputs should support this command.
-     * 				Two examples that illustrate usage:
-     * 				
-     * 			
+     * Request the available settings and ranges for one or all relay outputs. A
+     *         device that has one or more RelayOutputs should support this command.
+     *         
+     *         Two examples that illustrate usage:
+     *         
+     *       
      */
     @WebMethod(operationName = "GetRelayOutputOptions", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetRelayOutputOptions")
     @RequestWrapper(localName = "GetRelayOutputOptions", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.GetRelayOutputOptions")
@@ -152,7 +170,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Modify a video input configuration. A device that has one or more video sources shall support the setting of the VideoSourceConfiguration through this command.
+     * Modify a video input configuration. A device that has one or more video
+     *         sources shall support the setting of the VideoSourceConfiguration through this command.
+     *       
      */
     @WebMethod(operationName = "SetVideoSourceConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/SetVideoSourceConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -164,7 +184,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Get the video source configurations of a VideoSource. A device with one or more video sources shall support the GetVideoSourceConfigurations command..
+     * Get the video source configurations of a VideoSource. A device with one or
+     *         more video sources shall support the GetVideoSourceConfigurations command..
+     *       
      */
     @WebMethod(operationName = "GetVideoSourceConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoSourceConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -176,7 +198,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Returns the capabilities of the device IO service. The result is returned in a typed answer.
+     * Returns the capabilities of the device IO service. The result is returned
+     *         in a typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.GetServiceCapabilities")
@@ -186,7 +210,9 @@ public interface DeviceIOPort {
 ;
 
     /**
-     * Request the AudioSourceConfigurationOptions of an AudioSource. A device with one ore more AudioSources shall support this command.
+     * Request the AudioSourceConfigurationOptions of an AudioSource. A device
+     *         with one ore more AudioSources shall support this command.
+     *       
      */
     @WebMethod(operationName = "GetAudioSourceConfigurationOptions", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioSourceConfigurationOptions")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -198,7 +224,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Modify a video output configuration. A device that has one or more video outputs shall support the setting of its video output configuration through this command.
+     * Modify a video output configuration. A device that has one or more video
+     *         outputs shall support the setting of its video output configuration through this command.
+     *       
      */
     @WebMethod(operationName = "SetVideoOutputConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/SetVideoOutputConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -210,7 +238,10 @@ public interface DeviceIOPort {
     );
 
     /**
-     * List all available video outputs of a device. A device that has one or more physical video outputs shall support listing of available video outputs through the GetVideoOutputs command.
+     * List all available video outputs of a device. A device that has one or
+     *         more physical video outputs shall support listing of available video outputs through the
+     *         GetVideoOutputs command.
+     *       
      */
     @WebMethod(operationName = "GetVideoOutputs", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoOutputs")
     @RequestWrapper(localName = "GetVideoOutputs", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.GetVideoOutputs")
@@ -230,7 +261,10 @@ public interface DeviceIOPort {
     );
 
     /**
-     * List all available audio outputs of a device. A device that has one ore more physical audio outputs shall support listing of available audio outputs through the GetAudioOutputs command.
+     * List all available audio outputs of a device. A device that has one ore
+     *         more physical audio outputs shall support listing of available audio outputs through the
+     *         GetAudioOutputs command.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputs", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioOutputs")
     @RequestWrapper(localName = "GetAudioOutputs", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.Get")
@@ -265,7 +299,10 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Modify an audio source configuration. A device that has a one or more audio sources shall support the setting of the AudioSourceConfiguration through this command.
+     * Modify an audio source configuration. A device that has a one or more
+     *         audio sources shall support the setting of the AudioSourceConfiguration through this
+     *         command.
+     *       
      */
     @WebMethod(operationName = "SetAudioSourceConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/SetAudioSourceConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -277,7 +314,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * Modify an audio output configuration. A device that has one ore more audio outputs shall support the setting of the AudioOutputConfiguration through this command.
+     * Modify an audio output configuration. A device that has one ore more audio
+     *         outputs shall support the setting of the AudioOutputConfiguration through this command.
+     *       
      */
     @WebMethod(operationName = "SetAudioOutputConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/SetAudioOutputConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -296,7 +335,10 @@ public interface DeviceIOPort {
 ;
 
     /**
-     * Request the current configuration of a physical Audio output. A device that has one or more AudioOutputs shall support the retrieval of the AudioOutputConfiguration through this command.
+     * Request the current configuration of a physical Audio output. A device
+     *         that has one or more AudioOutputs shall support the retrieval of the
+     *         AudioOutputConfiguration through this command.
+     *       
      */
     @WebMethod(operationName = "GetAudioOutputConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioOutputConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -308,7 +350,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * List the configuration of an Audio Input. A device with one or more audio inputs shall support the GetAudioSourceConfiguration command.
+     * List the configuration of an Audio Input. A device with one or more audio
+     *         inputs shall support the GetAudioSourceConfiguration command.
+     *       
      */
     @WebMethod(operationName = "GetAudioSourceConfiguration", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioSourceConfiguration")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -320,7 +364,10 @@ public interface DeviceIOPort {
     );
 
     /**
-     * List all available video sources for the device. The device that has one or more video inputs shall support the listing of available video sources through the GetVideoSources command.
+     * List all available video sources for the device. The device that has one
+     *         or more video inputs shall support the listing of available video sources through the
+     *         GetVideoSources command.
+     *       
      */
     @WebMethod(operationName = "GetVideoSources", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoSources")
     @RequestWrapper(localName = "GetVideoSources", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.Get")
@@ -330,7 +377,10 @@ public interface DeviceIOPort {
 ;
 
     /**
-     * List all available audio sources for the device. The device that has one or more audio sources shall support the listing of available audio inputs through the GetAudioSources command.
+     * List all available audio sources for the device. The device that has one
+     *         or more audio sources shall support the listing of available audio inputs through the
+     *         GetAudioSources command.
+     *       
      */
     @WebMethod(operationName = "GetAudioSources", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetAudioSources")
     @RequestWrapper(localName = "GetAudioSources", targetNamespace = "http://www.onvif.org/ver10/deviceIO/wsdl", className = "org.onvif.ver10.deviceio.wsdl.Get")
@@ -340,7 +390,10 @@ public interface DeviceIOPort {
 ;
 
     /**
-     * Request the VideoOutputConfigurationOptions of a VideoOutput. A device that has one or more video outputs shall support the retrieval of VideoOutputConfigurationOptions through this command.
+     * Request the VideoOutputConfigurationOptions of a VideoOutput. A device
+     *         that has one or more video outputs shall support the retrieval of
+     *         VideoOutputConfigurationOptions through this command.
+     *       
      */
     @WebMethod(operationName = "GetVideoOutputConfigurationOptions", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetVideoOutputConfigurationOptions")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -352,7 +405,9 @@ public interface DeviceIOPort {
     );
 
     /**
-     * This operation gets a list of all available relay outputs and their settings.
+     * This operation gets a list of all available relay outputs and their
+     *         settings.
+     *       
      */
     @WebMethod(operationName = "GetRelayOutputs", action = "http://www.onvif.org/ver10/deviceio/wsdl/GetRelayOutputs")
     @RequestWrapper(localName = "GetRelayOutputs", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetRelayOutputs")

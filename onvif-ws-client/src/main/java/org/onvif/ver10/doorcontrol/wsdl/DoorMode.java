@@ -40,49 +40,69 @@ public enum DoorMode {
     UNKNOWN("Unknown"),
 
     /**
-     * The Door is in a Locked state. In this mode the device shall provide momentary access using the AccessDoor method if supported by the Door instance.
+     * The Door is in a Locked state. In this mode the device shall provide
+     *                 momentary access using the AccessDoor method if supported by the Door instance.
+     *               
      * 
      */
     @XmlEnumValue("Locked")
     LOCKED("Locked"),
 
     /**
-     * The Door is in an Unlocked (Permanent Access) state. Alarms related to door timing operations such as open too long or forced are masked in this mode.
+     * The Door is in an Unlocked (Permanent Access) state. Alarms related
+     *                 to door timing operations such as open too long or forced are masked in this mode.
+     *               
      * 
      */
     @XmlEnumValue("Unlocked")
     UNLOCKED("Unlocked"),
 
     /**
-     * The Door is in an Accessed state (momentary/temporary access). Alarms related to timing operations such as "door forced" are masked in this mode.
+     * The Door is in an Accessed state (momentary/temporary access).
+     *                 Alarms related to timing operations such as "door forced" are masked in this mode.
+     *               
      * 
      */
     @XmlEnumValue("Accessed")
     ACCESSED("Accessed"),
 
     /**
-     * The Door is in a Blocked state (Door is locked, and AccessDoor requests are ignored, i.e., it is not possible for door to go to Accessed state).
+     * The Door is in a Blocked state (Door is locked, and AccessDoor
+     *                 requests are ignored, i.e., it is not possible for door to go to Accessed state).
+     *               
      * 
      */
     @XmlEnumValue("Blocked")
     BLOCKED("Blocked"),
 
     /**
-     * The Door is in a LockedDown state (Door is locked) until released using the LockDownReleaseDoor command. AccessDoor, LockDoor, UnlockDoor, BlockDoor and LockOpenDoor requests are ignored, i.e., it is not possible for door to go to Accessed, Locked, Unlocked, Blocked or LockedOpen state.
+     * The Door is in a LockedDown state (Door is locked) until released
+     *                 using the LockDownReleaseDoor command. AccessDoor, LockDoor, UnlockDoor, BlockDoor
+     *                 and LockOpenDoor requests are ignored, i.e., it is not possible for door to go to
+     *                 Accessed, Locked, Unlocked, Blocked or LockedOpen state.
+     *               
      * 
      */
     @XmlEnumValue("LockedDown")
     LOCKED_DOWN("LockedDown"),
 
     /**
-     * The Door is in a LockedOpen state (Door is unlocked) until released using the LockOpenReleaseDoor command. AccessDoor, LockDoor, UnlockDoor, BlockDoor and LockDownDoor requests are ignored, i.e., it is not possible for door to go to Accessed, Locked, Unlocked, Blocked or LockedDown state.
+     * The Door is in a LockedOpen state (Door is unlocked) until released
+     *                 using the LockOpenReleaseDoor command. AccessDoor, LockDoor, UnlockDoor, BlockDoor
+     *                 and LockDownDoor requests are ignored, i.e., it is not possible for door to go to
+     *                 Accessed, Locked, Unlocked, Blocked or LockedDown state.
+     *               
      * 
      */
     @XmlEnumValue("LockedOpen")
     LOCKED_OPEN("LockedOpen"),
 
     /**
-     * The Door is in a Double Locked state - for doors with multiple locks. If the door does not have any DoubleLock, this shall be treated as a normal Locked mode. When changing to an Unlocked mode from the DoubleLocked mode, the door may first go to Locked state before unlocking.
+     * The Door is in a Double Locked state - for doors with multiple
+     *                 locks. If the door does not have any DoubleLock, this shall be treated as a normal
+     *                 Locked mode. When changing to an Unlocked mode from the DoubleLocked mode, the door
+     *                 may first go to Locked state before unlocking.
+     *               
      * 
      */
     @XmlEnumValue("DoubleLocked")

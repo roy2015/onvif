@@ -19,7 +19,7 @@ public interface ReceiverPort {
 
     /**
      * Lists all receivers currently present on a device. This operation is mandatory.
-     * 			
+     *       
      */
     @WebMethod(operationName = "GetReceivers", action = "http://www.onvif.org/ver10/receiver/wsdl/GetReceivers")
     @RequestWrapper(localName = "GetReceivers", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.GetReceivers")
@@ -30,8 +30,8 @@ public interface ReceiverPort {
 
     /**
      * Creates a new receiver. This operation is mandatory, although the service may
-     * 				raise a fault if the receiver cannot be created.
-     * 			
+     * raise a fault if the receiver cannot be created.
+     *       
      */
     @WebMethod(operationName = "CreateReceiver", action = "http://www.onvif.org/ver10/receiver/wsdl/CreateReceiver")
     @RequestWrapper(localName = "CreateReceiver", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.CreateReceiver")
@@ -45,7 +45,7 @@ public interface ReceiverPort {
 
     /**
      * Configures an existing receiver. This operation is mandatory.
-     * 			
+     *       
      */
     @WebMethod(operationName = "ConfigureReceiver", action = "http://www.onvif.org/ver10/receiver/wsdl/ConfigureReceiver")
     @RequestWrapper(localName = "ConfigureReceiver", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.ConfigureReceiver")
@@ -60,9 +60,9 @@ public interface ReceiverPort {
 
     /**
      * Determines whether the receiver is currently disconnected, connected or
-     * 				attempting to connect.
-     * 				This operation is mandatory.
-     * 			
+     * attempting to connect.
+     * This operation is mandatory.
+     *       
      */
     @WebMethod(operationName = "GetReceiverState", action = "http://www.onvif.org/ver10/receiver/wsdl/GetReceiverState")
     @RequestWrapper(localName = "GetReceiverState", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.GetReceiverState")
@@ -75,7 +75,9 @@ public interface ReceiverPort {
     );
 
     /**
-     * Returns the capabilities of the receiver service. The result is returned in a typed answer.
+     * Returns the capabilities of the receiver service. The result is returned
+     *         in a typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/receiver/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.GetServiceCapabilities")
@@ -86,9 +88,9 @@ public interface ReceiverPort {
 
     /**
      * Deletes an existing receiver. A receiver may be deleted only if it is not
-     * 				currently in use; otherwise a fault shall be raised.
-     * 				This operation is mandatory.
-     * 			
+     * currently in use; otherwise a fault shall be raised.
+     * This operation is mandatory.
+     *       
      */
     @WebMethod(operationName = "DeleteReceiver", action = "http://www.onvif.org/ver10/receiver/wsdl/DeleteReceiver")
     @RequestWrapper(localName = "DeleteReceiver", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.DeleteReceiver")
@@ -101,8 +103,8 @@ public interface ReceiverPort {
 
     /**
      * Sets the mode of the receiver without affecting the rest of its configuration.
-     * 				This operation is mandatory.
-     * 			
+     * This operation is mandatory.
+     *       
      */
     @WebMethod(operationName = "SetReceiverMode", action = "http://www.onvif.org/ver10/receiver/wsdl/SetReceiverMode")
     @RequestWrapper(localName = "SetReceiverMode", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.SetReceiverMode")
@@ -117,7 +119,7 @@ public interface ReceiverPort {
 
     /**
      * Retrieves the details of a specific receiver. This operation is mandatory.
-     * 			
+     *       
      */
     @WebMethod(operationName = "GetReceiver", action = "http://www.onvif.org/ver10/receiver/wsdl/GetReceiver")
     @RequestWrapper(localName = "GetReceiver", targetNamespace = "http://www.onvif.org/ver10/receiver/wsdl", className = "org.onvif.ver10.receiver.wsdl.GetReceiver")

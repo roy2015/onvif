@@ -12,6 +12,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * Range of duration greater equal Min duration and less equal Max duration.
+ *       
  * 
  * <p>Java class for DurationRange complex type.
  * 

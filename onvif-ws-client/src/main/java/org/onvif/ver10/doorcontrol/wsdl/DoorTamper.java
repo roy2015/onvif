@@ -20,8 +20,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * Tampering information for a Door.
- * 
+ *             Tampering information for a Door.
+ *           
  * 
  * <p>Java class for DoorTamper complex type.
  * 

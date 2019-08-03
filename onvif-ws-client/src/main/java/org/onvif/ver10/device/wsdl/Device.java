@@ -19,16 +19,21 @@ import javax.xml.ws.ResponseWrapper;
 public interface Device {
 
     /**
-     * This operation initiates a firmware upgrade using the HTTP POST mechanism. The response
-     * 				to the command includes an HTTP URL to which the upgrade file may be uploaded. The
-     * 				actual upgrade takes place as soon as the HTTP POST operation has completed. The device
-     * 				should support firmware upgrade through the StartFirmwareUpgrade command. The exact
-     * 				format of the firmware data is outside the scope of this specification.
-     * 				Firmware upgrade over HTTP may be achieved using the following steps:
-     * 				If the firmware upgrade fails because the upgrade file was invalid, the HTTP POST response
-     * 				shall be “415 Unsupported Media Type”. If the firmware upgrade fails due to an error at the
-     * 				device, the HTTP POST response shall be “500 Internal Server Error”.
-     * 				The value of the Content-Type header in the HTTP POST request shall be “application/octetstream”.
+     * This operation initiates a firmware upgrade using the HTTP POST mechanism.
+     *         The response
+     *         to the command includes an HTTP URL to which the upgrade file may be uploaded. The
+     *         actual upgrade takes place as soon as the HTTP POST operation has completed. The device
+     *         should support firmware upgrade through the StartFirmwareUpgrade command. The exact
+     *         format of the firmware data is outside the scope of this specification.
+     *         Firmware upgrade over HTTP may be achieved using the following steps:
+     *         
+     *         If the firmware upgrade fails because the upgrade file was invalid, the HTTP POST response
+     *         shall be “415 Unsupported Media Type”. If the firmware upgrade fails due to an error at the
+     *         device, the HTTP POST response shall be “500 Internal Server Error”.
+     *         
+     *         The value of the Content-Type header in the HTTP POST request shall be
+     *         “application/octetstream”.
+     *       
      */
     @WebMethod(operationName = "StartFirmwareUpgrade", action = "http://www.onvif.org/ver10/device/wsdl/StartFirmwareUpgrade")
     @RequestWrapper(localName = "StartFirmwareUpgrade", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.StartFirmwareUpgrade")
@@ -44,10 +49,14 @@ public interface Device {
     );
 
     /**
-     * This operation gets the zero-configuration from a device. If the device supports dynamic IP
-     * 				configuration according to [RFC3927], it shall support the return of IPv4 zero configuration
-     * 				address and status through the GetZeroConfiguration command.
-     * 			Devices supporting zero configuration on more than one interface shall use the extension to list the additional interface settings.
+     * This operation gets the zero-configuration from a device. If the device
+     *         supports dynamic IP
+     *         configuration according to [RFC3927], it shall support the return of IPv4 zero configuration
+     *         address and status through the GetZeroConfiguration command.
+     *         
+     *         Devices supporting zero configuration on more than one interface shall use the extension to
+     *         list the additional interface settings.
+     *       
      */
     @WebMethod(operationName = "GetZeroConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/GetZeroConfiguration")
     @RequestWrapper(localName = "GetZeroConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetZeroConfiguration")
@@ -57,9 +66,11 @@ public interface Device {
 ;
 
     /**
-     * This operation is specific to TLS functionality. This operation gets the status
-     * 				(enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
-     * 				support this command.
+     * This operation is specific to TLS functionality. This operation gets the
+     *         status
+     *         (enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
+     *         support this command.
+     *       
      */
     @WebMethod(operationName = "GetClientCertificateMode", action = "http://www.onvif.org/ver10/device/wsdl/GetClientCertificateMode")
     @RequestWrapper(localName = "GetClientCertificateMode", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetClientCertificateMode")
@@ -69,9 +80,11 @@ public interface Device {
 ;
 
     /**
-     * This operation is specific to TLS functionality. This operation sets the status
-     * 				(enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
-     * 				support this command.
+     * This operation is specific to TLS functionality. This operation sets the
+     *         status
+     *         (enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
+     *         support this command.
+     *       
      */
     @WebMethod(operationName = "SetClientCertificateMode", action = "http://www.onvif.org/ver10/device/wsdl/SetClientCertificateMode")
     @RequestWrapper(localName = "SetClientCertificateMode", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetClientCertificateMode")
@@ -83,10 +96,13 @@ public interface Device {
     );
 
     /**
-     * This operation sets the remote discovery mode of operation of a device. See Section 7.4 for
-     * 				the definition of remote discovery remote extensions. A device that supports remote discovery
-     * 				shall support configuration of the discovery mode setting through the
-     * 				SetRemoteDiscoveryMode command.
+     * This operation sets the remote discovery mode of operation of a device.
+     *         See Section 7.4 for
+     *         the definition of remote discovery remote extensions. A device that supports remote
+     *         discovery
+     *         shall support configuration of the discovery mode setting through the
+     *         SetRemoteDiscoveryMode command.
+     *       
      */
     @WebMethod(operationName = "SetRemoteDiscoveryMode", action = "http://www.onvif.org/ver10/device/wsdl/SetRemoteDiscoveryMode")
     @RequestWrapper(localName = "SetRemoteDiscoveryMode", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetRemoteDiscoveryMode")
@@ -98,13 +114,18 @@ public interface Device {
     );
 
     /**
-     * This operation creates new device users and corresponding credentials on a device for authentication purposes. 
-     * 				The device shall support creation of device users and their credentials through the CreateUsers
-     * 				command. Either all users are created successfully or a fault message shall be returned
-     * 				without creating any user.
-     * 				ONVIF compliant devices are recommended to support password length of at least 28 bytes,
-     * 				as clients may follow the password derivation mechanism which results in 'password
-     * 				equivalent' of length 28 bytes, as described in section 3.1.2 of the ONVIF security white paper.
+     * This operation creates new device users and corresponding credentials on a
+     *         device for authentication purposes.
+     *         The device shall support creation of device users and their credentials through the
+     *         CreateUsers
+     *         command. Either all users are created successfully or a fault message shall be returned
+     *         without creating any user.
+     *         
+     *         ONVIF compliant devices are recommended to support password length of at least 28 bytes,
+     *         as clients may follow the password derivation mechanism which results in 'password
+     *         equivalent' of length 28 bytes, as described in section 3.1.2 of the ONVIF security white
+     *         paper.
+     *       
      */
     @WebMethod(operationName = "CreateUsers", action = "http://www.onvif.org/ver10/device/wsdl/CreateUsers")
     @RequestWrapper(localName = "CreateUsers", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.CreateUsers")
@@ -116,8 +137,10 @@ public interface Device {
     );
 
     /**
-     * This operation gets the NTP settings from a device. If the device supports NTP, it shall be
-     * 				possible to get the NTP server settings through the GetNTP command.
+     * This operation gets the NTP settings from a device. If the device supports
+     *         NTP, it shall be
+     *         possible to get the NTP server settings through the GetNTP command.
+     *       
      */
     @WebMethod(operationName = "GetNTP", action = "http://www.onvif.org/ver10/device/wsdl/GetNTP")
     @RequestWrapper(localName = "GetNTP", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetNTP")
@@ -127,19 +150,27 @@ public interface Device {
 ;
 
     /**
-     * There might be some cases that a Certificate Authority or some other equivalent creates a
-     * 				certificate without having PKCS#10 certificate signing request. In such cases, the certificate
-     * 				will be bundled in conjunction with its private key. This command will be used for such use
-     * 				case scenarios. The certificate ID in the request is optionally set to the ID value the client
-     * 				wish to have. If the certificate ID is not specified in the request, device can choose the ID
-     * 				accordingly.
-     * 				This operation imports a private/public key pair into the device.
-     * 				The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
-     * 				rules.
-     * 				A device that does not support onboard key pair generation and support either TLS or IEEE
-     * 				802.1X using client certificate shall support this command. A device that support onboard key
-     * 				pair generation MAY support this command. The security policy of a device that supports this
-     * 				operation should make sure that the private key is sufficiently protected.
+     * There might be some cases that a Certificate Authority or some other
+     *         equivalent creates a
+     *         certificate without having PKCS#10 certificate signing request. In such cases, the
+     *         certificate
+     *         will be bundled in conjunction with its private key. This command will be used for such use
+     *         case scenarios. The certificate ID in the request is optionally set to the ID value the
+     *         client
+     *         wish to have. If the certificate ID is not specified in the request, device can choose the
+     *         ID
+     *         accordingly.
+     *         
+     *         This operation imports a private/public key pair into the device.
+     *         The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+     *         rules.
+     *         
+     *         A device that does not support onboard key pair generation and support either TLS or IEEE
+     *         802.1X using client certificate shall support this command. A device that support onboard
+     *         key
+     *         pair generation MAY support this command. The security policy of a device that supports this
+     *         operation should make sure that the private key is sufficiently protected.
+     *       
      */
     @WebMethod(operationName = "LoadCertificateWithPrivateKey", action = "http://www.onvif.org/ver10/device/wsdl/LoadCertificateWithPrivateKey")
     @RequestWrapper(localName = "LoadCertificateWithPrivateKey", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.LoadCertificateWithPrivateKey")
@@ -151,9 +182,13 @@ public interface Device {
     );
 
     /**
-     * This operation updates the settings for one or several users on a device for authentication purposes.
-     * 				The device shall support update of device users and their credentials through the SetUser command. 
-     * 				Either all change requests are processed successfully or a fault message shall be returned and no change requests be processed.
+     * This operation updates the settings for one or several users on a device
+     *         for authentication purposes.
+     *         The device shall support update of device users and their credentials through the SetUser
+     *         command.
+     *         Either all change requests are processed successfully or a fault message shall be returned
+     *         and no change requests be processed.
+     *       
      */
     @WebMethod(operationName = "SetUser", action = "http://www.onvif.org/ver10/device/wsdl/SetUser")
     @RequestWrapper(localName = "SetUser", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetUser")
@@ -165,11 +200,14 @@ public interface Device {
     );
 
     /**
-     * This operation sets the scope parameters of a device. The scope parameters are used in the
-     * 				device discovery to match a probe message.
-     * 				This operation replaces all existing configurable scope parameters (not fixed parameters). If
-     * 				this shall be avoided, one should use the scope add command instead. The device shall
-     * 				support configuration of discovery scope parameters through the SetScopes command.
+     * This operation sets the scope parameters of a device. The scope parameters
+     *         are used in the
+     *         device discovery to match a probe message.
+     *         This operation replaces all existing configurable scope parameters (not fixed parameters).
+     *         If
+     *         this shall be avoided, one should use the scope add command instead. The device shall
+     *         support configuration of discovery scope parameters through the SetScopes command.
+     *       
      */
     @WebMethod(operationName = "SetScopes", action = "http://www.onvif.org/ver10/device/wsdl/SetScopes")
     @RequestWrapper(localName = "SetScopes", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetScopes")
@@ -181,8 +219,10 @@ public interface Device {
     );
 
     /**
-     * This operation gets the default gateway settings from a device. The device shall support the
-     * 				GetNetworkDefaultGateway command returning configured default gateway address(es).
+     * This operation gets the default gateway settings from a device. The device
+     *         shall support the
+     *         GetNetworkDefaultGateway command returning configured default gateway address(es).
+     *       
      */
     @WebMethod(operationName = "GetNetworkDefaultGateway", action = "http://www.onvif.org/ver10/device/wsdl/GetNetworkDefaultGateway")
     @RequestWrapper(localName = "GetNetworkDefaultGateway", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetNetworkDefaultGateway")
@@ -192,10 +232,14 @@ public interface Device {
 ;
 
     /**
-     * This operation gets the device system date and time. The device shall support the return of
-     * 				the daylight saving setting and of the manual system date and time (if applicable) or indication
-     * 				of NTP time (if applicable) through the GetSystemDateAndTime command.
-     * 				A device shall provide the UTCDateTime information.
+     * This operation gets the device system date and time. The device shall
+     *         support the return of
+     *         the daylight saving setting and of the manual system date and time (if applicable) or
+     *         indication
+     *         of NTP time (if applicable) through the GetSystemDateAndTime command.
+     *         
+     *         A device shall provide the UTCDateTime information.
+     *       
      */
     @WebMethod(operationName = "GetSystemDateAndTime", action = "http://www.onvif.org/ver10/device/wsdl/GetSystemDateAndTime")
     @RequestWrapper(localName = "GetSystemDateAndTime", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetSystemDateAndTime")
@@ -205,12 +249,17 @@ public interface Device {
 ;
 
     /**
-     * This operation sets the NTP settings on a device. If the device supports NTP, it shall be
-     * 				possible to set the NTP server settings through the SetNTP command.
-     * 				A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to RFC 952, 
-     * 				other string shall be considered as invalid strings. 
-     * 				Changes to the NTP server list will not affect the clock mode DateTimeType. Use SetSystemDateAndTime to activate NTP operation.
-     * 			
+     * This operation sets the NTP settings on a device. If the device supports
+     *         NTP, it shall be
+     *         possible to set the NTP server settings through the SetNTP command.
+     *         
+     *         A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to
+     *         RFC 952,
+     *         other string shall be considered as invalid strings.
+     *         
+     *         Changes to the NTP server list will not affect the clock mode DateTimeType. Use
+     *         SetSystemDateAndTime to activate NTP operation.
+     *       
      */
     @WebMethod(operationName = "SetNTP", action = "http://www.onvif.org/ver10/device/wsdl/SetNTP")
     @RequestWrapper(localName = "SetNTP", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetNTP")
@@ -224,12 +273,16 @@ public interface Device {
     );
 
     /**
-     * This operation sets the network interface configuration on a device. The device shall support
-     * 				network configuration of supported network interfaces through the SetNetworkInterfaces
-     * 				command.
-     * 				For interoperability with a client unaware of the IEEE 802.11 extension a device shall retain
-     * 				its IEEE 802.11 configuration if the IEEE 802.11 configuration element isn’t present in the
-     * 				request.
+     * This operation sets the network interface configuration on a device. The
+     *         device shall support
+     *         network configuration of supported network interfaces through the SetNetworkInterfaces
+     *         command.
+     *         
+     *         For interoperability with a client unaware of the IEEE 802.11 extension a device shall
+     *         retain
+     *         its IEEE 802.11 configuration if the IEEE 802.11 configuration element isn’t present in the
+     *         request.
+     *       
      */
     @WebMethod(operationName = "SetNetworkInterfaces", action = "http://www.onvif.org/ver10/device/wsdl/SetNetworkInterfaces")
     @RequestWrapper(localName = "SetNetworkInterfaces", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetNetworkInterfaces")
@@ -244,9 +297,11 @@ public interface Device {
     );
 
     /**
-     * This operation sets the remote DP address or addresses on a device. If the device supports
-     * 				remote discovery, as specified in Section 7.4, the device shall support configuration of the
-     * 				remote DP address(es) through the SetDPAddresses command.
+     * This operation sets the remote DP address or addresses on a device. If the
+     *         device supports
+     *         remote discovery, as specified in Section 7.4, the device shall support configuration of the
+     *         remote DP address(es) through the SetDPAddresses command.
+     *       
      */
     @WebMethod(operationName = "SetDPAddresses", action = "http://www.onvif.org/ver10/device/wsdl/SetDPAddresses")
     @RequestWrapper(localName = "SetDPAddresses", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetDPAddresses")
@@ -258,9 +313,11 @@ public interface Device {
     );
 
     /**
-     * This operation gets the discovery mode of a device. See Section 7.2 for the definition of the
-     * 				different device discovery modes. The device shall support retrieval of the discovery mode
-     * 				setting through the GetDiscoveryMode command.
+     * This operation gets the discovery mode of a device. See Section 7.2 for
+     *         the definition of the
+     *         different device discovery modes. The device shall support retrieval of the discovery mode
+     *         setting through the GetDiscoveryMode command.
+     *       
      */
     @WebMethod(operationName = "GetDiscoveryMode", action = "http://www.onvif.org/ver10/device/wsdl/GetDiscoveryMode")
     @RequestWrapper(localName = "GetDiscoveryMode", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDiscoveryMode")
@@ -270,7 +327,9 @@ public interface Device {
 ;
 
     /**
-     * This operation gets arbitary device diagnostics information from the device.
+     * This operation gets arbitary device diagnostics information from the
+     *         device.
+     *       
      */
     @WebMethod(operationName = "GetSystemSupportInformation", action = "http://www.onvif.org/ver10/device/wsdl/GetSystemSupportInformation")
     @RequestWrapper(localName = "GetSystemSupportInformation", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetSystemSupportInformation")
@@ -280,9 +339,11 @@ public interface Device {
 ;
 
     /**
-     * This operation deletes an IP filter address from a device. If the device supports device access
-     * 				control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
-     * 				shall support deletion of IP filtering addresses through the RemoveIPAddressFilter command.
+     * This operation deletes an IP filter address from a device. If the device
+     *         supports device access
+     *         control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
+     *         shall support deletion of IP filtering addresses through the RemoveIPAddressFilter command.
+     *       
      */
     @WebMethod(operationName = "RemoveIPAddressFilter", action = "http://www.onvif.org/ver10/device/wsdl/RemoveIPAddressFilter")
     @RequestWrapper(localName = "RemoveIPAddressFilter", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.RemoveIPAddressFilter")
@@ -294,15 +355,23 @@ public interface Device {
     );
 
     /**
-     * This operation sets the device system date and time. The device shall support the
-     * 				configuration of the daylight saving setting and of the manual system date and time (if
-     * 				applicable) or indication of NTP time (if applicable) through the SetSystemDateAndTime
-     * 				command. 
-     * 				If system time and date are set manually, the client shall include UTCDateTime in the request.
-     * 				A TimeZone token which is not formed according to the rules of IEEE 1003.1 section 8.3 is considered as invalid timezone.
-     * 				The DayLightSavings flag should be set to true to activate any DST settings of the TimeZone string. 
-     * 				Clear the DayLightSavings flag if the DST portion of the TimeZone settings should be ignored.
-     * 			
+     * This operation sets the device system date and time. The device shall
+     *         support the
+     *         configuration of the daylight saving setting and of the manual system date and time (if
+     *         applicable) or indication of NTP time (if applicable) through the SetSystemDateAndTime
+     *         command.
+     *         
+     *         If system time and date are set manually, the client shall include UTCDateTime in the
+     *         request.
+     *         
+     *         A TimeZone token which is not formed according to the rules of IEEE 1003.1 section 8.3 is
+     *         considered as invalid timezone.
+     *         
+     *         The DayLightSavings flag should be set to true to activate any DST settings of the TimeZone
+     *         string.
+     *         Clear the DayLightSavings flag if the DST portion of the TimeZone settings should be
+     *         ignored.
+     *       
      */
     @WebMethod(operationName = "SetSystemDateAndTime", action = "http://www.onvif.org/ver10/device/wsdl/SetSystemDateAndTime")
     @RequestWrapper(localName = "SetSystemDateAndTime", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetSystemDateAndTime")
@@ -320,11 +389,15 @@ public interface Device {
     );
 
     /**
-     * This operation newly creates IEEE 802.1X configuration parameter set of the device. The
-     * 				device shall support this command if it supports IEEE 802.1X. If the device receives this
-     * 				request with already existing configuration token (Dot1XConfigurationToken) specification, the
-     * 				device should respond with 'ter:ReferenceToken ' error to indicate there is some configuration
-     * 				conflict.
+     * This operation newly creates IEEE 802.1X configuration parameter set of
+     *         the device. The
+     *         device shall support this command if it supports IEEE 802.1X. If the device receives this
+     *         request with already existing configuration token (Dot1XConfigurationToken) specification,
+     *         the
+     *         device should respond with 'ter:ReferenceToken ' error to indicate there is some
+     *         configuration
+     *         conflict.
+     *       
      */
     @WebMethod(operationName = "CreateDot1XConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/CreateDot1XConfiguration")
     @RequestWrapper(localName = "CreateDot1XConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.CreateDot1XConfiguration")
@@ -336,14 +409,16 @@ public interface Device {
     );
 
     /**
-     * Access to different services and sub-sets of services should be subject to access control. The
-     * 				WS-Security framework gives the prerequisite for end-point authentication. Authorization
-     * 				decisions can then be taken using an access security policy. This standard does not mandate
-     * 				any particular policy description format or security policy but this is up to the device
-     * 				manufacturer or system provider to choose policy and policy description format of choice.
-     * 				However, an access policy (in arbitrary format) can be requested using this command. If the
-     * 				device supports access policy settings based on WS-Security authentication, then the device
-     * 				shall support this command.
+     * Access to different services and sub-sets of services should be subject to
+     *         access control. The
+     *         WS-Security framework gives the prerequisite for end-point authentication. Authorization
+     *         decisions can then be taken using an access security policy. This standard does not mandate
+     *         any particular policy description format or security policy but this is up to the device
+     *         manufacturer or system provider to choose policy and policy description format of choice.
+     *         However, an access policy (in arbitrary format) can be requested using this command. If the
+     *         device supports access policy settings based on WS-Security authentication, then the device
+     *         shall support this command.
+     *       
      */
     @WebMethod(operationName = "GetAccessPolicy", action = "http://www.onvif.org/ver10/device/wsdl/GetAccessPolicy")
     @RequestWrapper(localName = "GetAccessPolicy", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetAccessPolicy")
@@ -353,18 +428,25 @@ public interface Device {
 ;
 
     /**
-     * This operation is used to retrieve URIs from which system information may be downloaded
-     * 				using HTTP. URIs may be returned for the following system information:
-     * 				System Logs. Multiple system logs may be returned, of different types. The exact format of
-     * 				the system logs is outside the scope of this specification.
-     * 				Support Information. This consists of arbitrary device diagnostics information from a device.
-     * 				The exact format of the diagnostic information is outside the scope of this specification.
-     * 				System Backup. The received file is a backup file that can be used to restore the current
-     * 				device configuration at a later date. The exact format of the backup configuration file is
-     * 				outside the scope of this specification.
-     * 				If the device allows retrieval of system logs, support information or system backup data, it
-     * 				should make them available via HTTP GET. If it does, it shall support the GetSystemUris
-     * 				command.
+     * This operation is used to retrieve URIs from which system information may
+     *         be downloaded
+     *         using HTTP. URIs may be returned for the following system information:
+     *         
+     *         System Logs. Multiple system logs may be returned, of different types. The exact format of
+     *         the system logs is outside the scope of this specification.
+     *         
+     *         Support Information. This consists of arbitrary device diagnostics information from a
+     *         device.
+     *         The exact format of the diagnostic information is outside the scope of this specification.
+     *         
+     *         System Backup. The received file is a backup file that can be used to restore the current
+     *         device configuration at a later date. The exact format of the backup configuration file is
+     *         outside the scope of this specification.
+     *         
+     *         If the device allows retrieval of system logs, support information or system backup data, it
+     *         should make them available via HTTP GET. If it does, it shall support the GetSystemUris
+     *         command.
+     *       
      */
     @WebMethod(operationName = "GetSystemUris", action = "http://www.onvif.org/ver10/device/wsdl/GetSystemUris")
     @RequestWrapper(localName = "GetSystemUris", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetSystemUris")
@@ -382,11 +464,13 @@ public interface Device {
     );
 
     /**
-     * This operation deletes scope-configurable scope parameters from a device. The scope
-     * 				parameters are used in the device discovery to match a probe message, see Section 7. The
-     * 				device shall support deletion of discovery scope parameters through the RemoveScopes
-     * 				command.
-     * 				Table
+     * This operation deletes scope-configurable scope parameters from a device.
+     *         The scope
+     *         parameters are used in the device discovery to match a probe message, see Section 7. The
+     *         device shall support deletion of discovery scope parameters through the RemoveScopes
+     *         command.
+     *         Table
+     *       
      */
     @WebMethod(operationName = "RemoveScopes", action = "http://www.onvif.org/ver10/device/wsdl/RemoveScopes")
     @RequestWrapper(localName = "RemoveScopes", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.RemoveScopes")
@@ -398,20 +482,27 @@ public interface Device {
     );
 
     /**
-     * TLS server certificate(s) or IEEE 802.1X client certificate(s) created using the PKCS#10
-     * 				certificate request command can be loaded into the device using this command (see Section
-     * 				8.4.13). The certificate ID in the request shall be present. The device may sort the received
-     * 				certificate(s) based on the public key and subject information in the certificate(s).
-     * 				The certificate ID in the request will be the ID value the client wish to have. The device is
-     * 				supposed to scan the generated key pairs present in the device to identify which is the
-     * 				correspondent key pair with the loaded certificate and then make the link between the
-     * 				certificate and the key pair.
-     * 				A device that supports onboard key pair generation that support either TLS or IEEE 802.1X
-     * 				shall support this command.
-     * 				The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
-     * 				rules.
-     * 				This command is applicable to any device type, although the parameter name is called for
-     * 				historical reasons NVTCertificate.
+     * TLS server certificate(s) or IEEE 802.1X client certificate(s) created
+     *         using the PKCS#10
+     *         certificate request command can be loaded into the device using this command (see Section
+     *         8.4.13). The certificate ID in the request shall be present. The device may sort the
+     *         received
+     *         certificate(s) based on the public key and subject information in the certificate(s).
+     *         The certificate ID in the request will be the ID value the client wish to have. The device
+     *         is
+     *         supposed to scan the generated key pairs present in the device to identify which is the
+     *         correspondent key pair with the loaded certificate and then make the link between the
+     *         certificate and the key pair.
+     *         
+     *         A device that supports onboard key pair generation that support either TLS or IEEE 802.1X
+     *         shall support this command.
+     *         
+     *         The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+     *         rules.
+     *         
+     *         This command is applicable to any device type, although the parameter name is called for
+     *         historical reasons NVTCertificate.
+     *       
      */
     @WebMethod(operationName = "LoadCertificates", action = "http://www.onvif.org/ver10/device/wsdl/LoadCertificates")
     @RequestWrapper(localName = "LoadCertificates", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.LoadCertificates")
@@ -423,9 +514,11 @@ public interface Device {
     );
 
     /**
-     * This operation gets the dynamic DNS settings from a device. If the device supports dynamic
-     * 				DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to get the type, name
-     * 				and TTL through the GetDynamicDNS command.
+     * This operation gets the dynamic DNS settings from a device. If the device
+     *         supports dynamic
+     *         DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to get the type, name
+     *         and TTL through the GetDynamicDNS command.
+     *       
      */
     @WebMethod(operationName = "GetDynamicDNS", action = "http://www.onvif.org/ver10/device/wsdl/GetDynamicDNS")
     @RequestWrapper(localName = "GetDynamicDNS", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDynamicDNS")
@@ -435,13 +528,17 @@ public interface Device {
 ;
 
     /**
-     * This operation gets all device server certificates (including self-signed) for the purpose of TLS
-     * 				authentication and all device client certificates for the purpose of IEEE 802.1X authentication.
-     * 				This command lists only the TLS server certificates and IEEE 802.1X client certificates for the
-     * 				device (neither trusted CA certificates nor trusted root certificates). The certificates are
-     * 				returned as binary data. A device that supports TLS shall support this command and the
-     * 				certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
-     * 				rules.
+     * This operation gets all device server certificates (including self-signed)
+     *         for the purpose of TLS
+     *         authentication and all device client certificates for the purpose of IEEE 802.1X
+     *         authentication.
+     *         This command lists only the TLS server certificates and IEEE 802.1X client certificates for
+     *         the
+     *         device (neither trusted CA certificates nor trusted root certificates). The certificates are
+     *         returned as binary data. A device that supports TLS shall support this command and the
+     *         certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+     *         rules.
+     *       
      */
     @WebMethod(operationName = "GetCertificates", action = "http://www.onvif.org/ver10/device/wsdl/GetCertificates")
     @RequestWrapper(localName = "GetCertificates", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetCertificates")
@@ -452,6 +549,7 @@ public interface Device {
 
     /**
      * This operation gets basic device information from the device.
+     *       
      */
     @WebMethod(operationName = "GetDeviceInformation", action = "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation")
     @RequestWrapper(localName = "GetDeviceInformation", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDeviceInformation")
@@ -471,9 +569,12 @@ public interface Device {
     );
 
     /**
-     * This operation sets the discovery mode operation of a device. See Section 7.2 for the
-     * 				definition of the different device discovery modes. The device shall support configuration of
-     * 				the discovery mode setting through the SetDiscoveryMode command.
+     * This operation sets the discovery mode operation of a device. See Section
+     *         7.2 for the
+     *         definition of the different device discovery modes. The device shall support configuration
+     *         of
+     *         the discovery mode setting through the SetDiscoveryMode command.
+     *       
      */
     @WebMethod(operationName = "SetDiscoveryMode", action = "http://www.onvif.org/ver10/device/wsdl/SetDiscoveryMode")
     @RequestWrapper(localName = "SetDiscoveryMode", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetDiscoveryMode")
@@ -485,13 +586,19 @@ public interface Device {
     );
 
     /**
-     * This operation requests the scope parameters of a device. The scope parameters are used in
-     * 				the device discovery to match a probe message, see Section 7. The Scope parameters are of
-     * 				two different types: 
-     * 				Fixed scope parameters are permanent device characteristics and cannot be removed through the device management interface. 
-     * 				The scope type is indicated in the scope list returned in the get scope parameters response. A device shall support 
-     * 				retrieval of discovery scope parameters through the GetScopes command. As some scope parameters are mandatory, 
-     * 				the device shall return a non-empty scope list in the response.
+     * This operation requests the scope parameters of a device. The scope
+     *         parameters are used in
+     *         the device discovery to match a probe message, see Section 7. The Scope parameters are of
+     *         two different types:
+     *         
+     *         Fixed scope parameters are permanent device characteristics and cannot be removed through
+     *         the device management interface.
+     *         The scope type is indicated in the scope list returned in the get scope parameters response.
+     *         A device shall support
+     *         retrieval of discovery scope parameters through the GetScopes command. As some scope
+     *         parameters are mandatory,
+     *         the device shall return a non-empty scope list in the response.
+     *       
      */
     @WebMethod(operationName = "GetScopes", action = "http://www.onvif.org/ver10/device/wsdl/GetScopes")
     @RequestWrapper(localName = "GetScopes", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetScopes")
@@ -501,15 +608,20 @@ public interface Device {
 ;
 
     /**
-     * This operation generates a private/public key pair and also can create a self-signed device
-     * 				certificate as a result of key pair generation. The certificate is created using a suitable
-     * 				onboard key pair generation mechanism.
-     * 				If a device supports onboard key pair generation, the device that supports TLS shall support
-     * 				this certificate creation command. And also, if a device supports onboard key pair generation,
-     * 				the device that support IEEE 802.1X shall support this command for the purpose of key pair
-     * 				generation. Certificates and key pairs are identified using certificate IDs. These IDs are either
-     * 				chosen by the certificate generation requester or by the device (in case that no ID value is
-     * 				given).
+     * This operation generates a private/public key pair and also can create a
+     *         self-signed device
+     *         certificate as a result of key pair generation. The certificate is created using a suitable
+     *         onboard key pair generation mechanism.
+     *         
+     *         If a device supports onboard key pair generation, the device that supports TLS shall support
+     *         this certificate creation command. And also, if a device supports onboard key pair
+     *         generation,
+     *         the device that support IEEE 802.1X shall support this command for the purpose of key pair
+     *         generation. Certificates and key pairs are identified using certificate IDs. These IDs are
+     *         either
+     *         chosen by the certificate generation requester or by the device (in case that no ID value is
+     *         given).
+     *       
      */
     @WebMethod(operationName = "CreateCertificate", action = "http://www.onvif.org/ver10/device/wsdl/CreateCertificate")
     @RequestWrapper(localName = "CreateCertificate", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.CreateCertificate")
@@ -528,12 +640,19 @@ public interface Device {
     );
 
     /**
-     * This operation sets the remote user. A device supporting remote user handling shall support this
-     * 				operation. The user is only valid for the WS-UserToken profile or as a HTTP / RTSP user.
-     * 				The password that is set shall always be the original (not derived) password.
-     * 				If UseDerivedPassword is set password derivation shall be done by the device when connecting to a
-     * 				remote device.The algorithm to use for deriving the password is described in section 5.12.2.1 of the core specification.
-     * 				To remove the remote user SetRemoteUser should be called without the RemoteUser parameter.
+     * This operation sets the remote user. A device supporting remote user
+     *         handling shall support this
+     *         operation. The user is only valid for the WS-UserToken profile or as a HTTP / RTSP user.
+     *         
+     *         The password that is set shall always be the original (not derived) password.
+     *         
+     *         If UseDerivedPassword is set password derivation shall be done by the device when connecting
+     *         to a
+     *         remote device.The algorithm to use for deriving the password is described in section
+     *         5.12.2.1 of the core specification.
+     *         
+     *         To remove the remote user SetRemoteUser should be called without the RemoteUser parameter.
+     *       
      */
     @WebMethod(operationName = "SetRemoteUser", action = "http://www.onvif.org/ver10/device/wsdl/SetRemoteUser")
     @RequestWrapper(localName = "SetRemoteUser", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetRemoteUser")
@@ -545,9 +664,12 @@ public interface Device {
     );
 
     /**
-     * This operation gets the network interface configuration from a device. The device shall
-     * 				support return of network interface configuration settings as defined by the NetworkInterface
-     * 				type through the GetNetworkInterfaces command.
+     * This operation gets the network interface configuration from a device. The
+     *         device shall
+     *         support return of network interface configuration settings as defined by the
+     *         NetworkInterface
+     *         type through the GetNetworkInterfaces command.
+     *       
      */
     @WebMethod(operationName = "GetNetworkInterfaces", action = "http://www.onvif.org/ver10/device/wsdl/GetNetworkInterfaces")
     @RequestWrapper(localName = "GetNetworkInterfaces", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetNetworkInterfaces")
@@ -557,8 +679,10 @@ public interface Device {
 ;
 
     /**
-     * This operation sets the default gateway settings on a device. The device shall support
-     * 				configuration of default gateway through the SetNetworkDefaultGateway command.
+     * This operation sets the default gateway settings on a device. The device
+     *         shall support
+     *         configuration of default gateway through the SetNetworkDefaultGateway command.
+     *       
      */
     @WebMethod(operationName = "SetNetworkDefaultGateway", action = "http://www.onvif.org/ver10/device/wsdl/SetNetworkDefaultGateway")
     @RequestWrapper(localName = "SetNetworkDefaultGateway", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetNetworkDefaultGateway")
@@ -573,7 +697,7 @@ public interface Device {
 
     /**
      * This operation modifies an existing Storage configuration.
-     * 			
+     *       
      */
     @WebMethod(operationName = "SetStorageConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/SetStorageConfiguration")
     @RequestWrapper(localName = "SetStorageConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetStorageConfiguration")
@@ -585,7 +709,9 @@ public interface Device {
     );
 
     /**
-     * This operation controls whether the hostname is set manually or retrieved via DHCP.
+     * This operation controls whether the hostname is set manually or retrieved
+     *         via DHCP.
+     *       
      */
     @WebMethod(operationName = "SetHostnameFromDHCP", action = "http://www.onvif.org/ver10/device/wsdl/SetHostnameFromDHCP")
     @RequestWrapper(localName = "SetHostnameFromDHCP", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetHostnameFromDHCP")
@@ -598,7 +724,9 @@ public interface Device {
     );
 
     /**
-     * This operation reloads the parameters on the device to their factory default values.
+     * This operation reloads the parameters on the device to their factory
+     *         default values.
+     *       
      */
     @WebMethod(operationName = "SetSystemFactoryDefault", action = "http://www.onvif.org/ver10/device/wsdl/SetSystemFactoryDefault")
     @RequestWrapper(localName = "SetSystemFactoryDefault", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetSystemFactoryDefault")
@@ -610,10 +738,13 @@ public interface Device {
     );
 
     /**
-     * This operation deletes users on a device. The device shall support deletion of device users and their credentials 
-     * 				through the DeleteUsers command. A device may have one or more fixed users
-     * 				that cannot be deleted to ensure access to the unit. Either all users are deleted successfully or a
-     * 				fault message shall be returned and no users be deleted.
+     * This operation deletes users on a device. The device shall support
+     *         deletion of device users and their credentials
+     *         through the DeleteUsers command. A device may have one or more fixed users
+     *         that cannot be deleted to ensure access to the unit. Either all users are deleted
+     *         successfully or a
+     *         fault message shall be returned and no users be deleted.
+     *       
      */
     @WebMethod(operationName = "DeleteUsers", action = "http://www.onvif.org/ver10/device/wsdl/DeleteUsers")
     @RequestWrapper(localName = "DeleteUsers", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.DeleteUsers")
@@ -625,10 +756,12 @@ public interface Device {
     );
 
     /**
-     * This operation upgrades a device firmware version. After a successful upgrade the response
-     * 				message is sent before the device reboots. The device should support firmware upgrade
-     * 				through the UpgradeSystemFirmware command. The exact format of the firmware data is
-     * 				outside the scope of this standard.
+     * This operation upgrades a device firmware version. After a successful
+     *         upgrade the response
+     *         message is sent before the device reboots. The device should support firmware upgrade
+     *         through the UpgradeSystemFirmware command. The exact format of the firmware data is
+     *         outside the scope of this standard.
+     *       
      */
     @WebMethod(operationName = "UpgradeSystemFirmware", action = "http://www.onvif.org/ver10/device/wsdl/UpgradeSystemFirmware")
     @RequestWrapper(localName = "UpgradeSystemFirmware", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.UpgradeSystemFirmware")
@@ -641,9 +774,11 @@ public interface Device {
     );
 
     /**
-     * This operation adds new configurable scope parameters to a device. The scope parameters
-     * 				are used in the device discovery to match a probe message. The device shall
-     * 				support addition of discovery scope parameters through the AddScopes command.
+     * This operation adds new configurable scope parameters to a device. The
+     *         scope parameters
+     *         are used in the device discovery to match a probe message. The device shall
+     *         support addition of discovery scope parameters through the AddScopes command.
+     *       
      */
     @WebMethod(operationName = "AddScopes", action = "http://www.onvif.org/ver10/device/wsdl/AddScopes")
     @RequestWrapper(localName = "AddScopes", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.AddScopes")
@@ -656,7 +791,8 @@ public interface Device {
 
     /**
      * This operation sets the settings of a relay output.
-     * 				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+     *         This method has been depricated with version 2.0. Refer to the DeviceIO service.
+     *       
      */
     @WebMethod(operationName = "SetRelayOutputSettings", action = "http://www.onvif.org/ver10/device/wsdl/SetRelayOutputSettings")
     @RequestWrapper(localName = "SetRelayOutputSettings", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetRelayOutputSettings")
@@ -670,12 +806,17 @@ public interface Device {
     );
 
     /**
-     * This operation gets all the existing IEEE 802.1X configuration parameter sets from the device.
-     * 				The device shall respond with all the IEEE 802.1X configurations so that the client can get to
-     * 				know how many IEEE 802.1X configurations are existing and how they are configured.
-     * 				A device that support IEEE 802.1X shall support this command.
-     * 				Regardless of whether the 802.1X method in the retrieved configuration has a password or
-     * 				not, the device shall not include the Password element in the response.
+     * This operation gets all the existing IEEE 802.1X configuration parameter
+     *         sets from the device.
+     *         The device shall respond with all the IEEE 802.1X configurations so that the client can get
+     *         to
+     *         know how many IEEE 802.1X configurations are existing and how they are configured.
+     *         
+     *         A device that support IEEE 802.1X shall support this command.
+     *         
+     *         Regardless of whether the 802.1X method in the retrieved configuration has a password or
+     *         not, the device shall not include the Password element in the response.
+     *       
      */
     @WebMethod(operationName = "GetDot1XConfigurations", action = "http://www.onvif.org/ver10/device/wsdl/GetDot1XConfigurations")
     @RequestWrapper(localName = "GetDot1XConfigurations", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDot1XConfigurations")
@@ -685,17 +826,23 @@ public interface Device {
 ;
 
     /**
-     * This operation initiates a system restore from backed up configuration data using the HTTP
-     * 				POST mechanism. The response to the command includes an HTTP URL to which the backup
-     * 				file may be uploaded. The actual restore takes place as soon as the HTTP POST operation
-     * 				has completed. Devices should support system restore through the StartSystemRestore
-     * 				command. The exact format of the backup configuration data is outside the scope of this
-     * 				specification.
-     * 				System restore over HTTP may be achieved using the following steps:
-     * 				If the system restore fails because the uploaded file was invalid, the HTTP POST response
-     * 				shall be “415 Unsupported Media Type”. If the system restore fails due to an error at the
-     * 				device, the HTTP POST response shall be “500 Internal Server Error”.
-     * 				The value of the Content-Type header in the HTTP POST request shall be “application/octetstream”.
+     * This operation initiates a system restore from backed up configuration
+     *         data using the HTTP
+     *         POST mechanism. The response to the command includes an HTTP URL to which the backup
+     *         file may be uploaded. The actual restore takes place as soon as the HTTP POST operation
+     *         has completed. Devices should support system restore through the StartSystemRestore
+     *         command. The exact format of the backup configuration data is outside the scope of this
+     *         specification.
+     *         
+     *         System restore over HTTP may be achieved using the following steps:
+     *         
+     *         If the system restore fails because the uploaded file was invalid, the HTTP POST response
+     *         shall be “415 Unsupported Media Type”. If the system restore fails due to an error at the
+     *         device, the HTTP POST response shall be “500 Internal Server Error”.
+     *         
+     *         The value of the Content-Type header in the HTTP POST request shall be
+     *         “application/octetstream”.
+     *       
      */
     @WebMethod(operationName = "StartSystemRestore", action = "http://www.onvif.org/ver10/device/wsdl/StartSystemRestore")
     @RequestWrapper(localName = "StartSystemRestore", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.StartSystemRestore")
@@ -709,11 +856,14 @@ public interface Device {
     );
 
     /**
-     * This operation sets the hostname on a device. It shall be possible to set the device hostname
-     * 				configurations through the SetHostname command.
-     * 				A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to RFC 952, 
-     * 				other string shall be considered as invalid strings. 
-     * 			
+     * This operation sets the hostname on a device. It shall be possible to set
+     *         the device hostname
+     *         configurations through the SetHostname command.
+     *         
+     *         A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to
+     *         RFC 952,
+     *         other string shall be considered as invalid strings.
+     *       
      */
     @WebMethod(operationName = "SetHostname", action = "http://www.onvif.org/ver10/device/wsdl/SetHostname")
     @RequestWrapper(localName = "SetHostname", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetHostname")
@@ -725,9 +875,11 @@ public interface Device {
     );
 
     /**
-     * This operation gets the IP address filter settings from a device. If the device supports device
-     * 				access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
-     * 				device shall support the GetIPAddressFilter command.
+     * This operation gets the IP address filter settings from a device. If the
+     *         device supports device
+     *         access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
+     *         device shall support the GetIPAddressFilter command.
+     *       
      */
     @WebMethod(operationName = "GetIPAddressFilter", action = "http://www.onvif.org/ver10/device/wsdl/GetIPAddressFilter")
     @RequestWrapper(localName = "GetIPAddressFilter", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetIPAddressFilter")
@@ -737,10 +889,15 @@ public interface Device {
 ;
 
     /**
-     * This operation returns the configured remote user (if any). A device supporting remote user
-     * 				handling shall support this operation. The user is only valid for the WS-UserToken profile or
-     * 				as a HTTP / RTSP user.
-     * 				The algorithm to use for deriving the password is described in section 5.12.2.1 of the core specification.
+     * This operation returns the configured remote user (if any). A device
+     *         supporting remote user
+     *         handling shall support this operation. The user is only valid for the WS-UserToken profile
+     *         or
+     *         as a HTTP / RTSP user.
+     *         
+     *         The algorithm to use for deriving the password is described in section 5.12.2.1 of the core
+     *         specification.
+     *       
      */
     @WebMethod(operationName = "GetRemoteUser", action = "http://www.onvif.org/ver10/device/wsdl/GetRemoteUser")
     @RequestWrapper(localName = "GetRemoteUser", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetRemoteUser")
@@ -750,13 +907,19 @@ public interface Device {
 ;
 
     /**
-     * Manage auxiliary commands supported by a device, such as controlling an Infrared (IR) lamp, 
-     * 				a heater or a wiper or a thermometer that is connected to the device.
-     * 				The supported commands can be retrieved via the AuxiliaryCommands capability.
-     * 				Although the name of the auxiliary commands can be freely defined, commands starting with the prefix tt: are 
-     * 				reserved to define frequently used commands and these reserved commands shall all share the "tt:command|parameter" syntax.
-     * 				
-     * 				A device that indicates auxiliary service capability shall support this command.
+     * Manage auxiliary commands supported by a device, such as controlling an
+     *         Infrared (IR) lamp,
+     *         a heater or a wiper or a thermometer that is connected to the device.
+     *         
+     *         The supported commands can be retrieved via the AuxiliaryCommands capability.
+     *         
+     *         Although the name of the auxiliary commands can be freely defined, commands starting with
+     *         the prefix tt: are
+     *         reserved to define frequently used commands and these reserved commands shall all share the
+     *         "tt:command|parameter" syntax.
+     *         
+     *         A device that indicates auxiliary service capability shall support this command.
+     *       
      */
     @WebMethod(operationName = "SendAuxiliaryCommand", action = "http://www.onvif.org/ver10/device/wsdl/SendAuxiliaryCommand")
     @RequestWrapper(localName = "SendAuxiliaryCommand", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SendAuxiliaryCommand")
@@ -769,7 +932,9 @@ public interface Device {
     );
 
     /**
-     * Returns the capabilities of the device service. The result is returned in a typed answer.
+     * Returns the capabilities of the device service. The result is returned in
+     *         a typed answer.
+     *       
      */
     @WebMethod(operationName = "GetServiceCapabilities", action = "http://www.onvif.org/ver10/device/wsdl/GetServiceCapabilities")
     @RequestWrapper(localName = "GetServiceCapabilities", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetServiceCapabilities")
@@ -779,9 +944,11 @@ public interface Device {
 ;
 
     /**
-     * This operation adds an IP filter address to a device. If the device supports device access
-     * 				control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
-     * 				shall support adding of IP filtering addresses through the AddIPAddressFilter command.
+     * This operation adds an IP filter address to a device. If the device
+     *         supports device access
+     *         control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
+     *         shall support adding of IP filtering addresses through the AddIPAddressFilter command.
+     *       
      */
     @WebMethod(operationName = "AddIPAddressFilter", action = "http://www.onvif.org/ver10/device/wsdl/AddIPAddressFilter")
     @RequestWrapper(localName = "AddIPAddressFilter", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.AddIPAddressFilter")
@@ -793,9 +960,11 @@ public interface Device {
     );
 
     /**
-     * This operation is specific to TLS functionality. This operation gets the status
-     * 				(enabled/disabled) of the device TLS server certificates. A device that supports TLS shall
-     * 				support this command.
+     * This operation is specific to TLS functionality. This operation gets the
+     *         status
+     *         (enabled/disabled) of the device TLS server certificates. A device that supports TLS shall
+     *         support this command.
+     *       
      */
     @WebMethod(operationName = "GetCertificatesStatus", action = "http://www.onvif.org/ver10/device/wsdl/GetCertificatesStatus")
     @RequestWrapper(localName = "GetCertificatesStatus", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetCertificatesStatus")
@@ -805,14 +974,19 @@ public interface Device {
 ;
 
     /**
-     * This operation requests a PKCS #10 certificate signature request from the device. The
-     * 				returned information field shall be either formatted exactly as specified in [PKCS#10] or PEM
-     * 				encoded [PKCS#10] format. In order for this command to work, the device must already have
-     * 				a private/public key pair. This key pair should be referred by CertificateID as specified in the
-     * 				input parameter description. This CertificateID refers to the key pair generated using
-     * 				CreateCertificate command.
-     * 				A device that support onboard key pair generation that supports either TLS or IEEE 802.1X
-     * 				using client certificate shall support this command.
+     * This operation requests a PKCS #10 certificate signature request from the
+     *         device. The
+     *         returned information field shall be either formatted exactly as specified in [PKCS#10] or
+     *         PEM
+     *         encoded [PKCS#10] format. In order for this command to work, the device must already have
+     *         a private/public key pair. This key pair should be referred by CertificateID as specified in
+     *         the
+     *         input parameter description. This CertificateID refers to the key pair generated using
+     *         CreateCertificate command.
+     *         
+     *         A device that support onboard key pair generation that supports either TLS or IEEE 802.1X
+     *         using client certificate shall support this command.
+     *       
      */
     @WebMethod(operationName = "GetPkcs10Request", action = "http://www.onvif.org/ver10/device/wsdl/GetPkcs10Request")
     @RequestWrapper(localName = "GetPkcs10Request", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetPkcs10Request")
@@ -829,8 +1003,10 @@ public interface Device {
     );
 
     /**
-     * This operation gets the DNS settings from a device. The device shall return its DNS
-     * 				configurations through the GetDNS command.
+     * This operation gets the DNS settings from a device. The device shall
+     *         return its DNS
+     *         configurations through the GetDNS command.
+     *       
      */
     @WebMethod(operationName = "GetDNS", action = "http://www.onvif.org/ver10/device/wsdl/GetDNS")
     @RequestWrapper(localName = "GetDNS", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDNS")
@@ -840,8 +1016,8 @@ public interface Device {
 ;
 
     /**
-     * This operation lists all existing storage configurations for the device. 
-     * 			
+     * This operation lists all existing storage configurations for the device.
+     *       
      */
     @WebMethod(operationName = "GetStorageConfigurations", action = "http://www.onvif.org/ver10/device/wsdl/GetStorageConfigurations")
     @RequestWrapper(localName = "GetStorageConfigurations", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetStorageConfigurations")
@@ -851,7 +1027,9 @@ public interface Device {
 ;
 
     /**
-     * This operation gets a system log from the device. The exact format of the system logs is outside the scope of this standard.
+     * This operation gets a system log from the device. The exact format of the
+     *         system logs is outside the scope of this standard.
+     *       
      */
     @WebMethod(operationName = "GetSystemLog", action = "http://www.onvif.org/ver10/device/wsdl/GetSystemLog")
     @RequestWrapper(localName = "GetSystemLog", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetSystemLog")
@@ -864,9 +1042,12 @@ public interface Device {
     );
 
     /**
-     * This operation gets the remote DP address or addresses from a device. If the device supports
-     * 				remote discovery, as specified in Section 7.4, the device shall support retrieval of the remote
-     * 				DP address(es) through the GetDPAddresses command.
+     * This operation gets the remote DP address or addresses from a device. If
+     *         the device supports
+     *         remote discovery, as specified in Section 7.4, the device shall support retrieval of the
+     *         remote
+     *         DP address(es) through the GetDPAddresses command.
+     *       
      */
     @WebMethod(operationName = "GetDPAddresses", action = "http://www.onvif.org/ver10/device/wsdl/GetDPAddresses")
     @RequestWrapper(localName = "GetDPAddresses", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDPAddresses")
@@ -877,7 +1058,8 @@ public interface Device {
 
     /**
      * This operation sets the state of a relay output.
-     * 				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+     *         This method has been depricated with version 2.0. Refer to the DeviceIO service.
+     *       
      */
     @WebMethod(operationName = "SetRelayOutputState", action = "http://www.onvif.org/ver10/device/wsdl/SetRelayOutputState")
     @RequestWrapper(localName = "SetRelayOutputState", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetRelayOutputState")
@@ -891,11 +1073,14 @@ public interface Device {
     );
 
     /**
-     * This operation restores the system backup configuration files(s) previously retrieved from a
-     * 				device. The device should support restore of backup configuration file(s) through the
-     * 				RestoreSystem command. The exact format of the backup configuration file(s) is outside the
-     * 				scope of this standard. If the command is supported, it shall accept backup files returned by
-     * 				the GetSystemBackup command.
+     * This operation restores the system backup configuration files(s)
+     *         previously retrieved from a
+     *         device. The device should support restore of backup configuration file(s) through the
+     *         RestoreSystem command. The exact format of the backup configuration file(s) is outside the
+     *         scope of this standard. If the command is supported, it shall accept backup files returned
+     *         by
+     *         the GetSystemBackup command.
+     *       
      */
     @WebMethod(operationName = "RestoreSystem", action = "http://www.onvif.org/ver10/device/wsdl/RestoreSystem")
     @RequestWrapper(localName = "RestoreSystem", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.RestoreSystem")
@@ -907,10 +1092,12 @@ public interface Device {
     );
 
     /**
-     * This operation gets the remote discovery mode of a device. See Section 7.4 for the definition
-     * 				of remote discovery extensions. A device that supports remote discovery shall support
-     * 				retrieval of the remote discovery mode setting through the GetRemoteDiscoveryMode
-     * 				command.
+     * This operation gets the remote discovery mode of a device. See Section 7.4
+     *         for the definition
+     *         of remote discovery extensions. A device that supports remote discovery shall support
+     *         retrieval of the remote discovery mode setting through the GetRemoteDiscoveryMode
+     *         command.
+     *       
      */
     @WebMethod(operationName = "GetRemoteDiscoveryMode", action = "http://www.onvif.org/ver10/device/wsdl/GetRemoteDiscoveryMode")
     @RequestWrapper(localName = "GetRemoteDiscoveryMode", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetRemoteDiscoveryMode")
@@ -920,8 +1107,10 @@ public interface Device {
 ;
 
     /**
-     * This operation sets the DNS settings on a device. It shall be possible to set the device DNS
-     * 				configurations through the SetDNS command.
+     * This operation sets the DNS settings on a device. It shall be possible to
+     *         set the device DNS
+     *         configurations through the SetDNS command.
+     *       
      */
     @WebMethod(operationName = "SetDNS", action = "http://www.onvif.org/ver10/device/wsdl/SetDNS")
     @RequestWrapper(localName = "SetDNS", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetDNS")
@@ -937,12 +1126,15 @@ public interface Device {
     );
 
     /**
-     * This operation requests the information of a certificate specified by certificate ID. The device
-     * 				should respond with its “Issuer DN”, “Subject DN”, “Key usage”, "Extended key usage”, “Key
-     * 				Length”, “Version”, “Serial Number”, “Signature Algorithm” and “Validity” data as the
-     * 				information of the certificate, as long as the device can retrieve such information from the
-     * 				specified certificate.
-     * 				A device that supports either TLS or IEEE 802.1X should support this command.
+     * This operation requests the information of a certificate specified by
+     *         certificate ID. The device
+     *         should respond with its “Issuer DN”, “Subject DN”, “Key usage”, "Extended key usage”, “Key
+     *         Length”, “Version”, “Serial Number”, “Signature Algorithm” and “Validity” data as the
+     *         information of the certificate, as long as the device can retrieve such information from the
+     *         specified certificate.
+     *         
+     *         A device that supports either TLS or IEEE 802.1X should support this command.
+     *       
      */
     @WebMethod(operationName = "GetCertificateInformation", action = "http://www.onvif.org/ver10/device/wsdl/GetCertificateInformation")
     @RequestWrapper(localName = "GetCertificateInformation", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetCertificateInformation")
@@ -965,8 +1157,10 @@ public interface Device {
 ;
 
     /**
-     * This operation is used by an endpoint to get the hostname from a device. The device shall
-     * 				return its hostname configurations through the GetHostname command.
+     * This operation is used by an endpoint to get the hostname from a device.
+     *         The device shall
+     *         return its hostname configurations through the GetHostname command.
+     *       
      */
     @WebMethod(operationName = "GetHostname", action = "http://www.onvif.org/ver10/device/wsdl/GetHostname")
     @RequestWrapper(localName = "GetHostname", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetHostname")
@@ -976,9 +1170,11 @@ public interface Device {
 ;
 
     /**
-     * This operation lists the registered users and corresponding credentials on a device. The
-     * 				device shall support retrieval of registered device users and their credentials for the user
-     * 				token through the GetUsers command.
+     * This operation lists the registered users and corresponding credentials on
+     *         a device. The
+     *         device shall support retrieval of registered device users and their credentials for the user
+     *         token through the GetUsers command.
+     *       
      */
     @WebMethod(operationName = "GetUsers", action = "http://www.onvif.org/ver10/device/wsdl/GetUsers")
     @RequestWrapper(localName = "GetUsers", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetUsers")
@@ -988,9 +1184,12 @@ public interface Device {
 ;
 
     /**
-     * This operation deletes an IEEE 802.1X configuration parameter set from the device. Which
-     * 				configuration should be deleted is specified by the 'Dot1XConfigurationToken' in the request.
-     * 				A device that support IEEE 802.1X shall support this command.
+     * This operation deletes an IEEE 802.1X configuration parameter set from the
+     *         device. Which
+     *         configuration should be deleted is specified by the 'Dot1XConfigurationToken' in the
+     *         request.
+     *         A device that support IEEE 802.1X shall support this command.
+     *       
      */
     @WebMethod(operationName = "DeleteDot1XConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/DeleteDot1XConfiguration")
     @RequestWrapper(localName = "DeleteDot1XConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.DeleteDot1XConfiguration")
@@ -1002,8 +1201,11 @@ public interface Device {
     );
 
     /**
-     * This operation gets a list of all available relay outputs and their settings.
-     * 				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+     * This operation gets a list of all available relay outputs and their
+     *         settings.
+     *         
+     *         This method has been depricated with version 2.0. Refer to the DeviceIO service.
+     *       
      */
     @WebMethod(operationName = "GetRelayOutputs", action = "http://www.onvif.org/ver10/device/wsdl/GetRelayOutputs")
     @RequestWrapper(localName = "GetRelayOutputs", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetRelayOutputs")
@@ -1013,12 +1215,15 @@ public interface Device {
 ;
 
     /**
-     * Any endpoint can ask for the capabilities of a device using the capability exchange request
-     * 				response operation. The device shall indicate all its ONVIF compliant capabilities through the
-     * 				GetCapabilities command.
-     * 				The capability list includes references to the addresses (XAddr) of the service implementing
-     * 				the interface operations in the category. Apart from the addresses, the
-     * 				capabilities only reflect optional functions.
+     * Any endpoint can ask for the capabilities of a device using the capability
+     *         exchange request
+     *         response operation. The device shall indicate all its ONVIF compliant capabilities through
+     *         the
+     *         GetCapabilities command.
+     *         The capability list includes references to the addresses (XAddr) of the service implementing
+     *         the interface operations in the category. Apart from the addresses, the
+     *         capabilities only reflect optional functions.
+     *       
      */
     @WebMethod(operationName = "GetCapabilities", action = "http://www.onvif.org/ver10/device/wsdl/GetCapabilities")
     @RequestWrapper(localName = "GetCapabilities", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetCapabilities")
@@ -1031,8 +1236,10 @@ public interface Device {
     );
 
     /**
-     * This operation configures defined network protocols on a device. The device shall support
-     * 				configuration of defined network protocols through the SetNetworkProtocols command.
+     * This operation configures defined network protocols on a device. The
+     *         device shall support
+     *         configuration of defined network protocols through the SetNetworkProtocols command.
+     *       
      */
     @WebMethod(operationName = "SetNetworkProtocols", action = "http://www.onvif.org/ver10/device/wsdl/SetNetworkProtocols")
     @RequestWrapper(localName = "SetNetworkProtocols", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetNetworkProtocols")
@@ -1044,8 +1251,9 @@ public interface Device {
     );
 
     /**
-     * This operation retrieves the Storage configuration associated with the given storage configuration token.
-     * 			
+     * This operation retrieves the Storage configuration associated with the given storage
+     * configuration token.
+     *       
      */
     @WebMethod(operationName = "GetStorageConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/GetStorageConfiguration")
     @RequestWrapper(localName = "GetStorageConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetStorageConfiguration")
@@ -1058,15 +1266,20 @@ public interface Device {
     );
 
     /**
-     * This command is used when it is necessary to load trusted CA certificates or trusted root
-     * 				certificates for the purpose of verification for its counterpart i.e. client certificate verification in
-     * 				TLS function or server certificate verification in IEEE 802.1X function.
-     * 				A device that support either TLS or IEEE 802.1X shall support this command. As for the
-     * 				supported certificate format, either DER format or PEM format is possible to be used. But a
-     * 				device that support this command shall support at least DER format as supported format type.
-     * 				The device may sort the received certificate(s) based on the public key and subject
-     * 				information in the certificate(s). Either all CA certificates are loaded successfully or a fault
-     * 				message shall be returned without loading any CA certificate.
+     * This command is used when it is necessary to load trusted CA certificates
+     *         or trusted root
+     *         certificates for the purpose of verification for its counterpart i.e. client certificate
+     *         verification in
+     *         TLS function or server certificate verification in IEEE 802.1X function.
+     *         
+     *         A device that support either TLS or IEEE 802.1X shall support this command. As for the
+     *         supported certificate format, either DER format or PEM format is possible to be used. But a
+     *         device that support this command shall support at least DER format as supported format type.
+     *         The device may sort the received certificate(s) based on the public key and subject
+     *         information in the certificate(s). Either all CA certificates are loaded successfully or a
+     *         fault
+     *         message shall be returned without loading any CA certificate.
+     *       
      */
     @WebMethod(operationName = "LoadCACertificates", action = "http://www.onvif.org/ver10/device/wsdl/LoadCACertificates")
     @RequestWrapper(localName = "LoadCACertificates", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.LoadCACertificates")
@@ -1078,11 +1291,14 @@ public interface Device {
     );
 
     /**
-     * This operation gets one IEEE 802.1X configuration parameter set from the device by
-     * 				specifying the configuration token (Dot1XConfigurationToken).
-     * 				A device that supports IEEE 802.1X shall support this command.
-     * 				Regardless of whether the 802.1X method in the retrieved configuration has a password or
-     * 				not, the device shall not include the Password element in the response.
+     * This operation gets one IEEE 802.1X configuration parameter set from the
+     *         device by
+     *         specifying the configuration token (Dot1XConfigurationToken).
+     *         
+     *         A device that supports IEEE 802.1X shall support this command.
+     *         Regardless of whether the 802.1X method in the retrieved configuration has a password or
+     *         not, the device shall not include the Password element in the response.
+     *       
      */
     @WebMethod(operationName = "GetDot1XConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/GetDot1XConfiguration")
     @RequestWrapper(localName = "GetDot1XConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDot1XConfiguration")
@@ -1095,9 +1311,11 @@ public interface Device {
     );
 
     /**
-     * While the CreateDot1XConfiguration command is trying to create a new configuration
-     * 				parameter set, this operation modifies existing IEEE 802.1X configuration parameter set of
-     * 				the device. A device that support IEEE 802.1X shall support this command.
+     * While the CreateDot1XConfiguration command is trying to create a new
+     *         configuration
+     *         parameter set, this operation modifies existing IEEE 802.1X configuration parameter set of
+     *         the device. A device that support IEEE 802.1X shall support this command.
+     *       
      */
     @WebMethod(operationName = "SetDot1XConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/SetDot1XConfiguration")
     @RequestWrapper(localName = "SetDot1XConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetDot1XConfiguration")
@@ -1109,10 +1327,12 @@ public interface Device {
     );
 
     /**
-     * This operation sets the IP address filter settings on a device. If the device supports device
-     * 				access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
-     * 				device shall support configuration of IP filtering rules through the SetIPAddressFilter
-     * 				command.
+     * This operation sets the IP address filter settings on a device. If the
+     *         device supports device
+     *         access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
+     *         device shall support configuration of IP filtering rules through the SetIPAddressFilter
+     *         command.
+     *       
      */
     @WebMethod(operationName = "SetIPAddressFilter", action = "http://www.onvif.org/ver10/device/wsdl/SetIPAddressFilter")
     @RequestWrapper(localName = "SetIPAddressFilter", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetIPAddressFilter")
@@ -1124,8 +1344,10 @@ public interface Device {
     );
 
     /**
-     * This operation gets defined network protocols from a device. The device shall support the
-     * 				GetNetworkProtocols command returning configured network protocols.
+     * This operation gets defined network protocols from a device. The device
+     *         shall support the
+     *         GetNetworkProtocols command returning configured network protocols.
+     *       
      */
     @WebMethod(operationName = "GetNetworkProtocols", action = "http://www.onvif.org/ver10/device/wsdl/GetNetworkProtocols")
     @RequestWrapper(localName = "GetNetworkProtocols", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetNetworkProtocols")
@@ -1135,9 +1357,10 @@ public interface Device {
 ;
 
     /**
-     * This operation creates a new storage configuration. 
-     * 			The configuration data shall be created in the device and shall be persistent (remain after reboot).
-     * 			
+     * This operation creates a new storage configuration.
+     * The configuration data shall be created in the device and shall be persistent (remain after
+     * reboot).
+     *       
      */
     @WebMethod(operationName = "CreateStorageConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/CreateStorageConfiguration")
     @RequestWrapper(localName = "CreateStorageConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.CreateStorageConfiguration")
@@ -1150,8 +1373,10 @@ public interface Device {
     );
 
     /**
-     * This operation returns a lists of the wireless networks in range of the device. A device should
-     * 				support this operation.
+     * This operation returns a lists of the wireless networks in range of the
+     *         device. A device should
+     *         support this operation.
+     *       
      */
     @WebMethod(operationName = "ScanAvailableDot11Networks", action = "http://www.onvif.org/ver10/device/wsdl/ScanAvailableDot11Networks")
     @RequestWrapper(localName = "ScanAvailableDot11Networks", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.ScanAvailableDot11Networks")
@@ -1164,9 +1389,11 @@ public interface Device {
     );
 
     /**
-     * This command sets the device access security policy (for more details on the access security
-     * 				policy see the Get command). If the device supports access policy settings
-     * 				based on WS-Security authentication, then the device shall support this command.
+     * This command sets the device access security policy (for more details on
+     *         the access security
+     *         policy see the Get command). If the device supports access policy settings
+     *         based on WS-Security authentication, then the device shall support this command.
+     *       
      */
     @WebMethod(operationName = "SetAccessPolicy", action = "http://www.onvif.org/ver10/device/wsdl/SetAccessPolicy")
     @RequestWrapper(localName = "SetAccessPolicy", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetAccessPolicy")
@@ -1178,11 +1405,14 @@ public interface Device {
     );
 
     /**
-     * This operation deletes a certificate or multiple certificates. The device MAY also delete a
-     * 				private/public key pair which is coupled with the certificate to be deleted. The device that
-     * 				support either TLS or IEEE 802.1X shall support the deletion of a certificate or multiple
-     * 				certificates through this command. Either all certificates are deleted successfully or a fault
-     * 				message shall be returned without deleting any certificate.
+     * This operation deletes a certificate or multiple certificates. The device
+     *         MAY also delete a
+     *         private/public key pair which is coupled with the certificate to be deleted. The device that
+     *         support either TLS or IEEE 802.1X shall support the deletion of a certificate or multiple
+     *         certificates through this command. Either all certificates are deleted successfully or a
+     *         fault
+     *         message shall be returned without deleting any certificate.
+     *       
      */
     @WebMethod(operationName = "DeleteCertificates", action = "http://www.onvif.org/ver10/device/wsdl/DeleteCertificates")
     @RequestWrapper(localName = "DeleteCertificates", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.DeleteCertificates")
@@ -1194,10 +1424,12 @@ public interface Device {
     );
 
     /**
-     * It is possible for an endpoint to request a URL that can be used to retrieve the complete
-     * 				schema and WSDL definitions of a device. The command gives in return a URL entry point
-     * 				where all the necessary product specific WSDL and schema definitions can be retrieved. The
-     * 				device shall provide a URL for WSDL and schema download through the GetWsdlUrl command.
+     * It is possible for an endpoint to request a URL that can be used to
+     *         retrieve the complete
+     *         schema and WSDL definitions of a device. The command gives in return a URL entry point
+     *         where all the necessary product specific WSDL and schema definitions can be retrieved. The
+     *         device shall provide a URL for WSDL and schema download through the GetWsdlUrl command.
+     *       
      */
     @WebMethod(operationName = "GetWsdlUrl", action = "http://www.onvif.org/ver10/device/wsdl/GetWsdlUrl")
     @RequestWrapper(localName = "GetWsdlUrl", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetWsdlUrl")
@@ -1207,8 +1439,9 @@ public interface Device {
 ;
 
     /**
-     * This operation deletes the given storage configuration and configuration change shall always be persistent.
-     * 			
+     * This operation deletes the given storage configuration and configuration change shall always
+     * be persistent.
+     *       
      */
     @WebMethod(operationName = "DeleteStorageConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/DeleteStorageConfiguration")
     @RequestWrapper(localName = "DeleteStorageConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.DeleteStorageConfiguration")
@@ -1220,8 +1453,10 @@ public interface Device {
     );
 
     /**
-     * This operation returns the IEEE802.11 capabilities. The device shall support
-     * 				this operation.
+     * This operation returns the IEEE802.11 capabilities. The device shall
+     *         support
+     *         this operation.
+     *       
      */
     @WebMethod(operationName = "GetDot11Capabilities", action = "http://www.onvif.org/ver10/device/wsdl/GetDot11Capabilities")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -1233,7 +1468,9 @@ public interface Device {
     );
 
     /**
-     * This operation sets the zero-configuration. Use GetCapalities to get if zero-zero-configuration is supported or not.
+     * This operation sets the zero-configuration. Use GetCapalities to get if
+     *         zero-zero-configuration is supported or not.
+     *       
      */
     @WebMethod(operationName = "SetZeroConfiguration", action = "http://www.onvif.org/ver10/device/wsdl/SetZeroConfiguration")
     @RequestWrapper(localName = "SetZeroConfiguration", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetZeroConfiguration")
@@ -1247,10 +1484,12 @@ public interface Device {
     );
 
     /**
-     * A client can ask for the device service endpoint reference address property that can be used
-     * 				to derive the password equivalent for remote user operation. The device shall support the
-     * 				GetEndpointReference command returning the address property of the device service
-     * 				endpoint reference.
+     * A client can ask for the device service endpoint reference address
+     *         property that can be used
+     *         to derive the password equivalent for remote user operation. The device shall support the
+     *         GetEndpointReference command returning the address property of the device service
+     *         endpoint reference.
+     *       
      */
     @WebMethod(operationName = "GetEndpointReference", action = "http://www.onvif.org/ver10/device/wsdl/GetEndpointReference")
     @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
@@ -1262,9 +1501,12 @@ public interface Device {
     );
 
     /**
-     * This operation is specific to TLS functionality. This operation sets the status (enable/disable)
-     * 				of the device TLS server certificates. A device that supports TLS shall support this command.
-     * 				Typically only one device server certificate is allowed to be enabled at a time.
+     * This operation is specific to TLS functionality. This operation sets the
+     *         status (enable/disable)
+     *         of the device TLS server certificates. A device that supports TLS shall support this
+     *         command.
+     *         Typically only one device server certificate is allowed to be enabled at a time.
+     *       
      */
     @WebMethod(operationName = "SetCertificatesStatus", action = "http://www.onvif.org/ver10/device/wsdl/SetCertificatesStatus")
     @RequestWrapper(localName = "SetCertificatesStatus", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetCertificatesStatus")
@@ -1276,8 +1518,10 @@ public interface Device {
     );
 
     /**
-     * This operation returns the status of a wireless network interface. The device shall support this
-     * 				command.
+     * This operation returns the status of a wireless network interface. The
+     *         device shall support this
+     *         command.
+     *       
      */
     @WebMethod(operationName = "GetDot11Status", action = "http://www.onvif.org/ver10/device/wsdl/GetDot11Status")
     @RequestWrapper(localName = "GetDot11Status", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetDot11Status")
@@ -1303,9 +1547,11 @@ public interface Device {
     );
 
     /**
-     * This operation sets the dynamic DNS settings on a device. If the device supports dynamic
-     * 				DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to set the type, name
-     * 				and TTL through the SetDynamicDNS command.
+     * This operation sets the dynamic DNS settings on a device. If the device
+     *         supports dynamic
+     *         DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to set the type, name
+     *         and TTL through the SetDynamicDNS command.
+     *       
      */
     @WebMethod(operationName = "SetDynamicDNS", action = "http://www.onvif.org/ver10/device/wsdl/SetDynamicDNS")
     @RequestWrapper(localName = "SetDynamicDNS", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.SetDynamicDNS")
@@ -1321,10 +1567,12 @@ public interface Device {
     );
 
     /**
-     * This operation is retrieves system backup configuration file(s) from a device. The device
-     * 				should support return of back up configuration file(s) through the GetSystemBackup command.
-     * 				The backup is returned with reference to a name and mime-type together with binary data.
-     * 				The exact format of the backup configuration files is outside the scope of this standard.
+     * This operation is retrieves system backup configuration file(s) from a
+     *         device. The device
+     *         should support return of back up configuration file(s) through the GetSystemBackup command.
+     *         The backup is returned with reference to a name and mime-type together with binary data.
+     *         The exact format of the backup configuration files is outside the scope of this standard.
+     *       
      */
     @WebMethod(operationName = "GetSystemBackup", action = "http://www.onvif.org/ver10/device/wsdl/GetSystemBackup")
     @RequestWrapper(localName = "GetSystemBackup", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetSystemBackup")
@@ -1334,12 +1582,16 @@ public interface Device {
 ;
 
     /**
-     * CA certificates will be loaded into a device and be used for the sake of following two cases.
-     * 				The one is for the purpose of TLS client authentication in TLS server function. The other one
-     * 				is for the purpose of Authentication Server authentication in IEEE 802.1X function. This
-     * 				operation gets all CA certificates loaded into a device. A device that supports either TLS client
-     * 				authentication or IEEE 802.1X shall support this command and the returned certificates shall
-     * 				be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding rules.
+     * CA certificates will be loaded into a device and be used for the sake of
+     *         following two cases.
+     *         The one is for the purpose of TLS client authentication in TLS server function. The other
+     *         one
+     *         is for the purpose of Authentication Server authentication in IEEE 802.1X function. This
+     *         operation gets all CA certificates loaded into a device. A device that supports either TLS
+     *         client
+     *         authentication or IEEE 802.1X shall support this command and the returned certificates shall
+     *         be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding rules.
+     *       
      */
     @WebMethod(operationName = "GetCACertificates", action = "http://www.onvif.org/ver10/device/wsdl/GetCACertificates")
     @RequestWrapper(localName = "GetCACertificates", targetNamespace = "http://www.onvif.org/ver10/device/wsdl", className = "org.onvif.ver10.device.wsdl.GetCACertificates")

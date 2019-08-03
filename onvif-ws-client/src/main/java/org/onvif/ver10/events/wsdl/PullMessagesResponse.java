@@ -103,7 +103,8 @@ public class PullMessagesResponse {
     }
 
     /**
-     * List of messages. This list shall be empty in case of a timeout.Gets the value of the notificationMessage property.
+     * List of messages. This list shall be empty in case of a timeout.
+     *                 Gets the value of the notificationMessage property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,

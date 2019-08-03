@@ -18,7 +18,9 @@ import org.w3c.dom.Element;
 
 
 /**
- * This type contains the Audio and Video coding capabilities of a display service.
+ * This type contains the Audio and Video coding capabilities of a display
+ *         service.
+ *       
  * 
  * <p>Java class for CodingCapabilities complex type.
  * 

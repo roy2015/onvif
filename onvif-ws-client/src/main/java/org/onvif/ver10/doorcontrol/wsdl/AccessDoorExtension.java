@@ -18,8 +18,8 @@ import org.w3c.dom.Element;
 
 /**
  * 
- * Extension for the AccessDoor command.
- * 
+ *             Extension for the AccessDoor command.
+ *           
  * 
  * <p>Java class for AccessDoorExtension complex type.
  * 

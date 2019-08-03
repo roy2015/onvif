@@ -14,6 +14,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 /**
  * The list of configurable parity for the data error detection.
+ *           
  * 
  * <p>Java class for ParityBitList complex type.
  * 

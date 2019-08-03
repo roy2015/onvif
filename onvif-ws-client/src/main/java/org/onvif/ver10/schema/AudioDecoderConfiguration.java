@@ -17,8 +17,10 @@ import org.w3c.dom.Element;
 
 
 /**
- * The Audio Decoder Configuration does not contain any that parameter to configure the
- * decoding .A decoder shall decode every data it receives (according to its capabilities).
+ * The Audio Decoder Configuration does not contain any that parameter to
+ *         configure the
+ *         decoding .A decoder shall decode every data it receives (according to its capabilities).
+ *       
  * 
  * <p>Java class for AudioDecoderConfiguration complex type.
  * 
