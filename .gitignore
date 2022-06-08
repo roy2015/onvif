@@ -1,25 +1,15 @@
-*target*
-*.jar
-*.war
-*.ear
+.idea/
+**/bin/
+**/target/
 *.class
+**/.DS_Store
 
-# eclipse specific git ignore
-*.pydevproject
-.project
-.metadata
-bin/**
-*.tmp
-*.bak
-*~.nib
-*~
-*.swp
-*.swo
-
-.idea/**
-.idea
-
-local.properties
+*.jar
+*.iml
+.svn/
 .classpath
+.project
 .settings/
-.loadpath
+*.log
+*.gz
+*.tgz
